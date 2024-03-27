@@ -1,0 +1,176 @@
+@page "/history"
+@using MudBlazor.Utilities
+@using SOTM.Shared.Models
+@using SOTM.MissionControl.Models
+@using SOTM.MissionControl.Services
+@inject HttpClient httpClient
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager navManager
+@inject DeckDataService deckData
+@inject GameService gameSvc
+@inject SettingsService settingsSvc
+@inject IJSRuntime JSRuntime
+
+<MudStack>
+<MudText Typo="Typo.h5" Style="font-weight: bold;">Game History</MudText>
+<div>
+    <MudFileUpload T="IBrowserFile" OnFilesChanged="UploadHistory">
+        <ButtonTemplate>
+            <div class="d-flex gap-4">
+                <MudButton 
+                    HtmlTag="label"
+                    StartIcon="@Icons.Material.Filled.Input" 
+                    Variant="Variant.Filled" 
+                    Class="save-load-button"
+                    for="@context.Id">
+
+                    Upload History
+                </MudButton>
+                <MudButton 
+                    OnClick="DownloadHistory"
+                    StartIcon="@Icons.Material.Filled.Download" 
+                    Variant="Variant.Filled" 
+                    Class="save-load-button">
+
+                    Download History
+                </MudButton>
+            </div>
+        </ButtonTemplate>
+    </MudFileUpload>
+</div>
+<MudTable Items="@this.gameData" Bordered="true" Striped="true">
+    @* <ToolBarContent>
+        <MudText Typo="Typo.h5" Style="font-weight: bold;">Game History</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchString1" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent> *@
+    <HeaderContent>
+        <MudTh Class="header"><MudText Typo="Typo.h6">Result</MudText></MudTh>
+        <MudTh Class="header"><MudText Typo="Typo.h6">Villain</MudText></MudTh>
+        <MudTh Class="header"><MudText Typo="Typo.h6">Environment</MudText></MudTh>
+        <MudTh Class="header"><MudText Typo="Typo.h6">Heroes</MudText></MudTh>
+        <MudTh Class="header"><MudText Typo="Typo.h6">Unpicked Heroes</MudText></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Result">
+            <MudText Typo="Typo.h5" Style="font-weight: bold;">@context.result</MudText>
+        </MudTd>
+        <MudTd DataLabel="Villain">
+            <MudText Typo="Typo.h6">@context.villain</MudText>
+        </MudTd>
+        <MudTd DataLabel="Environment">
+            <MudText Typo="Typo.h6">@context.environment</MudText>
+        </MudTd>
+        <MudTd Class="pa-0" DataLabel="Heroes">
+            <div class="d-flex gap-3 pa-2">
+                <div style="width: 50%;">
+                    @foreach (string hero in context.heroes.Take(3))
+                    {
+                        <p class="mb-0">@hero</p>
+                    }
+                </div>
+                <div style="width: 50%;">
+                    @foreach (string hero in context.heroes.Skip(3))
+                    {
+                        <p class="mb-0">@hero</p>
+                    }
+                </div>
+            </div>
+        </MudTd>
+        <MudTd Class="pa-0" DataLabel="Unpicked Heroes">
+            <div class="d-flex gap-3 pa-2">
+                <div style="width: 50%;">
+                    @foreach (string hero in context.unpickedHeroes.Take(3))
+                    {
+                        <p class="mb-0">@hero</p>
+                    }
+                </div>
+                <div style="width: 50%;">
+                    @foreach (string hero in context.unpickedHeroes.Skip(3))
+                    {
+                        <p class="mb-0">@hero</p>
+                    }
+                </div>
+            </div>
+        </MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+</MudStack>
+
+<style>
+    .save-load-button {
+        color: @(Colors.Shades.White);
+        background-color: @(Colors.Teal.Darken2);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 35px;
+    }
+    .save-load-button:hover {
+        background-color: @(Colors.Teal.Lighten1) !important;
+    }
+
+    .header {
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 0px;
+        padding-top: 4px;
+        border: 1px solid var(--mud-palette-table-lines);
+    }
+</style>
+
+@code
+{
+    public class GameTableRowData
+    {
+        public string result;
+        
+        public string villain;
+        public string environment;
+        public List<string> heroes;
+
+        public List<string> unpickedHeroes;
+        
+        public GameTableRowData (DeckDataService deckData, Game game)
+        {
+            this.result = game.state == GameState.WIN ? "Win" : "Loss";
+            this.heroes = game.GetPickedHeroes().Select(identifier => deckData.GetVariantData(identifier).title).ToList();
+            this.villain = deckData.GetVariantData(game.GetPickedVillain()).title;
+            this.environment = deckData.GetVariantData(game.GetPickedEnvironment()).title;
+            this.unpickedHeroes = game.GetUnpickedHeroes().Select(identifier => deckData.GetVariantData(identifier).title).ToList();
+        }
+    }
+
+    public IEnumerable<GameTableRowData> gameData = Enumerable.Empty<GameTableRowData>();
+    protected override async Task OnInitializedAsync()
+    {
+        await deckData.LoadData(localStorage, httpClient);
+        await gameSvc.LoadGameLog(localStorage);
+        this.gameData = gameSvc.GetLoggedGames().Select(game => new GameTableRowData(deckData, game ));
+    }
+
+    private async Task UploadHistory(InputFileChangeEventArgs args)
+    {
+        try
+        {
+            await gameSvc.LoadGameLogFile(args.File, settingsSvc.settings.importHistoryMode);
+            await gameSvc.SaveGameLog(localStorage);
+            navManager.Refresh();
+        }
+        catch (Exception err)
+        {
+            Console.Error.WriteLine(err.ToString());
+            Console.Error.WriteLine("Invalid file");
+        }
+    }
+
+    // https://www.meziantou.net/generating-and-downloading-a-file-in-a-blazor-webassembly-application.htm
+    private async Task DownloadHistory()
+    {
+        // Generate a text file
+        byte[] file = gameSvc.GetGameLogBytes();
+        await JSRuntime.InvokeVoidAsync("BlazorDownloadFile", "game-log.json", "application/json", file);
+    }
+}

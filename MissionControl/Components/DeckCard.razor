@@ -1,0 +1,103 @@
+@using SOTM.Shared.Models
+@using SOTM.MissionControl.Models
+@using SOTM.MissionControl.Services
+@using System.Text.RegularExpressions
+@inject DeckDataService deckData
+
+@inherits ComponentBase
+
+<MudCard Class="@($"pa-0 card-fix-width card-body {Class}")">
+    <MudCardHeader Class="pt-0 pl-3 pr-3 pb-0 card-head">
+        <CardHeaderContent>
+            <MudText Style="max-width: 160px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><b>@Title</b></MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent Class="pa-1">
+        <MudToggleGroup T="GlobalIdentifier" Dense DisableRipple Vertical SelectionMode="SelectionMode.MultiSelection" @bind-Values="PickableVariants" Class="banned" SelectedClass="pickable">
+            @foreach (var (variantTitle, variantIdentifier) in Variants)
+            {
+                <MudToggleItem Class="no-padding" Value="@variantIdentifier">
+                    <MudText Typo="Typo.body2" Class="@(context ? "pickable-text" : "banned-text")" Style="width: 100%; max-width: 160px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@deckData.GetVariantDisplayTitle(variantTitle, this.Title)</MudText>
+                </MudToggleItem>
+            }
+        </MudToggleGroup>
+    </MudCardContent>
+</MudCard>
+
+<style>
+    .card-head {
+        color: var(--pickable-text-color);
+        background: var(--head-color);
+        min-height: 35px;
+    }
+
+    .card-body {
+        color: var(--pickable-text-color);
+        background: var(--pickable-color);
+    }
+
+    .banned {
+        background-color: var(--banned-color);
+        :hover {
+            background-color: var(--banned-color);
+        }
+    }
+
+    .pickable {
+        background-color: var(--pickable-color);
+        :hover {
+            background-color: var(--pickable-color);
+        }
+    }
+
+    .banned-text {
+        color: var(--banned-text-color);
+        text-decoration: line-through;
+    }
+
+    .pickable-text {
+        color: var(--pickable-text-color);
+    }
+
+    .card-fix-width {
+        max-width: 180px !important;
+        width: 100% !important;
+    }
+
+    .no-padding {
+        padding: 0px !important;
+    }
+</style>
+
+@code
+{
+    [Parameter]
+    public string Title { get; set; }
+    [Parameter]
+    public List<(string?, GlobalIdentifier)> Variants { get; set; }
+
+    [Parameter]
+    public IEnumerable<GlobalIdentifier> PickableVariants { get; set; }
+
+    [Parameter]
+    public string Class { get; set; }
+
+    public static List<(string?, GlobalIdentifier)> FromDeckModel(Deck deck)
+    {
+        return deck.GetChildren()
+            .Select(variant => (variant.title, variant.identifier))
+            .ToList();
+    }
+
+    public static List<(string?, GlobalIdentifier)> FromExpansionModel(Expansion expansion)
+    {
+        return expansion.GetChildren().SelectMany(deck => deck.GetChildren())
+            .Select(variant => (variant.title, variant.identifier))
+            .ToList();
+    }
+
+    public IEnumerable<GlobalIdentifier> GetPickableVariants()
+    {
+        return this.PickableVariants;
+    }
+}

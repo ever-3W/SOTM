@@ -1,0 +1,289 @@
+{
+  "5e6209fc87db41f5922136b6aa2f626f": {
+    "picks": {
+      "HERO": [
+        0,
+        0,
+        1,
+        0,
+        3,
+        0,
+        5,
+        7
+      ],
+      "VILLAIN": [
+        1
+      ],
+      "ENVIRONMENT": [
+        1
+      ]
+    },
+    "state": "LOSS",
+    "draft": {
+      "heroes": [
+        "Vanilla.MiniPack5.VoidGuardDrMedico.VoidGuardDrMedico",
+        "Vanilla.MiniPack5.VoidGuardMainstay.VoidGuardRoadWarriorMainstayCharacter",
+        "Vanilla.InfernalRelics.NightMist.NightMist",
+        "Vanilla.Vengeance.Setback.DarkWatchSetbackCharacter",
+        "Vanilla.Vengeance.Parse.Parse",
+        "Vanilla.WrathOfTheCosmos.SkyScraper.ExtremistSkyScraperNormalCharacter",
+        "Menagerie.Menagerie.Radiance.Radiance",
+        "Vanilla.Vengeance.Knyfe.Knyfe"
+      ],
+      "villains": [
+        "Cauldron.Cauldron.TheRam.PastTheRamCharacter"
+      ],
+      "environments": [
+        "Vanilla.BaseExpansion.InsulaPrimalis.InsulaPrimalis"
+      ]
+    },
+    "id": "5e6209fc87db41f5922136b6aa2f626f",
+    "endTimestamp": 1710374011991
+  },
+  "366fe46fb28f478392adc190b58791a2": {
+    "picks": {
+      "HERO": [
+        5,
+        7,
+        0,
+        3,
+        0,
+        9,
+        1,
+        0
+      ],
+      "VILLAIN": [
+        1
+      ],
+      "ENVIRONMENT": [
+        1
+      ]
+    },
+    "state": "WIN",
+    "draft": {
+      "heroes": [
+        "Cauldron.CauldronAdrift.Gyrosaur.RenegadeGyrosaurCharacter",
+        "Vanilla.BaseExpansion.Fanatic.XtremePrimeWardensFanaticCharacter",
+        "Vanilla.MiniPack5.VoidGuardWrithe.VoidGuardWrithe",
+        "Vanilla.BaseExpansion.Legacy.AmericasGreatestLegacyCharacter",
+        "Vanilla.MiniPack2.TheScholar.TheScholarOfTheInfiniteCharacter",
+        "Vanilla.WrathOfTheCosmos.CaptainCosmic.PrimeWardensCaptainCosmicCharacter",
+        "Cauldron.CauldronStormfall.MagnificentMara.MagnificentMara",
+        "Vanilla.BaseExpansion.Bunker.BunkerFreedomSixCharacter"
+      ],
+      "villains": [
+        "Menagerie.Menagerie.Netherwarden.Netherwarden"
+      ],
+      "environments": [
+        "CaseFiles.CaseFiles.BirchwoodMass.BirchwoodMass"
+      ]
+    },
+    "id": "366fe46fb28f478392adc190b58791a2",
+    "endTimestamp": 1710374550447
+  },
+  "7550b4e450994978b83f1826482cb944": {
+    "picks": {
+      "HERO": [
+        5,
+        7,
+        1,
+        0,
+        3,
+        0,
+        0,
+        9
+      ],
+      "VILLAIN": [
+        1
+      ],
+      "ENVIRONMENT": [
+        1
+      ]
+    },
+    "state": "WIN",
+    "draft": {
+      "heroes": [
+        "Vanilla.MiniPack5.VoidGuardTheIdealist.VoidGuardTheIdealist",
+        "Cauldron.Cauldron.DocHavoc.FutureDocHavocCharacter",
+        "Cauldron.CauldronAdrift.Gyrosaur.CaptainGyrosaurCharacter",
+        "Vanilla.Vengeance.TheSentinels.AdamantSentinelsInstructions",
+        "Cauldron.Cauldron.TangoOne.GhostOpsTangoOneCharacter",
+        "Cauldron.CauldronAdrift.Pyre.WastelandRoninPyreCharacter",
+        "Cauldron.CauldronStormfall.Impact.WastelandRoninImpactCharacter",
+        "Vanilla.BaseExpansion.TheWraith.TheWraith"
+      ],
+      "villains": [
+        "Vanilla.InfernalRelics.Apostate.Apostate"
+      ],
+      "environments": [
+        "Cauldron.Cauldron.Northspar.Northspar"
+      ]
+    },
+    "id": "7550b4e450994978b83f1826482cb944",
+    "endTimestamp": 1710377638935
+  },
+  "b9dfc5fd2f764a0b8f7d90b3ff0e49fa": {
+    "picks": {
+      "HERO": [
+        5,
+        0,
+        7,
+        0,
+        0,
+        9,
+        3,
+        1
+      ],
+      "VILLAIN": [
+        1
+      ],
+      "ENVIRONMENT": [
+        1
+      ]
+    },
+    "state": "WIN",
+    "draft": {
+      "heroes": [
+        "Vanilla.BaseExpansion.Haka.TheEternalHakaCharacter",
+        "Vanilla.RookCity.Expatriette.UrbanWarfareExpatrietteCharacter",
+        "Vanilla.BaseExpansion.Ra.Ra",
+        "SpookyGhostwriter.SpookyGhostwriterComics.GoldDragon.GoldDragon",
+        "Vanilla.ShatteredTimelines.OmnitronX.OmnitronUCharacter",
+        "Cauldron.Cauldron.Baccarat.AceOfSwordsBaccaratCharacter",
+        "Vanilla.InfernalRelics.NightMist.NightMist",
+        "Cauldron.CauldronExperimental.Cricket.FirstResponseCricketCharacter"
+      ],
+      "villains": [
+        "Cauldron.CauldronStormfall.PhaseVillain.PhaseVillain"
+      ],
+      "environments": [
+        "SpookyGhostwriter.SpookyGhostwriterComics.AlesiaCircus.AlesiaCircus"
+      ]
+    },
+    "id": "b9dfc5fd2f764a0b8f7d90b3ff0e49fa",
+    "endTimestamp": 1710378564765
+  },
+  "683c7b7b10d54abb94812be43c5fa120": {
+    "picks": {
+      "HERO": [
+        0,
+        7,
+        5,
+        3,
+        1,
+        0,
+        0,
+        9
+      ],
+      "VILLAIN": [
+        1
+      ],
+      "ENVIRONMENT": [
+        1
+      ]
+    },
+    "state": "WIN",
+    "draft": {
+      "heroes": [
+        "Vanilla.Vengeance.TheSentinels.TheSentinels",
+        "Vanilla.ShatteredTimelines.ChronoRanger.ChronoRangerBestOfTimesCharacter",
+        "Cauldron.CauldronAdrift.Gyrosaur.CaptainGyrosaurCharacter",
+        "Cauldron.CauldronAdrift.Terminus.Terminus",
+        "Cauldron.CauldronStormfall.MagnificentMara.PastMagnificentMaraCharacter",
+        "CaseFiles.CaseFiles.Charlie.RooksGambitCharlieCharacter",
+        "Menagerie.Menagerie.Charade.SecretOriginsCharadeCharacter",
+        "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette.SilhouetteInkblotCharacter"
+      ],
+      "villains": [
+        "Vanilla.BaseExpansion.CitizenDawn.CitizenDawn"
+      ],
+      "environments": [
+        "Cauldron.CauldronUnexpected.DungeonsOfTerror.DungeonsOfTerror"
+      ]
+    },
+    "id": "683c7b7b10d54abb94812be43c5fa120",
+    "endTimestamp": 1710379685617
+  },
+  "1112af635b1e45d395e0c70176dd14a2": {
+    "picks": {
+      "HERO": [
+        1,
+        5,
+        0,
+        7,
+        9,
+        0,
+        0,
+        3
+      ],
+      "VILLAIN": [
+        1
+      ],
+      "ENVIRONMENT": [
+        1
+      ]
+    },
+    "state": "WIN",
+    "draft": {
+      "heroes": [
+        "Vanilla.BaseExpansion.TheVisionary.TheVisionary",
+        "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette.SilhouetteInkblotCharacter",
+        "Vanilla.MiniPack5.VoidGuardWrithe.VoidGuardWrithe",
+        "Vanilla.BaseExpansion.Tachyon.FreedomFiveTachyonCharacter",
+        "Vanilla.RookCity.MrFixer.MrFixer",
+        "Vanilla.RookCity.Expatriette.DarkWatchExpatrietteCharacter",
+        "Cauldron.CauldronStormfall.Impact.Impact",
+        "Vanilla.OblivAeon.Lifeline.Lifeline"
+      ],
+      "villains": [
+        "Cauldron.Cauldron.Gray.Gray"
+      ],
+      "environments": [
+        "Vanilla.OblivAeon.Mordengrad.Mordengrad"
+      ]
+    },
+    "id": "1112af635b1e45d395e0c70176dd14a2",
+    "endTimestamp": 1710380687066
+  },
+  "630614ee8a2e4651bdafd89800501489": {
+    "picks": {
+      "HERO": [
+        0,
+        0,
+        9,
+        0,
+        5,
+        3,
+        7,
+        1
+      ],
+      "VILLAIN": [
+        1
+      ],
+      "ENVIRONMENT": [
+        1
+      ]
+    },
+    "state": "WIN",
+    "draft": {
+      "heroes": [
+        "Vanilla.OblivAeon.Lifeline.LifelineBloodMageCharacter",
+        "Menagerie.Menagerie.Charade.Charade",
+        "Cauldron.Cauldron.Vanish.Vanish",
+        "Vanilla.BaseExpansion.Fanatic.XtremePrimeWardensFanaticCharacter",
+        "Vanilla.MiniPack4.Benchmark.BenchmarkSupplyAndDemandCharacter",
+        "Vanilla.OblivAeon.Luminary.Luminary",
+        "Vanilla.ShatteredTimelines.OmnitronX.OmnitronX",
+        "Cauldron.CauldronExperimental.Cricket.Cricket"
+      ],
+      "villains": [
+        "Vanilla.InfernalRelics.GloomWeaver.GloomWeaverSkinWalkerCharacter"
+      ],
+      "environments": [
+        "Vanilla.MiniPack1.SilverGulch1883.SilverGulch1883"
+      ]
+    },
+    "id": "630614ee8a2e4651bdafd89800501489",
+    "endTimestamp": 1710381935766
+  }
+}

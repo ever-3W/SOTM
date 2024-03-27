@@ -1,0 +1,265 @@
+﻿@inherits LayoutComponentBase
+@using SOTM.MissionControl.Services
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager navManager
+@inject SettingsService settingsSvc
+
+<PageTitle>Mission Control: SOTM Random Draft Generator</PageTitle>
+
+<MudThemeProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<div>
+    <MudAppBar Class="app-bar">
+        <MudChip OnClick=@(GetChipOnClick("deck-select")) Class=@(GetChipClass("deck-select")) Label="true"> Select Decks </MudChip>
+        <MudChip OnClick=@(GetChipOnClick("play-game")) Class=@(GetChipClass("play-game")) Label="true"> Play Game </MudChip>
+        <MudChip OnClick=@(GetChipOnClick("history")) Class=@(GetChipClass("history")) Label="true"> History </MudChip>
+        @* <MudChip OnClick=@(GetChipOnClick("statistics")) Class=@(GetChipClass("statistics")) Label="true"> Statistics </MudChip> *@
+        <MudSpacer/>
+        <MudChip OnClick="ToggleSettingsDrawer" Class=@(GetSettingsChipClass()) Label="true"> Settings </MudChip>
+        @* <MudChip OnClick=@(GetChipOnClick("about")) Class=@(GetChipClass("about")) Label="true"> About </MudChip> *@
+    </MudAppBar>
+    <MudLayout Class="mud-height-full">
+        <MudDrawer Anchor="Anchor.Right" Open="this.settingsDrawerOpen" Elevation="0" Variant="@DrawerVariant.Persistent" Color="Color.Primary" Class="px-4 settings-drawer">
+            <MudForm>
+                <MudStack>
+                <MudText Typo="Typo.h6">Settings</MudText>
+
+                <div>
+                    <MudText Typo="Typo.subtitle2"> Number of heroes to select </MudText>
+                    <MudNumericField 
+                        @ref="draftHeroCountInput"
+                        Value="settingsSvc.settings.draftHeroCount" 
+                        Class="settings-input" 
+                        Variant="Variant.Outlined" 
+                        Margin="Margin.Dense" 
+                        Min="3" 
+                        Max="20" />
+                </div>
+                <div style="min-height: 140px;">
+                    <MudText Typo="Typo.subtitle2"> Randomize heroes by... </MudText>
+                    <MudSelect 
+                        @ref="heroRandomizerMethodInput"
+                        T="RandomizerMethod" 
+                        @bind-Value="heroRandomizerMethodSetting"
+                        Class="settings-input" 
+                        Margin="Margin.Dense" 
+                        Variant="Variant.Outlined" 
+                        AnchorOrigin="Origin.BottomCenter">
+                        <MudSelectItem Value="RandomizerMethod.RANDOMIZE_BY_DECK"> Deck </MudSelectItem>
+                        <MudSelectItem Value="RandomizerMethod.RANDOMIZE_BY_VARIANT"> Variant </MudSelectItem>
+                    </MudSelect>
+                    <MudText @ref="heroRandomizerCaption" Typo="Typo.caption">@(this.GetRandomizeHeroTooltip())</MudText>
+                </div>
+                <div style="min-height: 140px;">
+                    <MudText Typo="Typo.subtitle2"> Randomize villains by... </MudText>
+                    <MudSelect
+                        @ref="villainRandomizerMethodInput"
+                        T="RandomizerMethod"
+                        @bind-Value="villainRandomizerMethodSetting"
+                        Class="settings-input" 
+                        Margin="Margin.Dense" Variant="Variant.Outlined" 
+                        AnchorOrigin="Origin.BottomCenter">
+                        <MudSelectItem Value="RandomizerMethod.RANDOMIZE_BY_DECK"> Deck </MudSelectItem>
+                        <MudSelectItem Value="RandomizerMethod.RANDOMIZE_BY_VARIANT"> Variant </MudSelectItem>
+                    </MudSelect>
+                    <MudText @ref="villainRandomizerCaption" Typo="Typo.caption">@(this.GetRandomizeVillainTooltip())</MudText>
+                </div>
+                <div>
+                    <MudText Typo="Typo.subtitle2"> When a game ends... </MudText>
+                    <MudSelect
+                        @ref="gameEndActionInput"
+                        T="GameEndAction" 
+                        @bind-Value="gameEndActionSetting"
+                        Class="settings-input" 
+                        Margin="Margin.Dense" Variant="Variant.Outlined" 
+                        AnchorOrigin="Origin.BottomCenter">
+                        <MudSelectItem Value="GameEndAction.RETURN_TO_DRAFT"> Return to selections </MudSelectItem>
+                        <MudSelectItem Value="GameEndAction.START_NEW_GAME"> Set up new draft </MudSelectItem>
+                    </MudSelect>
+                </div>
+                <div>
+                    <MudText Typo="Typo.subtitle2"> When importing game history... </MudText>
+                    <MudSelect
+                        @ref="importHistoryModeInput"
+                        T="ImportHistoryMode" 
+                        @bind-Value="importHistoryModeSetting"
+                        Class="settings-input" 
+                        Margin="Margin.Dense" Variant="Variant.Outlined" 
+                        AnchorOrigin="Origin.BottomCenter">
+                        <MudSelectItem Value="ImportHistoryMode.MERGE_EXISTING"> Merge existing entries </MudSelectItem>
+                        <MudSelectItem Value="ImportHistoryMode.OVERWRITE_ALL"> Overwrite all entries </MudSelectItem>
+                    </MudSelect>
+                </div>
+                <MudButton 
+                    StartIcon="@Icons.Material.Filled.Save" 
+                    OnClick="SaveAndCloseSettings"
+                    Variant="Variant.Filled" FullWidth="true" 
+                    Class="settings-button">
+
+                    Save and Exit
+                </MudButton>
+
+                @* <MudButton 
+                    StartIcon="@Icons.Material.Filled.Download" 
+                    Variant="Variant.Filled" FullWidth="true" 
+                    Class="settings-button">
+
+                    Export Settings
+                </MudButton>
+
+                <MudButton 
+                    StartIcon="@Icons.Material.Filled.Input" 
+                    Variant="Variant.Filled" FullWidth="true" 
+                    Class="settings-button">
+
+                    Import Settings
+                </MudButton> *@
+
+                <MudButton 
+                    StartIcon="@Icons.Material.Filled.PowerSettingsNew" 
+                    Variant="Variant.Filled" FullWidth="true" 
+                    OnClick="ClearAllData"
+                    Class="settings-button">
+
+                    Reset All Data
+                </MudButton>
+                    
+                </MudStack>
+            </MudForm>
+        </MudDrawer>
+        <MudMainContent Class="px-4" Style="@($"padding-top: 62px; background-color:{Colors.Teal.Lighten5}; height: 100vh;")">
+            @Body
+        </MudMainContent>
+    </MudLayout>
+</div>
+
+<style>
+    .app-bar {
+        height: 50px;
+        background-color: @(Colors.Teal.Darken3);
+    }
+    .settings-drawer {
+        padding-top: 62px;
+        --mud-palette-primary: @(Colors.Teal.Lighten3);
+        --mud-palette-primary-text: @(Colors.Teal.Darken4);
+        --mud-drawer-width-right: 280px;
+    }
+    .settings-input {
+        --mud-palette-text-primary: @(Colors.Teal.Darken4);
+        --mud-palette-lines-inputs: @(Colors.Teal.Darken4);
+        --mud-palette-action-default: @(Colors.Teal.Accent4);
+    }
+    .settings-button {
+        color: @(Colors.Teal.Darken4);
+        background-color: @(Colors.Teal.Lighten1);
+    }
+    .app-bar-chip, .app-bar-chip-active {
+        color: @(Colors.Shades.White);
+        font-weight: bold;
+    }
+    .app-bar-chip {
+        background-color: @(Colors.Teal.Darken3);
+    }
+    .app-bar-chip-active {
+        background-color: @(Colors.Teal.Darken4);
+    }
+</style>
+
+@code 
+{
+    public string GetChipClass(string uri)
+    {
+        return navManager.ToBaseRelativePath(navManager.Uri) == uri ? "app-bar-chip-active" : "app-bar-chip";
+    }
+
+    public Action GetChipOnClick(string uri)
+    {
+        return () =>
+        {
+            if (navManager.ToBaseRelativePath(navManager.Uri) != uri)
+            {
+                navManager.NavigateTo($"/{uri}");
+            }
+        };
+    }
+
+    public bool settingsDrawerOpen = false;
+
+    public string GetSettingsChipClass()
+    {
+        return settingsDrawerOpen ? "app-bar-chip-active" : "app-bar-chip";
+    }
+
+    public void ToggleSettingsDrawer()
+    {
+        if (!this.settingsDrawerOpen)
+        {
+            this.draftHeroCountInput.Value = settingsSvc.settings.draftHeroCount;
+            this.heroRandomizerMethodSetting = settingsSvc.settings.heroRandomizerMethod;
+            this.villainRandomizerMethodSetting = settingsSvc.settings.villainRandomizerMethod;
+            this.gameEndActionSetting = settingsSvc.settings.gameEndAction;
+            this.importHistoryModeSetting = settingsSvc.settings.importHistoryMode;
+        }
+        this.settingsDrawerOpen = !this.settingsDrawerOpen;
+    }
+
+
+
+    public const string TOOLTIP_RANDOMIZE_HERO_BY_DECK = "Heroes will be randomly selected with equal probability. Then, each hero is assigned a non-banned variant.";
+    public const string TOOLTIP_RANDOMIZE_VILLAIN_BY_DECK = "Villains will be randomly selected with equal probability. Then, each villain is assigned a non-banned variant.";
+    public const string TOOLTIP_RANDOMIZE_HERO_BY_VARIANT = "Each hero variant has an equal probability to be selected.";
+    public const string TOOLTIP_RANDOMIZE_VILLAIN_BY_VARIANT = "Each villain variant has an equal probability to be selected.";
+    public MudNumericField<int> draftHeroCountInput;
+    public MudSelect<RandomizerMethod> heroRandomizerMethodInput;
+    public RandomizerMethod heroRandomizerMethodSetting;
+    public MudSelect<RandomizerMethod> villainRandomizerMethodInput; 
+    public RandomizerMethod villainRandomizerMethodSetting;
+    public MudSelect<GameEndAction> gameEndActionInput;
+    public GameEndAction gameEndActionSetting;
+    public MudSelect<ImportHistoryMode> importHistoryModeInput;
+    public ImportHistoryMode importHistoryModeSetting;
+    public MudText heroRandomizerCaption;
+    public MudText villainRandomizerCaption;
+
+    public string GetRandomizeHeroTooltip()
+    {
+        return this.heroRandomizerMethodSetting == RandomizerMethod.RANDOMIZE_BY_DECK
+            ? TOOLTIP_RANDOMIZE_HERO_BY_DECK
+            : TOOLTIP_RANDOMIZE_HERO_BY_VARIANT;
+    }
+
+    public string GetRandomizeVillainTooltip()
+    {
+        return this.villainRandomizerMethodSetting == RandomizerMethod.RANDOMIZE_BY_DECK
+            ? TOOLTIP_RANDOMIZE_VILLAIN_BY_DECK
+            : TOOLTIP_RANDOMIZE_VILLAIN_BY_VARIANT;
+    }
+
+    public async Task SaveAndCloseSettings()
+    {
+        settingsSvc.settings = new SettingsData()
+        {
+            draftHeroCount = this.draftHeroCountInput.Value,
+            heroRandomizerMethod = this.heroRandomizerMethodSetting,
+            villainRandomizerMethod = this.villainRandomizerMethodSetting,
+            gameEndAction = this.gameEndActionSetting,
+            importHistoryMode = this.importHistoryModeSetting
+        };
+        await settingsSvc.SaveData(localStorage);
+
+        this.settingsDrawerOpen = false;
+    }
+
+    private async void ClearAllData()
+    {
+        await localStorage.ClearAsync();
+        navManager.Refresh();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await settingsSvc.LoadData(localStorage);
+    }
+}

@@ -1,0 +1,186 @@
+﻿@page "/deck-select"
+@using SOTM.Shared.Models
+@using SOTM.MissionControl.Models
+@using SOTM.MissionControl.Services
+@inject HttpClient httpClient
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager navManager
+@inject DeckDataService deckData
+@inject DraftRandomizerService randomizer
+@inject DraftSelectionsService draftSelections
+@inject GameService gameSvc
+@inject SettingsService settingsSvc
+
+<div>
+    <MudText> Click on "Draft New Game" to create a draft with randomized villain, hero, and environment decks. </MudText>
+    <MudText> Click on any hero/villain/environment name to ban it from being selected. Clicking a banned item again will un-ban it. </MudText>
+</div>
+
+<MudButton OnClick="DraftRandomGame" Variant="Variant.Filled" Class="draft-button">Draft New Game</MudButton>
+
+<div Class="d-flex justify-space-around flex-1 flex-wrap gap-3">
+    <MudCard Class="flex-1 pa-3 mb-3" Outlined="true" Style="@($"color:{Colors.Indigo.Darken4}; background:{Colors.Indigo.Lighten5};")">
+        <MudCardHeader Class="pa-0">
+            <CardHeaderContent>
+                <MudText Typo="Typo.h5"><b>VILLAINS</b></MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
+            @foreach (Expansion expansion in deckData.GetVillainExpansions()) 
+            {
+                <DeckCard 
+                    @ref="villainDeckRef"
+                    Title="@(expansion.identifier.LocalIdentifier())"
+                    Variants="@(DeckCard.FromExpansionModel(expansion))"
+                    PickableVariants="@(GetInitialPickableVariants(expansion.GetChildren().SelectMany(deck => deck.GetChildren())))"
+                    Class="villain-cards"
+                />
+            }
+        </MudCardContent>
+    </MudCard>
+    <MudCard Class="flex-1 pa-3" Outlined="true" Style="@($"color:{Colors.DeepOrange.Darken4}; background:{Colors.Amber.Lighten5};")">
+        <MudCardHeader Class="pa-0">
+            <CardHeaderContent>
+                <MudText Typo="Typo.h5"><b>HEROES</b></MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent Class="pa-0">
+            @foreach (Expansion expansion in deckData.GetHeroExpansions()) 
+            {
+                <MudCard Outlined Class="pa-3 mb-3" Style="@($"color:{Colors.DeepOrange.Darken4}; background:{Colors.Amber.Lighten4};")">
+                    <MudCardHeader Class="pa-0">
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">@expansion.GetIdentifier().LocalIdentifier()</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
+                        @foreach (Deck deck in expansion.GetChildren())
+                        {
+                            <DeckCard 
+                                @ref="heroDeckRef"
+                                Title="@(deck.title)"
+                                Variants="@(DeckCard.FromDeckModel(deck))"
+                                PickableVariants="@(GetInitialPickableVariants(deck.GetChildren()))"
+                                Class="hero-cards"
+                            />
+                        }
+                    </MudCardContent>
+                </MudCard>
+            }
+        </MudCardContent>
+    </MudCard>
+    <MudCard Class="flex-1 pa-3 mb-3" Outlined="true" Style="@($"color:{Colors.Green.Darken4}; background:{Colors.Green.Lighten5};")">
+        <MudCardHeader Class="pa-0">
+            <CardHeaderContent>
+                <MudText Typo="Typo.h5"><b>ENVIRONMENTS</b></MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
+            @foreach (Expansion expansion in deckData.GetEnvironmentExpansions()) 
+            {
+                <DeckCard 
+                    @ref="environmentDeckRef"
+                    Title="@(expansion.identifier.LocalIdentifier())"
+                    Variants="@(DeckCard.FromExpansionModel(expansion))"
+                    PickableVariants="@(GetInitialPickableVariants(expansion.GetChildren().SelectMany(deck => deck.GetChildren())))"
+                    Class="environment-cards"
+                />
+            }
+        </MudCardContent>
+    </MudCard>
+</div>
+
+<style>
+    .draft-button {
+        color: @(Colors.Shades.White);
+        background-color: @(Colors.Teal.Darken2);
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .draft-button:hover {
+        background-color: @(Colors.Teal.Lighten1) !important;
+    }
+    .villain-cards {
+        --head-color: @(Colors.Indigo.Accent2);
+        --pickable-color: @(Colors.Indigo.Lighten3);
+        --pickable-text-color: @(Colors.Indigo.Darken4);
+        --banned-color: @(Colors.Indigo.Lighten5);
+        --banned-text-color: @(Colors.Indigo.Lighten2);
+        --mud-palette-primary: @(Colors.Indigo.Accent2);
+        --mud-palette-background-grey: @(Colors.Indigo.Lighten1);
+        --mud-default-borderradius: 0px;
+    }
+    .hero-cards {
+        --head-color: @(Colors.Amber.Darken3);
+        --pickable-color: @(Colors.Amber.Lighten1);
+        --pickable-text-color: @(Colors.DeepOrange.Darken4);
+        --banned-color: @(Colors.Amber.Lighten4);
+        --banned-text-color: @(Colors.Amber.Darken1);
+        --mud-palette-primary: @(Colors.Amber.Darken3);
+        --mud-palette-background-grey: @(Colors.Amber.Darken3);
+        --mud-default-borderradius: 0px;
+    }
+    .environment-cards {
+        --head-color: @(Colors.Green.Default);
+        --pickable-color: @(Colors.Green.Lighten2);
+        --pickable-text-color: @(Colors.Green.Darken4);
+        --banned-color: @(Colors.Green.Accent1);
+        --banned-text-color: @(Colors.Green.Lighten1);
+        --mud-palette-primary: @(Colors.Green.Default);
+        --mud-palette-background-grey: @(Colors.Green.Default);
+        --mud-default-borderradius: 0px;
+    }
+</style>
+
+@code {
+
+    private List<Components.DeckCard> heroDeckComponents = new List<Components.DeckCard>();
+    Components.DeckCard heroDeckRef
+    {
+        set { heroDeckComponents.Add(value); }
+    }
+    private List<Components.DeckCard> villainDeckComponents = new List<Components.DeckCard>();
+    Components.DeckCard villainDeckRef
+    {
+        set { villainDeckComponents.Add(value); }
+    }
+    private List<Components.DeckCard> environmentDeckComponents = new List<Components.DeckCard>();
+    Components.DeckCard environmentDeckRef
+    {
+        set { environmentDeckComponents.Add(value); }
+    }
+
+    private async void DraftRandomGame()
+    {
+        List<GlobalIdentifier> pickableVariants =
+        [
+            ..this.heroDeckComponents.SelectMany(component => component.GetPickableVariants()).ToList(),
+            ..this.villainDeckComponents.SelectMany(component => component.GetPickableVariants()).ToList(),
+            ..this.environmentDeckComponents.SelectMany(component => component.GetPickableVariants()).ToList()
+        ];
+        var pickableVariantSet = pickableVariants.ToHashSet();
+
+        draftSelections.SetPickableVariants(pickableVariantSet);
+        await draftSelections.SavePickableVariants(localStorage); 
+
+        gameSvc.StartNewGame(randomizer.DraftRandomClassicGame(deckData, settingsSvc, pickableVariantSet));
+        await gameSvc.SaveGame(localStorage);
+
+        navManager.NavigateTo("/play-game");
+    }
+
+    private IEnumerable<GlobalIdentifier> GetInitialPickableVariants(IEnumerable<DeckVariant> variants)
+    {
+        return variants.Select(variant => variant.identifier)
+            .Where(identifier => draftSelections.VariantIsPickable(identifier));
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await deckData.LoadData(localStorage, httpClient);
+        await draftSelections.LoadPickableVariants(localStorage);
+    }
+
+}
+
+

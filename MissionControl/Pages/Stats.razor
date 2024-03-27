@@ -1,0 +1,33 @@
+@page "/stats"
+@using SOTM.Shared.Models
+@using SOTM.MissionControl.Models
+@using SOTM.MissionControl.Services
+@inject DeckDataService deckData
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject GameService gameSvc
+
+<PageTitle>Statistics</PageTitle>
+
+<h3>Games Played: @totalGames</h3>
+<h3>Games Won: @wins</h3>
+<h3>Win Rate: @DisplayRatio(wins, totalGames)</h3>
+
+@code {
+    int wins;
+    int totalGames;
+
+    public string DisplayRatio(int num, int den)
+    {
+        if (den == 0)
+        {
+            return "--";
+        }
+        return $"{Math.Round((double)num/den, 2)}";
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        await gameSvc.LoadGameLog(localStorage);
+        this.totalGames = gameSvc.GetLoggedGames().Count();
+        this.wins = gameSvc.GetLoggedGames().Where(game => game.state == GameState.WIN).Count();
+    }
+}
