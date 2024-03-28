@@ -73,33 +73,13 @@ namespace SOTM.InfraredEyepiece.Importers
         {
             CollectionV2 result = new CollectionV2(this._collectionIdentifier, this.collectionTitle);
             // the core DLL shouldn't contain any hanging variants
-            var (expansions, decks, hangingVariants) = this.ParseResourcesFromDLL(this.dllPath);
+            var (decks, hangingVariants) = this.ParseResourcesFromDLL(this.dllPath);
             result.hangingVariants = this.ExcludeHangingVariantsNotListed(hangingVariants);
             foreach (Deck deck in this.ExcludeDecksNotListed(decks))
             {
                 result.AddDeck(deck);
             }
             return result;
-        }
-
-        public override
-        (
-            GlobalIdentifier,
-            string,
-            List<GlobalIdentifier>,
-            List<Deck>,
-            Dictionary<string, List<HangingDeckVariant>>
-        ) ParseResources()
-        {
-            var (expansions, decks, hangingVariants) = this.ParseResourcesFromDLL(this.dllPath);
-            return
-            (
-                this._collectionIdentifier,
-                this.collectionTitle,
-                expansions,
-                this.ExcludeDecksNotListed(decks),
-                this.ExcludeHangingVariantsNotListed(hangingVariants)
-            );
         }
     }
 }

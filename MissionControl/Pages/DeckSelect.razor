@@ -183,12 +183,12 @@
         if (deckData.ListManifestDeltas(latestManifest).Count() > 0)
         {
             Console.WriteLine("Deltas found, rebuilding deck data collection");
-            var sourceCollections = await Task.WhenAll(
+            var sourceCollections = (await Task.WhenAll(
                 latestManifest.files.Values.Select(async (entry) => 
                 {
                     return await httpClient.GetFromJsonAsync<CollectionV2>($"data/{entry.file}");
                 })
-            );
+            )).OrderBy(collection => latestManifest.files[collection.identifier.ToString()].sortOrder);
             deckData.BuildFromSourceCollections(sourceCollections);
             await deckData.repo.Save(localStorage);
             deckData.manifestRepo.value = latestManifest;

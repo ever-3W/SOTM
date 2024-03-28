@@ -2,57 +2,59 @@
 using SOTM.InfraredEyepiece.Importers;
 using Microsoft.Extensions.Configuration;
 using SOTM.Shared.Models;
+using System.Text;
+using ICSharpCode.Decompiler.CSharp.Syntax;
 
 var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .AddCommandLine(args)
     .Build();
 
+
+CollectionImporter importer;
 if (config["Command"] == "ImportVanilla")
 {
-    var importer = new CoreGameImporter(config);
-    var file = new FileStream(importer.GetOutputFilePath(), FileMode.Create);
-    JsonSerializer.Serialize(file, importer.ParseResourcesV2(), new JsonSerializerOptions() { WriteIndented = true });
-    file.WriteByte((byte) '\n');
-    file.Flush();
-    Console.WriteLine($"Parsed vanilla deck data saved at \"{importer.GetOutputFilePath()}\".");
+    importer = new CoreGameImporter(config);
 }
 else if (config["Command"] == "ImportMod")
 {
-    var importer = new ModImporter(config["ModPublishedFileId"], config);
-    var file = new FileStream(importer.GetOutputFilePath(), FileMode.Create);
-    var collection = importer.ParseResourcesV2();
-    JsonSerializer.Serialize(file, collection, new JsonSerializerOptions() { WriteIndented = true });
-    file.WriteByte((byte) '\n');
-    file.Flush();
-    Console.WriteLine($"Parsed \"{collection.title}\" data saved at \"{importer.GetOutputFilePath()}\".");
+    importer = new ModImporter(config["ModPublishedFileId"], config);
 }
-else if (config["Command"] == "CreateManifest")
+else
 {
-    CollectionManifest manifest = new();
-
-    string[] files = Directory.GetFiles(config["OutputPath"], "*.json");
-    foreach (string filepath in files)
-    {
-        if (!filepath.EndsWith("manifest.json"))
-        {
-            string content = File.ReadAllText(filepath);
-            CollectionV2 collection = JsonSerializer.Deserialize<CollectionV2>(content);
-            manifest.files.Add(
-                collection.identifier.ToString(),
-                new CollectionManifestEntry()
-                {
-                    file = Path.GetFileName(filepath),
-                    hash = CollectionManifest.CalculateHash(content),
-                    sortOrder = collection.sortOrder
-                }
-            );
-        }
-    }
-
-    var file = new FileStream(Path.Combine(config["OutputPath"], "manifest.json"), FileMode.Create);
-    JsonSerializer.Serialize(file, manifest, new JsonSerializerOptions() { WriteIndented = true });
-    file.WriteByte((byte) '\n');
-    file.Flush();
-    Console.WriteLine("Manifest created successfully.");
+    importer = null;
+    Console.WriteLine("Command must either be \"ImportVanilla\" or \"ImportMod\"");
+    System.Environment.Exit(1);
 }
+
+var collection = importer.ParseResourcesV2();
+var content = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(collection, new JsonSerializerOptions() { WriteIndented = true }) + '\n');
+
+var output = File.Open(importer.GetOutputFilePath(), FileMode.Create);
+output.Write(content);
+output.Flush();
+Console.WriteLine($"Parsed \"{collection.title}\" data saved at \"{importer.GetOutputFilePath()}\".");
+
+
+string manifestPath = Path.Combine(config["OutputPath"], "manifest.json");
+CollectionManifest manifest = new();
+try
+{
+    var manifestFile = File.OpenRead(manifestPath);
+    manifest = JsonSerializer.Deserialize<CollectionManifest>(manifestFile) ?? manifest;
+    manifestFile.Dispose();
+}
+catch (FileNotFoundException)
+{
+    Console.WriteLine("manifest.json not found. Creating");
+}
+manifest.Add(
+    collection.identifier.ToString(), 
+    importer.GetOutputFileName(), 
+    CollectionManifest.CalculateHash(content)
+);
+
+var manifestOutput = File.Open(manifestPath, FileMode.Create);
+JsonSerializer.Serialize(manifestOutput, manifest, new JsonSerializerOptions() { WriteIndented = true });
+manifestOutput.WriteByte((byte) '\n');
+manifestOutput.Flush();

@@ -12,9 +12,6 @@ namespace SOTM.Shared.Models
         [JsonInclude]
         public string title;
 
-        [JsonInclude]
-        public int sortOrder = 0;
-
         private AncestorGroup<Expansion> heroExpansionParent;
         [JsonInclude]
         public List<Expansion> heroExpansions {

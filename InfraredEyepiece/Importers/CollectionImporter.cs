@@ -93,14 +93,12 @@ namespace SOTM.InfraredEyepiece.Importers
 
         public
         (
-            List<GlobalIdentifier>,
             List<Deck>,
             Dictionary<string, List<HangingDeckVariant>>
         )
         ParseResourcesFromDLL(string dllPath)
         {
             var hangingDeckVariants = new Dictionary<string, List<HangingDeckVariant>>();
-            var expansionIdentifiers = new HashSet<GlobalIdentifier>();
             var decks = new List<Deck>();
 
             var module = new PEFile(dllPath);
@@ -126,7 +124,6 @@ namespace SOTM.InfraredEyepiece.Importers
                                     hangingDeckVariants.Add(hdv.deckNamespacedIdentifier, new List<HangingDeckVariant>());
                                 }
                                 hangingDeckVariants[hdv.deckNamespacedIdentifier].Add(hdv);
-                                expansionIdentifiers.Add(hdv.sourceExpansionIdentifier);
                             }
                         }
                     }
@@ -140,7 +137,6 @@ namespace SOTM.InfraredEyepiece.Importers
                             var (expansionIdentifier, deckEntity) = this.ParseDeckList(dl, dlIdentifier);
 
                             decks.Add(deckEntity);
-                            expansionIdentifiers.Add(expansionIdentifier);
                         }
                     }
                 }
@@ -152,27 +148,21 @@ namespace SOTM.InfraredEyepiece.Importers
                 }
             }
 
-            return (expansionIdentifiers.ToList(), decks, hangingDeckVariants);
+            return (decks, hangingDeckVariants);
         }
 
 
+        public string GetOutputFileName()
+        {
+            return $"{this.collectionIdentifier}.json";
+        }
         public string GetOutputFilePath()
         {
             return Path.Combine(
                 this.config["OutputPath"],
-                $"{this.collectionIdentifier}.json"
+                this.GetOutputFileName()
             );
         }
         public abstract CollectionV2 ParseResourcesV2();
-
-        public abstract
-        (
-            GlobalIdentifier,
-            string,
-            List<GlobalIdentifier>,
-            List<Deck>,
-            Dictionary<string, List<HangingDeckVariant>>
-        )
-        ParseResources();
     }
 }

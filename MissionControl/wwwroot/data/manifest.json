@@ -1,34 +1,34 @@
 {
   "files": {
-    "CaseFiles": {
-      "file": "CaseFiles.json",
-      "hash": "FD8ADABE9093BD6474AC9AA13EE24506A2203DE79E5A10F3054CEB8ECC839557",
-      "sortOrder": 3
+    "Vanilla": {
+      "file": "Vanilla.json",
+      "hash": "A2722B35740897B8373D4EB7019137980ACA0B96F4968983F69D678B1BD0F21A",
+      "sortOrder": 0
     },
     "Cauldron": {
       "file": "Cauldron.json",
-      "hash": "BB50A25EE482664A3ADCE2BFFF4D0B8C52FF131805943C6F29CD89986E5C83E7",
+      "hash": "A982F299AD4AB05FF1AE5A5CF54D7CDBB9F4B8352FEA7EB6BEABA8BBD319BE52",
       "sortOrder": 1
     },
     "CauldronPromos": {
       "file": "CauldronPromos.json",
-      "hash": "9044EAADEA4D641E264FC8531BE7B6BB562AE81E8240F81312055C2F67BCFA6F",
+      "hash": "6F818235968A8FD45870BB64E5269CC233FC3C26AB001A5412594EDD328150BC",
       "sortOrder": 2
+    },
+    "CaseFiles": {
+      "file": "CaseFiles.json",
+      "hash": "392C6BECB86F1387AF5095C789879789177D79FCA789D59EF7EF13BA9A9DA3CF",
+      "sortOrder": 3
     },
     "Menagerie": {
       "file": "Menagerie.json",
-      "hash": "34B6FD20CEE765CF1734379BE48D80F114E7785C342A60A65C95E431238FA33C",
+      "hash": "97ECF214BEB8B597F33E8C48FDED65E0B415F7B36960B26B43977C7FA20F18F6",
       "sortOrder": 4
     },
     "SpookyGhostwriter": {
       "file": "SpookyGhostwriter.json",
-      "hash": "406875F21448F51DA261FCB4011CEE121BE243CE4258E824BAB2AA45D6B4E207",
+      "hash": "56B5DFED5848ABC3007A96C57574DD73E1AB63D1A1ECDD39EE8DD3F8C3BA87FB",
       "sortOrder": 5
-    },
-    "Vanilla": {
-      "file": "Vanilla.json",
-      "hash": "870E7527409E3C300BE7C4BAF4E5B1BFA59B5DF9D52A53F5DC5E11ADA6BCC3AA",
-      "sortOrder": 0
     }
   }
 }

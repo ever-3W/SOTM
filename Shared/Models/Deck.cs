@@ -38,7 +38,7 @@ namespace SOTM.Shared.Models
         // For resolving hanging variants
         public string GetNamespacedIdentifier()
         {
-            if (identifier.identifiers[DeckTreeLevel.COLLECTION] == Collection.BASE_COLLECTION_IDENTIFIER) return identifier.LocalIdentifier();
+            if (identifier.identifiers[DeckTreeLevel.COLLECTION] == CollectionV2.BASE_COLLECTION_IDENTIFIER) return identifier.LocalIdentifier();
             return identifier.identifiers[DeckTreeLevel.COLLECTION] + "." + identifier.LocalIdentifier();
         }
         public static DeckKind StringToKind(string kind)

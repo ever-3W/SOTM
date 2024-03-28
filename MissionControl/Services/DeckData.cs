@@ -43,7 +43,7 @@ namespace SOTM.MissionControl.Services
         public void BuildFromSourceCollections(IEnumerable<CollectionV2?> sourceCollections)
         {
             this.collection = new(new GlobalIdentifier("Root"), "Root");
-            foreach (CollectionV2? collection in sourceCollections.OrderBy(sc => sc?.sortOrder))
+            foreach (CollectionV2? collection in sourceCollections)
             {
                 if (collection != null)
                 {

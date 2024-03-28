@@ -30,11 +30,11 @@ namespace SOTM.Shared.Models
         [JsonInclude]
         public Dictionary<string, CollectionManifestEntry> files = new();
 
-        public static string CalculateHash(string content)
+        public static string CalculateHash(byte[] content)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(content));
+                byte[] hashBytes = sha256.ComputeHash(content);
                 return Convert.ToHexString(hashBytes);
             }
         }
