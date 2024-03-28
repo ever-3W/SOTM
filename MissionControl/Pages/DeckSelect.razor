@@ -161,10 +161,10 @@
         var pickableVariantSet = pickableVariants.ToHashSet();
 
         draftSelections.SetPickableVariants(pickableVariantSet);
-        await draftSelections.SavePickableVariants(localStorage); 
+        await draftSelections.repo.Save(localStorage); 
 
-        gameSvc.StartNewGame(randomizer.DraftRandomClassicGame(deckData, settingsSvc, pickableVariantSet));
-        await gameSvc.SaveGame(localStorage);
+        gameSvc.game = new Game(randomizer.DraftRandomClassicGame(deckData, settingsSvc, pickableVariantSet));
+        await gameSvc.repo.Save(localStorage);
 
         navManager.NavigateTo("/play-game");
     }
@@ -177,8 +177,30 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await deckData.LoadData(localStorage, httpClient);
-        await draftSelections.LoadPickableVariants(localStorage);
+        await deckData.manifestRepo.Load(localStorage);
+        var latestManifest = await httpClient.GetFromJsonAsync<CollectionManifest>("data/manifest.json");
+
+        if (deckData.ListManifestDeltas(latestManifest).Count() > 0)
+        {
+            Console.WriteLine("Deltas found, rebuilding deck data collection");
+            var sourceCollections = await Task.WhenAll(
+                latestManifest.files.Values.Select(async (entry) => 
+                {
+                    return await httpClient.GetFromJsonAsync<CollectionV2>($"data/{entry.file}");
+                })
+            );
+            deckData.BuildFromSourceCollections(sourceCollections);
+            await deckData.repo.Save(localStorage);
+            deckData.manifestRepo.value = latestManifest;
+            await deckData.manifestRepo.Save(localStorage);
+        }
+        else
+        {
+            Console.WriteLine("No deltas found, skipping deck data rebuild");
+            await deckData.Load(localStorage);
+        }
+
+        await draftSelections.repo.Load(localStorage);
     }
 
 }

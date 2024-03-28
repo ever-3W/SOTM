@@ -10,6 +10,7 @@
 @inject DraftRandomizerService randomizer
 @inject DraftSelectionsService draftSelections
 @inject GameService gameSvc
+@inject GameLogService gameLog
 @inject SettingsService settingsSvc
 
 <div Class="d-flex justify-space-around flex-1 flex-row gap-3" Style="min-width:0; overflow: scroll;">
@@ -346,9 +347,9 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await deckData.LoadData(localStorage, httpClient);
-        await gameSvc.LoadGame(localStorage);
-        await gameSvc.LoadGameLog(localStorage);
+        await deckData.Load(localStorage);
+        await gameSvc.repo.Load(localStorage);
+        await gameLog.repo.Load(localStorage);
 
         this.heroDropZoneItems = gameSvc.game?.draft.heroes.Select(
             (identifier, index) => new HeroCharacterDropItem()
@@ -367,8 +368,8 @@
 
     private async Task DraftRandomGame()
     {
-        await draftSelections.LoadPickableVariants(localStorage);
-        gameSvc.StartNewGame(randomizer.DraftRandomClassicGame(deckData, settingsSvc, draftSelections.GetPickableVariantSet()));
+        await draftSelections.repo.Load(localStorage);
+        gameSvc.game = new Game(randomizer.DraftRandomClassicGame(deckData, settingsSvc, draftSelections.GetPickableVariantSet()));
 
         this.heroDropZoneItems = gameSvc.game?.draft.heroes.Select(
             (identifier, index) => new HeroCharacterDropItem()
@@ -381,7 +382,7 @@
         StateHasChanged();
         this.heroDropContainerRef.Refresh();
 
-        await gameSvc.SaveGame(localStorage);
+        await gameSvc.repo.Save(localStorage);
     }
 
     private async void BackToDraft()
@@ -405,8 +406,8 @@
     }
     private async Task EndGame()
     {
-        gameSvc.SaveCurrentGameToLog();
-        await gameSvc.SaveGameLog(localStorage);
+        gameLog.AddGame(gameSvc.game);
+        await gameLog.repo.Save(localStorage);
         if (settingsSvc.settings.gameEndAction == GameEndAction.START_NEW_GAME)
         {
             await this.DraftRandomGame();

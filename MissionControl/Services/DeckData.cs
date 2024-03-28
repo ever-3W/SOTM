@@ -1,5 +1,3 @@
-using System.Net.Http.Json;
-using System.Text.Json;
 using System.Text.RegularExpressions;
 using Blazored.LocalStorage;
 using SOTM.Shared.Models;
@@ -13,74 +11,53 @@ namespace SOTM.MissionControl.Services
     }
     public class DeckDataService
     {
-        public List<string> serverDataUrls = new();
-        private ImportedData? data;
-        private CollectionV2 collection = new(new GlobalIdentifier("Root"), "Root");
-        private Dictionary<GlobalIdentifier, DeckVariant> deckVariantTable = new();
         private const string DECK_DATA_STORAGE_KEY = "DeckData";
+        public GenericRepository<CollectionV2> repo = new(DECK_DATA_STORAGE_KEY, new(new GlobalIdentifier("Root"), "Root"));
+
+        private const string LOADED_MANIFEST_STORAGE_KEY = "LoadedCollectionManifest";
+        public GenericRepository<CollectionManifest> manifestRepo = new(LOADED_MANIFEST_STORAGE_KEY, new());
+
+        public CollectionV2 collection
+        {
+            get => this.repo.value;
+            set => this.repo.value = value;
+        }
+        private Dictionary<GlobalIdentifier, DeckVariant> deckVariantTable = new();
 
         private void buildDataTables()
         {
-            if (this.data != null)
+            foreach (Deck deck in this.collection.GetAllDecks())
             {
-                foreach (Deck deck in this.collection.GetAllDecks())
+                foreach (DeckVariant variant in deck.GetChildren())
                 {
-                    foreach (DeckVariant variant in deck.GetChildren())
-                    {
-                        this.deckVariantTable[variant.identifier] = variant;
-                    }
+                    this.deckVariantTable[variant.identifier] = variant;
                 }
             }
         }
-        private async Task LoadDataFromServer(HttpClient httpClient)
-        {
-            var serverManifest = await httpClient.GetFromJsonAsync<CollectionManifest>("data/manifest.json");
-            FetchCollectionResult[] sourceCollections = await Task.WhenAll(
-                serverManifest.files.Values.Select(async (entry) => 
-                {
-                    string content = await httpClient.GetStringAsync($"data/{entry.file}");
-                    Console.WriteLine($"data/{entry.file} {content.Length}");
-                    return new FetchCollectionResult()
-                    {
-                        collection = JsonSerializer.Deserialize<CollectionV2>(content),
-                        hashMatch = CollectionManifest.CalculateHash(content) == entry.hash
-                    };
-                })
-            );
 
-            foreach (FetchCollectionResult result in sourceCollections.OrderBy(sc => sc.collection.sortOrder))
+        public IEnumerable<CollectionManifestDelta> ListManifestDeltas (CollectionManifest other)
+        {
+            return CollectionManifest.ListDeltas(this.manifestRepo.value, other);
+        }
+
+        public void BuildFromSourceCollections(IEnumerable<CollectionV2?> sourceCollections)
+        {
+            this.collection = new(new GlobalIdentifier("Root"), "Root");
+            foreach (CollectionV2? collection in sourceCollections.OrderBy(sc => sc?.sortOrder))
             {
-                this.collection.MergeWith(result.collection);
+                if (collection != null)
+                {
+                    this.collection.MergeWith(collection);
+                }
             }
             this.collection.ResolveHangingVariants();
             this.buildDataTables();
         }
-        private async Task TryLoadDataFromLocal(ILocalStorageService localStorage)
-        {
-            if (await localStorage.ContainKeyAsync(DECK_DATA_STORAGE_KEY))
-            {
-                this.data = await localStorage.GetItemAsync<ImportedData>(DECK_DATA_STORAGE_KEY);
-                this.buildDataTables();
-            }
-        }
 
-        private async Task SaveDataToLocal(ILocalStorageService storageService)
+        public async Task Load(ILocalStorageService storageService)
         {
-            await storageService.SetItemAsync(DECK_DATA_STORAGE_KEY, this.data);
-        }
-
-        public async Task LoadData(ILocalStorageService localStorage, HttpClient httpClient)
-        {
-            // Console.WriteLine(JsonSerializer.Serialize(this.serverDataUrls));
-            // if (this.data == null)
-            // {
-            //     await this.TryLoadDataFromLocal(localStorage);
-            //     if (this.data == null)
-            //     {
-                    await this.LoadDataFromServer(httpClient);
-            //         await this.SaveDataToLocal(localStorage);
-            //     }
-            // }
+            await this.repo.Load(storageService);
+            this.buildDataTables();
         }
 
         public DeckVariant? GetVariantData(GlobalIdentifier? identifier)
@@ -90,20 +67,6 @@ namespace SOTM.MissionControl.Services
                 return null;
             }
             return this.deckVariantTable.GetValueOrDefault(identifier);
-        }
-
-        private List<Expansion> GroupByDeckExpansion(List<Deck> decks)
-        {
-            var definedExpansions = new Dictionary<GlobalIdentifier, Expansion>();
-            foreach (Deck deck in decks)
-            {
-                if (!definedExpansions.ContainsKey(deck.sourceExpansionIdentifier))
-                {
-                    definedExpansions[deck.sourceExpansionIdentifier] = new Expansion(deck.sourceExpansionIdentifier);
-                }
-                definedExpansions[deck.sourceExpansionIdentifier].AddChild(deck);
-            }
-            return definedExpansions.Values.ToList();
         }
 
         public IEnumerable<Expansion> GetHeroExpansions()

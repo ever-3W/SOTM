@@ -4,7 +4,7 @@
 @using SOTM.MissionControl.Services
 @inject DeckDataService deckData
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
-@inject GameService gameSvc
+@inject GameLogService gameLog
 
 <PageTitle>Statistics</PageTitle>
 
@@ -26,8 +26,8 @@
     }
     protected override async Task OnInitializedAsync()
     {
-        await gameSvc.LoadGameLog(localStorage);
-        this.totalGames = gameSvc.GetLoggedGames().Count();
-        this.wins = gameSvc.GetLoggedGames().Where(game => game.state == GameState.WIN).Count();
+        await gameLog.repo.Load(localStorage);
+        this.totalGames = gameLog.GetLoggedGames().Count();
+        this.wins = gameLog.GetLoggedGames().Where(game => game.state == GameState.WIN).Count();
     }
 }

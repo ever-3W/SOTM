@@ -18,6 +18,7 @@ builder.Services.AddScoped(typeof(DeckDataService));
 builder.Services.AddScoped(typeof(DraftRandomizerService));
 builder.Services.AddScoped(typeof(DraftSelectionsService));
 builder.Services.AddScoped(typeof(GameService));
+builder.Services.AddScoped(typeof(GameLogService));
 builder.Services.AddScoped(typeof(SettingsService));
 
 await builder.Build().RunAsync();

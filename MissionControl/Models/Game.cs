@@ -60,8 +60,7 @@ namespace SOTM.MissionControl.Models
             Guid.NewGuid().ToString("N"),
             GetDefaultPicks(draft),
             new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds())
-        {
-        }
+        {}
 
         private int GetIndex(List<GlobalIdentifier> draftList, GlobalIdentifier identifier)
         {

@@ -7,7 +7,7 @@
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject NavigationManager navManager
 @inject DeckDataService deckData
-@inject GameService gameSvc
+@inject GameLogService gameLog
 @inject SettingsService settingsSvc
 @inject IJSRuntime JSRuntime
 
@@ -146,17 +146,17 @@
     public IEnumerable<GameTableRowData> gameData = Enumerable.Empty<GameTableRowData>();
     protected override async Task OnInitializedAsync()
     {
-        await deckData.LoadData(localStorage, httpClient);
-        await gameSvc.LoadGameLog(localStorage);
-        this.gameData = gameSvc.GetLoggedGames().Select(game => new GameTableRowData(deckData, game ));
+        await deckData.Load(localStorage);
+        await gameLog.repo.Load(localStorage);
+        this.gameData = gameLog.GetLoggedGames().Select(game => new GameTableRowData(deckData, game ));
     }
 
     private async Task UploadHistory(InputFileChangeEventArgs args)
     {
         try
         {
-            await gameSvc.LoadGameLogFile(args.File, settingsSvc.settings.importHistoryMode);
-            await gameSvc.SaveGameLog(localStorage);
+            await gameLog.LoadGameLogFile(args.File, settingsSvc.settings.importHistoryMode);
+            await gameLog.repo.Save(localStorage);
             navManager.Refresh();
         }
         catch (Exception err)
@@ -170,7 +170,7 @@
     private async Task DownloadHistory()
     {
         // Generate a text file
-        byte[] file = gameSvc.GetGameLogBytes();
+        byte[] file = gameLog.repo.GetBytes();
         await JSRuntime.InvokeVoidAsync("BlazorDownloadFile", "game-log.json", "application/json", file);
     }
 }

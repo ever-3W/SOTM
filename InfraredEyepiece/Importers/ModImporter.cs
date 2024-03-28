@@ -75,7 +75,6 @@ namespace SOTM.InfraredEyepiece.Importers
             // the core DLL shouldn't contain any hanging variants
             var (expansions, decks, hangingVariants) = this.ParseResourcesFromDLL(this.dllPath);
             result.hangingVariants = this.ExcludeHangingVariantsNotListed(hangingVariants);
-            result.sortOrder = this.config.GetValue<int>("SortOrder");
             foreach (Deck deck in this.ExcludeDecksNotListed(decks))
             {
                 result.AddDeck(deck);

@@ -17,7 +17,6 @@ namespace SOTM.InfraredEyepiece.Importers
             // the core DLL shouldn't contain any hanging variants
             var (expansions, decks, hangingVariants) = this.ParseResourcesFromDLL(this.config["VanillaDLLPath"]);
             result.hangingVariants = hangingVariants;
-            result.sortOrder = this.config.GetValue<int>("SortOrder");
             foreach (Deck deck in decks)
             {
                 // Override OblivAeon's "kind" to prevent him from being selected for drafting Clasic games
