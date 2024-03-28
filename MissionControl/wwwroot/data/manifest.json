@@ -1,0 +1,34 @@
+{
+  "files": {
+    "CaseFiles": {
+      "file": "CaseFiles.json",
+      "hash": "FD8ADABE9093BD6474AC9AA13EE24506A2203DE79E5A10F3054CEB8ECC839557",
+      "sortOrder": 3
+    },
+    "Cauldron": {
+      "file": "Cauldron.json",
+      "hash": "BB50A25EE482664A3ADCE2BFFF4D0B8C52FF131805943C6F29CD89986E5C83E7",
+      "sortOrder": 1
+    },
+    "CauldronPromos": {
+      "file": "CauldronPromos.json",
+      "hash": "9044EAADEA4D641E264FC8531BE7B6BB562AE81E8240F81312055C2F67BCFA6F",
+      "sortOrder": 2
+    },
+    "Menagerie": {
+      "file": "Menagerie.json",
+      "hash": "34B6FD20CEE765CF1734379BE48D80F114E7785C342A60A65C95E431238FA33C",
+      "sortOrder": 4
+    },
+    "SpookyGhostwriter": {
+      "file": "SpookyGhostwriter.json",
+      "hash": "406875F21448F51DA261FCB4011CEE121BE243CE4258E824BAB2AA45D6B4E207",
+      "sortOrder": 5
+    },
+    "Vanilla": {
+      "file": "Vanilla.json",
+      "hash": "870E7527409E3C300BE7C4BAF4E5B1BFA59B5DF9D52A53F5DC5E11ADA6BCC3AA",
+      "sortOrder": 0
+    }
+  }
+}

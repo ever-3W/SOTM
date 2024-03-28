@@ -1,0 +1,63 @@
+{
+  "heroExpansions": [],
+  "villainExpansions": [],
+  "environmentExpansions": [],
+  "teamVillainExpansions": [],
+  "identifier": "CauldronPromos",
+  "title": "Cauldron Promos",
+  "sortOrder": 2,
+  "hangingVariants": {
+    "AbsoluteZero": [
+      {
+        "deckNamespacedIdentifier": "AbsoluteZero",
+        "variantIdentifier": "NitroBoostAbsoluteZeroCharacter",
+        "promoTitle": "Nitro Boost Absolute Zero",
+        "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
+        "sourceCollectionIdentifier": "CauldronPromos"
+      }
+    ],
+    "Bunker": [
+      {
+        "deckNamespacedIdentifier": "Bunker",
+        "variantIdentifier": "SiegeBreakerBunkerCharacter",
+        "promoTitle": "Siege Breaker Bunker",
+        "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
+        "sourceCollectionIdentifier": "CauldronPromos"
+      }
+    ],
+    "Expatriette": [
+      {
+        "deckNamespacedIdentifier": "Expatriette",
+        "variantIdentifier": "UrbanWarfareExpatrietteCharacter",
+        "promoTitle": "Urban Warfare Expatriette",
+        "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
+        "sourceCollectionIdentifier": "CauldronPromos"
+      }
+    ],
+    "MrFixer": [
+      {
+        "deckNamespacedIdentifier": "MrFixer",
+        "variantIdentifier": "EnlightenedMrFixerCharacter",
+        "promoTitle": "Enlightened Mr. Fixer",
+        "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
+        "sourceCollectionIdentifier": "CauldronPromos"
+      },
+      {
+        "deckNamespacedIdentifier": "MrFixer",
+        "variantIdentifier": "NorthernWindMrFixerCharacter",
+        "promoTitle": "Northern Wind Mr. Fixer",
+        "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
+        "sourceCollectionIdentifier": "CauldronPromos"
+      }
+    ],
+    "OmnitronX": [
+      {
+        "deckNamespacedIdentifier": "OmnitronX",
+        "variantIdentifier": "OmnitronXICharacter",
+        "promoTitle": "Omnitron XI",
+        "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
+        "sourceCollectionIdentifier": "CauldronPromos"
+      }
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "heroExpansions": [
+    {
+      "decks": [
+        {
+          "variants": [
+            {
+              "identifier": "CaseFiles.CaseFiles.Charlie.Charlie",
+              "title": "Charlie",
+              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+              "sourceCollectionIdentifier": "CaseFiles"
+            },
+            {
+              "identifier": "CaseFiles.CaseFiles.Charlie.RooksGambitCharlieCharacter",
+              "title": "Charlie: Rook\u0027s Gambit",
+              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+              "sourceCollectionIdentifier": "CaseFiles"
+            },
+            {
+              "identifier": "CaseFiles.CaseFiles.Charlie.MoondancerCharlieCharacter",
+              "title": "Charlie: Moondancer",
+              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+              "sourceCollectionIdentifier": "CaseFiles"
+            }
+          ],
+          "title": "Charlie",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+          "identifier": "CaseFiles.CaseFiles.Charlie"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "CaseFiles.CaseFiles.Tucker.Tucker",
+              "title": "Tucker",
+              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+              "sourceCollectionIdentifier": "CaseFiles"
+            },
+            {
+              "identifier": "CaseFiles.CaseFiles.Tucker.DivisionCheerTuckerCharacter",
+              "title": "Tucker: Division Cheer",
+              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+              "sourceCollectionIdentifier": "CaseFiles"
+            },
+            {
+              "identifier": "CaseFiles.CaseFiles.Tucker.MoondancerTuckerCharacter",
+              "title": "Tucker: Moondancer",
+              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+              "sourceCollectionIdentifier": "CaseFiles"
+            },
+            {
+              "identifier": "CaseFiles.CaseFiles.Tucker.GunClubTuckerCharacter",
+              "title": "Gun Club: Tucker",
+              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+              "sourceCollectionIdentifier": "CaseFiles"
+            }
+          ],
+          "title": "Tucker",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+          "identifier": "CaseFiles.CaseFiles.Tucker"
+        }
+      ],
+      "identifier": "CaseFiles.CaseFiles"
+    }
+  ],
+  "villainExpansions": [],
+  "environmentExpansions": [
+    {
+      "decks": [
+        {
+          "variants": [
+            {
+              "identifier": "CaseFiles.CaseFiles.BirchwoodMass.BirchwoodMass",
+              "title": "Birchwood, Mass.",
+              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+              "sourceCollectionIdentifier": "CaseFiles"
+            }
+          ],
+          "title": "Birchwood, Mass.",
+          "kind": "ENVIRONMENT",
+          "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+          "identifier": "CaseFiles.CaseFiles.BirchwoodMass"
+        }
+      ],
+      "identifier": "CaseFiles.CaseFiles"
+    }
+  ],
+  "teamVillainExpansions": [],
+  "identifier": "CaseFiles",
+  "title": "Case Files",
+  "sortOrder": 3,
+  "hangingVariants": {
+    "Expatriette": [
+      {
+        "deckNamespacedIdentifier": "Expatriette",
+        "variantIdentifier": "GunClubExpatrietteCharacter",
+        "promoTitle": "Gun Club: Expatriette",
+        "sourceExpansionIdentifier": "CaseFiles.PromoCardList",
+        "sourceCollectionIdentifier": "CaseFiles"
+      }
+    ],
+    "Cauldron.TangoOne": [
+      {
+        "deckNamespacedIdentifier": "Cauldron.TangoOne",
+        "variantIdentifier": "GunClubTangoOneCharacter",
+        "promoTitle": "Gun Club: Tango One",
+        "sourceExpansionIdentifier": "CaseFiles.PromoCardList",
+        "sourceCollectionIdentifier": "CaseFiles"
+      }
+    ],
+    "Menagerie.Charade": [
+      {
+        "deckNamespacedIdentifier": "Menagerie.Charade",
+        "variantIdentifier": "GunClubCharadeCharacter",
+        "promoTitle": "Gun Club: Charade",
+        "sourceExpansionIdentifier": "CaseFiles.PromoCardList",
+        "sourceCollectionIdentifier": "CaseFiles"
+      }
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using ICSharpCode.Decompiler.Metadata;
+using Microsoft.Extensions.Configuration;
 using SOTM.Shared.Models;
 using SOTM.Shared.Models.JSONObjects;
 
@@ -10,10 +11,16 @@ namespace SOTM.InfraredEyepiece.Importers
 
     public abstract class CollectionImporter
     {
+        protected IConfigurationRoot config;
         protected static JsonSerializerOptions JSON_SERIALIZER_OPTS = new JsonSerializerOptions()
         { AllowTrailingCommas = true, WriteIndented = true };
 
         protected abstract GlobalIdentifier collectionIdentifier { get; }
+
+        public CollectionImporter(IConfigurationRoot config)
+        {
+            this.config = config;
+        }
 
         private (GlobalIdentifier, Deck) ParseDeckList(JSONDeckList dl, string dlIdentifier)
         {
@@ -147,6 +154,16 @@ namespace SOTM.InfraredEyepiece.Importers
 
             return (expansionIdentifiers.ToList(), decks, hangingDeckVariants);
         }
+
+
+        public string GetOutputFilePath()
+        {
+            return Path.Combine(
+                this.config["OutputPath"],
+                $"{this.collectionIdentifier}.json"
+            );
+        }
+        public abstract CollectionV2 ParseResourcesV2();
 
         public abstract
         (

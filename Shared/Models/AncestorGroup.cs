@@ -16,7 +16,6 @@ namespace SOTM.Shared.Models {
             }
         }
 
-        public const string JSON_CHILD_KEY = "children";
         [JsonInclude]
         public GlobalIdentifier identifier;
         public Dictionary<string, ChildType> children = new Dictionary<string, ChildType>();
@@ -39,6 +38,14 @@ namespace SOTM.Shared.Models {
         {
             children.TryAdd(child.GetIdentifier().ToString(), child);
             return child;
+        }
+
+        public void AddChildren(IEnumerable<ChildType> children)
+        {
+            foreach (ChildType child in children)
+            {
+                this.AddChild(child);
+            }
         }
 
         public IEnumerable<ChildType> GetChildren()

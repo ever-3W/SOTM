@@ -1,26 +1,7 @@
 {
-  "collections": [
+  "heroExpansions": [
     {
-      "identifier": "Vanilla",
-      "title": "Vanilla",
-      "expansions": [
-        "Vanilla.BaseExpansion",
-        "Vanilla.MiniPack1",
-        "Vanilla.RookCity",
-        "Vanilla.InfernalRelics",
-        "Vanilla.MiniPack2",
-        "Vanilla.ShatteredTimelines",
-        "Vanilla.WrathOfTheCosmos",
-        "Vanilla.MiniPack3",
-        "Vanilla.Vengeance",
-        "Vanilla.MiniPack4",
-        "Vanilla.VillainsOfTheMultiverse",
-        "Vanilla.MiniPack5",
-        "Vanilla.OblivAeon",
-        "Vanilla.EarthPrime",
-        "Vanilla.MagicalMysteriesPack"
-      ],
-      "heroes": [
+      "decks": [
         {
           "variants": [
             {
@@ -46,12 +27,6 @@
               "title": "Freedom Five Absolute Zero",
               "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
               "sourceCollectionIdentifier": "Vanilla"
-            },
-            {
-              "identifier": "Vanilla.BaseExpansion.AbsoluteZero.NitroBoostAbsoluteZeroCharacter",
-              "title": "Nitro Boost Absolute Zero",
-              "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
-              "sourceCollectionIdentifier": "CauldronPromos"
             }
           ],
           "title": "Absolute Zero",
@@ -90,12 +65,6 @@
               "title": "Freedom Five Bunker",
               "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
               "sourceCollectionIdentifier": "Vanilla"
-            },
-            {
-              "identifier": "Vanilla.BaseExpansion.Bunker.SiegeBreakerBunkerCharacter",
-              "title": "Siege Breaker Bunker",
-              "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
-              "sourceCollectionIdentifier": "CauldronPromos"
             }
           ],
           "title": "Bunker",
@@ -346,7 +315,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
           "identifier": "Vanilla.BaseExpansion.Haka"
-        },
+        }
+      ],
+      "identifier": "Vanilla.BaseExpansion"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -372,7 +346,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.MiniPack1",
           "identifier": "Vanilla.MiniPack1.Unity"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack1"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -386,18 +365,6 @@
               "title": "Dark Watch Mr. Fixer",
               "sourceExpansionIdentifier": "Vanilla.RookCity",
               "sourceCollectionIdentifier": "Vanilla"
-            },
-            {
-              "identifier": "Vanilla.RookCity.MrFixer.EnlightenedMrFixerCharacter",
-              "title": "Enlightened Mr. Fixer",
-              "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
-              "sourceCollectionIdentifier": "CauldronPromos"
-            },
-            {
-              "identifier": "Vanilla.RookCity.MrFixer.NorthernWindMrFixerCharacter",
-              "title": "Northern Wind Mr. Fixer",
-              "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
-              "sourceCollectionIdentifier": "CauldronPromos"
             }
           ],
           "title": "Mr. Fixer",
@@ -418,25 +385,18 @@
               "title": "Dark Watch Expatriette",
               "sourceExpansionIdentifier": "Vanilla.RookCity",
               "sourceCollectionIdentifier": "Vanilla"
-            },
-            {
-              "identifier": "Vanilla.RookCity.Expatriette.UrbanWarfareExpatrietteCharacter",
-              "title": "Urban Warfare Expatriette",
-              "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
-              "sourceCollectionIdentifier": "CauldronPromos"
-            },
-            {
-              "identifier": "Vanilla.RookCity.Expatriette.GunClubExpatrietteCharacter",
-              "title": "Gun Club: Expatriette",
-              "sourceExpansionIdentifier": "CaseFiles.PromoCardList",
-              "sourceCollectionIdentifier": "CaseFiles"
             }
           ],
           "title": "Expatriette",
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.RookCity",
           "identifier": "Vanilla.RookCity.Expatriette"
-        },
+        }
+      ],
+      "identifier": "Vanilla.RookCity"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -456,7 +416,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.MiniPack2",
           "identifier": "Vanilla.MiniPack2.TheScholar"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack2"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -508,7 +473,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
           "identifier": "Vanilla.InfernalRelics.TheArgentAdept"
-        },
+        }
+      ],
+      "identifier": "Vanilla.InfernalRelics"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -542,19 +512,18 @@
               "title": "Omnitron-U",
               "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
               "sourceCollectionIdentifier": "Vanilla"
-            },
-            {
-              "identifier": "Vanilla.ShatteredTimelines.OmnitronX.OmnitronXICharacter",
-              "title": "Omnitron XI",
-              "sourceExpansionIdentifier": "CauldronPromos.PromoCardList",
-              "sourceCollectionIdentifier": "CauldronPromos"
             }
           ],
           "title": "Omnitron-X",
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
           "identifier": "Vanilla.ShatteredTimelines.OmnitronX"
-        },
+        }
+      ],
+      "identifier": "Vanilla.ShatteredTimelines"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -606,7 +575,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
           "identifier": "Vanilla.WrathOfTheCosmos.SkyScraper"
-        },
+        }
+      ],
+      "identifier": "Vanilla.WrathOfTheCosmos"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -632,7 +606,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.MiniPack3",
           "identifier": "Vanilla.MiniPack3.Guise"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack3"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -732,7 +711,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.Vengeance",
           "identifier": "Vanilla.Vengeance.TheNaturalist"
-        },
+        }
+      ],
+      "identifier": "Vanilla.Vengeance"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -772,7 +756,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.MiniPack4",
           "identifier": "Vanilla.MiniPack4.Benchmark"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack4"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -852,7 +841,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.MiniPack5",
           "identifier": "Vanilla.MiniPack5.VoidGuardWrithe"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack5"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -952,7 +946,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.OblivAeon",
           "identifier": "Vanilla.OblivAeon.TheHarpy"
-        },
+        }
+      ],
+      "identifier": "Vanilla.OblivAeon"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1152,7 +1151,12 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "Vanilla.EarthPrime",
           "identifier": "Vanilla.EarthPrime.StarKnight"
-        },
+        }
+      ],
+      "identifier": "Vanilla.EarthPrime"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1194,7 +1198,12 @@
           "identifier": "Vanilla.MagicalMysteriesPack.Eldritch"
         }
       ],
-      "villains": [
+      "identifier": "Vanilla.MagicalMysteriesPack"
+    }
+  ],
+  "villainExpansions": [
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1262,7 +1271,12 @@
           "kind": "VILLAIN",
           "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
           "identifier": "Vanilla.BaseExpansion.GrandWarlordVoss"
-        },
+        }
+      ],
+      "identifier": "Vanilla.BaseExpansion"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1276,7 +1290,12 @@
           "kind": "VILLAIN",
           "sourceExpansionIdentifier": "Vanilla.MiniPack1",
           "identifier": "Vanilla.MiniPack1.Ambuscade"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack1"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1338,7 +1357,12 @@
           "kind": "VILLAIN",
           "sourceExpansionIdentifier": "Vanilla.RookCity",
           "identifier": "Vanilla.RookCity.TheChairman"
-        },
+        }
+      ],
+      "identifier": "Vanilla.RookCity"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1400,7 +1424,12 @@
           "kind": "VILLAIN",
           "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
           "identifier": "Vanilla.InfernalRelics.TheEnnead"
-        },
+        }
+      ],
+      "identifier": "Vanilla.InfernalRelics"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1414,7 +1443,12 @@
           "kind": "VILLAIN",
           "sourceExpansionIdentifier": "Vanilla.MiniPack2",
           "identifier": "Vanilla.MiniPack2.MissInformation"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack2"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1476,7 +1510,12 @@
           "kind": "VILLAIN",
           "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
           "identifier": "Vanilla.ShatteredTimelines.TheDreamer"
-        },
+        }
+      ],
+      "identifier": "Vanilla.ShatteredTimelines"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1538,7 +1577,12 @@
           "kind": "VILLAIN",
           "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
           "identifier": "Vanilla.WrathOfTheCosmos.KaargraWarfang"
-        },
+        }
+      ],
+      "identifier": "Vanilla.WrathOfTheCosmos"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1552,7 +1596,12 @@
           "kind": "VILLAIN",
           "sourceExpansionIdentifier": "Vanilla.MiniPack3",
           "identifier": "Vanilla.MiniPack3.WagerMaster"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack3"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1566,7 +1615,12 @@
           "kind": "VILLAIN",
           "sourceExpansionIdentifier": "Vanilla.MiniPack4",
           "identifier": "Vanilla.MiniPack4.Chokepoint"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack4"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1622,7 +1676,12 @@
           "kind": "VILLAIN",
           "sourceExpansionIdentifier": "Vanilla.EarthPrime",
           "identifier": "Vanilla.EarthPrime.Argo"
-        },
+        }
+      ],
+      "identifier": "Vanilla.EarthPrime"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1638,7 +1697,12 @@
           "identifier": "Vanilla.MagicalMysteriesPack.Malador"
         }
       ],
-      "environments": [
+      "identifier": "Vanilla.MagicalMysteriesPack"
+    }
+  ],
+  "environmentExpansions": [
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1694,7 +1758,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
           "identifier": "Vanilla.BaseExpansion.WagnerMarsBase"
-        },
+        }
+      ],
+      "identifier": "Vanilla.BaseExpansion"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1708,7 +1777,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.MiniPack1",
           "identifier": "Vanilla.MiniPack1.SilverGulch1883"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack1"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1736,7 +1810,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.RookCity",
           "identifier": "Vanilla.RookCity.RookCity"
-        },
+        }
+      ],
+      "identifier": "Vanilla.RookCity"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1764,7 +1843,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
           "identifier": "Vanilla.InfernalRelics.RealmOfDiscord"
-        },
+        }
+      ],
+      "identifier": "Vanilla.InfernalRelics"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1778,7 +1862,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.MiniPack2",
           "identifier": "Vanilla.MiniPack2.TheFinalWasteland"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack2"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1806,7 +1895,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
           "identifier": "Vanilla.ShatteredTimelines.TimeCataclysm"
-        },
+        }
+      ],
+      "identifier": "Vanilla.ShatteredTimelines"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1834,7 +1928,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
           "identifier": "Vanilla.WrathOfTheCosmos.DokThorathCapital"
-        },
+        }
+      ],
+      "identifier": "Vanilla.WrathOfTheCosmos"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1848,7 +1947,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.MiniPack3",
           "identifier": "Vanilla.MiniPack3.OmnitronIV"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack3"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1862,34 +1966,6 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
           "identifier": "Vanilla.VillainsOfTheMultiverse.TheTempleOfZhuLong"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Vanilla.Vengeance.MobileDefensePlatform.MobileDefensePlatform",
-              "title": "Mobile Defense Platform",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
-            }
-          ],
-          "title": "Mobile Defense Platform",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Vanilla.Vengeance",
-          "identifier": "Vanilla.Vengeance.MobileDefensePlatform"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Vanilla.Vengeance.FreedomTower.FreedomTower",
-              "title": "Freedom Tower",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
-            }
-          ],
-          "title": "Freedom Tower",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Vanilla.Vengeance",
-          "identifier": "Vanilla.Vengeance.FreedomTower"
         },
         {
           "variants": [
@@ -1932,7 +2008,45 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
           "identifier": "Vanilla.VillainsOfTheMultiverse.MMFFCC"
+        }
+      ],
+      "identifier": "Vanilla.VillainsOfTheMultiverse"
+    },
+    {
+      "decks": [
+        {
+          "variants": [
+            {
+              "identifier": "Vanilla.Vengeance.MobileDefensePlatform.MobileDefensePlatform",
+              "title": "Mobile Defense Platform",
+              "sourceExpansionIdentifier": "Vanilla.Vengeance",
+              "sourceCollectionIdentifier": "Vanilla"
+            }
+          ],
+          "title": "Mobile Defense Platform",
+          "kind": "ENVIRONMENT",
+          "sourceExpansionIdentifier": "Vanilla.Vengeance",
+          "identifier": "Vanilla.Vengeance.MobileDefensePlatform"
         },
+        {
+          "variants": [
+            {
+              "identifier": "Vanilla.Vengeance.FreedomTower.FreedomTower",
+              "title": "Freedom Tower",
+              "sourceExpansionIdentifier": "Vanilla.Vengeance",
+              "sourceCollectionIdentifier": "Vanilla"
+            }
+          ],
+          "title": "Freedom Tower",
+          "kind": "ENVIRONMENT",
+          "sourceExpansionIdentifier": "Vanilla.Vengeance",
+          "identifier": "Vanilla.Vengeance.FreedomTower"
+        }
+      ],
+      "identifier": "Vanilla.Vengeance"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -1946,7 +2060,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.MiniPack4",
           "identifier": "Vanilla.MiniPack4.TheCelestialTribunal"
-        },
+        }
+      ],
+      "identifier": "Vanilla.MiniPack4"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -2016,7 +2135,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.OblivAeon",
           "identifier": "Vanilla.OblivAeon.ChampionStudios"
-        },
+        }
+      ],
+      "identifier": "Vanilla.OblivAeon"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -2072,7 +2196,12 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "Vanilla.EarthPrime",
           "identifier": "Vanilla.EarthPrime.Tartarus"
-        },
+        }
+      ],
+      "identifier": "Vanilla.EarthPrime"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -2088,7 +2217,12 @@
           "identifier": "Vanilla.MagicalMysteriesPack.SubTerra"
         }
       ],
-      "teamVillains": [
+      "identifier": "Vanilla.MagicalMysteriesPack"
+    }
+  ],
+  "teamVillainExpansions": [
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -2158,7 +2292,12 @@
           "kind": "VILLAIN_TEAM",
           "sourceExpansionIdentifier": "Vanilla.Vengeance",
           "identifier": "Vanilla.Vengeance.ProletariatTeam"
-        },
+        }
+      ],
+      "identifier": "Vanilla.Vengeance"
+    },
+    {
+      "decks": [
         {
           "variants": [
             {
@@ -2299,1592 +2438,12 @@
           "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
           "identifier": "Vanilla.VillainsOfTheMultiverse.MissInformationTeam"
         }
-      ]
-    },
-    {
-      "identifier": "Cauldron",
-      "title": "Cauldron",
-      "expansions": [
-        "Cauldron.Cauldron",
-        "Cauldron.CauldronAdrift",
-        "Cauldron.CauldronUnexpected",
-        "Cauldron.CauldronStormfall",
-        "Cauldron.CauldronExperimental"
       ],
-      "heroes": [
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Baccarat.Baccarat",
-              "title": "Baccarat",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Baccarat.AceOfSwordsBaccaratCharacter",
-              "title": "Baccarat: Ace Of Swords",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Baccarat.AceOfSorrowsBaccaratCharacter",
-              "title": "Baccarat: Ace Of Sorrows",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Baccarat.PastBaccaratCharacter",
-              "title": "Baccarat 1929",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Baccarat",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Baccarat"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronExperimental.Cricket.Cricket",
-              "title": "Cricket",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronExperimental.Cricket.FirstResponseCricketCharacter",
-              "title": "First Response Cricket",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronExperimental.Cricket.RenegadeCricketCharacter",
-              "title": "Renegade Cricket",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronExperimental.Cricket.WastelandRoninCricketCharacter",
-              "title": "Wasteland Ronin Cricket",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Cricket",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-          "identifier": "Cauldron.CauldronExperimental.Cricket"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronExperimental.Cypher.Cypher",
-              "title": "Cypher",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronExperimental.Cypher.FirstResponseCypherCharacter",
-              "title": "First Response Cypher",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronExperimental.Cypher.SwarmingProtocolCypherCharacter",
-              "title": "Cypher: Swarming Protocol",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Cypher",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-          "identifier": "Cauldron.CauldronExperimental.Cypher"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.DocHavoc.DocHavoc",
-              "title": "Doc Havoc",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.DocHavoc.FirstResponseDocHavocCharacter",
-              "title": "First Response Doc Havoc",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.DocHavoc.FutureDocHavocCharacter",
-              "title": "Doc Havoc 2199",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Doc Havoc",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.DocHavoc"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.Drift.Drift",
-              "title": "Drift",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Drift.ThroughTheBreachDriftCharacter",
-              "title": "Drift: Through the Breach",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Drift.DualDriftCharacter",
-              "title": "Dual Drift",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Drift.DriftingShadowDriftCharacter",
-              "title": "Drift: 1609",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Drift.AllInGoodTimeDriftCharacter",
-              "title": "Drift: 1789",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Drift.TestSubjectHalberdDriftCharacter",
-              "title": "Drift: Test Subject Halberd-26",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Drift",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.Drift"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronStormfall.Echelon.Echelon",
-              "title": "Echelon",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronStormfall.Echelon.FirstResponseEchelonCharacter",
-              "title": "First Response Echelon",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronStormfall.Echelon.FutureEchelonCharacter",
-              "title": "Echelon 2199",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Echelon",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-          "identifier": "Cauldron.CauldronStormfall.Echelon"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.Gargoyle.Gargoyle",
-              "title": "Gargoyle",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Gargoyle.WastelandRoninGargoyleCharacter",
-              "title": "Wasteland Ronin Gargoyle",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Gargoyle.FutureGargoyleCharacter",
-              "title": "Gargoyle 2199",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Gargoyle.DragonRangerGargoyleCharacter",
-              "title": "Dragon Ranger Gargoyle",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Gargoyle.InfiltratorGargoyleCharacter",
-              "title": "Infiltrator Gargoyle",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Gargoyle",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.Gargoyle"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.Gyrosaur.Gyrosaur",
-              "title": "Gyrosaur",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Gyrosaur.SpeedDemonGyrosaurCharacter",
-              "title": "Gyrosaur: Speed Demon",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Gyrosaur.RenegadeGyrosaurCharacter",
-              "title": "Renegade Gyrosaur",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Gyrosaur.CaptainGyrosaurCharacter",
-              "title": "Captain Gyrosaur",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Gyrosaur",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.Gyrosaur"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronStormfall.Impact.Impact",
-              "title": "Impact",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronStormfall.Impact.RenegadeImpactCharacter",
-              "title": "Renegade Impact",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronStormfall.Impact.WastelandRoninImpactCharacter",
-              "title": "Wasteland Ronin Impact",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Impact",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-          "identifier": "Cauldron.CauldronStormfall.Impact"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.LadyOfTheWood.LadyOfTheWood",
-              "title": "Lady Of The Wood",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.LadyOfTheWood.SeasonsOfChangeLadyOfTheWoodCharacter",
-              "title": "Lady of the Wood: Season of Change",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.LadyOfTheWood.MinistryOfStrategicScienceLadyOfTheWoodCharacter",
-              "title": "Ministry Of Strategic Science Lady of the Wood",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.LadyOfTheWood.FutureLadyOfTheWoodCharacter",
-              "title": "Lady of the Wood 2199",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Lady Of The Wood",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.LadyOfTheWood"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronStormfall.MagnificentMara.MagnificentMara",
-              "title": "Magnificent Mara",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronStormfall.MagnificentMara.MinistryOfStrategicScienceMagnificentMaraCharacter",
-              "title": "Ministry Of Strategic Science Magnificent Mara",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronStormfall.MagnificentMara.PastMagnificentMaraCharacter",
-              "title": "Magnificent Mara 1929",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Magnificent Mara",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-          "identifier": "Cauldron.CauldronStormfall.MagnificentMara"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Malichae.Malichae",
-              "title": "Malichae",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Malichae.ShardmasterMalichaeCharacter",
-              "title": "Shardmaster Malichae",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Malichae.MinistryOfStrategicScienceMalichaeCharacter",
-              "title": "Ministry Of Strategic Science Malichae",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Malichae",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Malichae"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Necro.Necro",
-              "title": "Necro",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Necro.WardenOfChaosNecroCharacter",
-              "title": "Necro: Warden of Chaos",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Necro.PastNecroCharacter",
-              "title": "Necro 1929",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Necro.LastOfTheForgottenOrderNecroCharacter",
-              "title": "Last of The Forgotten Order Necro",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Necro",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Necro"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.Pyre.Pyre",
-              "title": "Pyre",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Pyre.UnstablePyreCharacter",
-              "title": "Unstable Pyre",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Pyre.WastelandRoninPyreCharacter",
-              "title": "Wasteland Ronin Pyre",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Pyre.ExpeditionOblaskPyreCharacter",
-              "title": "Pyre: Expedition Oblask",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Pyre",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.Pyre"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Quicksilver.Quicksilver",
-              "title": "Quicksilver",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Quicksilver.UncannyQuicksilverCharacter",
-              "title": "Uncanny Quicksilver",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Quicksilver.RenegadeQuicksilverCharacter",
-              "title": "Renegade Quicksilver",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Quicksilver.HarbingerQuicksilverCharacter",
-              "title": "Test Subject Harbinger-1 Quicksilver",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Quicksilver",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Quicksilver"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Starlight.Starlight",
-              "title": "Starlight",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Starlight.GenesisStarlightCharacter",
-              "title": "Starlight: Genesis",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Starlight.NightloreCouncilStarlightCharacter",
-              "title": "Nightlore Council Starlight",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Starlight.Area51StarlightCharacter",
-              "title": "Starlight: Area-51",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Starlight",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Starlight"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.TangoOne.TangoOne",
-              "title": "Tango One",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TangoOne.GhostOpsTangoOneCharacter",
-              "title": "Ghost Ops Tango One",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TangoOne.PastTangoOneCharacter",
-              "title": "Tango One 1929",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TangoOne.CreedOfTheSniperTangoOneCharacter",
-              "title": "Tango One: Creed of the Sniper",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TangoOne.GunClubTangoOneCharacter",
-              "title": "Gun Club: Tango One",
-              "sourceExpansionIdentifier": "CaseFiles.PromoCardList",
-              "sourceCollectionIdentifier": "CaseFiles"
-            }
-          ],
-          "title": "Tango One",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.TangoOne"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.Terminus.Terminus",
-              "title": "Terminus",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Terminus.MinistryOfStrategicScienceTerminusCharacter",
-              "title": "Ministry Of Strategic Science Terminus",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronAdrift.Terminus.FutureTerminusCharacter",
-              "title": "Terminus 2199",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Terminus",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.Terminus"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.TheKnight.TheKnight",
-              "title": "The Knight",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TheKnight.FairTheKnightCharacter",
-              "title": "The Fair Knight",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TheKnight.BerserkerTheKnightCharacter",
-              "title": "The Berserker Knight",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TheKnight.PastTheKnightCharacter",
-              "title": "The Knight 1929",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TheKnight.WastelandRoninTheKnightCharacter",
-              "title": "The Knights: Wasteland Ronin",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "The Knight",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.TheKnight"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.TheStranger.TheStranger",
-              "title": "The Stranger",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TheStranger.RunecarvedTheStrangerCharacter",
-              "title": "The Runecarved Stranger",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TheStranger.PastTheStrangerCharacter",
-              "title": "The Stranger 1929",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TheStranger.WastelandRoninTheStrangerCharacter",
-              "title": "Wasteland Ronin The Stranger",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TheStranger.CornTheStrangerCharacter",
-              "title": "The Stranger in the Corn",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "The Stranger",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.TheStranger"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronExperimental.Titan.Titan",
-              "title": "Titan",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronExperimental.Titan.MinistryOfStrategicScienceTitanCharacter",
-              "title": "Ministry Of Strategic Science Titan",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronExperimental.Titan.FutureTitanCharacter",
-              "title": "Titan 2199",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronExperimental.Titan.OniTitanCharacter",
-              "title": "Titan: Oni",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Titan",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-          "identifier": "Cauldron.CauldronExperimental.Titan"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Vanish.Vanish",
-              "title": "Vanish",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Vanish.FirstResponseVanishCharacter",
-              "title": "First Response Vanish",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Vanish.PastVanishCharacter",
-              "title": "Vanish 1929",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Vanish.TombOfThievesVanishCharacter",
-              "title": "Tomb of Thieves Vanish",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Vanish",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Vanish"
-        }
-      ],
-      "villains": [
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Anathema.Anathema",
-              "title": "Anathema",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Anathema.AcceleratedEvolutionAnathemaCharacter",
-              "title": "Accelerated Evolution Anathema",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Anathema",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Anathema"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronStormfall.Celadroch.Celadroch",
-              "title": "Celadroch",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Celadroch",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-          "identifier": "Cauldron.CauldronStormfall.Celadroch"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Dendron.Dendron",
-              "title": "Dendron",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Dendron.WindcolorDendronCharacter",
-              "title": "Windcolor Dendron",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Dendron",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Dendron"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.Dynamo.Dynamo",
-              "title": "Dynamo",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Dynamo",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.Dynamo"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Gray.Gray",
-              "title": "Gray",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Gray",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Gray"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronStormfall.Menagerie.Menagerie",
-              "title": "Menagerie",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Menagerie",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-          "identifier": "Cauldron.CauldronStormfall.Menagerie"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.Mythos.Mythos",
-              "title": "Mythos",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Mythos",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.Mythos"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronExperimental.Oriphel.Oriphel",
-              "title": "Oriphel",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Oriphel",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-          "identifier": "Cauldron.CauldronExperimental.Oriphel"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.Outlander.Outlander",
-              "title": "Outlander",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Outlander",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.Outlander"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronStormfall.PhaseVillain.PhaseVillain",
-              "title": "Phase",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Phase",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-          "identifier": "Cauldron.CauldronStormfall.PhaseVillain"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.ScreaMachine.ScreaMachine",
-              "title": "ScreaMachine",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "ScreaMachine",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.ScreaMachine"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronExperimental.SwarmEater.SwarmEater",
-              "title": "Swarm Eater",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.CauldronExperimental.SwarmEater.DistributedHivemindSwarmEaterCharacter",
-              "title": "Swarm Eater: Distributed Hivemind",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Swarm Eater",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-          "identifier": "Cauldron.CauldronExperimental.SwarmEater"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.TheInfernalChoir.TheInfernalChoir",
-              "title": "The Infernal Choir",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "The Infernal Choir",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.TheInfernalChoir"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.TheMistressOfFate.TheMistressOfFate",
-              "title": "The Mistress Of Fate",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "The Mistress Of Fate",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.TheMistressOfFate"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.TheRam.TheRam",
-              "title": "The Ram",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.TheRam.PastTheRamCharacter",
-              "title": "The Ram 1929",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "The Ram",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.TheRam"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Tiamat.Tiamat",
-              "title": "Tiamat",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Tiamat.HydraWinterTiamatCharacter",
-              "title": "Tiamat, The Jaws of Winter",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            },
-            {
-              "identifier": "Cauldron.Cauldron.Tiamat.FutureTiamatCharacter",
-              "title": "Tiamat 2199",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Tiamat",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Tiamat"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronExperimental.Vector.Vector",
-              "title": "Vector",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Vector",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-          "identifier": "Cauldron.CauldronExperimental.Vector"
-        }
-      ],
-      "environments": [
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.BlackwoodForest.BlackwoodForest",
-              "title": "Blackwood Forest",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Blackwood Forest",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.BlackwoodForest"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.CatchwaterHarbor.CatchwaterHarbor",
-              "title": "Catchwater Harbor 1929",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Catchwater Harbor 1929",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.CatchwaterHarbor"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronUnexpected.DungeonsOfTerror.DungeonsOfTerror",
-              "title": "Dungeons of Terror",
-              "sourceExpansionIdentifier": "Cauldron.CauldronUnexpected",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Dungeons of Terror",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.CauldronUnexpected",
-          "identifier": "Cauldron.CauldronUnexpected.DungeonsOfTerror"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.FSCContinuanceWanderer.FSCContinuanceWanderer",
-              "title": "F.S.C. Continuance Wanderer",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "F.S.C. Continuance Wanderer",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.FSCContinuanceWanderer"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.HalberdExperimentalResearchCenter.HalberdExperimentalResearchCenter",
-              "title": "Halberd Experimental Research Center",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Halberd Experimental Research Center",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.HalberdExperimentalResearchCenter"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.NightloreCitadel.NightloreCitadel",
-              "title": "Nightlore Citadel",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Nightlore Citadel",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.NightloreCitadel"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.Northspar.Northspar",
-              "title": "Northspar",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Northspar",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.Northspar"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronUnexpected.OblaskCrater.OblaskCrater",
-              "title": "Oblask Crater",
-              "sourceExpansionIdentifier": "Cauldron.CauldronUnexpected",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Oblask Crater",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.CauldronUnexpected",
-          "identifier": "Cauldron.CauldronUnexpected.OblaskCrater"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.StSimeonsCatacombs.StSimeonsCatacombs",
-              "title": "St. Simeon\u0027s Catacombs",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "St. Simeon\u0027s Catacombs",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.StSimeonsCatacombs"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronStormfall.SuperstormAkela.SuperstormAkela",
-              "title": "Superstorm Akela",
-              "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Superstorm Akela",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.CauldronStormfall",
-          "identifier": "Cauldron.CauldronStormfall.SuperstormAkela"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.TheChasmOfAThousandNights.TheChasmOfAThousandNights",
-              "title": "The Chasm of a Thousand Nights",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "The Chasm of a Thousand Nights",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.TheChasmOfAThousandNights"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronExperimental.TheCybersphere.TheCybersphere",
-              "title": "The Cybersphere",
-              "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "The Cybersphere",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.CauldronExperimental",
-          "identifier": "Cauldron.CauldronExperimental.TheCybersphere"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.Cauldron.TheWanderingIsle.TheWanderingIsle",
-              "title": "The Wandering Isle",
-              "sourceExpansionIdentifier": "Cauldron.Cauldron",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "The Wandering Isle",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.Cauldron",
-          "identifier": "Cauldron.Cauldron.TheWanderingIsle"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.VaultFive.VaultFive",
-              "title": "Vault Five",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Vault Five",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.VaultFive"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Cauldron.CauldronAdrift.WindmillCity.WindmillCity",
-              "title": "Windmill City",
-              "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-              "sourceCollectionIdentifier": "Cauldron"
-            }
-          ],
-          "title": "Windmill City",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Cauldron.CauldronAdrift",
-          "identifier": "Cauldron.CauldronAdrift.WindmillCity"
-        }
-      ],
-      "teamVillains": []
-    },
-    {
-      "identifier": "CauldronPromos",
-      "title": "Cauldron Promos",
-      "expansions": [
-        "CauldronPromos.PromoCardList"
-      ],
-      "heroes": [],
-      "villains": [],
-      "environments": [],
-      "teamVillains": []
-    },
-    {
-      "identifier": "CaseFiles",
-      "title": "Case Files",
-      "expansions": [
-        "CaseFiles.CaseFiles",
-        "CaseFiles.PromoCardList"
-      ],
-      "heroes": [
-        {
-          "variants": [
-            {
-              "identifier": "CaseFiles.CaseFiles.Charlie.Charlie",
-              "title": "Charlie",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
-            },
-            {
-              "identifier": "CaseFiles.CaseFiles.Charlie.RooksGambitCharlieCharacter",
-              "title": "Charlie: Rook\u0027s Gambit",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
-            },
-            {
-              "identifier": "CaseFiles.CaseFiles.Charlie.MoondancerCharlieCharacter",
-              "title": "Charlie: Moondancer",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
-            }
-          ],
-          "title": "Charlie",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-          "identifier": "CaseFiles.CaseFiles.Charlie"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "CaseFiles.CaseFiles.Tucker.Tucker",
-              "title": "Tucker",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
-            },
-            {
-              "identifier": "CaseFiles.CaseFiles.Tucker.DivisionCheerTuckerCharacter",
-              "title": "Tucker: Division Cheer",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
-            },
-            {
-              "identifier": "CaseFiles.CaseFiles.Tucker.MoondancerTuckerCharacter",
-              "title": "Tucker: Moondancer",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
-            },
-            {
-              "identifier": "CaseFiles.CaseFiles.Tucker.GunClubTuckerCharacter",
-              "title": "Gun Club: Tucker",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
-            }
-          ],
-          "title": "Tucker",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-          "identifier": "CaseFiles.CaseFiles.Tucker"
-        }
-      ],
-      "villains": [],
-      "environments": [
-        {
-          "variants": [
-            {
-              "identifier": "CaseFiles.CaseFiles.BirchwoodMass.BirchwoodMass",
-              "title": "Birchwood, Mass.",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
-            }
-          ],
-          "title": "Birchwood, Mass.",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-          "identifier": "CaseFiles.CaseFiles.BirchwoodMass"
-        }
-      ],
-      "teamVillains": []
-    },
-    {
-      "identifier": "Menagerie",
-      "title": "Menagerie of the Multiverse",
-      "expansions": [
-        "Menagerie.Menagerie"
-      ],
-      "heroes": [
-        {
-          "variants": [
-            {
-              "identifier": "Menagerie.Menagerie.Charade.Charade",
-              "title": "Charade",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            },
-            {
-              "identifier": "Menagerie.Menagerie.Charade.SecretOriginsCharadeCharacter",
-              "title": "Secret Origins Alycia Chin",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            },
-            {
-              "identifier": "Menagerie.Menagerie.Charade.GunClubCharadeCharacter",
-              "title": "Gun Club: Charade",
-              "sourceExpansionIdentifier": "CaseFiles.PromoCardList",
-              "sourceCollectionIdentifier": "CaseFiles"
-            }
-          ],
-          "title": "Charade",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Menagerie.Menagerie",
-          "identifier": "Menagerie.Menagerie.Charade"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Menagerie.Menagerie.GhostGirl.GhostGirl",
-              "title": "Ghost Girl",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            },
-            {
-              "identifier": "Menagerie.Menagerie.GhostGirl.MagusGhostGirlCharacter",
-              "title": "Ghost Girl, the Magus",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            },
-            {
-              "identifier": "Menagerie.Menagerie.GhostGirl.SolsticeGhostGirlCharacter",
-              "title": "Ghost Girl, Spirit of the Solstice",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            }
-          ],
-          "title": "Ghost Girl",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Menagerie.Menagerie",
-          "identifier": "Menagerie.Menagerie.GhostGirl"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Menagerie.Menagerie.Radiance.Radiance",
-              "title": "Radiance",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            },
-            {
-              "identifier": "Menagerie.Menagerie.Radiance.PrincessRadianceCharacter",
-              "title": "Princess Radiance",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            }
-          ],
-          "title": "Radiance",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "Menagerie.Menagerie",
-          "identifier": "Menagerie.Menagerie.Radiance"
-        }
-      ],
-      "villains": [
-        {
-          "variants": [
-            {
-              "identifier": "Menagerie.Menagerie.Netherwarden.Netherwarden",
-              "title": "Netherwarden",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            }
-          ],
-          "title": "Netherwarden",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Menagerie.Menagerie",
-          "identifier": "Menagerie.Menagerie.Netherwarden"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Menagerie.Menagerie.Unmute.Unmute",
-              "title": "Unmute",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            }
-          ],
-          "title": "Unmute",
-          "kind": "VILLAIN",
-          "sourceExpansionIdentifier": "Menagerie.Menagerie",
-          "identifier": "Menagerie.Menagerie.Unmute"
-        }
-      ],
-      "environments": [
-        {
-          "variants": [
-            {
-              "identifier": "Menagerie.Menagerie.ChallengerPark.ChallengerPark",
-              "title": "Challenger Park",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            }
-          ],
-          "title": "Challenger Park",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Menagerie.Menagerie",
-          "identifier": "Menagerie.Menagerie.ChallengerPark"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "Menagerie.Menagerie.StanleySportsCenter.StanleySportsCenter",
-              "title": "Stanley Sports Center",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
-            }
-          ],
-          "title": "Stanley Sports Center",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "Menagerie.Menagerie",
-          "identifier": "Menagerie.Menagerie.StanleySportsCenter"
-        }
-      ],
-      "teamVillains": []
-    },
-    {
-      "identifier": "SpookyGhostwriter",
-      "title": "Spooky Ghostwriter Comics",
-      "expansions": [
-        "SpookyGhostwriter.SpookyGhostwriterComics"
-      ],
-      "heroes": [
-        {
-          "variants": [
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.Escarlata",
-              "title": "Escarlata",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            },
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.EscarlataFiredancerCharacter",
-              "title": "Escarlata: Firedancer",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            },
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.EscarlataInkblotCharacter",
-              "title": "The Enraged Escarlata",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            }
-          ],
-          "title": "Escarlata",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.GoldDragon.GoldDragon",
-              "title": "Gold Dragon",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            },
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.GoldDragon.GoldDragonInkblotHumanCharacter",
-              "title": "The Invincible Gold Dragon",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            }
-          ],
-          "title": "Gold Dragon",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.GoldDragon"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.Tsukiko",
-              "title": "Tsukiko",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            },
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.TsukikoTheGameIsRiggedCharacter",
-              "title": "Tsukiko Tanner: The Game is Rigged",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            },
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.DarkCarnivalTsukikoCharacter",
-              "title": "Dark Carnival Tsukiko",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            },
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.TsukikoInkblotCharacter",
-              "title": "The Tricksy Tsukiko",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            },
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.GunClubTsukikoCharacter",
-              "title": "Gun Club: Tsukiko",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            }
-          ],
-          "title": "Tsukiko",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette.Silhouette",
-              "title": "Silhouette",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            },
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette.SilhouetteInkblotCharacter",
-              "title": "The Zany Zywen",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            }
-          ],
-          "title": "Silhouette",
-          "kind": "HERO",
-          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette"
-        }
-      ],
-      "villains": [],
-      "environments": [
-        {
-          "variants": [
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.AlesiaCircus.AlesiaCircus",
-              "title": "Alesia Circus",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            }
-          ],
-          "title": "Alesia Circus",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.AlesiaCircus"
-        },
-        {
-          "variants": [
-            {
-              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.OlInkwellTown.OlInkwellTown",
-              "title": "Ol\u0027 Inkwell Town",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
-            }
-          ],
-          "title": "Ol\u0027 Inkwell Town",
-          "kind": "ENVIRONMENT",
-          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.OlInkwellTown"
-        }
-      ],
-      "teamVillains": []
+      "identifier": "Vanilla.VillainsOfTheMultiverse"
     }
   ],
-  "hangingDeckVariants": {}
+  "identifier": "Vanilla",
+  "title": "Vanilla",
+  "sortOrder": 0,
+  "hangingVariants": {}
 }

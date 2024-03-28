@@ -1,0 +1,150 @@
+{
+  "heroExpansions": [
+    {
+      "decks": [
+        {
+          "variants": [
+            {
+              "identifier": "Menagerie.Menagerie.Charade.Charade",
+              "title": "Charade",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            },
+            {
+              "identifier": "Menagerie.Menagerie.Charade.SecretOriginsCharadeCharacter",
+              "title": "Secret Origins Alycia Chin",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            }
+          ],
+          "title": "Charade",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "Menagerie.Menagerie",
+          "identifier": "Menagerie.Menagerie.Charade"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "Menagerie.Menagerie.GhostGirl.GhostGirl",
+              "title": "Ghost Girl",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            },
+            {
+              "identifier": "Menagerie.Menagerie.GhostGirl.MagusGhostGirlCharacter",
+              "title": "Ghost Girl, the Magus",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            },
+            {
+              "identifier": "Menagerie.Menagerie.GhostGirl.SolsticeGhostGirlCharacter",
+              "title": "Ghost Girl, Spirit of the Solstice",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            }
+          ],
+          "title": "Ghost Girl",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "Menagerie.Menagerie",
+          "identifier": "Menagerie.Menagerie.GhostGirl"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "Menagerie.Menagerie.Radiance.Radiance",
+              "title": "Radiance",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            },
+            {
+              "identifier": "Menagerie.Menagerie.Radiance.PrincessRadianceCharacter",
+              "title": "Princess Radiance",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            }
+          ],
+          "title": "Radiance",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "Menagerie.Menagerie",
+          "identifier": "Menagerie.Menagerie.Radiance"
+        }
+      ],
+      "identifier": "Menagerie.Menagerie"
+    }
+  ],
+  "villainExpansions": [
+    {
+      "decks": [
+        {
+          "variants": [
+            {
+              "identifier": "Menagerie.Menagerie.Netherwarden.Netherwarden",
+              "title": "Netherwarden",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            }
+          ],
+          "title": "Netherwarden",
+          "kind": "VILLAIN",
+          "sourceExpansionIdentifier": "Menagerie.Menagerie",
+          "identifier": "Menagerie.Menagerie.Netherwarden"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "Menagerie.Menagerie.Unmute.Unmute",
+              "title": "Unmute",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            }
+          ],
+          "title": "Unmute",
+          "kind": "VILLAIN",
+          "sourceExpansionIdentifier": "Menagerie.Menagerie",
+          "identifier": "Menagerie.Menagerie.Unmute"
+        }
+      ],
+      "identifier": "Menagerie.Menagerie"
+    }
+  ],
+  "environmentExpansions": [
+    {
+      "decks": [
+        {
+          "variants": [
+            {
+              "identifier": "Menagerie.Menagerie.ChallengerPark.ChallengerPark",
+              "title": "Challenger Park",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            }
+          ],
+          "title": "Challenger Park",
+          "kind": "ENVIRONMENT",
+          "sourceExpansionIdentifier": "Menagerie.Menagerie",
+          "identifier": "Menagerie.Menagerie.ChallengerPark"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "Menagerie.Menagerie.StanleySportsCenter.StanleySportsCenter",
+              "title": "Stanley Sports Center",
+              "sourceExpansionIdentifier": "Menagerie.Menagerie",
+              "sourceCollectionIdentifier": "Menagerie"
+            }
+          ],
+          "title": "Stanley Sports Center",
+          "kind": "ENVIRONMENT",
+          "sourceExpansionIdentifier": "Menagerie.Menagerie",
+          "identifier": "Menagerie.Menagerie.StanleySportsCenter"
+        }
+      ],
+      "identifier": "Menagerie.Menagerie"
+    }
+  ],
+  "teamVillainExpansions": [],
+  "identifier": "Menagerie",
+  "title": "Menagerie of the Multiverse",
+  "sortOrder": 4,
+  "hangingVariants": {}
+}

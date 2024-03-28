@@ -14,7 +14,6 @@ namespace SOTM.Shared.Models
 
     public class Deck : AncestorGroup<DeckVariant>
     {
-        public new const string JSON_CHILD_KEY = "variants";
         [JsonInclude]
         public string? title;
         [JsonInclude]

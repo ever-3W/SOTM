@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Microsoft.Extensions.Configuration;
 using SOTM.Shared.Models;
 using SOTM.Shared.Models.JSONObjects;
 
@@ -6,8 +7,6 @@ namespace SOTM.InfraredEyepiece.Importers
 {
     public class ModImporter : CollectionImporter
     {
-        public const string MOD_PARENT_DIR = "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\337150";
-        
         private GlobalIdentifier _collectionIdentifier;
         private string collectionTitle;
         private string dllPath;
@@ -21,9 +20,9 @@ namespace SOTM.InfraredEyepiece.Importers
 
         protected override GlobalIdentifier collectionIdentifier { get => _collectionIdentifier; }
 
-        public ModImporter(string publishedFileId) : base()
+        public ModImporter(string publishedFileId, IConfigurationRoot config) : base(config)
         {
-            string modDir = Path.Combine(MOD_PARENT_DIR, publishedFileId);
+            string modDir = Path.Combine(this.config["ModDirectoryPath"], publishedFileId);
             string manifestPath = Path.Combine(modDir, "manifest.json");
             JSONModManifest manifest = JsonSerializer.Deserialize<JSONModManifest>(File.ReadAllText(manifestPath), JSON_SERIALIZER_OPTS);
 
@@ -68,6 +67,20 @@ namespace SOTM.InfraredEyepiece.Importers
                 deck.kind == DeckKind.ENVIRONMENT && manifestListedEnvironments.Contains(deck.GetDeckListIdentifier()) ||
                 deck.kind == DeckKind.VILLAIN_TEAM && manifestListedTeamVillains.Contains(deck.GetDeckListIdentifier())
             );
+        }
+
+        public override CollectionV2 ParseResourcesV2()
+        {
+            CollectionV2 result = new CollectionV2(this._collectionIdentifier, this.collectionTitle);
+            // the core DLL shouldn't contain any hanging variants
+            var (expansions, decks, hangingVariants) = this.ParseResourcesFromDLL(this.dllPath);
+            result.hangingVariants = this.ExcludeHangingVariantsNotListed(hangingVariants);
+            result.sortOrder = this.config.GetValue<int>("SortOrder");
+            foreach (Deck deck in this.ExcludeDecksNotListed(decks))
+            {
+                result.AddDeck(deck);
+            }
+            return result;
         }
 
         public override

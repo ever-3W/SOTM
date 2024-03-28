@@ -1,0 +1,154 @@
+{
+  "heroExpansions": [
+    {
+      "decks": [
+        {
+          "variants": [
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.Escarlata",
+              "title": "Escarlata",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            },
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.EscarlataFiredancerCharacter",
+              "title": "Escarlata: Firedancer",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            },
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.EscarlataInkblotCharacter",
+              "title": "The Enraged Escarlata",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            }
+          ],
+          "title": "Escarlata",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.GoldDragon.GoldDragon",
+              "title": "Gold Dragon",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            },
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.GoldDragon.GoldDragonInkblotHumanCharacter",
+              "title": "The Invincible Gold Dragon",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            }
+          ],
+          "title": "Gold Dragon",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.GoldDragon"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.Tsukiko",
+              "title": "Tsukiko",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            },
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.TsukikoTheGameIsRiggedCharacter",
+              "title": "Tsukiko Tanner: The Game is Rigged",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            },
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.DarkCarnivalTsukikoCharacter",
+              "title": "Dark Carnival Tsukiko",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            },
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.TsukikoInkblotCharacter",
+              "title": "The Tricksy Tsukiko",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            },
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.GunClubTsukikoCharacter",
+              "title": "Gun Club: Tsukiko",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            }
+          ],
+          "title": "Tsukiko",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette.Silhouette",
+              "title": "Silhouette",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            },
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette.SilhouetteInkblotCharacter",
+              "title": "The Zany Zywen",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            }
+          ],
+          "title": "Silhouette",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette"
+        }
+      ],
+      "identifier": "SpookyGhostwriter.SpookyGhostwriterComics"
+    }
+  ],
+  "villainExpansions": [],
+  "environmentExpansions": [
+    {
+      "decks": [
+        {
+          "variants": [
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.AlesiaCircus.AlesiaCircus",
+              "title": "Alesia Circus",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            }
+          ],
+          "title": "Alesia Circus",
+          "kind": "ENVIRONMENT",
+          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.AlesiaCircus"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.OlInkwellTown.OlInkwellTown",
+              "title": "Ol\u0027 Inkwell Town",
+              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+              "sourceCollectionIdentifier": "SpookyGhostwriter"
+            }
+          ],
+          "title": "Ol\u0027 Inkwell Town",
+          "kind": "ENVIRONMENT",
+          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.OlInkwellTown"
+        }
+      ],
+      "identifier": "SpookyGhostwriter.SpookyGhostwriterComics"
+    }
+  ],
+  "teamVillainExpansions": [],
+  "identifier": "SpookyGhostwriter",
+  "title": "Spooky Ghostwriter Comics",
+  "sortOrder": 5,
+  "hangingVariants": {}
+}

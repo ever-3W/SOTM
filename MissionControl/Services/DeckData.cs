@@ -1,13 +1,21 @@
 using System.Net.Http.Json;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using Blazored.LocalStorage;
 using SOTM.Shared.Models;
 
 namespace SOTM.MissionControl.Services
 {
+    public class FetchCollectionResult
+    {
+        public CollectionV2 collection;
+        public bool hashMatch;
+    }
     public class DeckDataService
     {
+        public List<string> serverDataUrls = new();
         private ImportedData? data;
+        private CollectionV2 collection = new(new GlobalIdentifier("Root"), "Root");
         private Dictionary<GlobalIdentifier, DeckVariant> deckVariantTable = new();
         private const string DECK_DATA_STORAGE_KEY = "DeckData";
 
@@ -15,21 +23,36 @@ namespace SOTM.MissionControl.Services
         {
             if (this.data != null)
             {
-                foreach (CollectionEntry ce in this.data.collections)
+                foreach (Deck deck in this.collection.GetAllDecks())
                 {
-                    foreach (Deck deck in ce.GetAllDecks())
+                    foreach (DeckVariant variant in deck.GetChildren())
                     {
-                        foreach (DeckVariant variant in deck.GetChildren())
-                        {
-                            this.deckVariantTable[variant.identifier] = variant;
-                        }
+                        this.deckVariantTable[variant.identifier] = variant;
                     }
                 }
             }
         }
         private async Task LoadDataFromServer(HttpClient httpClient)
         {
-            this.data = await httpClient.GetFromJsonAsync<ImportedData>("data/collections.json");
+            var serverManifest = await httpClient.GetFromJsonAsync<CollectionManifest>("data/manifest.json");
+            FetchCollectionResult[] sourceCollections = await Task.WhenAll(
+                serverManifest.files.Values.Select(async (entry) => 
+                {
+                    string content = await httpClient.GetStringAsync($"data/{entry.file}");
+                    Console.WriteLine($"data/{entry.file} {content.Length}");
+                    return new FetchCollectionResult()
+                    {
+                        collection = JsonSerializer.Deserialize<CollectionV2>(content),
+                        hashMatch = CollectionManifest.CalculateHash(content) == entry.hash
+                    };
+                })
+            );
+
+            foreach (FetchCollectionResult result in sourceCollections.OrderBy(sc => sc.collection.sortOrder))
+            {
+                this.collection.MergeWith(result.collection);
+            }
+            this.collection.ResolveHangingVariants();
             this.buildDataTables();
         }
         private async Task TryLoadDataFromLocal(ILocalStorageService localStorage)
@@ -48,15 +71,16 @@ namespace SOTM.MissionControl.Services
 
         public async Task LoadData(ILocalStorageService localStorage, HttpClient httpClient)
         {
-            if (this.data == null)
-            {
-                await this.TryLoadDataFromLocal(localStorage);
-                if (this.data == null)
-                {
+            // Console.WriteLine(JsonSerializer.Serialize(this.serverDataUrls));
+            // if (this.data == null)
+            // {
+            //     await this.TryLoadDataFromLocal(localStorage);
+            //     if (this.data == null)
+            //     {
                     await this.LoadDataFromServer(httpClient);
-                    await this.SaveDataToLocal(localStorage);
-                }
-            }
+            //         await this.SaveDataToLocal(localStorage);
+            //     }
+            // }
         }
 
         public DeckVariant? GetVariantData(GlobalIdentifier? identifier)
@@ -82,19 +106,19 @@ namespace SOTM.MissionControl.Services
             return definedExpansions.Values.ToList();
         }
 
-        public List<Expansion> GetHeroExpansions()
+        public IEnumerable<Expansion> GetHeroExpansions()
         {
-            return this.data?.collections.SelectMany(collection => this.GroupByDeckExpansion(collection.heroes)).ToList() ?? [];
+            return this.collection.heroExpansions;
         }
 
-        public List<Expansion> GetVillainExpansions()
+        public IEnumerable<Expansion> GetVillainExpansions()
         {
-            return this.data?.collections.SelectMany(collection => this.GroupByDeckExpansion(collection.villains)).ToList() ?? [];
+            return this.collection.villainExpansions;
         }
 
-        public List<Expansion> GetEnvironmentExpansions()
+        public IEnumerable<Expansion> GetEnvironmentExpansions()
         {
-            return this.data?.collections.SelectMany(collection => this.GroupByDeckExpansion(collection.environments)).ToList() ?? [];
+            return this.collection.environmentExpansions;
         }
 
         private const int VARIANT_LINE_CHAR_LIMIT = 25;
