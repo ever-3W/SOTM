@@ -7,26 +7,22 @@
             {
               "identifier": "Vanilla.BaseExpansion.AbsoluteZero.AbsoluteZero",
               "title": "Absolute Zero",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Absolute Zero"
             },
             {
               "identifier": "Vanilla.BaseExpansion.AbsoluteZero.AbsoluteZeroFreedomSixCharacter",
               "title": "Freedom Six Absolute Zero",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Six "
             },
             {
               "identifier": "Vanilla.BaseExpansion.AbsoluteZero.TermiNationAbsoluteZeroCharacter",
               "title": "Termi-Nation Absolute Zero",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Termi-Nation "
             },
             {
               "identifier": "Vanilla.BaseExpansion.AbsoluteZero.FreedomFiveAbsoluteZeroCharacter",
               "title": "Freedom Five Absolute Zero",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Five "
             }
           ],
           "title": "Absolute Zero",
@@ -39,32 +35,27 @@
             {
               "identifier": "Vanilla.BaseExpansion.Bunker.Bunker",
               "title": "Bunker",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Bunker"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Bunker.GIBunkerCharacter",
               "title": "G.I. Bunker",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "G.I. Bunker"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Bunker.BunkerFreedomSixCharacter",
               "title": "Freedom Six Bunker",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Six Bunker"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Bunker.TermiNationBunkerCharacter",
               "title": "Termi-Nation Bunker",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Termi-Nation Bunker"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Bunker.FreedomFiveBunkerCharacter",
               "title": "Freedom Five Bunker",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Five Bunker"
             }
           ],
           "title": "Bunker",
@@ -77,26 +68,22 @@
             {
               "identifier": "Vanilla.BaseExpansion.Legacy.Legacy",
               "title": "Legacy",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Legacy"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Legacy.YoungLegacyCharacter",
               "title": "America\u0027s Newest Legacy",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Newest Legacy"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Legacy.AmericasGreatestLegacyCharacter",
               "title": "America\u0027s Greatest Legacy",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Greatest Legacy"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Legacy.FreedomFiveLegacyCharacter",
               "title": "Freedom Five Legacy",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Five Legacy"
             }
           ],
           "title": "Legacy",
@@ -109,26 +96,22 @@
             {
               "identifier": "Vanilla.BaseExpansion.Tachyon.Tachyon",
               "title": "Tachyon",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Tachyon"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Tachyon.TheSuperScientificTachyonCharacter",
               "title": "The Super Scientific Tachyon",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Super Scientific Tachyon"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Tachyon.TachyonFreedomSixCharacter",
               "title": "Freedom Six Tachyon",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Six Tachyon"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Tachyon.FreedomFiveTachyonCharacter",
               "title": "Freedom Five Tachyon",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Five Tachyon"
             }
           ],
           "title": "Tachyon",
@@ -141,26 +124,22 @@
             {
               "identifier": "Vanilla.BaseExpansion.TheWraith.TheWraith",
               "title": "The Wraith",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Wraith"
             },
             {
               "identifier": "Vanilla.BaseExpansion.TheWraith.RookCityWraithCharacter",
               "title": "Rook City Wraith",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Rook City Wraith"
             },
             {
               "identifier": "Vanilla.BaseExpansion.TheWraith.TheWraithFreedomSixCharacter",
               "title": "Freedom Six Wraith",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Six Wraith"
             },
             {
               "identifier": "Vanilla.BaseExpansion.TheWraith.FreedomFiveWraithCharacter",
               "title": "Freedom Five Wraith",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Five Wraith"
             }
           ],
           "title": "The Wraith",
@@ -173,26 +152,22 @@
             {
               "identifier": "Vanilla.BaseExpansion.Fanatic.Fanatic",
               "title": "Fanatic",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Fanatic"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Fanatic.RedeemerFanaticCharacter",
               "title": "Redeemer Fanatic",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Redeemer Fanatic"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Fanatic.PrimeWardensFanaticCharacter",
               "title": "Prime Wardens Fanatic",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Prime Wardens Fanatic"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Fanatic.XtremePrimeWardensFanaticCharacter",
               "title": "Xtreme Prime Wardens Fanatic",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Xtreme Prime Wardens "
             }
           ],
           "title": "Fanatic",
@@ -205,26 +180,22 @@
             {
               "identifier": "Vanilla.BaseExpansion.Tempest.Tempest",
               "title": "Tempest",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Tempest"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Tempest.TempestFreedomSixCharacter",
               "title": "Freedom Six Tempest",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Six Tempest"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Tempest.PrimeWardensTempestCharacter",
               "title": "Prime Wardens Tempest",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Prime Wardens Tempest"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Tempest.XtremePrimeWardensTempestCharacter",
               "title": "Xtreme Prime Wardens Tempest",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Xtreme Prime Wardens "
             }
           ],
           "title": "Tempest",
@@ -237,20 +208,17 @@
             {
               "identifier": "Vanilla.BaseExpansion.Ra.Ra",
               "title": "Ra",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Ra"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Ra.RaHorusOfTwoHorizonsCharacter",
               "title": "Ra: Horus of Two Horizons",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Horus of Two Horizons"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Ra.RaSettingSunCharacter",
               "title": "Ra: Setting Sun",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Ra: Setting Sun"
             }
           ],
           "title": "Ra",
@@ -263,20 +231,17 @@
             {
               "identifier": "Vanilla.BaseExpansion.TheVisionary.TheVisionary",
               "title": "The Visionary",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Visionary"
             },
             {
               "identifier": "Vanilla.BaseExpansion.TheVisionary.DarkVisionaryCharacter",
               "title": "Dark Visionary",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Dark Visionary"
             },
             {
               "identifier": "Vanilla.BaseExpansion.TheVisionary.TheVisionaryUnleashedCharacter",
               "title": "The Visionary Unleashed",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Visionary Unleashed"
             }
           ],
           "title": "The Visionary",
@@ -289,26 +254,22 @@
             {
               "identifier": "Vanilla.BaseExpansion.Haka.Haka",
               "title": "Haka",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Haka"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Haka.TheEternalHakaCharacter",
               "title": "The Eternal Haka",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Eternal Haka"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Haka.PrimeWardensHakaCharacter",
               "title": "Prime Wardens Haka",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Prime Wardens Haka"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Haka.XtremePrimeWardensHakaCharacter",
               "title": "Xtreme Prime Wardens Haka",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Xtreme Prime Wardens "
             }
           ],
           "title": "Haka",
@@ -326,20 +287,17 @@
             {
               "identifier": "Vanilla.MiniPack1.Unity.Unity",
               "title": "Unity",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack1",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Unity"
             },
             {
               "identifier": "Vanilla.MiniPack1.Unity.UnityFreedomSixCharacter",
               "title": "Freedom Six Unity",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack1",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Six Unity"
             },
             {
               "identifier": "Vanilla.MiniPack1.Unity.TermiNationUnityCharacter",
               "title": "Termi-Nation Unity",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack1",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Termi-Nation Unity"
             }
           ],
           "title": "Unity",
@@ -357,14 +315,12 @@
             {
               "identifier": "Vanilla.RookCity.MrFixer.MrFixer",
               "title": "Mr. Fixer",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Mr. Fixer"
             },
             {
               "identifier": "Vanilla.RookCity.MrFixer.DarkWatchMrFixerCharacter",
               "title": "Dark Watch Mr. Fixer",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Dark Watch Mr. Fixer"
             }
           ],
           "title": "Mr. Fixer",
@@ -377,14 +333,12 @@
             {
               "identifier": "Vanilla.RookCity.Expatriette.Expatriette",
               "title": "Expatriette",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Expatriette"
             },
             {
               "identifier": "Vanilla.RookCity.Expatriette.DarkWatchExpatrietteCharacter",
               "title": "Dark Watch Expatriette",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Dark Watch Expatriette"
             }
           ],
           "title": "Expatriette",
@@ -402,14 +356,12 @@
             {
               "identifier": "Vanilla.MiniPack2.TheScholar.TheScholar",
               "title": "The Scholar",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack2",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Scholar"
             },
             {
               "identifier": "Vanilla.MiniPack2.TheScholar.TheScholarOfTheInfiniteCharacter",
               "title": "The Scholar of the Infinite",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack2",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Scholar of the Infinite"
             }
           ],
           "title": "The Scholar",
@@ -427,14 +379,12 @@
             {
               "identifier": "Vanilla.InfernalRelics.NightMist.NightMist",
               "title": "NightMist",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "NightMist"
             },
             {
               "identifier": "Vanilla.InfernalRelics.NightMist.DarkWatchNightMistCharacter",
               "title": "Dark Watch NightMist",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Dark Watch NightMist"
             }
           ],
           "title": "NightMist",
@@ -447,26 +397,22 @@
             {
               "identifier": "Vanilla.InfernalRelics.TheArgentAdept.TheArgentAdept",
               "title": "The Argent Adept",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Argent Adept"
             },
             {
               "identifier": "Vanilla.InfernalRelics.TheArgentAdept.PrimeWardensArgentAdeptCharacter",
               "title": "Prime Wardens Argent Adept",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Prime Wardens"
             },
             {
               "identifier": "Vanilla.InfernalRelics.TheArgentAdept.XtremePrimeWardensArgentAdeptCharacter",
               "title": "Xtreme Prime Wardens Argent Adept",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Xtreme Prime Wardens"
             },
             {
               "identifier": "Vanilla.InfernalRelics.TheArgentAdept.DarkConductorArgentAdeptCharacter",
               "title": "Dark Conductor Argent Adept",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Dark Conductor"
             }
           ],
           "title": "The Argent Adept",
@@ -484,14 +430,12 @@
             {
               "identifier": "Vanilla.ShatteredTimelines.ChronoRanger.ChronoRanger",
               "title": "Chrono-Ranger",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Chrono-Ranger"
             },
             {
               "identifier": "Vanilla.ShatteredTimelines.ChronoRanger.ChronoRangerBestOfTimesCharacter",
               "title": "Chrono-Ranger: Best of Times",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Best of Times"
             }
           ],
           "title": "Chrono-Ranger",
@@ -504,14 +448,12 @@
             {
               "identifier": "Vanilla.ShatteredTimelines.OmnitronX.OmnitronX",
               "title": "Omnitron-X",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Omnitron-X"
             },
             {
               "identifier": "Vanilla.ShatteredTimelines.OmnitronX.OmnitronUCharacter",
               "title": "Omnitron-U",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Omnitron-U"
             }
           ],
           "title": "Omnitron-X",
@@ -529,26 +471,22 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.CaptainCosmic.CaptainCosmic",
               "title": "Captain Cosmic",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Captain Cosmic"
             },
             {
               "identifier": "Vanilla.WrathOfTheCosmos.CaptainCosmic.PrimeWardensCaptainCosmicCharacter",
               "title": "Prime Wardens Captain Cosmic",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Prime Wardens "
             },
             {
               "identifier": "Vanilla.WrathOfTheCosmos.CaptainCosmic.XtremePrimeWardensCaptainCosmicCharacter",
               "title": "Xtreme Prime Wardens Captain Cosmic",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Xtreme Prime Wardens "
             },
             {
               "identifier": "Vanilla.WrathOfTheCosmos.CaptainCosmic.CaptainCosmicRequitalCharacter",
               "title": "Captain Cosmic Requital",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Captain Cosmic Requital"
             }
           ],
           "title": "Captain Cosmic",
@@ -561,14 +499,12 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.SkyScraper.SkyScraper",
               "title": "Sky-Scraper",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Sky-Scraper"
             },
             {
               "identifier": "Vanilla.WrathOfTheCosmos.SkyScraper.ExtremistSkyScraperNormalCharacter",
               "title": "Extremist Sky-Scraper",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Extremist Sky-Scraper"
             }
           ],
           "title": "Sky-Scraper",
@@ -586,20 +522,17 @@
             {
               "identifier": "Vanilla.MiniPack3.Guise.Guise",
               "title": "Guise",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack3",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Guise"
             },
             {
               "identifier": "Vanilla.MiniPack3.Guise.SantaGuiseCharacter",
               "title": "Santa Guise",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack3",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Santa Guise"
             },
             {
               "identifier": "Vanilla.MiniPack3.Guise.CompletionistGuiseCharacter",
               "title": "Completionist Guise",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack3",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Completionist Guise"
             }
           ],
           "title": "Guise",
@@ -617,14 +550,12 @@
             {
               "identifier": "Vanilla.Vengeance.Setback.Setback",
               "title": "Setback",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Setback"
             },
             {
               "identifier": "Vanilla.Vengeance.Setback.DarkWatchSetbackCharacter",
               "title": "Dark Watch Setback",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Dark Watch Setback"
             }
           ],
           "title": "Setback",
@@ -637,14 +568,12 @@
             {
               "identifier": "Vanilla.Vengeance.Parse.Parse",
               "title": "Parse",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Parse"
             },
             {
               "identifier": "Vanilla.Vengeance.Parse.FugueStateParseCharacter",
               "title": "Fugue State Parse",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Fugue State Parse"
             }
           ],
           "title": "Parse",
@@ -657,14 +586,12 @@
             {
               "identifier": "Vanilla.Vengeance.Knyfe.Knyfe",
               "title": "K.N.Y.F.E.",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "K.N.Y.F.E."
             },
             {
               "identifier": "Vanilla.Vengeance.Knyfe.KnyfeRogueAgentCharacter",
               "title": "K.N.Y.F.E. Rogue Agent",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "K.N.Y.F.E. Rogue Agent"
             }
           ],
           "title": "K.N.Y.F.E.",
@@ -677,14 +604,12 @@
             {
               "identifier": "Vanilla.Vengeance.TheSentinels.TheSentinels",
               "title": "The Sentinels",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Sentinels"
             },
             {
               "identifier": "Vanilla.Vengeance.TheSentinels.AdamantSentinelsInstructions",
               "title": "The Adamant Sentinels",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Adamant Sentinels"
             }
           ],
           "title": "The Sentinels",
@@ -697,14 +622,12 @@
             {
               "identifier": "Vanilla.Vengeance.TheNaturalist.TheNaturalist",
               "title": "The Naturalist",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Naturalist"
             },
             {
               "identifier": "Vanilla.Vengeance.TheNaturalist.TheHuntedNaturalistCharacter",
               "title": "The Hunted Naturalist",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Hunted Naturalist"
             }
           ],
           "title": "The Naturalist",
@@ -722,14 +645,12 @@
             {
               "identifier": "Vanilla.MiniPack4.Stuntman.Stuntman",
               "title": "Stuntman",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack4",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Stuntman"
             },
             {
               "identifier": "Vanilla.MiniPack4.Stuntman.ActionHeroStuntmanCharacter",
               "title": "Action Hero Stuntman",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack4",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Action Hero Stuntman"
             }
           ],
           "title": "Stuntman",
@@ -742,14 +663,12 @@
             {
               "identifier": "Vanilla.MiniPack4.Benchmark.Benchmark",
               "title": "Benchmark",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack4",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Benchmark"
             },
             {
               "identifier": "Vanilla.MiniPack4.Benchmark.BenchmarkSupplyAndDemandCharacter",
               "title": "Benchmark: Supply and Demand",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack4",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Supply and Demand"
             }
           ],
           "title": "Benchmark",
@@ -767,14 +686,12 @@
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardTheIdealist.VoidGuardTheIdealist",
               "title": "Void Guard The Idealist",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack5",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Void Guard The Idealist"
             },
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardTheIdealist.VoidGuardSuperSentaiIdealistCharacter",
               "title": "Super Sentai Idealist",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack5",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Super Sentai Idealist"
             }
           ],
           "title": "Void Guard The Idealist",
@@ -787,14 +704,12 @@
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardDrMedico.VoidGuardDrMedico",
               "title": "Void Guard Dr. Medico",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack5",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Void Guard Dr. Medico"
             },
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardDrMedico.VoidGuardDrMedicoMalpracticeCharacter",
               "title": "Dr. Medico - Malpractice",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack5",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Dr. Medico - Malpractice"
             }
           ],
           "title": "Void Guard Dr. Medico",
@@ -807,14 +722,12 @@
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardMainstay.VoidGuardMainstay",
               "title": "Void Guard Mainstay",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack5",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Void Guard Mainstay"
             },
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardMainstay.VoidGuardRoadWarriorMainstayCharacter",
               "title": "Road Warrior Mainstay",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack5",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Road Warrior Mainstay"
             }
           ],
           "title": "Void Guard Mainstay",
@@ -827,14 +740,12 @@
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardWrithe.VoidGuardWrithe",
               "title": "Void Guard Writhe",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack5",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Void Guard Writhe"
             },
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardWrithe.VoidGuardWritheCosmicInventorCharacter",
               "title": "Writhe: Cosmic Inventor",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack5",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Writhe: Cosmic Inventor"
             }
           ],
           "title": "Void Guard Writhe",
@@ -852,14 +763,12 @@
             {
               "identifier": "Vanilla.OblivAeon.Luminary.Luminary",
               "title": "Luminary",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Luminary"
             },
             {
               "identifier": "Vanilla.OblivAeon.Luminary.HeroicLuminaryCharacter",
               "title": "Heroic Luminary",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Heroic Luminary"
             }
           ],
           "title": "Luminary",
@@ -872,14 +781,12 @@
             {
               "identifier": "Vanilla.OblivAeon.LaComodora.LaComodora",
               "title": "La Comodora",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "La Comodora"
             },
             {
               "identifier": "Vanilla.OblivAeon.LaComodora.LaComodoraCurseOfTheBlackSpotCharacter",
               "title": "La Comodora: Curse of the Black Spot",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Curse of the Black Spot"
             }
           ],
           "title": "La Comodora",
@@ -892,14 +799,12 @@
             {
               "identifier": "Vanilla.OblivAeon.Lifeline.Lifeline",
               "title": "Lifeline",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Lifeline"
             },
             {
               "identifier": "Vanilla.OblivAeon.Lifeline.LifelineBloodMageCharacter",
               "title": "Lifeline - Blood Mage",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Lifeline - Blood Mage"
             }
           ],
           "title": "Lifeline",
@@ -912,14 +817,12 @@
             {
               "identifier": "Vanilla.OblivAeon.AkashThriya.AkashThriya",
               "title": "Akash\u0027Thriya",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Akash\u0027Thriya"
             },
             {
               "identifier": "Vanilla.OblivAeon.AkashThriya.AkashThriyaSpiritOfTheVoidCharacter",
               "title": "Akash\u0027Thriya: Spirit of the Void",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Spirit of the Void"
             }
           ],
           "title": "Akash\u0027Thriya",
@@ -932,14 +835,12 @@
             {
               "identifier": "Vanilla.OblivAeon.TheHarpy.TheHarpy",
               "title": "The Harpy",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Harpy"
             },
             {
               "identifier": "Vanilla.OblivAeon.TheHarpy.DarkWatchHarpyCharacter",
               "title": "Dark Watch Harpy",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Dark Watch Harpy"
             }
           ],
           "title": "The Harpy",
@@ -957,14 +858,12 @@
             {
               "identifier": "Vanilla.EarthPrime.CaptainThunder.CaptainThunder",
               "title": "Captain Thunder",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Captain Thunder"
             },
             {
               "identifier": "Vanilla.EarthPrime.CaptainThunder.RookieCaptainThunderCharacter",
               "title": "Rookie Captain Thunder",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Rookie Captain Thunder"
             }
           ],
           "title": "Captain Thunder",
@@ -977,14 +876,12 @@
             {
               "identifier": "Vanilla.EarthPrime.Bowman.Bowman",
               "title": "Bowman",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Bowman"
             },
             {
               "identifier": "Vanilla.EarthPrime.Bowman.GoldenAgeBowmanCharacter",
               "title": "Golden Age Bowman",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Golden Age Bowman"
             }
           ],
           "title": "Bowman",
@@ -997,14 +894,12 @@
             {
               "identifier": "Vanilla.EarthPrime.LadyLiberty.LadyLiberty",
               "title": "Lady Liberty",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Lady Liberty"
             },
             {
               "identifier": "Vanilla.EarthPrime.LadyLiberty.TheAllNewLadyLibertyCharacter",
               "title": "The All-New Lady Liberty",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The All-New Lady Liberty"
             }
           ],
           "title": "Lady Liberty",
@@ -1017,14 +912,12 @@
             {
               "identifier": "Vanilla.EarthPrime.DrMetropolis.DrMetropolis",
               "title": "Dr. Metropolis",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Dr. Metropolis"
             },
             {
               "identifier": "Vanilla.EarthPrime.DrMetropolis.OneWithFreedomDrMetropolisCharacter",
               "title": "One With Freedom Doctor Metropolis",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "One With Freedom"
             }
           ],
           "title": "Dr. Metropolis",
@@ -1037,14 +930,12 @@
             {
               "identifier": "Vanilla.EarthPrime.Siren.Siren",
               "title": "Siren",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Siren"
             },
             {
               "identifier": "Vanilla.EarthPrime.Siren.SirenBeneathTheSeaCharacter",
               "title": "Siren Beneath the Sea",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Siren Beneath the Sea"
             }
           ],
           "title": "Siren",
@@ -1057,14 +948,12 @@
             {
               "identifier": "Vanilla.EarthPrime.JohnnyRocket.JohnnyRocket",
               "title": "Johnny Rocket",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Johnny Rocket"
             },
             {
               "identifier": "Vanilla.EarthPrime.JohnnyRocket.MaximumSpeedJohnnyRocketCharacter",
               "title": "Maximum Speed Johnny Rocket",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Maximum Speed "
             }
           ],
           "title": "Johnny Rocket",
@@ -1077,14 +966,12 @@
             {
               "identifier": "Vanilla.EarthPrime.Daedalus.Daedalus",
               "title": "Daedalus",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Daedalus"
             },
             {
               "identifier": "Vanilla.EarthPrime.Daedalus.DaedalusAtTheForgeCharacter",
               "title": "Daedalus at the Forge",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Daedalus at the Forge"
             }
           ],
           "title": "Daedalus",
@@ -1097,14 +984,12 @@
             {
               "identifier": "Vanilla.EarthPrime.TheRaven.TheRaven",
               "title": "The Raven",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Raven"
             },
             {
               "identifier": "Vanilla.EarthPrime.TheRaven.SilverAgeRavenCharacter",
               "title": "Silver Age Raven",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Silver Age Raven"
             }
           ],
           "title": "The Raven",
@@ -1117,14 +1002,12 @@
             {
               "identifier": "Vanilla.EarthPrime.Pseudo.Pseudo",
               "title": "Pseudo",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Pseudo"
             },
             {
               "identifier": "Vanilla.EarthPrime.Pseudo.SpaceInfiltratorPseudoCharacter",
               "title": "Space Infiltrator Pseudo",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Space Infiltrator Pseudo"
             }
           ],
           "title": "Pseudo",
@@ -1137,14 +1020,12 @@
             {
               "identifier": "Vanilla.EarthPrime.StarKnight.StarKnight",
               "title": "Star Knight",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Star Knight"
             },
             {
               "identifier": "Vanilla.EarthPrime.StarKnight.StarKnightHashikOfHaassaaCharacter",
               "title": "Star Knight Hashik of Haassaa",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Hashik of Haassaa"
             }
           ],
           "title": "Star Knight",
@@ -1162,14 +1043,12 @@
             {
               "identifier": "Vanilla.MagicalMysteriesPack.LanternJack.LanternJack",
               "title": "Lantern Jack",
-              "sourceExpansionIdentifier": "Vanilla.MagicalMysteriesPack",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Lantern Jack"
             },
             {
               "identifier": "Vanilla.MagicalMysteriesPack.LanternJack.ChillingTalesLanternJackCharacter",
               "title": "Chilling Tales Lantern Jack",
-              "sourceExpansionIdentifier": "Vanilla.MagicalMysteriesPack",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Chilling Tales "
             }
           ],
           "title": "Lantern Jack",
@@ -1182,14 +1061,12 @@
             {
               "identifier": "Vanilla.MagicalMysteriesPack.Eldritch.Eldritch",
               "title": "Eldritch",
-              "sourceExpansionIdentifier": "Vanilla.MagicalMysteriesPack",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Eldritch"
             },
             {
               "identifier": "Vanilla.MagicalMysteriesPack.Eldritch.EldritchsLastStandCharacter",
               "title": "Eldritch\u0027s Last Stand",
-              "sourceExpansionIdentifier": "Vanilla.MagicalMysteriesPack",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Eldritch\u0027s Last Stand"
             }
           ],
           "title": "Eldritch",
@@ -1209,14 +1086,12 @@
             {
               "identifier": "Vanilla.BaseExpansion.BaronBlade.BaronBlade",
               "title": "Baron Blade",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Baron Blade"
             },
             {
               "identifier": "Vanilla.BaseExpansion.BaronBlade.MadBomberBladeCharacter",
               "title": "Mad Bomber Blade",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Mad Bomber Blade"
             }
           ],
           "title": "Baron Blade",
@@ -1229,14 +1104,12 @@
             {
               "identifier": "Vanilla.BaseExpansion.Omnitron.Omnitron",
               "title": "Omnitron",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Omnitron"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Omnitron.CosmicOmnitronCharacter",
               "title": "Cosmic Omnitron",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Cosmic Omnitron"
             }
           ],
           "title": "Omnitron",
@@ -1249,8 +1122,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.CitizenDawn.CitizenDawn",
               "title": "Citizen Dawn",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Citizen Dawn"
             }
           ],
           "title": "Citizen Dawn",
@@ -1263,8 +1135,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.GrandWarlordVoss.GrandWarlordVoss",
               "title": "Grand Warlord Voss",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Grand Warlord Voss"
             }
           ],
           "title": "Grand Warlord Voss",
@@ -1282,8 +1153,7 @@
             {
               "identifier": "Vanilla.MiniPack1.Ambuscade.Ambuscade",
               "title": "Ambuscade",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack1",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Ambuscade"
             }
           ],
           "title": "Ambuscade",
@@ -1301,14 +1171,12 @@
             {
               "identifier": "Vanilla.RookCity.Spite.Spite",
               "title": "Spite",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Spite"
             },
             {
               "identifier": "Vanilla.RookCity.Spite.SpiteAgentOfGloomCharacter",
               "title": "Spite: Agent of Gloom",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Spite: Agent of Gloom"
             }
           ],
           "title": "Spite",
@@ -1321,8 +1189,7 @@
             {
               "identifier": "Vanilla.RookCity.PlagueRat.PlagueRat",
               "title": "Plague Rat",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Plague Rat"
             }
           ],
           "title": "Plague Rat",
@@ -1335,8 +1202,7 @@
             {
               "identifier": "Vanilla.RookCity.TheMatriarch.TheMatriarch",
               "title": "The Matriarch",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Matriarch"
             }
           ],
           "title": "The Matriarch",
@@ -1349,8 +1215,7 @@
             {
               "identifier": "Vanilla.RookCity.TheChairman.TheChairman",
               "title": "The Chairman",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Chairman"
             }
           ],
           "title": "The Chairman",
@@ -1368,8 +1233,7 @@
             {
               "identifier": "Vanilla.InfernalRelics.Apostate.Apostate",
               "title": "Apostate",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Apostate"
             }
           ],
           "title": "Apostate",
@@ -1382,14 +1246,12 @@
             {
               "identifier": "Vanilla.InfernalRelics.GloomWeaver.GloomWeaver",
               "title": "GloomWeaver",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "GloomWeaver"
             },
             {
               "identifier": "Vanilla.InfernalRelics.GloomWeaver.GloomWeaverSkinWalkerCharacter",
               "title": "Skinwalker GloomWeaver",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Skinwalker GloomWeaver"
             }
           ],
           "title": "GloomWeaver",
@@ -1402,8 +1264,7 @@
             {
               "identifier": "Vanilla.InfernalRelics.AkashBhuta.AkashBhuta",
               "title": "Akash\u0027Bhuta",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Akash\u0027Bhuta"
             }
           ],
           "title": "Akash\u0027Bhuta",
@@ -1416,8 +1277,7 @@
             {
               "identifier": "Vanilla.InfernalRelics.TheEnnead.TheEnnead",
               "title": "The Ennead",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Ennead"
             }
           ],
           "title": "The Ennead",
@@ -1435,8 +1295,7 @@
             {
               "identifier": "Vanilla.MiniPack2.MissInformation.MissInformation",
               "title": "Miss Information",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack2",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Miss Information"
             }
           ],
           "title": "Miss Information",
@@ -1454,8 +1313,7 @@
             {
               "identifier": "Vanilla.ShatteredTimelines.IronLegacy.IronLegacy",
               "title": "Iron Legacy",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Iron Legacy"
             }
           ],
           "title": "Iron Legacy",
@@ -1468,8 +1326,7 @@
             {
               "identifier": "Vanilla.ShatteredTimelines.LaCapitan.LaCapitan",
               "title": "La Capit\u00E1n",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "La Capit\u00E1n"
             }
           ],
           "title": "La Capit\u00E1n",
@@ -1482,14 +1339,12 @@
             {
               "identifier": "Vanilla.ShatteredTimelines.Kismet.Kismet",
               "title": "Kismet",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Kismet"
             },
             {
               "identifier": "Vanilla.ShatteredTimelines.Kismet.TricksterKismetCharacter",
               "title": "Trickster Kismet",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Trickster Kismet"
             }
           ],
           "title": "Kismet",
@@ -1502,8 +1357,7 @@
             {
               "identifier": "Vanilla.ShatteredTimelines.TheDreamer.TheDreamer",
               "title": "The Dreamer",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Dreamer"
             }
           ],
           "title": "The Dreamer",
@@ -1521,8 +1375,7 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.Progeny.Progeny",
               "title": "Progeny",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Progeny"
             }
           ],
           "title": "Progeny",
@@ -1535,8 +1388,7 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.Deadline.Deadline",
               "title": "Deadline",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Deadline"
             }
           ],
           "title": "Deadline",
@@ -1549,14 +1401,12 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.Infinitor.Infinitor",
               "title": "Infinitor",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Infinitor"
             },
             {
               "identifier": "Vanilla.WrathOfTheCosmos.Infinitor.HeroicInfinitorCharacter",
               "title": "Heroic Infinitor",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Heroic Infinitor"
             }
           ],
           "title": "Infinitor",
@@ -1569,8 +1419,7 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.KaargraWarfang.KaargraWarfang",
               "title": "Kaargra Warfang",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Kaargra Warfang"
             }
           ],
           "title": "Kaargra Warfang",
@@ -1588,8 +1437,7 @@
             {
               "identifier": "Vanilla.MiniPack3.WagerMaster.WagerMaster",
               "title": "Wager Master",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack3",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Wager Master"
             }
           ],
           "title": "Wager Master",
@@ -1607,8 +1455,7 @@
             {
               "identifier": "Vanilla.MiniPack4.Chokepoint.Chokepoint",
               "title": "Chokepoint",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack4",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Chokepoint"
             }
           ],
           "title": "Chokepoint",
@@ -1626,8 +1473,7 @@
             {
               "identifier": "Vanilla.EarthPrime.Hades.Hades",
               "title": "Hades",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Hades"
             }
           ],
           "title": "Hades",
@@ -1640,8 +1486,7 @@
             {
               "identifier": "Vanilla.EarthPrime.MetaMind.MetaMind",
               "title": "Grue Meta-Mind",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Grue Meta-Mind"
             }
           ],
           "title": "Grue Meta-Mind",
@@ -1654,8 +1499,7 @@
             {
               "identifier": "Vanilla.EarthPrime.Omega.Omega",
               "title": "Omega",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Omega"
             }
           ],
           "title": "Omega",
@@ -1668,8 +1512,7 @@
             {
               "identifier": "Vanilla.EarthPrime.Argo.Argo",
               "title": "Argo",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Argo"
             }
           ],
           "title": "Argo",
@@ -1687,8 +1530,7 @@
             {
               "identifier": "Vanilla.MagicalMysteriesPack.Malador.Malador",
               "title": "Malador",
-              "sourceExpansionIdentifier": "Vanilla.MagicalMysteriesPack",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Malador"
             }
           ],
           "title": "Malador",
@@ -1708,8 +1550,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.Megalopolis.Megalopolis",
               "title": "Megalopolis",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Megalopolis"
             }
           ],
           "title": "Megalopolis",
@@ -1722,8 +1563,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.InsulaPrimalis.InsulaPrimalis",
               "title": "Insula Primalis",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Insula Primalis"
             }
           ],
           "title": "Insula Primalis",
@@ -1736,8 +1576,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.RuinsOfAtlantis.RuinsOfAtlantis",
               "title": "Ruins of Atlantis",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Ruins of Atlantis"
             }
           ],
           "title": "Ruins of Atlantis",
@@ -1750,8 +1589,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.WagnerMarsBase.WagnerMarsBase",
               "title": "Wagner Mars Base",
-              "sourceExpansionIdentifier": "Vanilla.BaseExpansion",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Wagner Mars Base"
             }
           ],
           "title": "Wagner Mars Base",
@@ -1769,8 +1607,7 @@
             {
               "identifier": "Vanilla.MiniPack1.SilverGulch1883.SilverGulch1883",
               "title": "Silver Gulch, 1883",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack1",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Silver Gulch, 1883"
             }
           ],
           "title": "Silver Gulch, 1883",
@@ -1788,8 +1625,7 @@
             {
               "identifier": "Vanilla.RookCity.PikeIndustrialComplex.PikeIndustrialComplex",
               "title": "Pike Industrial Complex",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Pike Industrial Complex"
             }
           ],
           "title": "Pike Industrial Complex",
@@ -1802,8 +1638,7 @@
             {
               "identifier": "Vanilla.RookCity.RookCity.RookCity",
               "title": "Rook City",
-              "sourceExpansionIdentifier": "Vanilla.RookCity",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Rook City"
             }
           ],
           "title": "Rook City",
@@ -1821,8 +1656,7 @@
             {
               "identifier": "Vanilla.InfernalRelics.TombOfAnubis.TombOfAnubis",
               "title": "Tomb of Anubis",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Tomb of Anubis"
             }
           ],
           "title": "Tomb of Anubis",
@@ -1835,8 +1669,7 @@
             {
               "identifier": "Vanilla.InfernalRelics.RealmOfDiscord.RealmOfDiscord",
               "title": "Realm of Discord",
-              "sourceExpansionIdentifier": "Vanilla.InfernalRelics",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Realm of Discord"
             }
           ],
           "title": "Realm of Discord",
@@ -1854,8 +1687,7 @@
             {
               "identifier": "Vanilla.MiniPack2.TheFinalWasteland.TheFinalWasteland",
               "title": "The Final Wasteland",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack2",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Final Wasteland"
             }
           ],
           "title": "The Final Wasteland",
@@ -1873,8 +1705,7 @@
             {
               "identifier": "Vanilla.ShatteredTimelines.TheBlock.TheBlock",
               "title": "The Block",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Block"
             }
           ],
           "title": "The Block",
@@ -1887,8 +1718,7 @@
             {
               "identifier": "Vanilla.ShatteredTimelines.TimeCataclysm.TimeCataclysm",
               "title": "Time Cataclysm",
-              "sourceExpansionIdentifier": "Vanilla.ShatteredTimelines",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Time Cataclysm"
             }
           ],
           "title": "Time Cataclysm",
@@ -1906,8 +1736,7 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.TheEnclaveOfTheEndlings.TheEnclaveOfTheEndlings",
               "title": "The Enclave of the Endlings",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Enclave of the Endlings"
             }
           ],
           "title": "The Enclave of the Endlings",
@@ -1920,8 +1749,7 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.DokThorathCapital.DokThorathCapital",
               "title": "Dok\u0027Thorath Capital",
-              "sourceExpansionIdentifier": "Vanilla.WrathOfTheCosmos",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Dok\u0027Thorath Capital"
             }
           ],
           "title": "Dok\u0027Thorath Capital",
@@ -1939,8 +1767,7 @@
             {
               "identifier": "Vanilla.MiniPack3.OmnitronIV.OmnitronIV",
               "title": "Omnitron IV",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack3",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Omnitron IV"
             }
           ],
           "title": "Omnitron IV",
@@ -1958,8 +1785,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.TheTempleOfZhuLong.TheTempleOfZhuLong",
               "title": "The Temple of Zhu Long",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Temple of Zhu Long"
             }
           ],
           "title": "The Temple of Zhu Long",
@@ -1972,8 +1798,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.TheCourtOfBlood.TheCourtOfBlood",
               "title": "The Court of Blood",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Court of Blood"
             }
           ],
           "title": "The Court of Blood",
@@ -1986,8 +1811,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.Magmaria.Magmaria",
               "title": "Magmaria",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Magmaria"
             }
           ],
           "title": "Magmaria",
@@ -2000,8 +1824,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.MMFFCC.MMFFCC",
               "title": "Madame Mittermeier\u0027s Fantastical Festival of Conundrums and Curiosities",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "MMFFCC"
             }
           ],
           "title": "Madame Mittermeier\u0027s Fantastical Festival of Conundrums and Curiosities",
@@ -2019,8 +1842,7 @@
             {
               "identifier": "Vanilla.Vengeance.MobileDefensePlatform.MobileDefensePlatform",
               "title": "Mobile Defense Platform",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Mobile Defense Platform"
             }
           ],
           "title": "Mobile Defense Platform",
@@ -2033,8 +1855,7 @@
             {
               "identifier": "Vanilla.Vengeance.FreedomTower.FreedomTower",
               "title": "Freedom Tower",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom Tower"
             }
           ],
           "title": "Freedom Tower",
@@ -2052,8 +1873,7 @@
             {
               "identifier": "Vanilla.MiniPack4.TheCelestialTribunal.TheCelestialTribunal",
               "title": "The Celestial Tribunal",
-              "sourceExpansionIdentifier": "Vanilla.MiniPack4",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Celestial Tribunal"
             }
           ],
           "title": "The Celestial Tribunal",
@@ -2071,8 +1891,7 @@
             {
               "identifier": "Vanilla.OblivAeon.Mordengrad.Mordengrad",
               "title": "Mordengrad",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Mordengrad"
             }
           ],
           "title": "Mordengrad",
@@ -2085,8 +1904,7 @@
             {
               "identifier": "Vanilla.OblivAeon.NexusOfTheVoid.NexusOfTheVoid",
               "title": "Nexus of the Void",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Nexus of the Void"
             }
           ],
           "title": "Nexus of the Void",
@@ -2099,8 +1917,7 @@
             {
               "identifier": "Vanilla.OblivAeon.MaerynianRefuge.MaerynianRefuge",
               "title": "Maerynian Refuge",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Maerynian Refuge"
             }
           ],
           "title": "Maerynian Refuge",
@@ -2113,8 +1930,7 @@
             {
               "identifier": "Vanilla.OblivAeon.FortAdamant.FortAdamant",
               "title": "Fort Adamant",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Fort Adamant"
             }
           ],
           "title": "Fort Adamant",
@@ -2127,8 +1943,7 @@
             {
               "identifier": "Vanilla.OblivAeon.ChampionStudios.ChampionStudios",
               "title": "Champion Studios",
-              "sourceExpansionIdentifier": "Vanilla.OblivAeon",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Champion Studios"
             }
           ],
           "title": "Champion Studios",
@@ -2146,8 +1961,7 @@
             {
               "identifier": "Vanilla.EarthPrime.FarsideCity.FarsideCity",
               "title": "Farside City",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Farside City"
             }
           ],
           "title": "Farside City",
@@ -2160,8 +1974,7 @@
             {
               "identifier": "Vanilla.EarthPrime.FreedomCity.FreedomCity",
               "title": "Freedom City",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Freedom City"
             }
           ],
           "title": "Freedom City",
@@ -2174,8 +1987,7 @@
             {
               "identifier": "Vanilla.EarthPrime.TheTerminus.TheTerminus",
               "title": "The Terminus",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Terminus"
             }
           ],
           "title": "The Terminus",
@@ -2188,8 +2000,7 @@
             {
               "identifier": "Vanilla.EarthPrime.Tartarus.Tartarus",
               "title": "Tartarus",
-              "sourceExpansionIdentifier": "Vanilla.EarthPrime",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Tartarus"
             }
           ],
           "title": "Tartarus",
@@ -2207,8 +2018,7 @@
             {
               "identifier": "Vanilla.MagicalMysteriesPack.SubTerra.SubTerra",
               "title": "Sub-Terra",
-              "sourceExpansionIdentifier": "Vanilla.MagicalMysteriesPack",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Sub-Terra"
             }
           ],
           "title": "Sub-Terra",
@@ -2228,8 +2038,7 @@
             {
               "identifier": "Vanilla.Vengeance.BaronBladeTeam.BaronBladeTeam",
               "title": "Baron Blade",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Baron Blade"
             }
           ],
           "title": "Baron Blade",
@@ -2242,8 +2051,7 @@
             {
               "identifier": "Vanilla.Vengeance.ErmineTeam.ErmineTeam",
               "title": "Ermine",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Ermine"
             }
           ],
           "title": "Ermine",
@@ -2256,8 +2064,7 @@
             {
               "identifier": "Vanilla.Vengeance.FrictionTeam.FrictionTeam",
               "title": "Friction",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Friction"
             }
           ],
           "title": "Friction",
@@ -2270,8 +2077,7 @@
             {
               "identifier": "Vanilla.Vengeance.FrightTrainTeam.FrightTrainTeam",
               "title": "Fright Train",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Fright Train"
             }
           ],
           "title": "Fright Train",
@@ -2284,8 +2090,7 @@
             {
               "identifier": "Vanilla.Vengeance.ProletariatTeam.ProletariatTeam",
               "title": "Proletariat",
-              "sourceExpansionIdentifier": "Vanilla.Vengeance",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Proletariat"
             }
           ],
           "title": "Proletariat",
@@ -2303,8 +2108,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.AmbuscadeTeam.AmbuscadeTeam",
               "title": "Ambuscade",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Ambuscade"
             }
           ],
           "title": "Ambuscade",
@@ -2317,8 +2121,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.BiomancerTeam.BiomancerTeam",
               "title": "Biomancer",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Biomancer"
             }
           ],
           "title": "Biomancer",
@@ -2331,8 +2134,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.BugbearTeam.BugbearTeam",
               "title": "Bugbear",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Bugbear"
             }
           ],
           "title": "Bugbear",
@@ -2345,8 +2147,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.GreazerTeam.GreazerTeam",
               "title": "Greazer",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Greazer"
             }
           ],
           "title": "Greazer",
@@ -2359,8 +2160,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.LaCapitanTeam.LaCapitanTeam",
               "title": "La Capitan",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "La Capitan"
             }
           ],
           "title": "La Capitan",
@@ -2373,8 +2173,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.PlagueRatTeam.PlagueRatTeam",
               "title": "Plague Rat",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Plague Rat"
             }
           ],
           "title": "Plague Rat",
@@ -2387,8 +2186,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.CitizensHammerAndAnvilTeam.CitizensHammerAndAnvilTeam",
               "title": "Citizens Hammer \u0026 Anvil",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Citizens Hammer \u0026 Anvil"
             }
           ],
           "title": "Citizens Hammer \u0026 Anvil",
@@ -2401,8 +2199,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.SergeantSteelTeam.SergeantSteelTeam",
               "title": "Sergeant Steel",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Sergeant Steel"
             }
           ],
           "title": "Sergeant Steel",
@@ -2415,8 +2212,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.TheOperativeTeam.TheOperativeTeam",
               "title": "The Operative",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "The Operative"
             }
           ],
           "title": "The Operative",
@@ -2429,8 +2225,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.MissInformationTeam.MissInformationTeam",
               "title": "Miss Information",
-              "sourceExpansionIdentifier": "Vanilla.VillainsOfTheMultiverse",
-              "sourceCollectionIdentifier": "Vanilla"
+              "shortTitle": "Miss Information"
             }
           ],
           "title": "Miss Information",

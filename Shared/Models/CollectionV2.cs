@@ -42,7 +42,7 @@ namespace SOTM.Shared.Models
 
 
         [JsonInclude]
-        public Dictionary<string, List<HangingDeckVariant>> hangingVariants;
+        public Dictionary<string, List<DeckVariant>> hangingVariants;
 
         [JsonConstructor]
         public CollectionV2(GlobalIdentifier identifier, string title) {
@@ -118,26 +118,24 @@ namespace SOTM.Shared.Models
             }
         }
 
-        public void ResolveHangingVariants()
-        {
-            foreach (Deck deck in this.GetAllDecks())
-            {
-                string dne = deck.GetNamespacedIdentifier();
-                if (this.hangingVariants.ContainsKey(dne))
-                {
-                    Console.Error.WriteLine($"Resolved {dne} as {deck.identifier}");
-                    foreach (HangingDeckVariant hdv in this.hangingVariants[dne])
-                    {
-                        deck.AddChild(new DeckVariant(deck.identifier.CreateChildIdentifier(hdv.variantIdentifier))
-                        {
-                            title = hdv.promoTitle,
-                            sourceExpansionIdentifier = hdv.sourceExpansionIdentifier,
-                            sourceCollectionIdentifier = hdv.sourceCollectionIdentifier
-                        });
-                    }
-                    this.hangingVariants.Remove(dne);
-                }
-            }
-        }
+        // public void ResolveHangingVariants()
+        // {
+        //     foreach (Deck deck in this.GetAllDecks())
+        //     {
+        //         string dne = deck.GetNamespacedIdentifier();
+        //         if (this.hangingVariants.ContainsKey(dne))
+        //         {
+        //             Console.Error.WriteLine($"Resolved {dne} as {deck.identifier}");
+        //             foreach (HangingDeckVariant hdv in this.hangingVariants[dne])
+        //             {
+        //                 deck.AddChild(new DeckVariant(deck.identifier.CreateChildIdentifier(hdv.variantIdentifier))
+        //                 {
+        //                     title = hdv.promoTitle
+        //                 });
+        //             }
+        //             this.hangingVariants.Remove(dne);
+        //         }
+        //     }
+        // }
     }
 }

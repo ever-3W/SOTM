@@ -7,14 +7,12 @@
             {
               "identifier": "Menagerie.Menagerie.Charade.Charade",
               "title": "Charade",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Charade"
             },
             {
               "identifier": "Menagerie.Menagerie.Charade.SecretOriginsCharadeCharacter",
               "title": "Secret Origins Alycia Chin",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Secret Origins Alycia Chin"
             }
           ],
           "title": "Charade",
@@ -27,20 +25,17 @@
             {
               "identifier": "Menagerie.Menagerie.GhostGirl.GhostGirl",
               "title": "Ghost Girl",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Ghost Girl"
             },
             {
               "identifier": "Menagerie.Menagerie.GhostGirl.MagusGhostGirlCharacter",
               "title": "Ghost Girl, the Magus",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Ghost Girl, the Magus"
             },
             {
               "identifier": "Menagerie.Menagerie.GhostGirl.SolsticeGhostGirlCharacter",
               "title": "Ghost Girl, Spirit of the Solstice",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Spirit of the Solstice"
             }
           ],
           "title": "Ghost Girl",
@@ -53,14 +48,12 @@
             {
               "identifier": "Menagerie.Menagerie.Radiance.Radiance",
               "title": "Radiance",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Radiance"
             },
             {
               "identifier": "Menagerie.Menagerie.Radiance.PrincessRadianceCharacter",
               "title": "Princess Radiance",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Princess Radiance"
             }
           ],
           "title": "Radiance",
@@ -80,8 +73,7 @@
             {
               "identifier": "Menagerie.Menagerie.Netherwarden.Netherwarden",
               "title": "Netherwarden",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Netherwarden"
             }
           ],
           "title": "Netherwarden",
@@ -94,8 +86,7 @@
             {
               "identifier": "Menagerie.Menagerie.Unmute.Unmute",
               "title": "Unmute",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Unmute"
             }
           ],
           "title": "Unmute",
@@ -115,8 +106,7 @@
             {
               "identifier": "Menagerie.Menagerie.ChallengerPark.ChallengerPark",
               "title": "Challenger Park",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Challenger Park"
             }
           ],
           "title": "Challenger Park",
@@ -129,8 +119,7 @@
             {
               "identifier": "Menagerie.Menagerie.StanleySportsCenter.StanleySportsCenter",
               "title": "Stanley Sports Center",
-              "sourceExpansionIdentifier": "Menagerie.Menagerie",
-              "sourceCollectionIdentifier": "Menagerie"
+              "shortTitle": "Stanley Sports Center"
             }
           ],
           "title": "Stanley Sports Center",

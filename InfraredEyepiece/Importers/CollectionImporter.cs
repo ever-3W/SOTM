@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using ICSharpCode.Decompiler.Metadata;
 using Microsoft.Extensions.Configuration;
+using SOTM.InfraredEyepiece.Utilities;
 using SOTM.Shared.Models;
 using SOTM.Shared.Models.JSONObjects;
 
@@ -38,9 +39,8 @@ namespace SOTM.InfraredEyepiece.Importers
             GlobalIdentifier baseVariantIdentifier = deckEntity.identifier.CreateChildIdentifier(dlIdentifier);
             DeckVariant baseVariant = new DeckVariant(baseVariantIdentifier)
             {
-                title = dl.name,
-                sourceExpansionIdentifier = expansionIdentifier,
-                sourceCollectionIdentifier = this.collectionIdentifier
+                title = TitleUtils.GetVariantFullTitle(deckEntity.title),
+                shortTitle = TitleUtils.GetVariantShortTitle(deckEntity.title, deckEntity.title)
             };
             deckEntity.AddChild(baseVariant);
 
@@ -58,9 +58,8 @@ namespace SOTM.InfraredEyepiece.Importers
                         {
                             DeckVariant variant = new DeckVariant(deckEntity.identifier.CreateChildIdentifier(pc.promoIdentifier))
                             {
-                                title = pc.promoTitle,
-                                sourceCollectionIdentifier = this.collectionIdentifier,
-                                sourceExpansionIdentifier = expansionIdentifier
+                                title = TitleUtils.GetVariantFullTitle(pc.promoTitle),
+                                shortTitle = TitleUtils.GetVariantShortTitle(pc.promoTitle, deckEntity.title)
                             };
                             deckEntity.AddChild(variant);
                         }
@@ -71,34 +70,38 @@ namespace SOTM.InfraredEyepiece.Importers
             return (expansionIdentifier, deckEntity);
         }
 
-        private List<HangingDeckVariant> ParseHangingVariants(JSONPromoCardList pcl)
+        private Dictionary<string, List<DeckVariant>> ParseHangingVariants(JSONPromoCardList pcl)
         {
-            List<HangingDeckVariant> hvs = new List<HangingDeckVariant>();
-            foreach (KeyValuePair<string, Card[]> promoList in pcl)
-            {
-                foreach (Card card in promoList.Value)
-                {
-                    hvs.Add(new HangingDeckVariant()
-                    {
-                        deckNamespacedIdentifier = promoList.Key,
-                        promoTitle = card.promoTitle,
-                        variantIdentifier = card.promoIdentifier,
-                        sourceCollectionIdentifier = this.collectionIdentifier,
-                        sourceExpansionIdentifier = this.collectionIdentifier.CreateChildIdentifier(Expansion.PROMO_CARD_LIST_EXPANSION_IDENTIFIER)
-                    });
-                }
-            }
-            return hvs;
+            return new Dictionary<string, List<DeckVariant>> (
+                pcl.Select((promoList) => 
+                    new KeyValuePair<string, List<DeckVariant>>(
+                        promoList.Key,
+                        promoList.Value.Select(card => 
+                        {
+                            GlobalIdentifier identifier = this.collectionIdentifier
+                                .CreateChildIdentifier(Expansion.PROMO_CARD_LIST_EXPANSION_IDENTIFIER)
+                                .CreateChildIdentifier(promoList.Key.Split('.').Last())
+                                .CreateChildIdentifier(card.promoIdentifier);
+
+                            return new DeckVariant(identifier)
+                            {
+                                title = TitleUtils.GetVariantFullTitle(card.promoTitle),
+                                // Reuse full title since short title function requires deck title
+                                shortTitle = TitleUtils.GetVariantFullTitle(card.promoTitle)
+                            };
+                        }).ToList()
+                    ))
+            );
         }
 
         public
         (
             List<Deck>,
-            Dictionary<string, List<HangingDeckVariant>>
+            Dictionary<string, List<DeckVariant>>
         )
         ParseResourcesFromDLL(string dllPath)
         {
-            var hangingDeckVariants = new Dictionary<string, List<HangingDeckVariant>>();
+            var hangingDeckVariants = new Dictionary<string, List<DeckVariant>>();
             var decks = new List<Deck>();
 
             var module = new PEFile(dllPath);
@@ -117,14 +120,7 @@ namespace SOTM.InfraredEyepiece.Importers
                         JSONPromoCardList? pcl = JsonSerializer.Deserialize<JSONPromoCardList>(stream, JSON_SERIALIZER_OPTS);
                         if (pcl != null)
                         {
-                            foreach(var hdv in this.ParseHangingVariants(pcl))
-                            {
-                                if (!hangingDeckVariants.ContainsKey(hdv.deckNamespacedIdentifier))
-                                {
-                                    hangingDeckVariants.Add(hdv.deckNamespacedIdentifier, new List<HangingDeckVariant>());
-                                }
-                                hangingDeckVariants[hdv.deckNamespacedIdentifier].Add(hdv);
-                            }
+                            hangingDeckVariants = this.ParseHangingVariants(pcl);
                         }
                     }
                     else

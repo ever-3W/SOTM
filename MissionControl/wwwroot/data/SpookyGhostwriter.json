@@ -7,20 +7,17 @@
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.Escarlata",
               "title": "Escarlata",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "Escarlata"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.EscarlataFiredancerCharacter",
               "title": "Escarlata: Firedancer",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "Escarlata: Firedancer"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.EscarlataInkblotCharacter",
               "title": "The Enraged Escarlata",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "The Enraged Escarlata"
             }
           ],
           "title": "Escarlata",
@@ -33,14 +30,12 @@
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.GoldDragon.GoldDragon",
               "title": "Gold Dragon",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "Gold Dragon"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.GoldDragon.GoldDragonInkblotHumanCharacter",
               "title": "The Invincible Gold Dragon",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "Invincible Gold Dragon"
             }
           ],
           "title": "Gold Dragon",
@@ -53,32 +48,27 @@
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.Tsukiko",
               "title": "Tsukiko",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "Tsukiko"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.TsukikoTheGameIsRiggedCharacter",
               "title": "Tsukiko Tanner: The Game is Rigged",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "The Game is Rigged"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.DarkCarnivalTsukikoCharacter",
               "title": "Dark Carnival Tsukiko",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "Dark Carnival Tsukiko"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.TsukikoInkblotCharacter",
               "title": "The Tricksy Tsukiko",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "The Tricksy Tsukiko"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.GunClubTsukikoCharacter",
               "title": "Gun Club: Tsukiko",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "Gun Club: Tsukiko"
             }
           ],
           "title": "Tsukiko",
@@ -91,14 +81,12 @@
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette.Silhouette",
               "title": "Silhouette",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "Silhouette"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette.SilhouetteInkblotCharacter",
               "title": "The Zany Zywen",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "The Zany Zywen"
             }
           ],
           "title": "Silhouette",
@@ -119,8 +107,7 @@
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.AlesiaCircus.AlesiaCircus",
               "title": "Alesia Circus",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "Alesia Circus"
             }
           ],
           "title": "Alesia Circus",
@@ -133,8 +120,7 @@
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.OlInkwellTown.OlInkwellTown",
               "title": "Ol\u0027 Inkwell Town",
-              "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
-              "sourceCollectionIdentifier": "SpookyGhostwriter"
+              "shortTitle": "Ol\u0027 Inkwell Town"
             }
           ],
           "title": "Ol\u0027 Inkwell Town",

@@ -7,20 +7,17 @@
             {
               "identifier": "CaseFiles.CaseFiles.Charlie.Charlie",
               "title": "Charlie",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
+              "shortTitle": "Charlie"
             },
             {
               "identifier": "CaseFiles.CaseFiles.Charlie.RooksGambitCharlieCharacter",
               "title": "Charlie: Rook\u0027s Gambit",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
+              "shortTitle": "Charlie: Rook\u0027s Gambit"
             },
             {
               "identifier": "CaseFiles.CaseFiles.Charlie.MoondancerCharlieCharacter",
               "title": "Charlie: Moondancer",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
+              "shortTitle": "Charlie: Moondancer"
             }
           ],
           "title": "Charlie",
@@ -33,26 +30,22 @@
             {
               "identifier": "CaseFiles.CaseFiles.Tucker.Tucker",
               "title": "Tucker",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
+              "shortTitle": "Tucker"
             },
             {
               "identifier": "CaseFiles.CaseFiles.Tucker.DivisionCheerTuckerCharacter",
               "title": "Tucker: Division Cheer",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
+              "shortTitle": "Tucker: Division Cheer"
             },
             {
               "identifier": "CaseFiles.CaseFiles.Tucker.MoondancerTuckerCharacter",
               "title": "Tucker: Moondancer",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
+              "shortTitle": "Tucker: Moondancer"
             },
             {
               "identifier": "CaseFiles.CaseFiles.Tucker.GunClubTuckerCharacter",
               "title": "Gun Club: Tucker",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
+              "shortTitle": "Gun Club: Tucker"
             }
           ],
           "title": "Tucker",
@@ -73,8 +66,7 @@
             {
               "identifier": "CaseFiles.CaseFiles.BirchwoodMass.BirchwoodMass",
               "title": "Birchwood, Mass.",
-              "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
-              "sourceCollectionIdentifier": "CaseFiles"
+              "shortTitle": "Birchwood, Mass."
             }
           ],
           "title": "Birchwood, Mass.",
@@ -92,29 +84,23 @@
   "hangingVariants": {
     "Expatriette": [
       {
-        "deckNamespacedIdentifier": "Expatriette",
-        "variantIdentifier": "GunClubExpatrietteCharacter",
-        "promoTitle": "Gun Club: Expatriette",
-        "sourceExpansionIdentifier": "CaseFiles.PromoCardList",
-        "sourceCollectionIdentifier": "CaseFiles"
+        "identifier": "CaseFiles.PromoCardList.Expatriette.GunClubExpatrietteCharacter",
+        "title": "Gun Club: Expatriette",
+        "shortTitle": "Gun Club: Expatriette"
       }
     ],
     "Cauldron.TangoOne": [
       {
-        "deckNamespacedIdentifier": "Cauldron.TangoOne",
-        "variantIdentifier": "GunClubTangoOneCharacter",
-        "promoTitle": "Gun Club: Tango One",
-        "sourceExpansionIdentifier": "CaseFiles.PromoCardList",
-        "sourceCollectionIdentifier": "CaseFiles"
+        "identifier": "CaseFiles.PromoCardList.TangoOne.GunClubTangoOneCharacter",
+        "title": "Gun Club: Tango One",
+        "shortTitle": "Gun Club: Tango One"
       }
     ],
     "Menagerie.Charade": [
       {
-        "deckNamespacedIdentifier": "Menagerie.Charade",
-        "variantIdentifier": "GunClubCharadeCharacter",
-        "promoTitle": "Gun Club: Charade",
-        "sourceExpansionIdentifier": "CaseFiles.PromoCardList",
-        "sourceCollectionIdentifier": "CaseFiles"
+        "identifier": "CaseFiles.PromoCardList.Charade.GunClubCharadeCharacter",
+        "title": "Gun Club: Charade",
+        "shortTitle": "Gun Club: Charade"
       }
     ]
   }

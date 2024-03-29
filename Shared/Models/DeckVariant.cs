@@ -8,14 +8,11 @@ namespace SOTM.Shared.Models {
         public GlobalIdentifier identifier;
         [JsonInclude]
         public string? title;
+        [JsonInclude]
+        public string? shortTitle;
         public DeckVariant(GlobalIdentifier identifier) { 
             this.identifier = identifier;
         }
-
-        [JsonInclude]
-        public GlobalIdentifier sourceExpansionIdentifier;
-        [JsonInclude]
-        public GlobalIdentifier sourceCollectionIdentifier;
 
         public GlobalIdentifier GetIdentifier()
         {

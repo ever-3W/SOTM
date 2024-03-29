@@ -40,15 +40,15 @@ namespace SOTM.InfraredEyepiece.Importers
             );
         }
 
-        private Dictionary<string, List<HangingDeckVariant>>
-        ExcludeHangingVariantsNotListed(Dictionary<string, List<HangingDeckVariant>> hangingVariants)
+        private Dictionary<string, List<DeckVariant>>
+        ExcludeHangingVariantsNotListed(Dictionary<string, List<DeckVariant>> hangingVariants)
         {
-            var listedHangingVariants = new Dictionary<string, List<HangingDeckVariant>>();
-            foreach (KeyValuePair<string, List<HangingDeckVariant>> kv in hangingVariants)
+            var listedHangingVariants = new Dictionary<string, List<DeckVariant>>();
+            foreach (KeyValuePair<string, List<DeckVariant>> kv in hangingVariants)
             {
                 if (this.manifestListedVariantsByDeck.ContainsKey(kv.Key)) {
                     var listedVariantsInDeck = kv.Value.FindAll(hdv => 
-                        this.manifestListedVariantsByDeck[kv.Key].Contains(hdv.variantIdentifier));
+                        this.manifestListedVariantsByDeck[kv.Key].Contains(hdv.identifier.LocalIdentifier()));
                     
                     if (listedVariantsInDeck.Count() > 0)
                     {
