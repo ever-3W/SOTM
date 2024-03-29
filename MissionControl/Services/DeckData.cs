@@ -11,13 +11,13 @@ namespace SOTM.MissionControl.Services
     }
     public class DeckDataService
     {
-        private const string DECK_DATA_STORAGE_KEY = "DeckData";
-        public GenericRepository<CollectionV2> repo = new(DECK_DATA_STORAGE_KEY, new(new GlobalIdentifier("Root"), "Root"));
+        private const string DECK_DATA_STORAGE_KEY = "DeckDataModel";
+        public GenericRepository<List<CollectionV2>> repo = new(DECK_DATA_STORAGE_KEY, new());
 
         private const string LOADED_MANIFEST_STORAGE_KEY = "LoadedCollectionManifest";
         public GenericRepository<CollectionManifest> manifestRepo = new(LOADED_MANIFEST_STORAGE_KEY, new());
 
-        public CollectionV2 collection
+        public List<CollectionV2> model
         {
             get => this.repo.value;
             set => this.repo.value = value;
@@ -28,12 +28,16 @@ namespace SOTM.MissionControl.Services
 
         private void buildDataTables()
         {
-            foreach (Deck deck in this.collection.GetAllDecks())
+            foreach (Deck deck in this.model.SelectMany(collection => collection.GetAllDecks()))
             {
                 foreach (DeckVariant variant in deck.GetChildren())
                 {
                     this.deckVariantTable[variant.identifier] = variant;
                 }
+            }
+            foreach (DeckVariant variant in this.model.SelectMany(collection => collection.hangingVariants.Values.SelectMany(variant => variant)))
+            {
+                this.deckVariantTable[variant.identifier] = variant;
             }
         }
 
@@ -42,17 +46,26 @@ namespace SOTM.MissionControl.Services
             return CollectionManifest.ListDeltas(this.manifestRepo.value, other);
         }
 
+        public IEnumerable<DeckVariant> GetAllVariants(Deck deck)
+        {
+            string dne = deck.GetNamespacedIdentifier();
+            IEnumerable<DeckVariant> promoVariants = this.model.SelectMany(collection => collection.hangingVariants.GetValueOrDefault(dne, []));
+            return new List<IEnumerable<DeckVariant>>()
+            {
+                deck.GetChildren(),
+                promoVariants
+            }.SelectMany(variant => variant);
+        }
+
         public void BuildFromSourceCollections(IEnumerable<CollectionV2?> sourceCollections)
         {
-            this.collection = new(new GlobalIdentifier("Root"), "Root");
             foreach (CollectionV2? collection in sourceCollections)
             {
                 if (collection != null)
                 {
-                    this.collection.MergeWith(collection);
+                    this.model.Add(collection);
                 }
             }
-            this.collection.ResolveHangingVariants();
             this.buildDataTables();
         }
 
@@ -73,17 +86,17 @@ namespace SOTM.MissionControl.Services
 
         public IEnumerable<Expansion> GetHeroExpansions()
         {
-            return this.collection.heroExpansions;
+            return this.model.SelectMany(collection => collection.heroExpansions);
         }
 
         public IEnumerable<Expansion> GetVillainExpansions()
         {
-            return this.collection.villainExpansions;
+            return this.model.SelectMany(collection => collection.villainExpansions);
         }
 
         public IEnumerable<Expansion> GetEnvironmentExpansions()
         {
-            return this.collection.environmentExpansions;
+            return this.model.SelectMany(collection => collection.environmentExpansions);
         }
     }
 }
