@@ -12,7 +12,9 @@ namespace SOTM.MissionControl.Services
     {
         private Random random = new();
 
-        private List<T> SelectKFrom<T>(IEnumerable<T> enumerable, int k)
+        // Select k items randomly from a source enumerable.
+        // Each item has an equal probability to be selected.
+        private IEnumerable<T> SelectKFrom<T>(IEnumerable<T> enumerable, int k)
         {
             int remainingIndices = enumerable.Count();
             SortedSet<int> selectedIndices = new();
@@ -34,43 +36,32 @@ namespace SOTM.MissionControl.Services
 
             return selectedIndices.Select(index => enumerable.ElementAt(index)).ToList();
         }
-        public List<GlobalIdentifier> DraftRandomVariants (RandomizerMethod method, HashSet<GlobalIdentifier> pickableVariants, IEnumerable<Expansion> expansions, int length)
+        public List<GlobalIdentifier> DraftRandomVariants (DeckDataService deckData, DeckKind kind, RandomizerMethod method, HashSet<GlobalIdentifier> pickableVariants, int length)
         {
+            var groupedVariants = deckData.VariantsByKindGroupedByDeck(kind);
             if (method == RandomizerMethod.RANDOMIZE_BY_DECK)
             {
                 // Each deck has an equal probability to be selected.
                 // Once the decks are selected, a non-banned variant is selected from it at random.
                 return SelectKFrom
                 (
-                    expansions
-                        .SelectMany(expansion => expansion.GetChildren())
-                        .Where(deck => 
-                            deck
-                                .GetChildren()
-                                .Where(variant => pickableVariants.Contains(variant.identifier))
-                                .Count() > 0)
-                        .ToArray(), 
+                    groupedVariants
+                        .Select(deckVariants => deckVariants.Where(variant => pickableVariants.Contains(variant.identifier)))
+                        .Where(deckVariants => deckVariants.Count() > 0), 
                     length
-                ).SelectMany(deck => SelectKFrom(
-                    deck
-                        .GetChildren()
-                        .Where(variant => pickableVariants.Contains(variant.identifier))
-                        .Select(variant => variant.identifier)
-                        .ToArray(),
-                    1
-                )).ToList();
+                ).SelectMany(deckVariants => SelectKFrom(deckVariants, 1)
+                    .Select(variant => variant.identifier)
+                ).ToList();
             }
             else
             {
                 // Each non-banned variant has an equal probability to be selected.
                 return SelectKFrom
                 (
-                    expansions
-                        .SelectMany(expansion => expansion.GetChildren())
-                        .SelectMany(deck => deck.GetChildren())
+                    groupedVariants
+                        .SelectMany(deckVariants => deckVariants)
                         .Where(variant => pickableVariants.Contains(variant.identifier))
-                        .Select(variant => variant.identifier)
-                        .ToArray(),
+                        .Select(variant => variant.identifier),
                     length
                 ).ToList();
             }
@@ -80,9 +71,9 @@ namespace SOTM.MissionControl.Services
         {
             return new Draft()
             {
-                heroes = DraftRandomVariants(settingsSvc.settings.heroRandomizerMethod, pickableVariants, deckData.GetHeroExpansions(), settingsSvc.settings.draftHeroCount),
-                villains = DraftRandomVariants(settingsSvc.settings.villainRandomizerMethod, pickableVariants, deckData.GetVillainExpansions(), 1),
-                environments = DraftRandomVariants(RandomizerMethod.RANDOMIZE_BY_VARIANT, pickableVariants, deckData.GetEnvironmentExpansions(), 1)
+                heroes = DraftRandomVariants(deckData, DeckKind.HERO, settingsSvc.settings.heroRandomizerMethod, pickableVariants, settingsSvc.settings.draftHeroCount),
+                villains = DraftRandomVariants(deckData, DeckKind.VILLAIN, settingsSvc.settings.villainRandomizerMethod, pickableVariants, 1),
+                environments = DraftRandomVariants(deckData, DeckKind.ENVIRONMENT, RandomizerMethod.RANDOMIZE_BY_VARIANT, pickableVariants, 1)
             };
         }
     }

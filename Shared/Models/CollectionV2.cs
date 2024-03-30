@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace SOTM.Shared.Models
 {
-    public class CollectionV2
+    public class CollectionV2: IIdentifiable
     {
         public const string BASE_COLLECTION_IDENTIFIER = "Vanilla";
 
@@ -56,7 +56,10 @@ namespace SOTM.Shared.Models
 
             this.hangingVariants = new();
         }
-
+        public GlobalIdentifier GetIdentifier()
+        {
+            return this.identifier;
+        }
         public void AddDeck(Deck deck)
         {
             AncestorGroup<Expansion>? expansionParent = null;
@@ -117,25 +120,5 @@ namespace SOTM.Shared.Models
                 }
             }
         }
-
-        // public void ResolveHangingVariants()
-        // {
-        //     foreach (Deck deck in this.GetAllDecks())
-        //     {
-        //         string dne = deck.GetNamespacedIdentifier();
-        //         if (this.hangingVariants.ContainsKey(dne))
-        //         {
-        //             Console.Error.WriteLine($"Resolved {dne} as {deck.identifier}");
-        //             foreach (HangingDeckVariant hdv in this.hangingVariants[dne])
-        //             {
-        //                 deck.AddChild(new DeckVariant(deck.identifier.CreateChildIdentifier(hdv.variantIdentifier))
-        //                 {
-        //                     title = hdv.promoTitle
-        //                 });
-        //             }
-        //             this.hangingVariants.Remove(dne);
-        //         }
-        //     }
-        // }
     }
 }

@@ -1,0 +1,95 @@
+@page "/collections"
+@using System.Text.Json
+@using SOTM.Shared.Models
+@using SOTM.MissionControl.Models
+@using SOTM.MissionControl.Services
+@inject DeckDataService deckData
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject GameLogService gameLog
+
+<MudFileUpload T="IBrowserFile" OnFilesChanged="UploadCollection">
+    <ButtonTemplate>
+        <MudButton 
+            HtmlTag="label"
+            StartIcon="@Icons.Material.Filled.Input" 
+            Variant="Variant.Filled" 
+            Class="save-load-button"
+            for="@context.Id">
+
+            Import Collection
+        </MudButton>
+    </ButtonTemplate>
+</MudFileUpload>
+<div class="d-flex flex-wrap gap-3 align-content-start pt-3">
+    @foreach (CollectionMetadata metadata in deckData.GetAllCollectionMetadata()) 
+    {
+        <MudCard Style="@($"width: 300px; background: {Colors.BlueGrey.Lighten5}")">
+            <MudCardHeader Class="pa-2" Style="@($"background: {Colors.BlueGrey.Lighten2}")">
+                <CardHeaderContent>
+                    <div class="d-flex">
+                        <MudText Typo="Typo.h6"><b>@metadata.title</b></MudText>
+                        <MudSpacer/>
+                        <MudIconButton Icon="@Icons.Material.Filled.PushPin" Disabled="true" Size="@Size.Small" Color="Color.Default" />
+                        <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="@(CollectionIconOnClick(metadata.identifier))" Size="@Size.Small" Color="Color.Default" />
+                    </div>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent Class="pa-2">
+                @if (metadata.heroDeckCount > 0)
+                {
+                    <MudText>@($"{metadata.heroDeckCount} Heroes")</MudText>
+                }
+                @if (metadata.villainDeckCount > 0)
+                {
+                    <MudText>@($"{metadata.villainDeckCount} Villains")</MudText>
+                }
+                @if (metadata.environmentDeckCount > 0)
+                {
+                    <MudText>@($"{metadata.environmentDeckCount} Environments")</MudText>
+                }
+                @if (metadata.teamVillainDeckCount > 0)
+                {
+                    <MudText>@($"{metadata.teamVillainDeckCount} Team Villains")</MudText>
+                }
+                @if (metadata.promoVariantCount > 0)
+                {
+                    <MudText>@($"{metadata.promoVariantCount} Variants")</MudText>
+                }
+            </MudCardContent>
+        </MudCard>
+    }
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await deckData.Load(localStorage);
+        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(
+            deckData.GetAllCollectionMetadata()
+        ));
+    }
+    private async Task UploadCollection(InputFileChangeEventArgs args)
+    {
+        try
+        {
+            var collection = await JsonSerializer.DeserializeAsync<CollectionV2>(args.File.OpenReadStream());
+            deckData.model.AddImported(collection);
+            StateHasChanged();
+        }
+        catch (Exception err)
+        {
+            Console.Error.WriteLine(err.ToString());
+            Console.Error.WriteLine("Invalid file");
+        }
+    }
+
+    public Action CollectionIconOnClick(GlobalIdentifier identifier)
+    {
+        return () =>
+        {
+            Console.WriteLine($"Removing {identifier.ToString()}");
+            deckData.model.RemoveImported(identifier);
+            StateHasChanged();
+        };
+    }
+}
