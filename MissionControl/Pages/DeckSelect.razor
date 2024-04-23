@@ -178,7 +178,7 @@
     protected override async Task OnInitializedAsync()
     {
         await deckData.manifestRepo.Load(localStorage);
-        var latestManifest = await httpClient.GetFromJsonAsync<CollectionManifest>("data/manifest.json");
+        var latestManifest = await httpClient.GetFromJsonAsync<CollectionManifest>("data/ModManifest.json");
 
         if (deckData.ListManifestDeltas(latestManifest).Count() > 0)
         {

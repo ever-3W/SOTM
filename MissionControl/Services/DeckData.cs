@@ -72,7 +72,7 @@ namespace SOTM.MissionControl.Services
             string collectionKey = collection.GetIdentifier().ToString();
             if (this.presetCollections.FindIndex(existing => existing.identifier.ToString() == collectionKey) >= 0)
             {
-                Console.Error.WriteLine($"\"{collection.title}\" is a preset collection, it cannot be imported.");
+                Console.Error.WriteLine($"\"{collection.title}\" is a server-side collection, it cannot be imported.");
             }
             else
             {
