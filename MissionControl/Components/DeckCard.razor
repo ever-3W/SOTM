@@ -6,7 +6,7 @@
 
 @inherits ComponentBase
 
-<MudCard Class="@($"pa-0 card-fix-width card-body {Class}")">
+<MudCard Class="@($"pa-0 card-fix-width card-body {Class}")" Style="@($"background-color: var(--{(this.IsAnyVariantPickable ? "pickable-color" : "banned-color")});")">
     <MudCardHeader Class="@($"px-3 py-0 cursor-pointer {(this.IsAnyVariantPickable ? "card-head-pickable" : "card-head-banned")}")" @onclick="ToggleCardVariants">
         <CardHeaderContent>
             <MudText Class="@($"{(this.IsAnyVariantPickable ? "card-head-text-pickable" : "card-head-text-banned")}")"><b>@Title</b></MudText>
