@@ -1,3 +1,7 @@
+using System.Collections.Immutable;
+using System.Drawing;
+using System.Globalization;
+using System.Text;
 using System.Text.Json.Serialization;
 
 namespace SOTM.Shared.Models
@@ -5,12 +9,37 @@ namespace SOTM.Shared.Models
     public class CollectionV2: IIdentifiable
     {
         public const string BASE_COLLECTION_IDENTIFIER = "Vanilla";
+        public const string BASE_COLLECTION_TITLE = "Official Content";
+        public const string BASE_COLLECTION_COLOR = "e02128";
 
         [JsonInclude]
         public GlobalIdentifier identifier;
 
         [JsonInclude]
         public string title;
+
+        private int _color;
+        [JsonInclude]
+        public string color {
+            get => $"#{this._color:X6}";
+            set
+            {
+                // make sure it's a valid hex color
+                string colorStr = value;
+                if (colorStr.StartsWith("0x"))
+                {
+                    colorStr = colorStr.Substring(2);
+                }
+                else if (colorStr.StartsWith('#'))
+                {
+                    colorStr = colorStr.Substring(1);
+                }
+                if (!Int32.TryParse(Encoding.UTF8.GetBytes(colorStr), NumberStyles.HexNumber, null, out this._color))
+                {
+                    this._color = 0;
+                }
+            }
+        }
 
         private AncestorGroup<Expansion> heroExpansionParent;
         [JsonInclude]
@@ -56,6 +85,7 @@ namespace SOTM.Shared.Models
 
             this.hangingVariants = new();
         }
+
         public GlobalIdentifier GetIdentifier()
         {
             return this.identifier;
@@ -89,7 +119,7 @@ namespace SOTM.Shared.Models
             }
         }
 
-        public IEnumerable<Deck> GetAllDecks()
+        public IEnumerable<Expansion> GetAllExpansions()
         {
             return new List<AncestorGroup<Expansion>> {
                 this.heroExpansionParent,
@@ -97,7 +127,12 @@ namespace SOTM.Shared.Models
                 this.environmentExpansionParent,
                 this.teamVillainExpansionParent,
             }
-                .SelectMany(parent => parent.GetChildren())
+                .SelectMany(parent => parent.GetChildren());
+        }
+
+        public IEnumerable<Deck> GetAllDecks()
+        {
+            return this.GetAllExpansions()
                 .SelectMany(expansion => expansion.GetChildren());
         }
 

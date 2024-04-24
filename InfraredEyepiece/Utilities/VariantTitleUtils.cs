@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace SOTM.InfraredEyepiece.Utilities
 {
-    public class TitleUtils
+    public class VariantTitleUtils
     {
         private static Dictionary<string, string> FULL_TITLE_SPECIAL_CASES = new()
         {
@@ -35,7 +35,8 @@ namespace SOTM.InfraredEyepiece.Utilities
             { "Madame Mittermeier's Fantastical Festival of Conundrums and Curiosities", "MMFFCC"},
             { "F.S.C. Continuance Wanderer", "Continuance Wanderer"},
             { "Halberd Experimental Research Center", "Halberd Research Center"},
-            { "The Chasm of a Thousand Nights", "Chasm of 1,000 Nights"}
+            { "The Chasm of a Thousand Nights", "Chasm of 1,000 Nights"},
+            { "Secret Origins Alycia Chin", "Secret Origins" }
         };
 
         public static string GetVariantShortTitle (string variantTitle, string deckTitle)

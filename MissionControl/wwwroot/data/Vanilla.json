@@ -1,4 +1,5 @@
 {
+  "color": "#E02128",
   "heroExpansions": [
     {
       "decks": [
@@ -278,6 +279,8 @@
           "identifier": "Vanilla.BaseExpansion.Haka"
         }
       ],
+      "title": "Base Game",
+      "shortTitle": "Base Game",
       "identifier": "Vanilla.BaseExpansion"
     },
     {
@@ -306,6 +309,8 @@
           "identifier": "Vanilla.MiniPack1.Unity"
         }
       ],
+      "title": "Mini Pack 1",
+      "shortTitle": "Mini Pack 1",
       "identifier": "Vanilla.MiniPack1"
     },
     {
@@ -347,6 +352,8 @@
           "identifier": "Vanilla.RookCity.Expatriette"
         }
       ],
+      "title": "Rook City",
+      "shortTitle": "Rook City",
       "identifier": "Vanilla.RookCity"
     },
     {
@@ -370,6 +377,8 @@
           "identifier": "Vanilla.MiniPack2.TheScholar"
         }
       ],
+      "title": "Mini Pack 2",
+      "shortTitle": "Mini Pack 2",
       "identifier": "Vanilla.MiniPack2"
     },
     {
@@ -421,6 +430,8 @@
           "identifier": "Vanilla.InfernalRelics.TheArgentAdept"
         }
       ],
+      "title": "Infernal Relics",
+      "shortTitle": "Infernal Relics",
       "identifier": "Vanilla.InfernalRelics"
     },
     {
@@ -462,6 +473,8 @@
           "identifier": "Vanilla.ShatteredTimelines.OmnitronX"
         }
       ],
+      "title": "Shattered Timelines",
+      "shortTitle": "Shattered Timelines",
       "identifier": "Vanilla.ShatteredTimelines"
     },
     {
@@ -513,6 +526,8 @@
           "identifier": "Vanilla.WrathOfTheCosmos.SkyScraper"
         }
       ],
+      "title": "Wrath Of The Cosmos",
+      "shortTitle": "Wrath Of The Cosmos",
       "identifier": "Vanilla.WrathOfTheCosmos"
     },
     {
@@ -541,6 +556,8 @@
           "identifier": "Vanilla.MiniPack3.Guise"
         }
       ],
+      "title": "Mini Pack 3",
+      "shortTitle": "Mini Pack 3",
       "identifier": "Vanilla.MiniPack3"
     },
     {
@@ -636,6 +653,8 @@
           "identifier": "Vanilla.Vengeance.TheNaturalist"
         }
       ],
+      "title": "Vengeance",
+      "shortTitle": "Vengeance",
       "identifier": "Vanilla.Vengeance"
     },
     {
@@ -677,6 +696,8 @@
           "identifier": "Vanilla.MiniPack4.Benchmark"
         }
       ],
+      "title": "Mini Pack 4",
+      "shortTitle": "Mini Pack 4",
       "identifier": "Vanilla.MiniPack4"
     },
     {
@@ -754,6 +775,8 @@
           "identifier": "Vanilla.MiniPack5.VoidGuardWrithe"
         }
       ],
+      "title": "Mini Pack 5",
+      "shortTitle": "Mini Pack 5",
       "identifier": "Vanilla.MiniPack5"
     },
     {
@@ -849,6 +872,8 @@
           "identifier": "Vanilla.OblivAeon.TheHarpy"
         }
       ],
+      "title": "OblivAeon",
+      "shortTitle": "OblivAeon",
       "identifier": "Vanilla.OblivAeon"
     },
     {
@@ -1034,6 +1059,8 @@
           "identifier": "Vanilla.EarthPrime.StarKnight"
         }
       ],
+      "title": "Earth Prime",
+      "shortTitle": "Earth Prime",
       "identifier": "Vanilla.EarthPrime"
     },
     {
@@ -1075,6 +1102,8 @@
           "identifier": "Vanilla.MagicalMysteriesPack.Eldritch"
         }
       ],
+      "title": "Magical Mysteries Pack",
+      "shortTitle": "Magical Mysteries Pack",
       "identifier": "Vanilla.MagicalMysteriesPack"
     }
   ],
@@ -1144,6 +1173,8 @@
           "identifier": "Vanilla.BaseExpansion.GrandWarlordVoss"
         }
       ],
+      "title": "Base Game",
+      "shortTitle": "Base Game",
       "identifier": "Vanilla.BaseExpansion"
     },
     {
@@ -1162,6 +1193,8 @@
           "identifier": "Vanilla.MiniPack1.Ambuscade"
         }
       ],
+      "title": "Mini Pack 1",
+      "shortTitle": "Mini Pack 1",
       "identifier": "Vanilla.MiniPack1"
     },
     {
@@ -1224,6 +1257,8 @@
           "identifier": "Vanilla.RookCity.TheChairman"
         }
       ],
+      "title": "Rook City",
+      "shortTitle": "Rook City",
       "identifier": "Vanilla.RookCity"
     },
     {
@@ -1286,6 +1321,8 @@
           "identifier": "Vanilla.InfernalRelics.TheEnnead"
         }
       ],
+      "title": "Infernal Relics",
+      "shortTitle": "Infernal Relics",
       "identifier": "Vanilla.InfernalRelics"
     },
     {
@@ -1304,6 +1341,8 @@
           "identifier": "Vanilla.MiniPack2.MissInformation"
         }
       ],
+      "title": "Mini Pack 2",
+      "shortTitle": "Mini Pack 2",
       "identifier": "Vanilla.MiniPack2"
     },
     {
@@ -1366,6 +1405,8 @@
           "identifier": "Vanilla.ShatteredTimelines.TheDreamer"
         }
       ],
+      "title": "Shattered Timelines",
+      "shortTitle": "Shattered Timelines",
       "identifier": "Vanilla.ShatteredTimelines"
     },
     {
@@ -1428,6 +1469,8 @@
           "identifier": "Vanilla.WrathOfTheCosmos.KaargraWarfang"
         }
       ],
+      "title": "Wrath Of The Cosmos",
+      "shortTitle": "Wrath Of The Cosmos",
       "identifier": "Vanilla.WrathOfTheCosmos"
     },
     {
@@ -1446,6 +1489,8 @@
           "identifier": "Vanilla.MiniPack3.WagerMaster"
         }
       ],
+      "title": "Mini Pack 3",
+      "shortTitle": "Mini Pack 3",
       "identifier": "Vanilla.MiniPack3"
     },
     {
@@ -1464,6 +1509,8 @@
           "identifier": "Vanilla.MiniPack4.Chokepoint"
         }
       ],
+      "title": "Mini Pack 4",
+      "shortTitle": "Mini Pack 4",
       "identifier": "Vanilla.MiniPack4"
     },
     {
@@ -1521,6 +1568,8 @@
           "identifier": "Vanilla.EarthPrime.Argo"
         }
       ],
+      "title": "Earth Prime",
+      "shortTitle": "Earth Prime",
       "identifier": "Vanilla.EarthPrime"
     },
     {
@@ -1539,6 +1588,8 @@
           "identifier": "Vanilla.MagicalMysteriesPack.Malador"
         }
       ],
+      "title": "Magical Mysteries Pack",
+      "shortTitle": "Magical Mysteries Pack",
       "identifier": "Vanilla.MagicalMysteriesPack"
     }
   ],
@@ -1598,6 +1649,8 @@
           "identifier": "Vanilla.BaseExpansion.WagnerMarsBase"
         }
       ],
+      "title": "Base Game",
+      "shortTitle": "Base Game",
       "identifier": "Vanilla.BaseExpansion"
     },
     {
@@ -1616,6 +1669,8 @@
           "identifier": "Vanilla.MiniPack1.SilverGulch1883"
         }
       ],
+      "title": "Mini Pack 1",
+      "shortTitle": "Mini Pack 1",
       "identifier": "Vanilla.MiniPack1"
     },
     {
@@ -1647,6 +1702,8 @@
           "identifier": "Vanilla.RookCity.RookCity"
         }
       ],
+      "title": "Rook City",
+      "shortTitle": "Rook City",
       "identifier": "Vanilla.RookCity"
     },
     {
@@ -1678,6 +1735,8 @@
           "identifier": "Vanilla.InfernalRelics.RealmOfDiscord"
         }
       ],
+      "title": "Infernal Relics",
+      "shortTitle": "Infernal Relics",
       "identifier": "Vanilla.InfernalRelics"
     },
     {
@@ -1696,6 +1755,8 @@
           "identifier": "Vanilla.MiniPack2.TheFinalWasteland"
         }
       ],
+      "title": "Mini Pack 2",
+      "shortTitle": "Mini Pack 2",
       "identifier": "Vanilla.MiniPack2"
     },
     {
@@ -1727,6 +1788,8 @@
           "identifier": "Vanilla.ShatteredTimelines.TimeCataclysm"
         }
       ],
+      "title": "Shattered Timelines",
+      "shortTitle": "Shattered Timelines",
       "identifier": "Vanilla.ShatteredTimelines"
     },
     {
@@ -1758,6 +1821,8 @@
           "identifier": "Vanilla.WrathOfTheCosmos.DokThorathCapital"
         }
       ],
+      "title": "Wrath Of The Cosmos",
+      "shortTitle": "Wrath Of The Cosmos",
       "identifier": "Vanilla.WrathOfTheCosmos"
     },
     {
@@ -1776,6 +1841,8 @@
           "identifier": "Vanilla.MiniPack3.OmnitronIV"
         }
       ],
+      "title": "Mini Pack 3",
+      "shortTitle": "Mini Pack 3",
       "identifier": "Vanilla.MiniPack3"
     },
     {
@@ -1833,6 +1900,8 @@
           "identifier": "Vanilla.VillainsOfTheMultiverse.MMFFCC"
         }
       ],
+      "title": "Villains Of The Multiverse",
+      "shortTitle": "VOTM",
       "identifier": "Vanilla.VillainsOfTheMultiverse"
     },
     {
@@ -1864,6 +1933,8 @@
           "identifier": "Vanilla.Vengeance.FreedomTower"
         }
       ],
+      "title": "Vengeance",
+      "shortTitle": "Vengeance",
       "identifier": "Vanilla.Vengeance"
     },
     {
@@ -1882,6 +1953,8 @@
           "identifier": "Vanilla.MiniPack4.TheCelestialTribunal"
         }
       ],
+      "title": "Mini Pack 4",
+      "shortTitle": "Mini Pack 4",
       "identifier": "Vanilla.MiniPack4"
     },
     {
@@ -1952,6 +2025,8 @@
           "identifier": "Vanilla.OblivAeon.ChampionStudios"
         }
       ],
+      "title": "OblivAeon",
+      "shortTitle": "OblivAeon",
       "identifier": "Vanilla.OblivAeon"
     },
     {
@@ -2009,6 +2084,8 @@
           "identifier": "Vanilla.EarthPrime.Tartarus"
         }
       ],
+      "title": "Earth Prime",
+      "shortTitle": "Earth Prime",
       "identifier": "Vanilla.EarthPrime"
     },
     {
@@ -2027,6 +2104,8 @@
           "identifier": "Vanilla.MagicalMysteriesPack.SubTerra"
         }
       ],
+      "title": "Magical Mysteries Pack",
+      "shortTitle": "Magical Mysteries Pack",
       "identifier": "Vanilla.MagicalMysteriesPack"
     }
   ],
@@ -2099,6 +2178,8 @@
           "identifier": "Vanilla.Vengeance.ProletariatTeam"
         }
       ],
+      "title": "Vengeance",
+      "shortTitle": "Vengeance",
       "identifier": "Vanilla.Vengeance"
     },
     {
@@ -2234,10 +2315,12 @@
           "identifier": "Vanilla.VillainsOfTheMultiverse.MissInformationTeam"
         }
       ],
+      "title": "Villains Of The Multiverse",
+      "shortTitle": "VOTM",
       "identifier": "Vanilla.VillainsOfTheMultiverse"
     }
   ],
   "identifier": "Vanilla",
-  "title": "Vanilla",
+  "title": "Official Content",
   "hangingVariants": {}
 }

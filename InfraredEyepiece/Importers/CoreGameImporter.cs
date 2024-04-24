@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Configuration;
+using SOTM.InfraredEyepiece.Utilities;
 using SOTM.Shared.Models;
 
 namespace SOTM.InfraredEyepiece.Importers
@@ -13,7 +14,8 @@ namespace SOTM.InfraredEyepiece.Importers
 
         public override CollectionV2 ParseResourcesV2()
         {
-            CollectionV2 result = new CollectionV2(this._collectionIdentifier, CollectionV2.BASE_COLLECTION_IDENTIFIER);
+            CollectionV2 result = new CollectionV2(this._collectionIdentifier, CollectionV2.BASE_COLLECTION_TITLE)
+            { color = CollectionV2.BASE_COLLECTION_COLOR };
             // the core DLL shouldn't contain any hanging variants
             var (decks, hangingVariants) = this.ParseResourcesFromDLL(this.config["VanillaDLLPath"]);
             result.hangingVariants = hangingVariants;
@@ -25,6 +27,11 @@ namespace SOTM.InfraredEyepiece.Importers
                     deck.kind = DeckKind.VILLAIN_OBLIVAEON;
                 }
                 result.AddDeck(deck);
+            }
+            foreach (Expansion expansion in result.GetAllExpansions())
+            {
+                expansion.title = ExpansionTitleUtils.GetExpansionFullTitle(expansion.identifier.LocalIdentifier());
+                expansion.shortTitle = ExpansionTitleUtils.GetExpansionShortTitle(expansion.identifier.LocalIdentifier());
             }
             return result;
         }

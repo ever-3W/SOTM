@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Microsoft.Extensions.Configuration;
+using SOTM.InfraredEyepiece.Utilities;
 using SOTM.Shared.Models;
 using SOTM.Shared.Models.JSONObjects;
 
@@ -9,6 +10,7 @@ namespace SOTM.InfraredEyepiece.Importers
     {
         private GlobalIdentifier _collectionIdentifier;
         private string collectionTitle;
+        private string collectionColor;
         private string dllPath;
         // Unreleased decks and variants will have DeckList files associated with them,
         // but if they aren't listed in the manifest they won't be playable in game
@@ -29,6 +31,7 @@ namespace SOTM.InfraredEyepiece.Importers
             this.dllPath = Path.Combine(modDir, manifest.dll);
             this._collectionIdentifier = new GlobalIdentifier(manifest.@namespace);
             this.collectionTitle = manifest.title;
+            this.collectionColor = manifest.color;
             this.manifestListedHeroes = new HashSet<string>(manifest?.decks?.heroes ?? new string[]{});
             this.manifestListedVillains = new HashSet<string>(manifest?.decks?.villains ?? new string[]{});
             this.manifestListedEnvironments = new HashSet<string>(manifest?.decks?.environments ?? new string[]{});
@@ -71,13 +74,19 @@ namespace SOTM.InfraredEyepiece.Importers
 
         public override CollectionV2 ParseResourcesV2()
         {
-            CollectionV2 result = new CollectionV2(this._collectionIdentifier, this.collectionTitle);
+            CollectionV2 result = new CollectionV2(this._collectionIdentifier, this.collectionTitle)
+            { color = this.collectionColor };
             // the core DLL shouldn't contain any hanging variants
             var (decks, hangingVariants) = this.ParseResourcesFromDLL(this.dllPath);
             result.hangingVariants = this.ExcludeHangingVariantsNotListed(hangingVariants);
             foreach (Deck deck in this.ExcludeDecksNotListed(decks))
             {
                 result.AddDeck(deck);
+            }
+            foreach (Expansion expansion in result.GetAllExpansions())
+            {
+                expansion.title = ExpansionTitleUtils.GetExpansionFullTitle(expansion.identifier.LocalIdentifier());
+                expansion.shortTitle = ExpansionTitleUtils.GetExpansionShortTitle(expansion.identifier.LocalIdentifier());
             }
             return result;
         }

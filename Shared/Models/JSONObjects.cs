@@ -22,6 +22,7 @@ namespace SOTM.Shared.Models.JSONObjects
     public class JSONModManifest
     {
         public string title { get; set; }
+        public string color { get; set; }
         public string @namespace { get; set; }
         public string dll { get; set; }
         public DeckLists decks { get; set; }

@@ -1,4 +1,5 @@
 {
+  "color": "#ACEEEE",
   "heroExpansions": [
     {
       "decks": [
@@ -12,7 +13,7 @@
             {
               "identifier": "Menagerie.Menagerie.Charade.SecretOriginsCharadeCharacter",
               "title": "Secret Origins Alycia Chin",
-              "shortTitle": "Secret Origins Alycia Chin"
+              "shortTitle": "Secret Origins"
             }
           ],
           "title": "Charade",
@@ -62,6 +63,8 @@
           "identifier": "Menagerie.Menagerie.Radiance"
         }
       ],
+      "title": "Menagerie of the Multiverse",
+      "shortTitle": "MOTM",
       "identifier": "Menagerie.Menagerie"
     }
   ],
@@ -95,6 +98,8 @@
           "identifier": "Menagerie.Menagerie.Unmute"
         }
       ],
+      "title": "Menagerie of the Multiverse",
+      "shortTitle": "MOTM",
       "identifier": "Menagerie.Menagerie"
     }
   ],
@@ -128,6 +133,8 @@
           "identifier": "Menagerie.Menagerie.StanleySportsCenter"
         }
       ],
+      "title": "Menagerie of the Multiverse",
+      "shortTitle": "MOTM",
       "identifier": "Menagerie.Menagerie"
     }
   ],

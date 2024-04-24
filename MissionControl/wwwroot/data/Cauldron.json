@@ -1,4 +1,5 @@
 {
+  "color": "#EC59A0",
   "heroExpansions": [
     {
       "decks": [
@@ -311,6 +312,8 @@
           "identifier": "Cauldron.Cauldron.Vanish"
         }
       ],
+      "title": "Cauldron",
+      "shortTitle": "Cauldron",
       "identifier": "Cauldron.Cauldron"
     },
     {
@@ -395,6 +398,8 @@
           "identifier": "Cauldron.CauldronExperimental.Titan"
         }
       ],
+      "title": "Cauldron:Experimental",
+      "shortTitle": "Cauldron:Experimental",
       "identifier": "Cauldron.CauldronExperimental"
     },
     {
@@ -550,6 +555,8 @@
           "identifier": "Cauldron.CauldronAdrift.Terminus"
         }
       ],
+      "title": "Cauldron:Adrift",
+      "shortTitle": "Cauldron:Adrift",
       "identifier": "Cauldron.CauldronAdrift"
     },
     {
@@ -624,6 +631,8 @@
           "identifier": "Cauldron.CauldronStormfall.MagnificentMara"
         }
       ],
+      "title": "Cauldron:Stormfall",
+      "shortTitle": "Cauldron:Stormfall",
       "identifier": "Cauldron.CauldronStormfall"
     }
   ],
@@ -721,6 +730,8 @@
           "identifier": "Cauldron.Cauldron.Tiamat"
         }
       ],
+      "title": "Cauldron",
+      "shortTitle": "Cauldron",
       "identifier": "Cauldron.Cauldron"
     },
     {
@@ -765,6 +776,8 @@
           "identifier": "Cauldron.CauldronStormfall.PhaseVillain"
         }
       ],
+      "title": "Cauldron:Stormfall",
+      "shortTitle": "Cauldron:Stormfall",
       "identifier": "Cauldron.CauldronStormfall"
     },
     {
@@ -848,6 +861,8 @@
           "identifier": "Cauldron.CauldronAdrift.TheMistressOfFate"
         }
       ],
+      "title": "Cauldron:Adrift",
+      "shortTitle": "Cauldron:Adrift",
       "identifier": "Cauldron.CauldronAdrift"
     },
     {
@@ -897,6 +912,8 @@
           "identifier": "Cauldron.CauldronExperimental.Vector"
         }
       ],
+      "title": "Cauldron:Experimental",
+      "shortTitle": "Cauldron:Experimental",
       "identifier": "Cauldron.CauldronExperimental"
     }
   ],
@@ -982,6 +999,8 @@
           "identifier": "Cauldron.Cauldron.TheWanderingIsle"
         }
       ],
+      "title": "Cauldron",
+      "shortTitle": "Cauldron",
       "identifier": "Cauldron.Cauldron"
     },
     {
@@ -1052,6 +1071,8 @@
           "identifier": "Cauldron.CauldronAdrift.WindmillCity"
         }
       ],
+      "title": "Cauldron:Adrift",
+      "shortTitle": "Cauldron:Adrift",
       "identifier": "Cauldron.CauldronAdrift"
     },
     {
@@ -1083,6 +1104,8 @@
           "identifier": "Cauldron.CauldronUnexpected.OblaskCrater"
         }
       ],
+      "title": "Cauldron:Unexpected",
+      "shortTitle": "Cauldron:Unexpected",
       "identifier": "Cauldron.CauldronUnexpected"
     },
     {
@@ -1101,6 +1124,8 @@
           "identifier": "Cauldron.CauldronStormfall.SuperstormAkela"
         }
       ],
+      "title": "Cauldron:Stormfall",
+      "shortTitle": "Cauldron:Stormfall",
       "identifier": "Cauldron.CauldronStormfall"
     },
     {
@@ -1119,6 +1144,8 @@
           "identifier": "Cauldron.CauldronExperimental.TheCybersphere"
         }
       ],
+      "title": "Cauldron:Experimental",
+      "shortTitle": "Cauldron:Experimental",
       "identifier": "Cauldron.CauldronExperimental"
     }
   ],

@@ -10,6 +10,10 @@ namespace SOTM.Shared.Models
             get => this.JsonChildPropertyGetter();
             set => this.JsonChildPropertySetter(value);
         }
+        [JsonInclude]
+        public string? title;
+        [JsonInclude]
+        public string? shortTitle;
 
         public const string BASE_EXPANSION_IDENTIFIER = "BaseExpansion";
         // Mods introducing new promo cards aren't tied to a specific Expansion, so this is a placeholder

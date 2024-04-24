@@ -39,8 +39,8 @@ namespace SOTM.InfraredEyepiece.Importers
             GlobalIdentifier baseVariantIdentifier = deckEntity.identifier.CreateChildIdentifier(dlIdentifier);
             DeckVariant baseVariant = new DeckVariant(baseVariantIdentifier)
             {
-                title = TitleUtils.GetVariantFullTitle(deckEntity.title),
-                shortTitle = TitleUtils.GetVariantShortTitle(deckEntity.title, deckEntity.title)
+                title = VariantTitleUtils.GetVariantFullTitle(deckEntity.title),
+                shortTitle = VariantTitleUtils.GetVariantShortTitle(deckEntity.title, deckEntity.title)
             };
             deckEntity.AddChild(baseVariant);
 
@@ -58,8 +58,8 @@ namespace SOTM.InfraredEyepiece.Importers
                         {
                             DeckVariant variant = new DeckVariant(deckEntity.identifier.CreateChildIdentifier(pc.promoIdentifier))
                             {
-                                title = TitleUtils.GetVariantFullTitle(pc.promoTitle),
-                                shortTitle = TitleUtils.GetVariantShortTitle(pc.promoTitle, deckEntity.title)
+                                title = VariantTitleUtils.GetVariantFullTitle(pc.promoTitle),
+                                shortTitle = VariantTitleUtils.GetVariantShortTitle(pc.promoTitle, deckEntity.title)
                             };
                             deckEntity.AddChild(variant);
                         }
@@ -85,9 +85,9 @@ namespace SOTM.InfraredEyepiece.Importers
 
                             return new DeckVariant(identifier)
                             {
-                                title = TitleUtils.GetVariantFullTitle(card.promoTitle),
+                                title = VariantTitleUtils.GetVariantFullTitle(card.promoTitle),
                                 // Reuse full title since short title function requires deck title
-                                shortTitle = TitleUtils.GetVariantFullTitle(card.promoTitle)
+                                shortTitle = VariantTitleUtils.GetVariantFullTitle(card.promoTitle)
                             };
                         }).ToList()
                     ))
@@ -116,7 +116,6 @@ namespace SOTM.InfraredEyepiece.Importers
                     Match pclMatch = Regex.Match(r.Name, @"DeckLists.PromoCardList.json$");
                     if (pclMatch.Success)
                     {
-                        Console.Error.WriteLine("Found PromoCardList {0}", pclMatch.Value);
                         JSONPromoCardList? pcl = JsonSerializer.Deserialize<JSONPromoCardList>(stream, JSON_SERIALIZER_OPTS);
                         if (pcl != null)
                         {
