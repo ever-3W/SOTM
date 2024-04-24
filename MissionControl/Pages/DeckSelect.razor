@@ -19,10 +19,10 @@
 <MudButton OnClick="DraftRandomGame" Variant="Variant.Filled" Class="draft-button">Draft New Game</MudButton>
 
 <div Class="d-flex justify-space-around flex-1 flex-wrap gap-3">
-    <MudCard Class="flex-1 pa-3 mb-3" Outlined="true" Style="@($"color:{Colors.Indigo.Darken4}; background:{Colors.Indigo.Lighten5};")">
+    <MudCard Class="flex-1 pa-3 mb-3 villain-section" Outlined="true">
         <MudCardHeader Class="pa-0">
             <CardHeaderContent>
-                <MudText Typo="Typo.h5"><b>VILLAINS</b></MudText>
+                <MudText Typo="Typo.h5" Style="user-select: none;"><b>VILLAINS</b></MudText>
             </CardHeaderContent>
         </MudCardHeader>
         <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
@@ -38,17 +38,17 @@
             }
         </MudCardContent>
     </MudCard>
-    <MudCard Class="flex-1 pa-3" Outlined="true" Style="@($"color:{Colors.DeepOrange.Darken4}; background:{Colors.Amber.Lighten5};")">
+    <MudCard Class="flex-1 pa-3 hero-section" Outlined="true">
         <MudCardHeader Class="pa-0">
             <CardHeaderContent>
-                <MudText Typo="Typo.h5"><b>HEROES</b></MudText>
+                <MudText Typo="Typo.h5" Style="user-select: none;"><b>HEROES</b></MudText>
             </CardHeaderContent>
         </MudCardHeader>
         <MudCardContent Class="pa-0">
             @foreach (Expansion expansion in deckData.GetHeroExpansions()) 
             {
-                <MudCard Outlined Class="pa-3 mb-3" Style="@($"color:{Colors.DeepOrange.Darken4}; background:{Colors.Amber.Lighten4};")">
-                    <MudCardHeader Class="pa-0">
+                <MudCard Outlined Class="pa-3 mb-3" Style=@($"background: {Colors.Amber.Lighten4};")>
+                    <MudCardHeader Class="pa-0 mb-2 hero-expansion-header">
                         <CardHeaderContent>
                             <MudText Typo="Typo.h6">@expansion.GetIdentifier().LocalIdentifier()</MudText>
                         </CardHeaderContent>
@@ -69,10 +69,10 @@
             }
         </MudCardContent>
     </MudCard>
-    <MudCard Class="flex-1 pa-3 mb-3" Outlined="true" Style="@($"color:{Colors.Green.Darken4}; background:{Colors.Green.Lighten5};")">
+    <MudCard Class="flex-1 pa-3 mb-3 environment-section" Outlined="true">
         <MudCardHeader Class="pa-0">
             <CardHeaderContent>
-                <MudText Typo="Typo.h5"><b>ENVIRONMENTS</b></MudText>
+                <MudText Typo="Typo.h5" Style="user-select: none;"><b>ENVIRONMENTS</b></MudText>
             </CardHeaderContent>
         </MudCardHeader>
         <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
@@ -100,31 +100,55 @@
     .draft-button:hover {
         background-color: @(Colors.Teal.Lighten1) !important;
     }
-    .villain-cards {
-        --head-color: @(Colors.Indigo.Accent2);
-        --pickable-color: @(Colors.Indigo.Lighten3);
+    .villain-section {
         --pickable-text-color: @(Colors.Indigo.Darken4);
+        color: var(--pickable-text-color); 
+        background: @(Colors.Indigo.Lighten5);
+    }
+    .villain-cards {
+        --head-color: @(Colors.Indigo.Accent3);
+        --pickable-color: @(Colors.Indigo.Accent1);
         --banned-color: @(Colors.Indigo.Lighten5);
+        --banned-head-color: @(Colors.Indigo.Accent2);
+        --banned-head-text-color: @(Colors.Indigo.Darken2);
         --banned-text-color: @(Colors.Indigo.Lighten2);
         --mud-palette-primary: @(Colors.Indigo.Accent2);
         --mud-palette-background-grey: @(Colors.Indigo.Lighten1);
         --mud-default-borderradius: 0px;
     }
+    .hero-section {
+        --pickable-text-color: color-mix(in srgb, @(Colors.DeepOrange.Darken4) 80%, #000);
+        color: var(--pickable-text-color);
+        background: @(Colors.Amber.Lighten5);
+    }
+    .hero-expansion-header {
+        color: var(--pickable-text-color);
+        user-select: none;
+        margin-bottom: 2px;
+        border-bottom: 1px solid var(--pickable-text-color);
+    }
     .hero-cards {
-        --head-color: @(Colors.Amber.Darken3);
+        --head-color: @(Colors.Amber.Darken4);
         --pickable-color: @(Colors.Amber.Lighten1);
-        --pickable-text-color: @(Colors.DeepOrange.Darken4);
         --banned-color: @(Colors.Amber.Lighten4);
+        --banned-head-color: @(Colors.Amber.Darken3);
+        --banned-head-text-color: @(Colors.DeepOrange.Darken3);
         --banned-text-color: @(Colors.Amber.Darken1);
         --mud-palette-primary: @(Colors.Amber.Darken3);
         --mud-palette-background-grey: @(Colors.Amber.Darken3);
         --mud-default-borderradius: 0px;
     }
-    .environment-cards {
-        --head-color: @(Colors.Green.Default);
-        --pickable-color: @(Colors.Green.Lighten2);
+    .environment-section {
         --pickable-text-color: @(Colors.Green.Darken4);
+        color: var(--pickable-text-color);
+        background: @(Colors.Green.Lighten5);
+    }
+    .environment-cards {
+        --head-color: @(Colors.Green.Darken1);
+        --pickable-color: @(Colors.Green.Lighten2);
         --banned-color: @(Colors.Green.Accent1);
+        --banned-head-color: @(Colors.Green.Default);
+        --banned-head-text-color: @(Colors.Green.Darken2);
         --banned-text-color: @(Colors.Green.Lighten1);
         --mud-palette-primary: @(Colors.Green.Default);
         --mud-palette-background-grey: @(Colors.Green.Default);

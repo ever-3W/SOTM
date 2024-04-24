@@ -7,9 +7,9 @@
 @inherits ComponentBase
 
 <MudCard Class="@($"pa-0 card-fix-width card-body {Class}")">
-    <MudCardHeader Class="pt-0 pl-3 pr-3 pb-0 card-head">
+    <MudCardHeader Class="@($"px-3 py-0 cursor-pointer {(this.IsAnyVariantPickable ? "card-head-pickable" : "card-head-banned")}")" @onclick="ToggleCardVariants">
         <CardHeaderContent>
-            <MudText Style="max-width: 160px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><b>@Title</b></MudText>
+            <MudText Class="@($"{(this.IsAnyVariantPickable ? "card-head-text-pickable" : "card-head-text-banned")}")"><b>@Title</b></MudText>
         </CardHeaderContent>
     </MudCardHeader>
     <MudCardContent Class="pa-1">
@@ -25,10 +25,33 @@
 </MudCard>
 
 <style>
-    .card-head {
-        color: var(--pickable-text-color);
+    .card-head-pickable, .card-head-banned {
         background: var(--head-color);
         min-height: 35px;
+    }
+    .card-head-pickable {
+        background: var(--head-color);
+    }
+    .card-head-banned {
+        background: var(--banned-head-color);
+    }
+    .card-head-pickable:hover, .card-head-banned:hover {
+        filter: brightness(135%); 
+    }
+
+    .card-head-text-pickable, .card-head-text-banned {
+        max-width: 160px;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        user-select: none;
+    }
+    .card-head-text-pickable {
+        color: var(--pickable-text-color);
+    }
+    .card-head-text-banned {
+        color: var(--banned-head-text-color);
+        text-decoration: line-through;
     }
 
     .card-body {
@@ -38,16 +61,16 @@
 
     .banned {
         background-color: var(--banned-color);
-        :hover {
-            background-color: var(--banned-color);
-        }
+    }
+    .banned:hover {
+        background-color: var(--banned-color);
     }
 
     .pickable {
         background-color: var(--pickable-color);
-        :hover {
-            background-color: var(--pickable-color);
-        }
+    }
+    .pickable:hover {
+        background-color: var(--pickable-color);
     }
 
     .banned-text {
@@ -79,9 +102,22 @@
     [Parameter]
     public IEnumerable<GlobalIdentifier> PickableVariants { get; set; }
 
+    public bool IsAnyVariantPickable { get => this.PickableVariants.Any(); }
+
+    public void ToggleCardVariants()
+    {
+        if (this.IsAnyVariantPickable)
+        {
+            this.PickableVariants = Enumerable.Empty<GlobalIdentifier>();
+        }
+        else
+        {
+            this.PickableVariants = this.Variants.Select(v => v.Item3);
+        }
+    }
+
     [Parameter]
     public string Class { get; set; }
-
     public static List<(string?, string?, GlobalIdentifier)> FromDeckModel(DeckDataService deckData, Deck deck)
     {
         return deckData.GetAllVariants(deck)
