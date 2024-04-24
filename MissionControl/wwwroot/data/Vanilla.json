@@ -242,7 +242,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.TheVisionary.TheVisionaryUnleashedCharacter",
               "title": "The Visionary Unleashed",
-              "shortTitle": "The Visionary Unleashed"
+              "shortTitle": "Visionary Unleashed"
             }
           ],
           "title": "The Visionary",
@@ -499,7 +499,7 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.CaptainCosmic.CaptainCosmicRequitalCharacter",
               "title": "Captain Cosmic Requital",
-              "shortTitle": "Captain Cosmic Requital"
+              "shortTitle": "Requital"
             }
           ],
           "title": "Captain Cosmic",
@@ -924,7 +924,7 @@
             {
               "identifier": "Vanilla.EarthPrime.LadyLiberty.TheAllNewLadyLibertyCharacter",
               "title": "The All-New Lady Liberty",
-              "shortTitle": "The All-New Lady Liberty"
+              "shortTitle": "All-New Lady Liberty"
             }
           ],
           "title": "Lady Liberty",
@@ -1032,7 +1032,7 @@
             {
               "identifier": "Vanilla.EarthPrime.Pseudo.SpaceInfiltratorPseudoCharacter",
               "title": "Space Infiltrator Pseudo",
-              "shortTitle": "Space Infiltrator Pseudo"
+              "shortTitle": "Space Infiltrator "
             }
           ],
           "title": "Pseudo",
@@ -1102,8 +1102,8 @@
           "identifier": "Vanilla.MagicalMysteriesPack.Eldritch"
         }
       ],
-      "title": "Magical Mysteries Pack",
-      "shortTitle": "Magical Mysteries Pack",
+      "title": "Magical Mysteries",
+      "shortTitle": "Magical Mysteries",
       "identifier": "Vanilla.MagicalMysteriesPack"
     }
   ],
@@ -1588,8 +1588,8 @@
           "identifier": "Vanilla.MagicalMysteriesPack.Malador"
         }
       ],
-      "title": "Magical Mysteries Pack",
-      "shortTitle": "Magical Mysteries Pack",
+      "title": "Magical Mysteries",
+      "shortTitle": "Magical Mysteries",
       "identifier": "Vanilla.MagicalMysteriesPack"
     }
   ],
@@ -2104,8 +2104,8 @@
           "identifier": "Vanilla.MagicalMysteriesPack.SubTerra"
         }
       ],
-      "title": "Magical Mysteries Pack",
-      "shortTitle": "Magical Mysteries Pack",
+      "title": "Magical Mysteries",
+      "shortTitle": "Magical Mysteries",
       "identifier": "Vanilla.MagicalMysteriesPack"
     }
   ],

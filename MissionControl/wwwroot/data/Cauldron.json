@@ -13,12 +13,12 @@
             {
               "identifier": "Cauldron.Cauldron.Baccarat.AceOfSwordsBaccaratCharacter",
               "title": "Baccarat: Ace Of Swords",
-              "shortTitle": "Baccarat: Ace Of Swords"
+              "shortTitle": "Ace Of Swords"
             },
             {
               "identifier": "Cauldron.Cauldron.Baccarat.AceOfSorrowsBaccaratCharacter",
               "title": "Baccarat: Ace Of Sorrows",
-              "shortTitle": "Baccarat: Ace Of Sorrows"
+              "shortTitle": "Ace Of Sorrows"
             },
             {
               "identifier": "Cauldron.Cauldron.Baccarat.PastBaccaratCharacter",
@@ -41,7 +41,7 @@
             {
               "identifier": "Cauldron.Cauldron.DocHavoc.FirstResponseDocHavocCharacter",
               "title": "First Response Doc Havoc",
-              "shortTitle": "First Response Doc Havoc"
+              "shortTitle": "First Response "
             },
             {
               "identifier": "Cauldron.Cauldron.DocHavoc.FutureDocHavocCharacter",
@@ -125,7 +125,7 @@
             {
               "identifier": "Cauldron.Cauldron.Necro.LastOfTheForgottenOrderNecroCharacter",
               "title": "Last of The Forgotten Order Necro",
-              "shortTitle": "Last of The Forgotten Order "
+              "shortTitle": "Forgotten Order"
             }
           ],
           "title": "Necro",
@@ -242,7 +242,7 @@
             {
               "identifier": "Cauldron.Cauldron.TheKnight.WastelandRoninTheKnightCharacter",
               "title": "The Knights: Wasteland Ronin",
-              "shortTitle": "Knights: Wasteland Ronin"
+              "shortTitle": "Wasteland Ronin"
             }
           ],
           "title": "The Knight",
@@ -260,7 +260,7 @@
             {
               "identifier": "Cauldron.Cauldron.TheStranger.RunecarvedTheStrangerCharacter",
               "title": "The Runecarved Stranger",
-              "shortTitle": "The Runecarved Stranger"
+              "shortTitle": "Runecarved Stranger"
             },
             {
               "identifier": "Cauldron.Cauldron.TheStranger.PastTheStrangerCharacter",
@@ -275,7 +275,7 @@
             {
               "identifier": "Cauldron.Cauldron.TheStranger.CornTheStrangerCharacter",
               "title": "The Stranger in the Corn",
-              "shortTitle": "The Stranger in the Corn"
+              "shortTitle": "Stranger in the Corn"
             }
           ],
           "title": "The Stranger",
@@ -338,7 +338,7 @@
             {
               "identifier": "Cauldron.CauldronExperimental.Cricket.WastelandRoninCricketCharacter",
               "title": "Wasteland Ronin Cricket",
-              "shortTitle": "Wasteland Ronin Cricket"
+              "shortTitle": "Wasteland Ronin "
             }
           ],
           "title": "Cricket",
@@ -398,8 +398,8 @@
           "identifier": "Cauldron.CauldronExperimental.Titan"
         }
       ],
-      "title": "Cauldron:Experimental",
-      "shortTitle": "Cauldron:Experimental",
+      "title": "Cauldron: Experimental",
+      "shortTitle": "Cauldron: Experimental",
       "identifier": "Cauldron.CauldronExperimental"
     },
     {
@@ -452,7 +452,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.Gargoyle.WastelandRoninGargoyleCharacter",
               "title": "Wasteland Ronin Gargoyle",
-              "shortTitle": "Wasteland Ronin Gargoyle"
+              "shortTitle": "Wasteland Ronin "
             },
             {
               "identifier": "Cauldron.CauldronAdrift.Gargoyle.FutureGargoyleCharacter",
@@ -523,7 +523,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.Pyre.ExpeditionOblaskPyreCharacter",
               "title": "Pyre: Expedition Oblask",
-              "shortTitle": "Pyre: Expedition Oblask"
+              "shortTitle": "Expedition Oblask"
             }
           ],
           "title": "Pyre",
@@ -555,8 +555,8 @@
           "identifier": "Cauldron.CauldronAdrift.Terminus"
         }
       ],
-      "title": "Cauldron:Adrift",
-      "shortTitle": "Cauldron:Adrift",
+      "title": "Cauldron: Adrift",
+      "shortTitle": "Cauldron: Adrift",
       "identifier": "Cauldron.CauldronAdrift"
     },
     {
@@ -631,8 +631,8 @@
           "identifier": "Cauldron.CauldronStormfall.MagnificentMara"
         }
       ],
-      "title": "Cauldron:Stormfall",
-      "shortTitle": "Cauldron:Stormfall",
+      "title": "Cauldron: Stormfall",
+      "shortTitle": "Cauldron: Stormfall",
       "identifier": "Cauldron.CauldronStormfall"
     }
   ],
@@ -776,8 +776,8 @@
           "identifier": "Cauldron.CauldronStormfall.PhaseVillain"
         }
       ],
-      "title": "Cauldron:Stormfall",
-      "shortTitle": "Cauldron:Stormfall",
+      "title": "Cauldron: Stormfall",
+      "shortTitle": "Cauldron: Stormfall",
       "identifier": "Cauldron.CauldronStormfall"
     },
     {
@@ -861,8 +861,8 @@
           "identifier": "Cauldron.CauldronAdrift.TheMistressOfFate"
         }
       ],
-      "title": "Cauldron:Adrift",
-      "shortTitle": "Cauldron:Adrift",
+      "title": "Cauldron: Adrift",
+      "shortTitle": "Cauldron: Adrift",
       "identifier": "Cauldron.CauldronAdrift"
     },
     {
@@ -912,8 +912,8 @@
           "identifier": "Cauldron.CauldronExperimental.Vector"
         }
       ],
-      "title": "Cauldron:Experimental",
-      "shortTitle": "Cauldron:Experimental",
+      "title": "Cauldron: Experimental",
+      "shortTitle": "Cauldron: Experimental",
       "identifier": "Cauldron.CauldronExperimental"
     }
   ],
@@ -1071,8 +1071,8 @@
           "identifier": "Cauldron.CauldronAdrift.WindmillCity"
         }
       ],
-      "title": "Cauldron:Adrift",
-      "shortTitle": "Cauldron:Adrift",
+      "title": "Cauldron: Adrift",
+      "shortTitle": "Cauldron: Adrift",
       "identifier": "Cauldron.CauldronAdrift"
     },
     {
@@ -1104,8 +1104,8 @@
           "identifier": "Cauldron.CauldronUnexpected.OblaskCrater"
         }
       ],
-      "title": "Cauldron:Unexpected",
-      "shortTitle": "Cauldron:Unexpected",
+      "title": "Cauldron: Unexpected",
+      "shortTitle": "Cauldron: Unexpected",
       "identifier": "Cauldron.CauldronUnexpected"
     },
     {
@@ -1124,8 +1124,8 @@
           "identifier": "Cauldron.CauldronStormfall.SuperstormAkela"
         }
       ],
-      "title": "Cauldron:Stormfall",
-      "shortTitle": "Cauldron:Stormfall",
+      "title": "Cauldron: Stormfall",
+      "shortTitle": "Cauldron: Stormfall",
       "identifier": "Cauldron.CauldronStormfall"
     },
     {
@@ -1144,8 +1144,8 @@
           "identifier": "Cauldron.CauldronExperimental.TheCybersphere"
         }
       ],
-      "title": "Cauldron:Experimental",
-      "shortTitle": "Cauldron:Experimental",
+      "title": "Cauldron: Experimental",
+      "shortTitle": "Cauldron: Experimental",
       "identifier": "Cauldron.CauldronExperimental"
     }
   ],

@@ -7,6 +7,7 @@ namespace SOTM.InfraredEyepiece.Utilities
         private static Dictionary<string, string> FULL_TITLE_SPECIAL_CASES = new()
         {
             { "BaseExpansion", "Base Game" },
+            { "MagicalMysteriesPack", "Magical Mysteries" },
             { "SpookyGhostwriterComics", "Spooky Ghostwriter"},
             { "Menagerie", "Menagerie of the Multiverse"}
         };
@@ -18,7 +19,7 @@ namespace SOTM.InfraredEyepiece.Utilities
                 return FULL_TITLE_SPECIAL_CASES[expansionIdentifier];
             }
             return Regex.Replace(expansionIdentifier, "([a-z])([A-Z0-9])", "$1 $2")
-                .Replace("Cauldron ", "Cauldron:")
+                .Replace("Cauldron ", "Cauldron: ")
                 .Replace("Obliv Aeon", "OblivAeon");
         }
 

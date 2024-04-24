@@ -4,6 +4,7 @@ namespace SOTM.MissionControl.Models
 {
     public class DeckVariantMetadata
     {
+        public string? title;
         public string? shortTitle;
         public GlobalIdentifier identifier;
         public string? color;
@@ -11,6 +12,7 @@ namespace SOTM.MissionControl.Models
         public DeckVariantMetadata(DeckVariant variant)
         {
             this.identifier = variant.identifier;
+            this.title = variant.title;
             this.shortTitle = variant.shortTitle;
         }
     }

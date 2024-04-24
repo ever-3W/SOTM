@@ -1,0 +1,45 @@
+@using SOTM.Shared.Models
+@using SOTM.MissionControl.Models
+@using SOTM.MissionControl.Services
+@using System.Text.RegularExpressions
+@inject DeckDataService deckData
+
+@inherits ComponentBase
+<MudCard Class="@($"character-card d-flex {Class}")">
+    <MudCardContent Class="pa-2 flex-1 mud-height-full character-card-content">
+        <MudText><b>@(VariantMetadata?.title ?? DefaultTitle)</b></MudText>
+    </MudCardContent>
+    <div class="mud-height-full character-card-marker" style=@($"background-color: {VariantMetadata?.color ?? "#000"}")></div>
+</MudCard>
+
+<style>
+    .character-card {
+        width: 130px;
+        height: 170px;
+        color: var(--character-card-text-color);
+        background-color: var(--character-card-color);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-wrap: break-word;
+        user-select: none;
+        hyphens: auto;
+    }
+    .character-card-content {
+        width: calc(100% - 6px);
+    }
+    .character-card-marker {
+        width: 6px;
+    }
+</style>
+
+@code
+{
+    [Parameter]
+    public string Class { get; set; }
+
+    [Parameter]
+    public DeckVariantMetadata VariantMetadata { get; set; }
+
+    [Parameter]
+    public string DefaultTitle { get; set; }
+}

@@ -143,13 +143,19 @@ namespace SOTM.MissionControl.Services
             return deck.GetChildren().Concat(promoVariants);
         }
 
+        public DeckVariantMetadata? GetVariantMetadata(DeckVariant? variant)
+        {
+            if (variant == null)
+            {
+                return null;
+            }
+            return new DeckVariantMetadata(variant) 
+            { color = this.variantIdentifierCollectionTable[variant.identifier].color };
+        }
+
         public IEnumerable<DeckVariantMetadata> GetAllVariantsMetadata(Deck deck)
         {
-            return this.GetAllVariants(deck).Select
-            (
-                variant => new DeckVariantMetadata(variant) 
-                { color = this.variantIdentifierCollectionTable[variant.identifier].color }
-            );
+            return this.GetAllVariants(deck).Select(this.GetVariantMetadata);
         }
 
         public IEnumerable<IEnumerable<DeckVariant>> VariantsByKindGroupedByDeck(DeckKind kind)

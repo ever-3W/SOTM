@@ -86,8 +86,7 @@ namespace SOTM.InfraredEyepiece.Importers
                             return new DeckVariant(identifier)
                             {
                                 title = VariantTitleUtils.GetVariantFullTitle(card.promoTitle),
-                                // Reuse full title since short title function requires deck title
-                                shortTitle = VariantTitleUtils.GetVariantFullTitle(card.promoTitle)
+                                shortTitle = VariantTitleUtils.GetVariantShortTitle(card.promoTitle, null)
                             };
                         }).ToList()
                     ))

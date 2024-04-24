@@ -17,16 +17,13 @@
     <MudCard Class="flex-0 pa-3 mb-3" Style="@($"color:{Colors.Indigo.Darken2}; background:{Colors.Indigo.Lighten5};")">
         <MudCardContent Class="d-flex flex-column pa-0" Style="height: 550px;">
             <div class="flex-0">
-                <MudText Align="Align.Center" Typo="Typo.h6" Style="@($"color: {Colors.Indigo.Darken4};")">VILLAIN</MudText>
+                <MudText Align="Align.Center" Typo="Typo.h6" Style="@($"user-select: none; color: {Colors.Indigo.Darken4};")">VILLAIN</MudText>
             </div>
-            <div class="flex-0 pa-3 rounded d-flex justify-space-around" style="border-width: 5px;">
-                <MudCard Class="character-card villain-character">
-                    <MudCardHeader>
-                        <CardHeaderContent>
-                            <MudText><b>@(this.GetSelectedVillainEntity()?.title ?? "Unknown Villain")</b></MudText>
-                        </CardHeaderContent>
-                    </MudCardHeader>
-                </MudCard>
+            <div class="flex-0 pa-4 rounded d-flex justify-space-around" style="border-width: 5px;">
+                <CharacterCard
+                    Class="villain-character"
+                    VariantMetadata="this.GetSelectedVillainEntity()"
+                    DefaultTitle="Unknown Villain"/>
             </div>
             <MudSpacer />
             <div class="flex-0" style="box-sizing: border-box;">
@@ -60,25 +57,21 @@
                 <ChildContent>
                     <div class="flex-0 align-content-start">
                         <MudText Align="Align.Center" Typo="Typo.h6" Class="hero-cc-dropzone-text">HEROES</MudText>
-                        <MudDropZone ItemIsDisabled="ItemIsDisabled" T="HeroCharacterDropItem" Identifier="Picked" Class="rounded d-flex pa-3 ma-0 flex-1 gap-3 hero-cc-dropzone" AllowReorder="true">
+                        <MudDropZone ItemIsDisabled="ItemIsDisabled" T="HeroCharacterDropItem" Identifier="Picked" Class="rounded d-flex pa-4 ma-0 flex-1 gap-3 hero-cc-dropzone" AllowReorder="true">
                         </MudDropZone>
                     </div>
                     <MudSpacer />
                     <div class="flex-0 align-content-start">
                         <MudText Align="Align.Center" Typo="Typo.h6" Class="@($"{(DropZonesDisabled() ? "hero-cc-dropzone-text-disabled" : "hero-cc-dropzone-text")}")">AVAILABLE HEROES</MudText>
-                        <MudDropZone ItemIsDisabled="ItemIsDisabled" T="HeroCharacterDropItem" Identifier="Benched" Class="@($"rounded d-flex pa-3 ma-0 flex-1 gap-3 {(DropZonesDisabled() ? "hero-cc-dropzone-disabled" : "hero-cc-dropzone")}")" AllowReorder="true" DisabledClass="hero-character-disabled">
+                        <MudDropZone ItemIsDisabled="ItemIsDisabled" T="HeroCharacterDropItem" Identifier="Benched" Class="@($"rounded d-flex pa-4 ma-0 flex-1 gap-3 {(DropZonesDisabled() ? "hero-cc-dropzone-disabled" : "hero-cc-dropzone")}")" AllowReorder="true" DisabledClass="hero-character-disabled">
                         </MudDropZone>
                         <MudText Align="Align.Center" Typo="Typo.subtitle2" Style="@($"margin-top: 5px; color: {Colors.Red.Darken4};")">@(uiController.GetBottomTooltipText())</MudText>
                     </div>
                 </ChildContent>
                 <ItemRenderer>
-                    <MudCard Class="character-card hero-character">
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText><b>@context.entity.title</b></MudText>
-                            </CardHeaderContent>
-                        </MudCardHeader>
-                    </MudCard>
+                    <CharacterCard
+                        Class="hero-character"
+                        VariantMetadata="@context.entity"/>
                 </ItemRenderer>
             </MudDropContainer>
         </MudCardContent>
@@ -86,16 +79,13 @@
     <MudCard Class="flex-grow-0 pa-3 mb-3" Style="@($"color:{Colors.Green.Darken2}; background:{Colors.Green.Lighten5};")">
         <MudCardContent Class="d-flex flex-column pa-0" Style="width: 100%; height:550px;">
             <div class="flex-0">
-                <MudText Align="Align.Center" Typo="Typo.h6" Style="@($"color: {Colors.Green.Darken4};")">ENVIRONMENT</MudText>
+                <MudText Align="Align.Center" Typo="Typo.h6" Style="@($"user-select: none; color: {Colors.Green.Darken4};")">ENVIRONMENT</MudText>
             </div>
-            <div class="flex-0 pa-3 rounded d-flex justify-space-around" style="border-width: 5px;">
-                <MudCard Class="character-card environment-character">
-                    <MudCardHeader>
-                        <CardHeaderContent>
-                            <MudText><b>@(this.GetSelectedEnvironmentEntity()?.title ?? "Unknown Environment")</b></MudText>
-                        </CardHeaderContent>
-                    </MudCardHeader>
-                </MudCard>
+            <div class="flex-0 pa-4 rounded d-flex justify-space-around" style="border-width: 5px;">
+                <CharacterCard
+                    Class="environment-character"
+                    VariantMetadata="this.GetSelectedEnvironmentEntity()"
+                    DefaultTitle="Unknown Environment"/>
             </div>
             <MudSpacer />
             <div class="flex-0" style="box-sizing: border-box;">
@@ -137,16 +127,6 @@
 </div>
 
 <style>
-    .character-card {
-        width: 120px;
-        height: 155px;
-        color: var(--character-card-text-color);
-        background-color: var(--character-card-color);
-        text-overflow: ellipsis;
-        overflow: hidden;
-        word-wrap: break-word;
-        hyphens: auto;
-    }
     .villain-character {
         --character-card-text-color: @(Colors.Indigo.Darken4);
         --character-card-color: @(Colors.Indigo.Lighten2);
@@ -164,7 +144,7 @@
         --character-card-color: @(Colors.Green.Lighten2);
     }
     .hero-cc-dropzone, .hero-cc-dropzone-disabled {
-        height:205px;
+        height: 210px;
         min-width: 0;
         overflow-x: scroll;
         border-width: 5px;
@@ -179,9 +159,11 @@
     }
     .hero-cc-dropzone-text {
         color: @(Colors.Amber.Darken4);
+        user-select: none;
     }
     .hero-cc-dropzone-text-disabled {
         color: #ffc187;
+        user-select: none;
     }
 </style>
 
@@ -304,7 +286,7 @@
 
     public class HeroCharacterDropItem
     {
-        public DeckVariant entity { get; init; }
+        public DeckVariantMetadata entity { get; init; }
         public bool isPicked = false;
         public int Order { get; set; }
     }
@@ -335,14 +317,14 @@
     private MudDropContainer<HeroCharacterDropItem> heroDropContainerRef;
     private List<HeroCharacterDropItem> heroDropZoneItems = [];
 
-    private DeckVariant? GetSelectedVillainEntity()
+    private DeckVariantMetadata? GetSelectedVillainEntity()
     {
-        return deckData.GetVariantData(gameSvc.game?.draft.villains.ElementAtOrDefault(0));
+        return deckData.GetVariantMetadata(deckData.GetVariantData(gameSvc.game?.draft.villains.ElementAtOrDefault(0)));
     }
 
-    private DeckVariant? GetSelectedEnvironmentEntity()
+    private DeckVariantMetadata? GetSelectedEnvironmentEntity()
     {
-        return deckData.GetVariantData(gameSvc.game?.draft.environments.ElementAtOrDefault(0));
+        return deckData.GetVariantMetadata(deckData.GetVariantData(gameSvc.game?.draft.environments.ElementAtOrDefault(0)));
     }
 
     protected override async Task OnInitializedAsync()
@@ -354,7 +336,7 @@
         this.heroDropZoneItems = gameSvc.game?.draft.heroes.Select(
             (identifier, index) => new HeroCharacterDropItem()
             {
-                entity = deckData.GetVariantData(identifier),
+                entity = deckData.GetVariantMetadata(deckData.GetVariantData(identifier)),
                 isPicked = false,
                 Order = index
             }
@@ -374,7 +356,7 @@
         this.heroDropZoneItems = gameSvc.game?.draft.heroes.Select(
             (identifier, index) => new HeroCharacterDropItem()
             {
-                entity = deckData.GetVariantData(identifier),
+                entity = deckData.GetVariantMetadata(deckData.GetVariantData(identifier)),
                 isPicked = false,
                 Order = index
             }

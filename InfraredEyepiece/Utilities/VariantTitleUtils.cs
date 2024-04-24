@@ -19,8 +19,7 @@ namespace SOTM.InfraredEyepiece.Utilities
             return variantTitle;
         }
 
-        private const int VARIANT_LINE_CHAR_LIMIT = 25;
-
+        private const int VARIANT_LINE_CHAR_LIMIT = 23;
         private static Dictionary<string, string> SHORT_TITLE_SPECIAL_CASES = new()
         {
             { "Accelerated Evolution Anathema", "Acc. Evolution Anathema" },
@@ -32,6 +31,10 @@ namespace SOTM.InfraredEyepiece.Utilities
             { "Xtreme Prime Wardens Argent Adept", "Xtreme Prime Wardens" },
             { "Dark Conductor Argent Adept", "Dark Conductor" },
             { "One With Freedom Doctor Metropolis", "One With Freedom"},
+            { "Nitro Boost Absolute Zero", "Nitro Boost" },
+            { "Urban Warfare Expatriette", "Urban Warfare" },
+            { "The Knights: Wasteland Ronin", "Wasteland Ronin" },
+            { "Last of The Forgotten Order Necro", "Forgotten Order" },
             { "Tsukiko Tanner: The Game is Rigged", "The Game is Rigged" },
             { "Madame Mittermeier's Fantastical Festival of Conundrums and Curiosities", "MMFFCC"},
             { "Catchwater Harbor 1929", "Catchwater Harbor, 1929" },
@@ -41,7 +44,7 @@ namespace SOTM.InfraredEyepiece.Utilities
             { "Secret Origins Alycia Chin", "Secret Origins" }
         };
 
-        public static string GetVariantShortTitle (string variantTitle, string deckTitle)
+        public static string GetVariantShortTitle (string variantTitle, string? deckTitle)
         {
             if (SHORT_TITLE_SPECIAL_CASES.ContainsKey(variantTitle))
             {
@@ -57,13 +60,20 @@ namespace SOTM.InfraredEyepiece.Utilities
                 {
                     return variantTitle.Replace("Ministry Of Strategic Science", "MSS");
                 }
-                if (variantTitle.StartsWith(deckTitle, StringComparison.CurrentCultureIgnoreCase))
+                if (deckTitle is not null)
                 {
-                    return Regex.Replace(variantTitle, $"{deckTitle}(\\:?)(,?)( ?)", "", RegexOptions.IgnoreCase);
-                }
-                if (variantTitle.EndsWith(deckTitle, StringComparison.CurrentCultureIgnoreCase))
-                {
-                    return Regex.Replace(variantTitle, $"{deckTitle}( ?)", "");
+                    if (variantTitle == deckTitle)
+                    {
+                        return variantTitle;
+                    }
+                    if (variantTitle.StartsWith(deckTitle, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        return Regex.Replace(variantTitle, $"{deckTitle}(\\:?)(,?)( ?)", "", RegexOptions.IgnoreCase);
+                    }
+                    if (variantTitle.EndsWith(deckTitle, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        return Regex.Replace(variantTitle, $"{deckTitle}( ?)", "");
+                    }
                 }
             }
             return variantTitle;
