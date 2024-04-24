@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Blazored.LocalStorage;
+using SOTM.MissionControl.Models;
 using SOTM.Shared.Models;
 
 namespace SOTM.MissionControl.Services
@@ -114,16 +115,19 @@ namespace SOTM.MissionControl.Services
         }
 
         // Used for data lookup
-        private Dictionary<GlobalIdentifier, DeckVariant> deckVariantTable = new();
+        private Dictionary<GlobalIdentifier, DeckVariant> variantIdentifierEntityTable = new();
+        private Dictionary<GlobalIdentifier, CollectionV2> variantIdentifierCollectionTable = new();
         private void BuildCollectionDataTables(CollectionV2 collection)
         {
             foreach (DeckVariant variant in collection.GetAllDecks().SelectMany(deck => deck.GetChildren()))
             {
-                this.deckVariantTable[variant.identifier] = variant;
+                this.variantIdentifierEntityTable[variant.identifier] = variant;
+                this.variantIdentifierCollectionTable[variant.identifier] = collection;
             }
             foreach (DeckVariant variant in collection.hangingVariants.Values.SelectMany(variant => variant))
             {
-                this.deckVariantTable[variant.identifier] = variant;
+                this.variantIdentifierEntityTable[variant.identifier] = variant;
+                this.variantIdentifierCollectionTable[variant.identifier] = collection;
             }
         }
 
@@ -137,6 +141,15 @@ namespace SOTM.MissionControl.Services
             string dne = deck.GetNamespacedIdentifier();
             IEnumerable<DeckVariant> promoVariants = this.model.GetAllCollections().SelectMany(collection => collection.hangingVariants.GetValueOrDefault(dne, []));
             return deck.GetChildren().Concat(promoVariants);
+        }
+
+        public IEnumerable<DeckVariantMetadata> GetAllVariantsMetadata(Deck deck)
+        {
+            return this.GetAllVariants(deck).Select
+            (
+                variant => new DeckVariantMetadata(variant) 
+                { color = this.variantIdentifierCollectionTable[variant.identifier].color }
+            );
         }
 
         public IEnumerable<IEnumerable<DeckVariant>> VariantsByKindGroupedByDeck(DeckKind kind)
@@ -185,7 +198,7 @@ namespace SOTM.MissionControl.Services
             {
                 return null;
             }
-            return this.deckVariantTable.GetValueOrDefault(identifier);
+            return this.variantIdentifierEntityTable.GetValueOrDefault(identifier);
         }
 
         public IEnumerable<Expansion> GetHeroExpansions()

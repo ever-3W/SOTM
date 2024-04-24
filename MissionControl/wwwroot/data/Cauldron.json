@@ -716,7 +716,7 @@
             {
               "identifier": "Cauldron.Cauldron.Tiamat.HydraWinterTiamatCharacter",
               "title": "Hydra Tiamat",
-              "shortTitle": "The Jaws of Winter"
+              "shortTitle": "Hydra Tiamat"
             },
             {
               "identifier": "Cauldron.Cauldron.Tiamat.FutureTiamatCharacter",
@@ -1010,7 +1010,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.CatchwaterHarbor.CatchwaterHarbor",
               "title": "Catchwater Harbor, 1929",
-              "shortTitle": "Catchwater Harbor 1929"
+              "shortTitle": "Catchwater Harbor, 1929"
             }
           ],
           "title": "Catchwater Harbor 1929",

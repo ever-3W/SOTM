@@ -30,7 +30,7 @@
             {
                 <DeckCard 
                     @ref="villainDeckRef"
-                    Title="@(expansion.identifier.LocalIdentifier())"
+                    Title="@(expansion.shortTitle)"
                     Variants="@(DeckCard.FromExpansionModel(deckData, expansion))"
                     PickableVariants="@(expansion.GetChildren().SelectMany(deck => GetInitialPickableVariants(deck)))"
                     Class="villain-cards"
@@ -50,7 +50,7 @@
                 <MudCard Outlined Class="pa-3 mb-3" Style=@($"background: {Colors.Amber.Lighten4};")>
                     <MudCardHeader Class="pa-0 mb-2 hero-expansion-header">
                         <CardHeaderContent>
-                            <MudText Typo="Typo.h6">@expansion.GetIdentifier().LocalIdentifier()</MudText>
+                            <MudText Typo="Typo.h6">@expansion.title</MudText>
                         </CardHeaderContent>
                     </MudCardHeader>
                     <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
@@ -80,7 +80,7 @@
             {
                 <DeckCard 
                     @ref="environmentDeckRef"
-                    Title="@(expansion.identifier.LocalIdentifier())"
+                    Title="@(expansion.shortTitle)"
                     Variants="@(DeckCard.FromExpansionModel(deckData, expansion))"
                     PickableVariants="@(expansion.GetChildren().SelectMany(deck => GetInitialPickableVariants(deck)))"
                     Class="environment-cards"

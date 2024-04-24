@@ -14,10 +14,11 @@
     </MudCardHeader>
     <MudCardContent Class="pa-1">
         <MudToggleGroup T="GlobalIdentifier" Dense DisableRipple Vertical SelectionMode="SelectionMode.MultiSelection" @bind-Values="PickableVariants" Class="banned" SelectedClass="pickable">
-            @foreach (var (variantTitle, variantShortTitle, variantIdentifier) in Variants)
+            @foreach (var metadata in Variants)
             {
-                <MudToggleItem Class="no-padding" Value="@variantIdentifier">
-                    <MudText Typo="Typo.body2" Class="@(context ? "pickable-text" : "banned-text")" Style="width: 100%; max-width: 160px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@variantShortTitle</MudText>
+                <MudToggleItem Class="no-padding d-flex justify-space-between" Value="@metadata.identifier">
+                    <MudText Typo="Typo.body2" Class=@($"py-0 pl-1 pr-0 flex-1 {(context ? "pickable-text" : "banned-text")}") Style="width: 160px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@metadata.shortTitle</MudText>
+                    <div class="flex-0 variant-collection-marker" style="@($"background-color:{metadata.color}")"></div>
                 </MudToggleItem>
             }
         </MudToggleGroup>
@@ -90,14 +91,32 @@
     .no-padding {
         padding: 0px !important;
     }
+
+    .variant-collection-marker {
+        width: 5px;
+        height: 100%;
+    }
 </style>
 
 @code
 {
+    public class VariantMetadata
+    {
+        public string? title;
+        public string? shortTitle;
+        public GlobalIdentifier identifier;
+        public string color;
+
+        public VariantMetadata(GlobalIdentifier identifier)
+        {
+            this.identifier = identifier;
+        }
+    }
+
     [Parameter]
     public string Title { get; set; }
     [Parameter]
-    public List<(string?, string?, GlobalIdentifier)> Variants { get; set; }
+    public List<DeckVariantMetadata> Variants { get; set; }
 
     [Parameter]
     public IEnumerable<GlobalIdentifier> PickableVariants { get; set; }
@@ -112,23 +131,20 @@
         }
         else
         {
-            this.PickableVariants = this.Variants.Select(v => v.Item3);
+            this.PickableVariants = this.Variants.Select(v => v.identifier);
         }
     }
 
     [Parameter]
     public string Class { get; set; }
-    public static List<(string?, string?, GlobalIdentifier)> FromDeckModel(DeckDataService deckData, Deck deck)
+    public static List<DeckVariantMetadata> FromDeckModel(DeckDataService deckData, Deck deck)
     {
-        return deckData.GetAllVariants(deck)
-            .Select(variant => (variant.title, variant.shortTitle, variant.identifier))
-            .ToList();
+        return deckData.GetAllVariantsMetadata(deck).ToList();
     }
 
-    public static List<(string?, string?, GlobalIdentifier)> FromExpansionModel(DeckDataService deckData, Expansion expansion)
+    public static List<DeckVariantMetadata> FromExpansionModel(DeckDataService deckData, Expansion expansion)
     {
-        return expansion.GetChildren().SelectMany(deck => deckData.GetAllVariants(deck))
-            .Select(variant => (variant.title, variant.shortTitle, variant.identifier))
+        return expansion.GetChildren().SelectMany(deck => deckData.GetAllVariantsMetadata(deck))
             .ToList();
     }
 
