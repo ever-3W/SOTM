@@ -16,7 +16,9 @@
 
 <div>
     <MudText> Click on "Draft New Game" to create a draft with randomized villain, hero, and environment decks. </MudText>
-    <MudText> Click on any hero/villain/environment name to ban it from being selected. Clicking a banned item again will un-ban it. </MudText>
+    <MudText> Click on any hero/villain/environment item to ban it from being selected. Clicking a banned item again will unban it. </MudText>
+    <MudText> Clicking on a card heading will ban/unban all items listed on that card. </MudText>
+    <MudText> Shift-click on any hero/villain/environment item to ban/unban all other items from the same mod. </MudText>
     <MudText> Ban settings are saved every time a new draft is created. </MudText>
 </div>
 
@@ -67,6 +69,7 @@
                                 Variants="@(DeckCard.FromDeckModel(deckData, deck))"
                                 PickableVariants="@(GetInitialPickableVariants(deck))"
                                 Class="hero-cards"
+                                OnChangedTo="OnChangedTo"
                             />
                         }
                     </MudCardContent>
@@ -89,6 +92,7 @@
                     Variants="@(DeckCard.FromExpansionModel(deckData, expansion))"
                     PickableVariants="@(expansion.GetChildren().SelectMany(deck => GetInitialPickableVariants(deck)))"
                     Class="environment-cards"
+                    OnChangedTo="OnChangedTo"
                 />
             }
         </MudCardContent>
@@ -162,6 +166,12 @@
     Components.DeckCard environmentDeckRef
     {
         set { environmentDeckComponents.Add(value); }
+    }
+    private IEnumerable<Components.DeckCard> AllDeckComponents()
+    {
+        return this.heroDeckComponents
+            .Concat(this.villainDeckComponents)
+            .Concat(this.environmentDeckComponents);
     }
 
     private async void DraftRandomGame()
@@ -241,6 +251,26 @@
 
     public void OnChangedTo(GlobalIdentifier identifier, bool enableAll)
     {
-        Console.WriteLine($"Changing {identifier} to {enableAll}");
+        if (_shiftFlag)
+        {
+            Console.WriteLine($"Changing {identifier} to {enableAll}");
+            var collection = deckData.GetSourceCollection(identifier);
+            if (enableAll)
+            {
+                foreach (Components.DeckCard component in this.AllDeckComponents())
+                {
+                    var slice = component.Variants.Select(variant => variant.identifier).Where(identifier => deckData.GetSourceCollection(identifier) == collection);
+                    component.UnionValues(slice);
+                }
+            }
+            else
+            {
+                foreach (Components.DeckCard component in this.AllDeckComponents())
+                {
+                    var slice = component.Variants.Select(variant => variant.identifier).Where(identifier => deckData.GetSourceCollection(identifier) != collection);
+                    component.IntersectValues(slice);
+                }
+            }
+        }
     }
 }
