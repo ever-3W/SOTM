@@ -13,7 +13,7 @@
         </CardHeaderContent>
     </MudCardHeader>
     <MudCardContent Class="pa-1">
-        <MudToggleGroup T="GlobalIdentifier" Dense DisableRipple Vertical SelectionMode="SelectionMode.MultiSelection" @bind-Values="PickableVariants" @bind-Values:after="() => ValuesChangedHandler(PickableVariants)" Class="banned" SelectedClass="pickable">
+        <MudToggleGroup T="GlobalIdentifier" Dense DisableRipple Vertical SelectionMode="SelectionMode.MultiSelection" @bind-Values:get="PickableVariants" @bind-Values:set="OnValuesChanged" Class="banned" SelectedClass="pickable">
             @foreach (var metadata in Variants)
             {
                 <MudToggleItem Class="no-padding d-flex justify-space-between" Value="@metadata.identifier">
@@ -141,21 +141,32 @@
         return expansion.GetChildren().SelectMany(deck => deckData.GetAllVariantViewModels(deck))
             .ToList();
     }
-
     public IEnumerable<GlobalIdentifier> GetPickableVariants()
     {
         return this.PickableVariants;
     }
 
-    private void ValuesChangedHandler(IEnumerable<GlobalIdentifier> identifiers)
+    private void OnValuesChanged(IEnumerable<GlobalIdentifier> identifiers)
     {
         var changed = this.PickableVariants.Union(identifiers).Except(this.PickableVariants.Intersect(identifiers));
+        this.PickableVariants = identifiers;
         Console.WriteLine($"Values changed: {string.Join(",", changed)}");
         foreach (GlobalIdentifier identifier in changed)
         {
             // there should only ever be one item in this loop
             this.OnChangedTo(identifier, identifiers.Contains(identifier));
         }
-        this.PickableVariants = identifiers;
+    }
+
+    public void IntersectValues(IEnumerable<GlobalIdentifier> identifiers)
+    {
+        this.PickableVariants = this.PickableVariants.Intersect(identifiers);
+        StateHasChanged();
+    }
+
+    public void UnionValues(IEnumerable<GlobalIdentifier> identifiers)
+    {
+        this.PickableVariants = this.PickableVariants.Union(identifiers);
+        StateHasChanged();
     }
 }

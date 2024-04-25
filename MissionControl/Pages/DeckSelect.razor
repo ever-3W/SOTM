@@ -38,6 +38,7 @@
                     Variants="@(DeckCard.FromExpansionModel(deckData, expansion))"
                     PickableVariants="@(expansion.GetChildren().SelectMany(deck => GetInitialPickableVariants(deck)))"
                     Class="villain-cards"
+                    OnChangedTo="OnChangedTo"
                 />
             }
         </MudCardContent>
@@ -236,5 +237,10 @@
     {
         KeyboardEvents.RemoveKeyDownListener(this.OnKeyDown);
         KeyboardEvents.RemoveKeyUpListener(this.OnKeyUp);
+    }
+
+    public void OnChangedTo(GlobalIdentifier identifier, bool enableAll)
+    {
+        Console.WriteLine($"Changing {identifier} to {enableAll}");
     }
 }
