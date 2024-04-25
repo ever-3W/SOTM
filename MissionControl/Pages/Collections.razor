@@ -21,7 +21,7 @@
     </ButtonTemplate>
 </MudFileUpload>
 <div class="d-flex flex-wrap gap-3 align-content-start pt-3">
-    @foreach (CollectionMetadata metadata in deckData.GetAllCollectionMetadata()) 
+    @foreach (CollectionViewModel metadata in deckData.GetAllCollectionViewModel()) 
     {
         <MudCard Style="@($"width: 300px; background: {Colors.BlueGrey.Lighten5}")">
             <MudCardHeader Class="pa-2" Style="@($"background: {Colors.BlueGrey.Lighten2}")">
@@ -65,14 +65,14 @@
     {
         await deckData.Load(localStorage);
         Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(
-            deckData.GetAllCollectionMetadata()
+            deckData.GetAllCollectionViewModel()
         ));
     }
     private async Task UploadCollection(InputFileChangeEventArgs args)
     {
         try
         {
-            var collection = await JsonSerializer.DeserializeAsync<CollectionV2>(args.File.OpenReadStream());
+            var collection = await JsonSerializer.DeserializeAsync<Collection>(args.File.OpenReadStream());
             deckData.model.AddImported(collection);
             StateHasChanged();
         }

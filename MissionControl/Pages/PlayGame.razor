@@ -286,7 +286,7 @@
 
     public class HeroCharacterDropItem
     {
-        public DeckVariantMetadata entity { get; init; }
+        public DeckVariantViewModel entity { get; init; }
         public bool isPicked = false;
         public int Order { get; set; }
     }
@@ -317,12 +317,12 @@
     private MudDropContainer<HeroCharacterDropItem> heroDropContainerRef;
     private List<HeroCharacterDropItem> heroDropZoneItems = [];
 
-    private DeckVariantMetadata? GetSelectedVillainEntity()
+    private DeckVariantViewModel? GetSelectedVillainEntity()
     {
         return deckData.GetVariantMetadata(deckData.GetVariantData(gameSvc.game?.draft.villains.ElementAtOrDefault(0)));
     }
 
-    private DeckVariantMetadata? GetSelectedEnvironmentEntity()
+    private DeckVariantViewModel? GetSelectedEnvironmentEntity()
     {
         return deckData.GetVariantMetadata(deckData.GetVariantData(gameSvc.game?.draft.environments.ElementAtOrDefault(0)));
     }

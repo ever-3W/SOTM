@@ -6,16 +6,16 @@ namespace SOTM.InfraredEyepiece.Importers
 {
     public class CoreGameImporter : CollectionImporter
     {
-        private GlobalIdentifier _collectionIdentifier = new GlobalIdentifier(CollectionV2.BASE_COLLECTION_IDENTIFIER);
+        private GlobalIdentifier _collectionIdentifier = new GlobalIdentifier(Collection.BASE_COLLECTION_IDENTIFIER);
         protected override GlobalIdentifier collectionIdentifier { get => _collectionIdentifier; }
 
         public CoreGameImporter(IConfigurationRoot config): base(config)
         {}
 
-        public override CollectionV2 ParseResourcesV2()
+        public override Collection ParseResources()
         {
-            CollectionV2 result = new CollectionV2(this._collectionIdentifier, CollectionV2.BASE_COLLECTION_TITLE)
-            { color = CollectionV2.BASE_COLLECTION_COLOR };
+            Collection result = new Collection(this._collectionIdentifier, Collection.BASE_COLLECTION_TITLE)
+            { color = Collection.BASE_COLLECTION_COLOR };
             // the core DLL shouldn't contain any hanging variants
             var (decks, hangingVariants) = this.ParseResourcesFromDLL(this.config["VanillaDLLPath"]);
             result.hangingVariants = hangingVariants;

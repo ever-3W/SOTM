@@ -2,14 +2,14 @@ using SOTM.Shared.Models;
 
 namespace SOTM.MissionControl.Models
 {
-    public class DeckVariantMetadata
+    public class DeckVariantViewModel
     {
         public string? title;
         public string? shortTitle;
         public GlobalIdentifier identifier;
         public string? color;
 
-        public DeckVariantMetadata(DeckVariant variant)
+        public DeckVariantViewModel(DeckVariant variant)
         {
             this.identifier = variant.identifier;
             this.title = variant.title;

@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace SOTM.Shared.Models
 {
-    public class CollectionV2: IIdentifiable
+    public class Collection: IIdentifiable
     {
         public const string BASE_COLLECTION_IDENTIFIER = "Vanilla";
         public const string BASE_COLLECTION_TITLE = "Official Content";
@@ -74,7 +74,7 @@ namespace SOTM.Shared.Models
         public Dictionary<string, List<DeckVariant>> hangingVariants;
 
         [JsonConstructor]
-        public CollectionV2(GlobalIdentifier identifier, string title) {
+        public Collection(GlobalIdentifier identifier, string title) {
             this.identifier = identifier;
             this.title = title;
 
@@ -136,7 +136,7 @@ namespace SOTM.Shared.Models
                 .SelectMany(expansion => expansion.GetChildren());
         }
 
-        public void MergeWith(CollectionV2 other)
+        public void MergeWith(Collection other)
         {
             this.heroExpansionParent.AddChildren(other.heroExpansionParent.GetChildren());
             this.villainExpansionParent.AddChildren(other.villainExpansionParent.GetChildren());

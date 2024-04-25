@@ -33,7 +33,7 @@ else
     importer = new ModImporter(config["ModPublishedFileId"], config);
 }
 
-var collection = importer.ParseResourcesV2();
+var collection = importer.ParseResources();
 var content = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(collection, new JsonSerializerOptions() { WriteIndented = true }) + '\n');
 
 var output = File.Open(importer.GetOutputFilePath(), FileMode.Create);

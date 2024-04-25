@@ -72,9 +72,9 @@ namespace SOTM.InfraredEyepiece.Importers
             );
         }
 
-        public override CollectionV2 ParseResourcesV2()
+        public override Collection ParseResources()
         {
-            CollectionV2 result = new CollectionV2(this._collectionIdentifier, this.collectionTitle)
+            Collection result = new Collection(this._collectionIdentifier, this.collectionTitle)
             { color = this.collectionColor };
             // the core DLL shouldn't contain any hanging variants
             var (decks, hangingVariants) = this.ParseResourcesFromDLL(this.dllPath);

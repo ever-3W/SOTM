@@ -12,7 +12,7 @@ namespace SOTM.MissionControl.Services
         IMPORTED
     }
 
-    public class CollectionMetadata
+    public class CollectionViewModel
     {
         [JsonInclude]
         public GlobalIdentifier identifier;
@@ -31,9 +31,9 @@ namespace SOTM.MissionControl.Services
         [JsonInclude]
         public CollectionSource source;
 
-        public static CollectionMetadata CreateMetadata(CollectionV2 collection, CollectionSource source)
+        public static CollectionViewModel CreateMetadata(Collection collection, CollectionSource source)
         {
-            return new CollectionMetadata()
+            return new CollectionViewModel()
             {
                 identifier = collection.identifier,
                 title = collection.title,
@@ -50,11 +50,11 @@ namespace SOTM.MissionControl.Services
     public class DeckDataModel
     {
         [JsonInclude]
-        public List<CollectionV2> presetCollections = new();
+        public List<Collection> presetCollections = new();
         [JsonInclude]
-        public List<CollectionV2> importedCollections = new();
+        public List<Collection> importedCollections = new();
 
-        public void AddPreset(CollectionV2 collection)
+        public void AddPreset(Collection collection)
         {
             string collectionKey = collection.GetIdentifier().ToString();
             int collectionIndex = this.presetCollections.FindIndex(existing => existing.identifier.ToString() == collectionKey);
@@ -68,7 +68,7 @@ namespace SOTM.MissionControl.Services
             }
         }
 
-        public void AddImported(CollectionV2 collection)
+        public void AddImported(Collection collection)
         {
             string collectionKey = collection.GetIdentifier().ToString();
             if (this.presetCollections.FindIndex(existing => existing.identifier.ToString() == collectionKey) >= 0)
@@ -94,7 +94,7 @@ namespace SOTM.MissionControl.Services
             this.importedCollections = this.importedCollections.Where(collection => !collection.identifier.Equals(collectionIdentifier)).ToList();
         }
 
-        public IEnumerable<CollectionV2> GetAllCollections()
+        public IEnumerable<Collection> GetAllCollections()
         {
             return this.presetCollections.Concat(this.importedCollections);
         }
@@ -116,8 +116,8 @@ namespace SOTM.MissionControl.Services
 
         // Used for data lookup
         private Dictionary<GlobalIdentifier, DeckVariant> variantIdentifierEntityTable = new();
-        private Dictionary<GlobalIdentifier, CollectionV2> variantIdentifierCollectionTable = new();
-        private void BuildCollectionDataTables(CollectionV2 collection)
+        private Dictionary<GlobalIdentifier, Collection> variantIdentifierCollectionTable = new();
+        private void BuildCollectionDataTables(Collection collection)
         {
             foreach (DeckVariant variant in collection.GetAllDecks().SelectMany(deck => deck.GetChildren()))
             {
@@ -143,17 +143,17 @@ namespace SOTM.MissionControl.Services
             return deck.GetChildren().Concat(promoVariants);
         }
 
-        public DeckVariantMetadata? GetVariantMetadata(DeckVariant? variant)
+        public DeckVariantViewModel? GetVariantMetadata(DeckVariant? variant)
         {
             if (variant == null)
             {
                 return null;
             }
-            return new DeckVariantMetadata(variant) 
+            return new DeckVariantViewModel(variant) 
             { color = this.variantIdentifierCollectionTable[variant.identifier].color };
         }
 
-        public IEnumerable<DeckVariantMetadata> GetAllVariantsMetadata(Deck deck)
+        public IEnumerable<DeckVariantViewModel> GetAllVariantViewModels(Deck deck)
         {
             return this.GetAllVariants(deck).Select(this.GetVariantMetadata);
         }
@@ -177,9 +177,9 @@ namespace SOTM.MissionControl.Services
             return parentsEnumerable.SelectMany(expansion => expansion.GetChildren().Select(deck => this.GetAllVariants(deck)));
         }
 
-        public void BuildFromSourceCollections(IEnumerable<CollectionV2?> sourceCollections)
+        public void BuildFromSourceCollections(IEnumerable<Collection?> sourceCollections)
         {
-            foreach (CollectionV2? collection in sourceCollections)
+            foreach (Collection? collection in sourceCollections)
             {
                 if (collection != null)
                 {
@@ -192,7 +192,7 @@ namespace SOTM.MissionControl.Services
         public async Task Load(ILocalStorageService storageService)
         {
             await this.repo.Load(storageService);
-            foreach (CollectionV2 collection in this.model.GetAllCollections())
+            foreach (Collection collection in this.model.GetAllCollections())
             {
                 this.BuildCollectionDataTables(collection);
             }
@@ -222,15 +222,15 @@ namespace SOTM.MissionControl.Services
             return this.model.GetAllCollections().SelectMany(collection => collection.environmentExpansions);
         }
 
-        public IEnumerable<CollectionMetadata> GetAllCollectionMetadata()
+        public IEnumerable<CollectionViewModel> GetAllCollectionViewModel()
         {
             return 
                 this.model.presetCollections
-                    .Select(collection => CollectionMetadata.CreateMetadata(collection, CollectionSource.PRESET))
+                    .Select(collection => CollectionViewModel.CreateMetadata(collection, CollectionSource.PRESET))
                 .Concat
                 (
                     this.model.importedCollections
-                        .Select(collection => CollectionMetadata.CreateMetadata(collection, CollectionSource.IMPORTED))
+                        .Select(collection => CollectionViewModel.CreateMetadata(collection, CollectionSource.IMPORTED))
                 );
         }
     }

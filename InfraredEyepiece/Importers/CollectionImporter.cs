@@ -157,6 +157,6 @@ namespace SOTM.InfraredEyepiece.Importers
                 this.GetOutputFileName()
             );
         }
-        public abstract CollectionV2 ParseResourcesV2();
+        public abstract Collection ParseResources();
     }
 }

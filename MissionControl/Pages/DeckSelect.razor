@@ -210,7 +210,7 @@
             var sourceCollections = (await Task.WhenAll(
                 latestManifest.files.Values.Select(async (entry) => 
                 {
-                    return await httpClient.GetFromJsonAsync<CollectionV2>($"data/{entry.file}");
+                    return await httpClient.GetFromJsonAsync<Collection>($"data/{entry.file}");
                 })
             )).OrderBy(collection => latestManifest.files[collection.identifier.ToString()].sortOrder);
             deckData.BuildFromSourceCollections(sourceCollections);

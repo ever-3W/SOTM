@@ -100,23 +100,11 @@
 
 @code
 {
-    public class VariantMetadata
-    {
-        public string? title;
-        public string? shortTitle;
-        public GlobalIdentifier identifier;
-        public string color;
-
-        public VariantMetadata(GlobalIdentifier identifier)
-        {
-            this.identifier = identifier;
-        }
-    }
 
     [Parameter]
     public string Title { get; set; }
     [Parameter]
-    public List<DeckVariantMetadata> Variants { get; set; }
+    public List<DeckVariantViewModel> Variants { get; set; }
 
     [Parameter]
     public IEnumerable<GlobalIdentifier> PickableVariants { get; set; }
@@ -137,14 +125,14 @@
 
     [Parameter]
     public string Class { get; set; }
-    public static List<DeckVariantMetadata> FromDeckModel(DeckDataService deckData, Deck deck)
+    public static List<DeckVariantViewModel> FromDeckModel(DeckDataService deckData, Deck deck)
     {
-        return deckData.GetAllVariantsMetadata(deck).ToList();
+        return deckData.GetAllVariantViewModels(deck).ToList();
     }
 
-    public static List<DeckVariantMetadata> FromExpansionModel(DeckDataService deckData, Expansion expansion)
+    public static List<DeckVariantViewModel> FromExpansionModel(DeckDataService deckData, Expansion expansion)
     {
-        return expansion.GetChildren().SelectMany(deck => deckData.GetAllVariantsMetadata(deck))
+        return expansion.GetChildren().SelectMany(deck => deckData.GetAllVariantViewModels(deck))
             .ToList();
     }
 
