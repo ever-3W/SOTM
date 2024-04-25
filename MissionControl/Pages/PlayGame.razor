@@ -14,7 +14,7 @@
 @inject SettingsService settingsSvc
 
 <div Class="d-flex justify-space-around flex-1 flex-row gap-3" Style="min-width:0; overflow: scroll;">
-    <MudCard Class="flex-0 pa-3 mb-3" Style="@($"color:{Colors.Indigo.Darken2}; background:{Colors.Indigo.Lighten5};")">
+    <MudCard Class="flex-0 pa-3 mb-3 villain-section">
         <MudCardContent Class="d-flex flex-column pa-0" Style="height: 550px;">
             <div class="flex-0">
                 <MudText Align="Align.Center" Typo="Typo.h6" Style="@($"user-select: none; color: {Colors.Indigo.Darken4};")">VILLAIN</MudText>
@@ -51,7 +51,7 @@
             </div>
         </MudCardContent>
     </MudCard>
-    <MudCard Class="flex-1 pa-3 mb-3" Style="@($"color:{Colors.Amber.Darken3}; background:{Colors.Amber.Lighten5};")">
+    <MudCard Class="flex-1 pa-3 mb-3 hero-section">
         <MudCardContent Class="pa-0 align-content-start gap-3 relative" Style="width: 100%; height:550px;">
             <MudDropContainer Class="align-content-space-between d-flex flex-column absolute" T="HeroCharacterDropItem" @ref="heroDropContainerRef" Items="@heroDropZoneItems" ItemsSelector="@((item, dropzone) => item.isPicked == (dropzone == "Picked"))" ItemDropped="ItemUpdated" Style="min-width: 0; width:100%; height:100%;">
                 <ChildContent>
@@ -76,7 +76,7 @@
             </MudDropContainer>
         </MudCardContent>
     </MudCard>
-    <MudCard Class="flex-grow-0 pa-3 mb-3" Style="@($"color:{Colors.Green.Darken2}; background:{Colors.Green.Lighten5};")">
+    <MudCard Class="flex-grow-0 pa-3 mb-3 environment-section">
         <MudCardContent Class="d-flex flex-column pa-0" Style="width: 100%; height:550px;">
             <div class="flex-0">
                 <MudText Align="Align.Center" Typo="Typo.h6" Style="@($"user-select: none; color: {Colors.Green.Darken4};")">ENVIRONMENT</MudText>
@@ -135,9 +135,12 @@
         --character-card-text-color: @(Colors.DeepOrange.Darken4);
         --character-card-color: @(Colors.Amber.Lighten1);
     }
-    .hero-character-disabled > .mud-card {
+    .hero-character-disabled .character-card {
         --character-card-text-color: #e5aa8c;
         --character-card-color: #ffe697;
+    }
+    .hero-character-disabled .character-card-marker {
+        filter: opacity(50%);
     }
     .environment-character {
         --character-card-text-color: @(Colors.Green.Darken4);
@@ -148,6 +151,7 @@
         min-width: 0;
         overflow-x: scroll;
         border-width: 5px;
+        border-color: @(Colors.Amber.Darken4);
         overflow-y: hidden;
     }
     .hero-cc-dropzone {
@@ -158,11 +162,10 @@
         border-color: #ffc187;
     }
     .hero-cc-dropzone-text {
-        color: @(Colors.Amber.Darken4);
         user-select: none;
     }
     .hero-cc-dropzone-text-disabled {
-        color: #ffc187;
+        color: @(Colors.Amber.Darken3);
         user-select: none;
     }
 </style>
@@ -173,8 +176,8 @@
     public class UIController
     {
         protected const string TOOLTIP_PICK_DEFAULT = "Assemble your team by dragging 3-5 available hero cards to the top.";
-        protected const string TOOLTIP_PICK_READY_START = "Continue editing your hero selections, or press the \"Fight!\" button on the right.";
-        protected const string TOOLTIP_PICK_TOO_MANY_HEROES = "Only a maximum of 5 heroes can be selected.";
+        protected const string TOOLTIP_PICK_READY_START = "Continue editing your hero selections, or press the button on the right to start the game.";
+        protected const string TOOLTIP_PICK_TOO_MANY_HEROES = "You can only select up to 5 heroes.";
         protected const string TOOLTIP_RANDOMIZE = "Generate a new random draft (villain, hero, and environment) with the same ban settings.";
         protected const string TOOLTIP_GAME = "The game has started. Good luck!";
         protected const string TOOLTIP_BACK = "Return to the previous page. The current draft will NOT be saved.";
@@ -185,7 +188,7 @@
         private bool backButtonHovered = false;
         private bool winButtonHovered = false;
         private bool lossButtonHovered = false;
-        private bool gameHasStarted = false;
+        public Func<bool> GameHasStarted = () => false;
         private int pickedHeroCount = 0;
 
         public void RandomizeBtnHover()
@@ -220,14 +223,6 @@
         {
             this.lossButtonHovered = false;
         }
-        public void GameHasStarted()
-        {
-            this.gameHasStarted = true;
-        }
-        public void GameHasEnded()
-        {
-            this.gameHasStarted = false;
-        }
         public void SetPickedHeroCount(int count)
         {
             this.pickedHeroCount = count;
@@ -235,19 +230,19 @@
 
         public bool RandomizeButtonDisabled()
         {
-            return this.gameHasStarted;
+            return this.GameHasStarted();
         }
         public bool StartButtonDisabled()
         {
-            return (this.gameHasStarted) || (this.pickedHeroCount < 3) || (this.pickedHeroCount > 5);
+            return (this.GameHasStarted()) || (this.pickedHeroCount < 3) || (this.pickedHeroCount > 5);
         }
         public string OutcomeButtonVisibility()
         {
-            return this.gameHasStarted ? "" : "invisible";
+            return this.GameHasStarted() ? "" : "invisible";
         }
         public string GetBottomTooltipText()
         {
-            if (this.gameHasStarted)
+            if (this.GameHasStarted())
             {
                 if (this.backButtonHovered)
                 {
@@ -327,20 +322,44 @@
         return deckData.GetVariantMetadata(deckData.GetVariantData(gameSvc.game?.draft.environments.ElementAtOrDefault(0)));
     }
 
+    private bool GameHasStarted()
+    {
+        return (gameSvc?.game is not null) && (gameSvc.game.state == GameState.PLAY);
+    }
+
     protected override async Task OnInitializedAsync()
     {
         await deckData.Load(localStorage);
         await gameSvc.repo.Load(localStorage);
         await gameLog.repo.Load(localStorage);
+        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(gameSvc.game));
+        uiController.GameHasStarted = this.GameHasStarted;
 
-        this.heroDropZoneItems = gameSvc.game?.draft.heroes.Select(
-            (identifier, index) => new HeroCharacterDropItem()
-            {
-                entity = deckData.GetVariantMetadata(deckData.GetVariantData(identifier)),
-                isPicked = false,
-                Order = index
-            }
-        ).ToList() ?? [];
+        if (gameSvc.game is not null)
+        {
+            var pickedHeroes = gameSvc.game.GetPickedHeroes();
+            this.heroDropZoneItems = pickedHeroes.Select
+            (
+                (identifier, index) => new HeroCharacterDropItem()
+                {
+                    entity = deckData.GetVariantMetadata(deckData.GetVariantData(identifier)),
+                    isPicked = true,
+                    Order = index
+                }
+            ).Concat
+            (
+                gameSvc.game.GetUnpickedHeroes().Select((identifier, index) => new HeroCharacterDropItem()
+                {
+                    entity = deckData.GetVariantMetadata(deckData.GetVariantData(identifier)),
+                    isPicked = false,
+                    Order = pickedHeroes.Count() + index
+                }
+            )).ToList();
+        }
+        else
+        {
+            this.heroDropZoneItems = [];
+        }
     }
     protected override void OnAfterRender(bool firstRender)
     {
@@ -374,7 +393,6 @@
 
     private async void StartGame()
     {
-        this.uiController.GameHasStarted();
         gameSvc.game.Pick(DeckKind.VILLAIN, gameSvc.game.draft.villains[0], 0);
         gameSvc.game.Pick(DeckKind.ENVIRONMENT, gameSvc.game.draft.environments[0], 0);
         foreach (HeroCharacterDropItem item in this.heroDropZoneItems)
@@ -385,11 +403,12 @@
             }
         }
         gameSvc.game.state = GameState.PLAY;
+        await gameSvc.repo.Save(localStorage);
     }
     private async Task EndGame()
     {
         gameLog.AddGame(gameSvc.game);
-        await gameLog.repo.Save(localStorage);
+        await gameSvc.repo.Save(localStorage);
         if (settingsSvc.settings.gameEndAction == GameEndAction.START_NEW_GAME)
         {
             await this.DraftRandomGame();
@@ -401,13 +420,11 @@
     }
     private async Task EndGameWin()
     {
-        this.uiController.GameHasEnded();
         gameSvc.game.state = GameState.WIN;
         await this.EndGame();
     }
     private async Task EndGameLoss()
     {
-        this.uiController.GameHasEnded();
         gameSvc.game.state = GameState.LOSS;
         await this.EndGame();
     }

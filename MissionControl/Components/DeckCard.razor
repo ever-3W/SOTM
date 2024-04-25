@@ -18,7 +18,7 @@
             {
                 <MudToggleItem Class="no-padding d-flex justify-space-between" Value="@metadata.identifier">
                     <MudText Typo="Typo.body2" Class=@($"py-0 pl-1 pr-0 flex-1 {(context ? "pickable-text" : "banned-text")}") Style="width: 160px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@metadata.shortTitle</MudText>
-                    <div class="flex-0 variant-collection-marker" style="@($"background-color:{metadata.color}")"></div>
+                    <div class="@($"flex-0 toggle-group-collection-marker{$"{(context ? "" : " variant-collection-marker-banned")}"}")" style="@($"background-color:{metadata.color}")"></div>
                 </MudToggleItem>
             }
         </MudToggleGroup>
@@ -92,9 +92,13 @@
         padding: 0px !important;
     }
 
-    .variant-collection-marker {
+    .toggle-group-collection-marker {
         width: 5px;
         height: 100%;
+    }
+
+    .variant-collection-marker-banned {
+        filter: opacity(50%);
     }
 </style>
 
