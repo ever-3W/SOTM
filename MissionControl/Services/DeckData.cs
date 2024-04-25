@@ -143,6 +143,11 @@ namespace SOTM.MissionControl.Services
             return deck.GetChildren().Concat(promoVariants);
         }
 
+        public Collection GetSourceCollection(GlobalIdentifier identifier)
+        {
+            return this.variantIdentifierCollectionTable[identifier];
+        }
+
         public DeckVariantViewModel? GetVariantMetadata(DeckVariant? variant)
         {
             if (variant == null)
@@ -150,7 +155,7 @@ namespace SOTM.MissionControl.Services
                 return null;
             }
             return new DeckVariantViewModel(variant) 
-            { color = this.variantIdentifierCollectionTable[variant.identifier].color };
+            { color = this.GetSourceCollection(variant.identifier).color };
         }
 
         public IEnumerable<DeckVariantViewModel> GetAllVariantViewModels(Deck deck)

@@ -2,6 +2,7 @@
 @using SOTM.Shared.Models
 @using SOTM.MissionControl.Models
 @using SOTM.MissionControl.Services
+@using SOTM.MissionControl.Utilities
 @inject HttpClient httpClient
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject NavigationManager navManager
@@ -11,9 +12,12 @@
 @inject GameService gameSvc
 @inject SettingsService settingsSvc
 
+@implements IDisposable
+
 <div>
     <MudText> Click on "Draft New Game" to create a draft with randomized villain, hero, and environment decks. </MudText>
     <MudText> Click on any hero/villain/environment name to ban it from being selected. Clicking a banned item again will un-ban it. </MudText>
+    <MudText> Ban settings are saved every time a new draft is created. </MudText>
 </div>
 
 <MudButton OnClick="DraftRandomGame" Variant="Variant.Filled" Class="draft-button">Draft New Game</MudButton>
@@ -142,7 +146,7 @@
 </style>
 
 @code {
-
+    private bool _shiftFlag = false;
     private List<Components.DeckCard> heroDeckComponents = new List<Components.DeckCard>();
     Components.DeckCard heroDeckRef
     {
@@ -210,8 +214,27 @@
         }
 
         await draftSelections.repo.Load(localStorage);
+        KeyboardEvents.AddKeyDownListener(this.OnKeyDown);
+        KeyboardEvents.AddKeyUpListener(this.OnKeyUp);
     }
 
+    public void OnKeyDown (KeyboardEventArgs args)
+    {
+        if (args.Key == "Shift")
+        {
+            _shiftFlag = true;
+        }
+    }
+    public void OnKeyUp (KeyboardEventArgs args)
+    {
+        if (args.Key == "Shift")
+        {
+            _shiftFlag = false;
+        }
+    }
+    public void Dispose()
+    {
+        KeyboardEvents.RemoveKeyDownListener(this.OnKeyDown);
+        KeyboardEvents.RemoveKeyUpListener(this.OnKeyUp);
+    }
 }
-
-

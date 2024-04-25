@@ -3,4 +3,4 @@
 .vscode
 
 # mod jsons for user to add
-InfraredEyepiece/ModJson/*.json
+**/ModJson/*.json

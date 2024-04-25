@@ -3,6 +3,7 @@
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject NavigationManager navManager
 @inject SettingsService settingsSvc
+@inject IJSRuntime JSRuntime
 
 <PageTitle>Mission Control: SOTM Random Draft Generator</PageTitle>
 
@@ -278,5 +279,9 @@
     protected override async Task OnInitializedAsync()
     {
         await settingsSvc.LoadData(localStorage);
+    }
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("JsFunctions.addKeyboardListeners");
     }
 }
