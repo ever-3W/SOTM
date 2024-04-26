@@ -73,6 +73,10 @@ namespace SOTM.Shared.Models {
 
         public override bool Equals(object? obj)
         {
+            if (this == obj)
+            {
+                return true;
+            }
             if (obj is GlobalIdentifier otherIdentifier) {
                 return this.identifiers.SequenceEqual(otherIdentifier.identifiers);
             }

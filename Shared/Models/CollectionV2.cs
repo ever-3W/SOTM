@@ -155,5 +155,10 @@ namespace SOTM.Shared.Models
                 }
             }
         }
+
+        public override int GetHashCode()
+        {
+            return this.GetIdentifier().GetHashCode();
+        }
     }
 }

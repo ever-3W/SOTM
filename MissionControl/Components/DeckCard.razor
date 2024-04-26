@@ -104,29 +104,51 @@
 
 @code
 {
-
+    private Dictionary<GlobalIdentifier, DeckVariantViewModel> _variantModelTable;
+    private Dictionary<GlobalIdentifier, bool> _variantPickableTable;
+    private Dictionary<Collection, IEnumerable<GlobalIdentifier>> _collectionSliceTable;
     [Parameter]
     public string Title { get; set; }
     [Parameter]
-    public List<DeckVariantViewModel> Variants { get; set; }
+    public IEnumerable<DeckVariantViewModel> Variants
+    { 
+        get => _variantModelTable.Values; 
+        set
+        {
+            _variantModelTable = value.ToDictionary(model => model.identifier);
+            _variantPickableTable = value.ToDictionary(model => model.identifier, model => true);
+            _collectionSliceTable = value
+                .GroupBy(model => deckData.GetSourceCollection(model.identifier))
+                .ToDictionary(g => g.Key, g => g.Select(model => model.identifier));
+        }
+    }
     [Parameter]
     public Action<GlobalIdentifier, bool> OnChangedTo { get; set; } = (_, _) => {};
 
     [Parameter]
-    public IEnumerable<GlobalIdentifier> PickableVariants { get; set; }
+    public IEnumerable<GlobalIdentifier> PickableVariants
+    {
+        get => _variantPickableTable.Keys.Where(identifier => _variantPickableTable[identifier]);
+        set
+        {
+            foreach (var identifier in this.PickableVariants.ExceptBy(value, v => v))
+            {
+                _variantPickableTable[identifier] = false;
+            }
+            foreach (var identifier in value)
+            {
+                _variantPickableTable[identifier] = true;
+            }
+        }
+    }
 
     public bool IsAnyVariantPickable { get => this.PickableVariants.Any(); }
 
     public void ToggleCardVariants()
     {
-        if (this.IsAnyVariantPickable)
-        {
-            this.PickableVariants = Enumerable.Empty<GlobalIdentifier>();
-        }
-        else
-        {
-            this.PickableVariants = this.Variants.Select(v => v.identifier);
-        }
+        var result = !this.PickableVariants.Any();
+        _variantPickableTable = _variantModelTable.ToDictionary(model => model.Key, model => result);
+        StateHasChanged();
     }
 
     [Parameter]
@@ -141,32 +163,49 @@
         return expansion.GetChildren().SelectMany(deck => deckData.GetAllVariantViewModels(deck))
             .ToList();
     }
-    public IEnumerable<GlobalIdentifier> GetPickableVariants()
-    {
-        return this.PickableVariants;
-    }
 
     private void OnValuesChanged(IEnumerable<GlobalIdentifier> identifiers)
     {
-        var changed = this.PickableVariants.Union(identifiers).Except(this.PickableVariants.Intersect(identifiers));
-        this.PickableVariants = identifiers;
-        Console.WriteLine($"Values changed: {string.Join(",", changed)}");
+        var changed = _variantPickableTable
+            .Where(entry => identifiers.Contains(entry.Key) != entry.Value)
+            .Select(entry => entry.Key);
         foreach (GlobalIdentifier identifier in changed)
         {
-            // there should only ever be one item in this loop
             this.OnChangedTo(identifier, identifiers.Contains(identifier));
         }
     }
 
-    public void IntersectValues(IEnumerable<GlobalIdentifier> identifiers)
+    public void ExcludeAllInCollection(Collection collection)
     {
-        this.PickableVariants = this.PickableVariants.Intersect(identifiers);
-        StateHasChanged();
+        IEnumerable<GlobalIdentifier>? delta;
+        if (_collectionSliceTable.TryGetValue(collection, out delta))
+        {
+            delta = delta.Where(identifier => _variantPickableTable[identifier]);
+            if (delta.Any())
+            {
+                foreach (var identifier in delta)
+                {
+                    _variantPickableTable[identifier] = false;
+                }
+                StateHasChanged();
+            }
+        }
     }
 
-    public void UnionValues(IEnumerable<GlobalIdentifier> identifiers)
+    public void IncludeAllInCollection(Collection collection)
     {
-        this.PickableVariants = this.PickableVariants.Union(identifiers);
-        StateHasChanged();
+        IEnumerable<GlobalIdentifier>? delta;
+        if (_collectionSliceTable.TryGetValue(collection, out delta))
+        {
+            delta = delta.Where(identifier => !_variantPickableTable[identifier]);
+            if (delta.Any())
+            {
+                foreach (var identifier in delta)
+                {
+                    _variantPickableTable[identifier] = true;
+                }
+                StateHasChanged();
+            }
+        }
     }
 }
