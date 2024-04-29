@@ -178,12 +178,7 @@
 
     private async void DraftRandomGame()
     {
-        var pickableVariantSet = this.AllDeckComponents()
-            .SelectMany(component => component.PickableVariants).ToHashSet();
-
-        draftSelections.SetPickableVariants(pickableVariantSet);
-        await draftSelections.repo.Save(localStorage); 
-
+        var pickableVariantSet = await this.AutoSave();
         gameSvc.game = new Game(randomizer.DraftRandomClassicGame(deckData, settingsSvc, pickableVariantSet));
         await gameSvc.repo.Save(localStorage);
 
@@ -237,13 +232,24 @@
         var interval = settingsSvc.DraftAutoSaveInterval;
         if (interval is not null && _autoSaveSeconds >= interval)
         {
-            InvokeAsync(() => 
+            InvokeAsync(() =>
             {
                 Console.WriteLine($"auto save timer is now {_autoSaveSeconds}");
                 _autoSaveSeconds = 0;
-                StateHasChanged();
+
+                return AutoSave();
             });
         }
+    }
+
+    public async Task<HashSet<GlobalIdentifier>> AutoSave()
+    {
+        var pickableVariantSet = this.AllDeckComponents()
+            .SelectMany(component => component.PickableVariants).ToHashSet();
+
+        draftSelections.SetPickableVariants(pickableVariantSet);
+        await draftSelections.repo.Save(localStorage); 
+        return pickableVariantSet;
     }
 
     public void OnKeyDown (KeyboardEventArgs args)
@@ -267,12 +273,12 @@
         KeyboardEvents.RemoveKeyUpListener(this.OnKeyUp);
     }
 
-    public void OnChangedTo(GlobalIdentifier identifier, bool enableAll)
+    public void OnChangedTo(Components.DeckCard source, GlobalIdentifier identifier, bool changedValue)
     {
         if (_shiftFlag)
         {
             var collection = deckData.GetSourceCollection(identifier);
-            if (enableAll)
+            if (changedValue)
             {
                 foreach (Components.DeckCard component in this.AllDeckComponents())
                 {
@@ -286,6 +292,10 @@
                     component.ExcludeAllInCollection(collection);
                 }
             }
+        }
+        else
+        {
+            source.SetSingleValue(identifier, changedValue);
         }
     }
 }

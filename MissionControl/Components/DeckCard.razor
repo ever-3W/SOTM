@@ -123,7 +123,7 @@
         }
     }
     [Parameter]
-    public Action<GlobalIdentifier, bool> OnChangedTo { get; set; } = (_, _) => {};
+    public Action<DeckCard, GlobalIdentifier, bool> OnChangedTo { get; set; } = (_, _, _) => {};
 
     [Parameter]
     public IEnumerable<GlobalIdentifier> PickableVariants
@@ -171,7 +171,16 @@
             .Select(entry => entry.Key);
         foreach (GlobalIdentifier identifier in changed)
         {
-            this.OnChangedTo(identifier, identifiers.Contains(identifier));
+            this.OnChangedTo(this, identifier, identifiers.Contains(identifier));
+        }
+    }
+
+    public void SetSingleValue(GlobalIdentifier identifier, bool changedValue)
+    {
+        if (this._variantPickableTable.ContainsKey(identifier))
+        {
+            this._variantPickableTable[identifier] = changedValue;
+            StateHasChanged();
         }
     }
 
