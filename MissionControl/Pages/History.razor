@@ -6,7 +6,6 @@
 @inject HttpClient httpClient
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject NavigationManager navManager
-@inject DeckDataService deckData
 @inject GameLogService gameLog
 @inject SettingsService settingsSvc
 @inject IJSRuntime JSRuntime
@@ -133,22 +132,21 @@
 
         public List<string> unpickedHeroes;
         
-        public GameTableRowData (DeckDataService deckData, Game game)
+        public GameTableRowData (GameLogService gameLog, Game game)
         {
             this.result = game.state == GameState.WIN ? "Win" : "Loss";
-            this.heroes = game.GetPickedHeroes().Select(identifier => deckData.GetVariantData(identifier).title).ToList();
-            this.villain = deckData.GetVariantData(game.GetPickedVillain()).title;
-            this.environment = deckData.GetVariantData(game.GetPickedEnvironment()).title;
-            this.unpickedHeroes = game.GetUnpickedHeroes().Select(identifier => deckData.GetVariantData(identifier).title).ToList();
+            this.heroes = game.GetPickedHeroes().Select(identifier => gameLog.GetVariantMetadata(identifier).title).ToList();
+            this.villain = gameLog.GetVariantMetadata(game.GetPickedVillain()).title;
+            this.environment = gameLog.GetVariantMetadata(game.GetPickedEnvironment()).title;
+            this.unpickedHeroes = game.GetUnpickedHeroes().Select(identifier => gameLog.GetVariantMetadata(identifier).title).ToList();
         }
     }
 
     public IEnumerable<GameTableRowData> gameData = Enumerable.Empty<GameTableRowData>();
     protected override async Task OnInitializedAsync()
     {
-        await deckData.Load(localStorage);
-        await gameLog.repo.Load(localStorage);
-        this.gameData = gameLog.GetLoggedGames().Select(game => new GameTableRowData(deckData, game ));
+        await gameLog.Load(localStorage);
+        this.gameData = gameLog.GetLoggedGames().Select(game => new GameTableRowData(gameLog, game ));
     }
 
     private async Task UploadHistory(InputFileChangeEventArgs args)
@@ -156,7 +154,7 @@
         try
         {
             await gameLog.LoadGameLogFile(args.File, settingsSvc.settings.importHistoryMode);
-            await gameLog.repo.Save(localStorage);
+            await gameLog.Save(localStorage);
             navManager.Refresh();
         }
         catch (Exception err)
@@ -170,7 +168,7 @@
     private async Task DownloadHistory()
     {
         // Generate a text file
-        byte[] file = gameLog.repo.GetBytes();
+        byte[] file = gameLog.GetBytes();
         await JSRuntime.InvokeVoidAsync("BlazorDownloadFile", "game-log.json", "application/json", file);
     }
 }

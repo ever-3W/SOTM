@@ -20,6 +20,7 @@ namespace SOTM.MissionControl.Services
 
         public async Task<T> Load(ILocalStorageService storageService)
         {
+            Console.WriteLine(storageService.GetItemAsStringAsync(storageKey));
             this.value = (await storageService.GetItemAsync<T>(storageKey)) ?? this.value;
             return this.value;
         }

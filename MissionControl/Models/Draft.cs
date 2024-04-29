@@ -19,5 +19,10 @@ namespace SOTM.MissionControl.Models
             if (kind == DeckKind.ENVIRONMENT) return this.environments;
             return this.heroes;
         }
+
+        public IEnumerable<GlobalIdentifier> GetAllVariants()
+        {
+            return this.villains.Concat(this.heroes).Concat(this.environments);
+        }
     }
 }

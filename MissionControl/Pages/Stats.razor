@@ -26,7 +26,7 @@
     }
     protected override async Task OnInitializedAsync()
     {
-        await gameLog.repo.Load(localStorage);
+        await gameLog.Load(localStorage);
         this.totalGames = gameLog.GetLoggedGames().Count();
         this.wins = gameLog.GetLoggedGames().Where(game => game.state == GameState.WIN).Count();
     }
