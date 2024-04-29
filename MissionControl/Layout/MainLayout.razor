@@ -32,7 +32,7 @@
                     <MudText Typo="Typo.subtitle2"> Number of heroes to select </MudText>
                     <MudNumericField 
                         @ref="draftHeroCountInput"
-                        Value="settingsSvc.settings.draftHeroCount" 
+                        @bind-Value="settingsSvc.DraftHeroCount" 
                         Class="settings-input" 
                         Variant="Variant.Outlined" 
                         Margin="Margin.Dense" 
@@ -44,7 +44,7 @@
                     <MudSelect 
                         @ref="heroRandomizerMethodInput"
                         T="RandomizerMethod" 
-                        @bind-Value="heroRandomizerMethodSetting"
+                        @bind-Value="settingsSvc.HeroRandomizerMethod"
                         Class="settings-input" 
                         Margin="Margin.Dense" 
                         Variant="Variant.Outlined" 
@@ -52,28 +52,28 @@
                         <MudSelectItem Value="RandomizerMethod.RANDOMIZE_BY_DECK"> Deck </MudSelectItem>
                         <MudSelectItem Value="RandomizerMethod.RANDOMIZE_BY_VARIANT"> Variant </MudSelectItem>
                     </MudSelect>
-                    <MudText @ref="heroRandomizerCaption" Typo="Typo.caption">@(this.GetRandomizeHeroTooltip())</MudText>
+                    <MudText @ref="heroRandomizerCaption" Typo="Typo.caption">@(this.RandomizeHeroTooltip)</MudText>
                 </div>
                 <div style="min-height: 140px;">
                     <MudText Typo="Typo.subtitle2"> Randomize villains by... </MudText>
                     <MudSelect
                         @ref="villainRandomizerMethodInput"
                         T="RandomizerMethod"
-                        @bind-Value="villainRandomizerMethodSetting"
+                        @bind-Value="settingsSvc.VillainRandomizerMethod"
                         Class="settings-input" 
                         Margin="Margin.Dense" Variant="Variant.Outlined" 
                         AnchorOrigin="Origin.BottomCenter">
                         <MudSelectItem Value="RandomizerMethod.RANDOMIZE_BY_DECK"> Deck </MudSelectItem>
                         <MudSelectItem Value="RandomizerMethod.RANDOMIZE_BY_VARIANT"> Variant </MudSelectItem>
                     </MudSelect>
-                    <MudText @ref="villainRandomizerCaption" Typo="Typo.caption">@(this.GetRandomizeVillainTooltip())</MudText>
+                    <MudText @ref="villainRandomizerCaption" Typo="Typo.caption">@(this.RandomizeVillainTooltip)</MudText>
                 </div>
                 <div>
                     <MudText Typo="Typo.subtitle2"> When a game ends... </MudText>
                     <MudSelect
                         @ref="gameEndActionInput"
                         T="GameEndAction" 
-                        @bind-Value="gameEndActionSetting"
+                        @bind-Value="settingsSvc.GameEndAction"
                         Class="settings-input" 
                         Margin="Margin.Dense" Variant="Variant.Outlined" 
                         AnchorOrigin="Origin.BottomCenter">
@@ -86,7 +86,7 @@
                     <MudSelect
                         @ref="importHistoryModeInput"
                         T="ImportHistoryMode" 
-                        @bind-Value="importHistoryModeSetting"
+                        @bind-Value="settingsSvc.ImportHistoryMode"
                         Class="settings-input" 
                         Margin="Margin.Dense" Variant="Variant.Outlined" 
                         AnchorOrigin="Origin.BottomCenter">
@@ -94,7 +94,25 @@
                         <MudSelectItem Value="ImportHistoryMode.OVERWRITE_ALL"> Overwrite all entries </MudSelectItem>
                     </MudSelect>
                 </div>
-                <MudButton 
+                <div>
+                    <MudText Typo="Typo.subtitle2"> Draft auto-save interval (seconds) </MudText>
+                    <MudSelect
+                        T="int?" 
+                        @bind-Value="settingsSvc.DraftAutoSaveInterval"
+                        Class="settings-input" 
+                        Margin="Margin.Dense" Variant="Variant.Outlined" 
+                        AnchorOrigin="Origin.BottomCenter">
+                        <MudSelectItem T="int?" Value="5"/>
+                        <MudSelectItem T="int?" Value="10"/>
+                        <MudSelectItem T="int?" Value="15"/>
+                        <MudSelectItem T="int?" Value="30"/>
+                        <MudSelectItem T="int?" Value="60"/>
+                        <MudSelectItem T="int?" Value="120"/>
+                        @* <MudSelectItem T="int?" Value="null"> Never </MudSelectItem> *@
+                    </MudSelect>
+                    <MudText Typo="Typo.caption">Draft selections are always saved whenever a new game is drafted.</MudText>
+                </div>
+                @* <MudButton 
                     StartIcon="@Icons.Material.Filled.Save" 
                     OnClick="SaveAndCloseSettings"
                     Variant="Variant.Filled" FullWidth="true" 
@@ -103,7 +121,7 @@
                     Save and Exit
                 </MudButton>
 
-                @* <MudButton 
+                <MudButton 
                     StartIcon="@Icons.Material.Filled.Download" 
                     Variant="Variant.Filled" FullWidth="true" 
                     Class="settings-button">
@@ -214,16 +232,14 @@
     {
         if (!this.settingsDrawerOpen)
         {
-            this.draftHeroCountInput.Value = settingsSvc.settings.draftHeroCount;
-            this.heroRandomizerMethodSetting = settingsSvc.settings.heroRandomizerMethod;
-            this.villainRandomizerMethodSetting = settingsSvc.settings.villainRandomizerMethod;
-            this.gameEndActionSetting = settingsSvc.settings.gameEndAction;
-            this.importHistoryModeSetting = settingsSvc.settings.importHistoryMode;
+            @* this.draftHeroCountInput.Value = settingsSvc.DraftHeroCount;
+            this.heroRandomizerMethodSetting = settingsSvc.HeroRandomizerMethod;
+            this.villainRandomizerMethodSetting = settingsSvc.VillainRandomizerMethod;
+            this.gameEndActionSetting = settingsSvc.GameEndAction;
+            this.importHistoryModeSetting = settingsSvc.ImportHistoryMode; *@
         }
         this.settingsDrawerOpen = !this.settingsDrawerOpen;
     }
-
-
 
     public const string TOOLTIP_RANDOMIZE_HERO_BY_DECK = "Heroes will be randomly selected with equal probability. Then, each hero is assigned a non-banned variant.";
     public const string TOOLTIP_RANDOMIZE_VILLAIN_BY_DECK = "Villains will be randomly selected with equal probability. Then, each villain is assigned a non-banned variant.";
@@ -231,43 +247,24 @@
     public const string TOOLTIP_RANDOMIZE_VILLAIN_BY_VARIANT = "Each villain variant has an equal probability to be selected.";
     public MudNumericField<int> draftHeroCountInput;
     public MudSelect<RandomizerMethod> heroRandomizerMethodInput;
-    public RandomizerMethod heroRandomizerMethodSetting;
     public MudSelect<RandomizerMethod> villainRandomizerMethodInput; 
-    public RandomizerMethod villainRandomizerMethodSetting;
     public MudSelect<GameEndAction> gameEndActionInput;
-    public GameEndAction gameEndActionSetting;
     public MudSelect<ImportHistoryMode> importHistoryModeInput;
-    public ImportHistoryMode importHistoryModeSetting;
     public MudText heroRandomizerCaption;
     public MudText villainRandomizerCaption;
 
-    public string GetRandomizeHeroTooltip()
+    public string RandomizeHeroTooltip
     {
-        return this.heroRandomizerMethodSetting == RandomizerMethod.RANDOMIZE_BY_DECK
+        get => settingsSvc?.HeroRandomizerMethod == RandomizerMethod.RANDOMIZE_BY_DECK
             ? TOOLTIP_RANDOMIZE_HERO_BY_DECK
             : TOOLTIP_RANDOMIZE_HERO_BY_VARIANT;
     }
 
-    public string GetRandomizeVillainTooltip()
+    public string RandomizeVillainTooltip
     {
-        return this.villainRandomizerMethodSetting == RandomizerMethod.RANDOMIZE_BY_DECK
+        get => settingsSvc?.VillainRandomizerMethod == RandomizerMethod.RANDOMIZE_BY_DECK
             ? TOOLTIP_RANDOMIZE_VILLAIN_BY_DECK
             : TOOLTIP_RANDOMIZE_VILLAIN_BY_VARIANT;
-    }
-
-    public async Task SaveAndCloseSettings()
-    {
-        settingsSvc.settings = new SettingsData()
-        {
-            draftHeroCount = this.draftHeroCountInput.Value,
-            heroRandomizerMethod = this.heroRandomizerMethodSetting,
-            villainRandomizerMethod = this.villainRandomizerMethodSetting,
-            gameEndAction = this.gameEndActionSetting,
-            importHistoryMode = this.importHistoryModeSetting
-        };
-        await settingsSvc.SaveData(localStorage);
-
-        this.settingsDrawerOpen = false;
     }
 
     private async void ClearAllData()
@@ -278,7 +275,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await settingsSvc.LoadData(localStorage);
+        await settingsSvc.Load(localStorage);
     }
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {

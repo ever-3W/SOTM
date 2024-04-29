@@ -71,8 +71,8 @@ namespace SOTM.MissionControl.Services
         {
             return new Draft()
             {
-                heroes = DraftRandomVariants(deckData, DeckKind.HERO, settingsSvc.settings.heroRandomizerMethod, pickableVariants, settingsSvc.settings.draftHeroCount),
-                villains = DraftRandomVariants(deckData, DeckKind.VILLAIN, settingsSvc.settings.villainRandomizerMethod, pickableVariants, 1),
+                heroes = DraftRandomVariants(deckData, DeckKind.HERO, settingsSvc.HeroRandomizerMethod, pickableVariants, settingsSvc.DraftHeroCount),
+                villains = DraftRandomVariants(deckData, DeckKind.VILLAIN, settingsSvc.VillainRandomizerMethod, pickableVariants, 1),
                 environments = DraftRandomVariants(deckData, DeckKind.ENVIRONMENT, RandomizerMethod.RANDOMIZE_BY_VARIANT, pickableVariants, 1)
             };
         }

@@ -410,7 +410,7 @@
         gameLog.AddGame(gameSvc.game, deckData);
         await gameSvc.repo.Save(localStorage);
         await gameLog.Save(localStorage);
-        if (settingsSvc.settings.gameEndAction == GameEndAction.START_NEW_GAME)
+        if (settingsSvc.GameEndAction == GameEndAction.START_NEW_GAME)
         {
             await this.DraftRandomGame();
         }
