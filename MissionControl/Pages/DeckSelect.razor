@@ -22,7 +22,7 @@
     <MudText> Shift-click on any hero/villain/environment item (not heading) to ban/unban all other items from the same mod. </MudText>
 </div>
 
-<MudButton OnClick="DraftRandomGame" Variant="Variant.Filled" Class="draft-button">Draft New Game</MudButton>
+<MudButton OnClick="DraftRandomGame" Variant="Variant.Filled" Class="action-button">Draft New Game</MudButton>
 
 <div Class="d-flex justify-space-around flex-1 flex-wrap gap-3">
     <MudCard Class="flex-1 pa-3 mb-3 villain-section" Outlined="true">
@@ -100,15 +100,6 @@
 </div>
 
 <style>
-    .draft-button {
-        color: @(Colors.Shades.White);
-        background-color: @(Colors.Teal.Darken2);
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .draft-button:hover {
-        background-color: @(Colors.Teal.Lighten1) !important;
-    }
     .villain-cards {
         --head-color: @(Colors.Indigo.Accent3);
         --pickable-color: @(Colors.Indigo.Accent1);

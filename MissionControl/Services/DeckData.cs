@@ -19,28 +19,55 @@ namespace SOTM.MissionControl.Services
         [JsonInclude]
         public string title;
         [JsonInclude]
+        public string color;
+        // the *Variant fields store the number of non-base variants
+        [JsonInclude]
         public int heroDeckCount;
+        [JsonInclude]
+        public int heroVariantCount;
         [JsonInclude]
         public int villainDeckCount;
         [JsonInclude]
+        public int villainVariantCount;
+        [JsonInclude]
         public int environmentDeckCount;
         [JsonInclude]
+        public int environmentVariantCount;
+        [JsonInclude]
         public int teamVillainDeckCount;
+        [JsonInclude]
+        public int teamVillainVariantCount;
         [JsonInclude]
         public int promoVariantCount;
         [JsonInclude]
         public CollectionSource source;
 
-        public static CollectionViewModel CreateMetadata(Collection collection, CollectionSource source)
+        private static (int, int) GetDeckAndVariantCounts(IEnumerable<Expansion> expansions)
         {
+            var decks = expansions.SelectMany(expansion => expansion.GetChildren());
+            return (decks.Count(), Enumerable.Sum(decks.Select(deck => deck.GetChildren().Count() - 1)));
+        }
+
+        public static CollectionViewModel CreateViewModel(Collection collection, CollectionSource source)
+        {
+            var (heroDeckCount, heroVariantCount) = GetDeckAndVariantCounts(collection.heroExpansions);
+            var (villainDeckCount, villainVariantCount) = GetDeckAndVariantCounts(collection.villainExpansions);
+            var (environmentDeckCount, environmentVariantCount) = GetDeckAndVariantCounts(collection.environmentExpansions);
+            var (teamVillainDeckCount, teamVillainVariantCount) = GetDeckAndVariantCounts(collection.teamVillainExpansions);
+            
             return new CollectionViewModel()
             {
                 identifier = collection.identifier,
                 title = collection.title,
-                heroDeckCount = collection.heroExpansions.SelectMany(expansion => expansion.GetChildren()).Count(),
-                villainDeckCount = collection.villainExpansions.SelectMany(expansion => expansion.GetChildren()).Count(),
-                environmentDeckCount = collection.environmentExpansions.SelectMany(expansion => expansion.GetChildren()).Count(),
-                teamVillainDeckCount = collection.teamVillainExpansions.SelectMany(expansion => expansion.GetChildren()).Count(),
+                color = collection.color,
+                heroDeckCount = heroDeckCount,
+                heroVariantCount = heroVariantCount,
+                villainDeckCount = villainDeckCount,
+                villainVariantCount = villainVariantCount,
+                environmentDeckCount = environmentDeckCount,
+                environmentVariantCount = environmentVariantCount,
+                teamVillainDeckCount = teamVillainDeckCount,
+                teamVillainVariantCount = teamVillainVariantCount,
                 promoVariantCount = collection.hangingVariants.Values.SelectMany(variant => variant).Count(),
                 source = source
             };
@@ -68,12 +95,13 @@ namespace SOTM.MissionControl.Services
             }
         }
 
-        public void AddImported(Collection collection)
+        public bool AddImported(Collection collection)
         {
             string collectionKey = collection.GetIdentifier().ToString();
             if (this.presetCollections.FindIndex(existing => existing.identifier.ToString() == collectionKey) >= 0)
             {
                 Console.Error.WriteLine($"\"{collection.title}\" is a server-side collection, it cannot be imported.");
+                return false;
             }
             else
             {
@@ -86,6 +114,7 @@ namespace SOTM.MissionControl.Services
                 {
                     this.importedCollections.Add(collection);
                 }
+                return true;
             }
         }
 
@@ -231,12 +260,25 @@ namespace SOTM.MissionControl.Services
         {
             return 
                 this.model.presetCollections
-                    .Select(collection => CollectionViewModel.CreateMetadata(collection, CollectionSource.PRESET))
+                    .Select(collection => CollectionViewModel.CreateViewModel(collection, CollectionSource.PRESET))
                 .Concat
                 (
                     this.model.importedCollections
-                        .Select(collection => CollectionViewModel.CreateMetadata(collection, CollectionSource.IMPORTED))
+                        .Select(collection => CollectionViewModel.CreateViewModel(collection, CollectionSource.IMPORTED))
                 );
+        }
+
+        public void ImportCollection(Collection collection)
+        {
+            if (this.model.AddImported(collection))
+            {
+                this.BuildCollectionDataTables(collection);
+            }
+        }
+
+        public void RemoveImportedCollection(GlobalIdentifier collectionIdentifier)
+        {
+            this.model.RemoveImported(collectionIdentifier);
         }
     }
 }

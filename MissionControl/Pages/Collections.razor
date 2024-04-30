@@ -7,73 +7,148 @@
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject GameLogService gameLog
 
-<MudFileUpload T="IBrowserFile" OnFilesChanged="UploadCollection">
-    <ButtonTemplate>
-        <MudButton 
-            HtmlTag="label"
-            StartIcon="@Icons.Material.Filled.Input" 
-            Variant="Variant.Filled" 
-            Class="save-load-button"
-            for="@context.Id">
+<div class="d-flex flex-1 flex-row">
+<MudStack Class="flex-0 align-content-start" Style="width: 225px;">
+    <MudText> All collections currently loaded are listed on the right. </MudText>
+    <MudText> Items are marked with a specific color on the right corresponding to the collection they came from.</MudText>
+    <MudText> To import a new collection, upload its parsed JSON file using the button below. </MudText>
+    <MudFileUpload T="IBrowserFile" OnFilesChanged="UploadCollection" Style="flex: none !important;">
+        <ButtonTemplate>
+            <MudButton 
+                HtmlTag="label"
+                StartIcon="@Icons.Material.Filled.Input" 
+                Variant="Variant.Filled" 
+                Class="action-button"
+                for="@context.Id">
 
-            Import Collection
-        </MudButton>
-    </ButtonTemplate>
-</MudFileUpload>
-<div class="d-flex flex-wrap gap-3 align-content-start pt-3">
-    @foreach (CollectionViewModel metadata in deckData.GetAllCollectionViewModel()) 
+                Import Collection
+            </MudButton>
+        </ButtonTemplate>
+    </MudFileUpload>
+    <MudText> Loaded content summary: </MudText>
+    <ul>
+        <li> @HeroDeckTotal Hero Decks + @HeroVariantTotal Variants </li>
+        <li> @VillainDeckTotal Villain Decks + @VillainVariantTotal Variants </li>
+        <li> @EnvironmentDeckTotal Environment Decks </li>
+        <li> @TeamVillainDeckTotal Team Villain Decks + @TeamVillainVariantTotal Variants </li>
+    </ul>
+    <MudSpacer />
+</MudStack>
+<div class="d-flex flex-1 flex-wrap gap-3 align-content-start pt-3 pl-3 ml-3 border-l-2">
+    @foreach (CollectionViewModel metadata in this._collectionViewModels) 
     {
-        <MudCard Style="@($"width: 300px; background: {Colors.BlueGrey.Lighten5}")">
-            <MudCardHeader Class="pa-2" Style="@($"background: {Colors.BlueGrey.Lighten2}")">
+        <MudCard Class=@($"collection-card {(metadata.source == CollectionSource.PRESET ? "server-side" : "client-side")}")>
+            <MudCardHeader Class=@($"collection-header pl-1 pr-2 py-0 {(metadata.source == CollectionSource.PRESET ? "server-side" : "client-side")}")>
                 <CardHeaderContent>
                     <div class="d-flex">
-                        <MudText Typo="Typo.h6"><b>@metadata.title</b></MudText>
+                        <MudText Typo="@(metadata.title.Length > LARGE_TEXT_MAX_LENGTH ? Typo.body1 : Typo.h6)" Class=@($"collection-header-text px-2 py-0 {(metadata.source == CollectionSource.PRESET ? "server-side" : "client-side")}")><b>@metadata.title</b></MudText>
                         <MudSpacer/>
-                        <MudIconButton Icon="@Icons.Material.Filled.PushPin" Disabled="true" Size="@Size.Small" Color="Color.Default" />
-                        <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="@(CollectionIconOnClick(metadata.identifier))" Size="@Size.Small" Color="Color.Default" />
+                        @if (metadata.source == CollectionSource.PRESET)
+                        {
+                            <MudIconButton Icon="@Icons.Material.Filled.PushPin" Disabled="true" Size="@Size.Small" Color="Color.Default" />
+                        }
+                        else
+                        {
+                            <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="@(CollectionIconOnClick(metadata.identifier))" Size="@Size.Small" Color="Color.Default" />
+                        }
                     </div>
                 </CardHeaderContent>
             </MudCardHeader>
-            <MudCardContent Class="pa-2">
-                @if (metadata.heroDeckCount > 0)
-                {
-                    <MudText>@($"{metadata.heroDeckCount} Heroes")</MudText>
-                }
-                @if (metadata.villainDeckCount > 0)
-                {
-                    <MudText>@($"{metadata.villainDeckCount} Villains")</MudText>
-                }
-                @if (metadata.environmentDeckCount > 0)
-                {
-                    <MudText>@($"{metadata.environmentDeckCount} Environments")</MudText>
-                }
-                @if (metadata.teamVillainDeckCount > 0)
-                {
-                    <MudText>@($"{metadata.teamVillainDeckCount} Team Villains")</MudText>
-                }
-                @if (metadata.promoVariantCount > 0)
-                {
-                    <MudText>@($"{metadata.promoVariantCount} Variants")</MudText>
-                }
-            </MudCardContent>
+            <div class="d-flex" style="height: 140px;">
+                <MudCardContent Class="mud-height-full flex-1 pa-2 collection-content">
+                    @if (metadata.heroDeckCount > 0)
+                    {
+                        <MudText>@($"{metadata.heroDeckCount} Heroes{(metadata.heroVariantCount > 0 ? $" + {metadata.heroVariantCount} Variants" : "")}")</MudText>
+                    }
+                    @if (metadata.villainDeckCount > 0)
+                    {
+                        <MudText>@($"{metadata.villainDeckCount} Villains{(metadata.villainVariantCount > 0 ? $" + {metadata.villainVariantCount} Variants" : "")}")</MudText>
+                    }
+                    @if (metadata.environmentDeckCount > 0)
+                    {
+                        <MudText>@($"{metadata.environmentDeckCount} Environments{(metadata.environmentVariantCount > 0 ? $" + {metadata.environmentVariantCount} Variants" : "")}")</MudText>
+                    }
+                    @if (metadata.teamVillainDeckCount > 0)
+                    {
+                        <MudText>@($"{metadata.teamVillainDeckCount} Team Villains{(metadata.teamVillainVariantCount > 0 ? $" + {metadata.teamVillainVariantCount} Variants" : "")}")</MudText>
+                    }
+                    @if (metadata.promoVariantCount > 0)
+                    {
+                        <MudText>@($"{metadata.promoVariantCount} Promo Variants")</MudText>
+                    }
+                </MudCardContent>
+                <div class="mud-height-full collection-marker" style=@($"background-color: {metadata.color ?? "#000"}")></div>
+            </div>
         </MudCard>
     }
 </div>
+</div>
+<style>
+    .server-side {
+        --card-bg-color: @(Colors.BlueGrey.Lighten4);
+        --head-color: @(Colors.BlueGrey.Lighten2);
+        color: @(Colors.BlueGrey.Darken4);
+    }
+
+    .client-side {
+        --card-bg-color: @(Colors.LightGreen.Lighten4);
+        --head-color: @(Colors.LightGreen.Lighten2);
+        color: @(Colors.LightGreen.Darken4);
+    }
+
+    .collection-card {
+        width: 270px;
+        background-color: var(--card-bg-color);
+        user-select: none;
+    }
+
+    .collection-header {
+        height: 45px;
+        background-color: var(--head-color); 
+    }
+
+    .collection-header-text {
+        width: 235px;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .collection-content {
+        width: calc(100% - 16px);
+    }
+    .collection-marker {
+        width: 16px;
+    }
+</style>
 
 @code {
+    private IEnumerable<CollectionViewModel> _collectionViewModels = Enumerable.Empty<CollectionViewModel>();
+
+    public int HeroDeckTotal => Enumerable.Sum(this._collectionViewModels.Select(cvm => cvm.heroDeckCount));
+    public int VillainDeckTotal => Enumerable.Sum(this._collectionViewModels.Select(cvm => cvm.villainDeckCount));
+    public int EnvironmentDeckTotal => Enumerable.Sum(this._collectionViewModels.Select(cvm => cvm.environmentDeckCount));
+    public int TeamVillainDeckTotal => Enumerable.Sum(this._collectionViewModels.Select(cvm => cvm.teamVillainDeckCount));
+    public int HeroVariantTotal => Enumerable.Sum(this._collectionViewModels.Select(cvm => cvm.heroVariantCount));
+    public int VillainVariantTotal => Enumerable.Sum(this._collectionViewModels.Select(cvm => cvm.villainVariantCount));
+    public int EnvironmentVariantTotal => Enumerable.Sum(this._collectionViewModels.Select(cvm => cvm.environmentVariantCount));
+    public int TeamVillainVariantTotal => Enumerable.Sum(this._collectionViewModels.Select(cvm => cvm.teamVillainVariantCount));
+    public int PromoVariantTotal => Enumerable.Sum(this._collectionViewModels.Select(cvm => cvm.promoVariantCount));
+
+    private const int LARGE_TEXT_MAX_LENGTH = 24;
     protected override async Task OnInitializedAsync()
     {
         await deckData.Load(localStorage);
-        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(
-            deckData.GetAllCollectionViewModel()
-        ));
+        this._collectionViewModels = deckData.GetAllCollectionViewModel();
     }
     private async Task UploadCollection(InputFileChangeEventArgs args)
     {
         try
         {
             var collection = await JsonSerializer.DeserializeAsync<Collection>(args.File.OpenReadStream());
-            deckData.model.AddImported(collection);
+            deckData.ImportCollection(collection);
+            await deckData.repo.Save(localStorage);
+            this._collectionViewModels = deckData.GetAllCollectionViewModel();
             StateHasChanged();
         }
         catch (Exception err)
@@ -88,7 +163,7 @@
         return () =>
         {
             Console.WriteLine($"Removing {identifier.ToString()}");
-            deckData.model.RemoveImported(identifier);
+            deckData.RemoveImportedCollection(identifier);
             StateHasChanged();
         };
     }

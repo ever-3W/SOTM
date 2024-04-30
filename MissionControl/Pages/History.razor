@@ -20,7 +20,7 @@
                     HtmlTag="label"
                     StartIcon="@Icons.Material.Filled.Input" 
                     Variant="Variant.Filled" 
-                    Class="save-load-button"
+                    Class="action-button"
                     for="@context.Id">
 
                     Upload History
@@ -29,7 +29,7 @@
                     OnClick="DownloadHistory"
                     StartIcon="@Icons.Material.Filled.Download" 
                     Variant="Variant.Filled" 
-                    Class="save-load-button">
+                    Class="action-button">
 
                     Download History
                 </MudButton>
@@ -100,17 +100,6 @@
 </MudStack>
 
 <style>
-    .save-load-button {
-        color: @(Colors.Shades.White);
-        background-color: @(Colors.Teal.Darken2);
-        margin-top: 10px;
-        margin-bottom: 10px;
-        height: 35px;
-    }
-    .save-load-button:hover {
-        background-color: @(Colors.Teal.Lighten1) !important;
-    }
-
     .header {
         padding-left: 8px;
         padding-right: 8px;

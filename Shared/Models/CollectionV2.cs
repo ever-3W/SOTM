@@ -136,26 +136,6 @@ namespace SOTM.Shared.Models
                 .SelectMany(expansion => expansion.GetChildren());
         }
 
-        public void MergeWith(Collection other)
-        {
-            this.heroExpansionParent.AddChildren(other.heroExpansionParent.GetChildren());
-            this.villainExpansionParent.AddChildren(other.villainExpansionParent.GetChildren());
-            this.environmentExpansionParent.AddChildren(other.environmentExpansionParent.GetChildren());
-            this.teamVillainExpansionParent.AddChildren(other.teamVillainExpansionParent.GetChildren());
-
-            foreach (var kv in other.hangingVariants)
-            {
-                if (this.hangingVariants.ContainsKey(kv.Key))
-                {
-                    this.hangingVariants[kv.Key].AddRange(kv.Value);
-                }
-                else
-                {
-                    this.hangingVariants[kv.Key] = kv.Value;
-                }
-            }
-        }
-
         public override int GetHashCode()
         {
             return this.GetIdentifier().GetHashCode();

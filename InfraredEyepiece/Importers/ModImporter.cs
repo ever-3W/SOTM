@@ -79,14 +79,27 @@ namespace SOTM.InfraredEyepiece.Importers
             // the core DLL shouldn't contain any hanging variants
             var (decks, hangingVariants) = this.ParseResourcesFromDLL(this.dllPath);
             result.hangingVariants = this.ExcludeHangingVariantsNotListed(hangingVariants);
+            HashSet<GlobalIdentifier> expansionSet = new();
+
             foreach (Deck deck in this.ExcludeDecksNotListed(decks))
             {
                 result.AddDeck(deck);
+                expansionSet.Add(deck.sourceExpansionIdentifier);
             }
+
+            bool singleExpansion = expansionSet.Count() == 1;
             foreach (Expansion expansion in result.GetAllExpansions())
             {
-                expansion.title = ExpansionTitleUtils.GetExpansionFullTitle(expansion.identifier.LocalIdentifier());
-                expansion.shortTitle = ExpansionTitleUtils.GetExpansionShortTitle(expansion.identifier.LocalIdentifier());
+                if (singleExpansion)
+                {
+                    expansion.title = result.title;
+                    expansion.shortTitle = result.title;
+                }
+                else
+                {
+                    expansion.title = ExpansionTitleUtils.GetExpansionFullTitle(expansion.identifier.LocalIdentifier());
+                    expansion.shortTitle = ExpansionTitleUtils.GetExpansionShortTitle(expansion.identifier.LocalIdentifier());
+                }
             }
             return result;
         }
