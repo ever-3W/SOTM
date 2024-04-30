@@ -65,7 +65,7 @@
                         <MudText Align="Align.Center" Typo="Typo.h6" Class="@($"{(DropZonesDisabled ? "hero-cc-dropzone-text-disabled" : "hero-cc-dropzone-text")}")">AVAILABLE HEROES</MudText>
                         <MudDropZone ItemIsDisabled="ItemIsDisabled" T="HeroCharacterDropItem" Identifier="Benched" Class="@($"rounded d-flex pa-4 ma-0 flex-1 gap-3 {(DropZonesDisabled ? "hero-cc-dropzone-disabled" : "hero-cc-dropzone")}")" AllowReorder="true" DisabledClass="hero-character-disabled">
                         </MudDropZone>
-                        <MudText Align="Align.Center" Typo="Typo.subtitle2" Style="@($"margin-top: 5px; color: {Colors.Red.Darken4};")">@(GetBottomTooltipText())</MudText>
+                        <MudText Align="Align.Center" Typo="Typo.subtitle2" Style="@($"margin-top: 5px; color: {Colors.Red.Darken4};")">@(BottomTooltipText)</MudText>
                     </div>
                 </ChildContent>
                 <ItemRenderer>
@@ -226,43 +226,45 @@
         (gameSvc.GameHasStarted) || (this.pickedHeroCount < 3) || (this.pickedHeroCount > 5);
 
     public string OutcomeButtonVisibility => gameSvc.GameHasStarted ? "" : "invisible";
-    public string GetBottomTooltipText()
+    public string BottomTooltipText
     {
-        if (gameSvc.GameHasStarted)
+        get
         {
+            if (gameSvc.GameHasStarted)
+            {
+                if (this.backButtonHovered)
+                {
+                    return TOOLTIP_CANCEL;
+                }
+                if (this.winButtonHovered)
+                {
+                    return TOOLTIP_WIN;
+                }
+                if (this.lossButtonHovered)
+                {
+                    return TOOLTIP_LOSS;
+                }
+                return TOOLTIP_GAME;
+            }
             if (this.backButtonHovered)
             {
-                return TOOLTIP_CANCEL;
+                return TOOLTIP_BACK;
             }
-            if (this.winButtonHovered)
+            if (this.randomizeButtonHovered)
             {
-                return TOOLTIP_WIN;
+                return TOOLTIP_RANDOMIZE;
             }
-            if (this.lossButtonHovered)
+            if (this.pickedHeroCount > 5)
             {
-                return TOOLTIP_LOSS;
+                return TOOLTIP_PICK_TOO_MANY_HEROES;
             }
-            return TOOLTIP_GAME;
+            else if (this.pickedHeroCount >= 3)
+            {
+                return TOOLTIP_PICK_READY_START;
+            }
+            return TOOLTIP_PICK_DEFAULT;
         }
-        if (this.backButtonHovered)
-        {
-            return TOOLTIP_BACK;
-        }
-        if (this.randomizeButtonHovered)
-        {
-            return TOOLTIP_RANDOMIZE;
-        }
-        if (this.pickedHeroCount > 5)
-        {
-            return TOOLTIP_PICK_TOO_MANY_HEROES;
-        }
-        else if (this.pickedHeroCount >= 3)
-        {
-            return TOOLTIP_PICK_READY_START;
-        }
-        return TOOLTIP_PICK_DEFAULT;
     }
-
     public class HeroCharacterDropItem
     {
         public DeckVariantViewModel entity { get; init; }
@@ -318,7 +320,7 @@
 
     public void InitDropZones(Game game)
     {
-        var pickedHeroes = game.GetPickedHeroes();
+        var pickedHeroes = game.PickedHeroes;
         this.heroDropZoneItems = pickedHeroes.Select
         (
             (identifier, index) => new HeroCharacterDropItem()
@@ -329,7 +331,7 @@
             }
         ).Concat
         (
-            game.GetUnpickedHeroes().Select((identifier, index) => new HeroCharacterDropItem()
+            game.UnpickedHeroes.Select((identifier, index) => new HeroCharacterDropItem()
             {
                 entity = deckData.GetVariantMetadata(deckData.GetVariantData(identifier)),
                 isPicked = false,

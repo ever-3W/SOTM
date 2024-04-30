@@ -143,17 +143,20 @@
     protected override async Task OnInitializedAsync()
     {
         await deckData.Load(localStorage);
-        this._collectionViewModels = deckData.GetAllCollectionViewModel();
+        this._collectionViewModels = deckData.CollectionViewModels;
     }
     private async Task UploadCollection(InputFileChangeEventArgs args)
     {
         try
         {
             var collection = await JsonSerializer.DeserializeAsync<Collection>(args.File.OpenReadStream());
-            deckData.ImportCollection(collection);
-            await deckData.SaveDeckData(localStorage);
-            this._collectionViewModels = deckData.GetAllCollectionViewModel();
-            StateHasChanged();
+            if (collection is not null)
+            {
+                deckData.ImportCollection(collection);
+                await deckData.SaveDeckData(localStorage);
+                this._collectionViewModels = deckData.CollectionViewModels;
+                StateHasChanged();
+            }
         }
         catch (Exception err)
         {
@@ -167,7 +170,7 @@
         Console.WriteLine($"Removing {identifier.ToString()}");
         deckData.RemoveImportedCollection(identifier);
         await deckData.SaveDeckData(localStorage);
-        this._collectionViewModels = deckData.GetAllCollectionViewModel();
+        this._collectionViewModels = deckData.CollectionViewModels;
         StateHasChanged();
     }
 }

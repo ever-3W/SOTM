@@ -87,35 +87,26 @@ namespace SOTM.MissionControl.Models
             return this.picks[kind].ElementAtOrDefault(GetIndex(this.draft.GetList(kind), identifier)) & ((int) this.state >> 3);
         }
 
-        public IEnumerable<GlobalIdentifier> GetPickedHeroes()
-        {
-            return this.picks[DeckKind.HERO]
+        public IEnumerable<GlobalIdentifier> PickedHeroes =>
+            this.picks[DeckKind.HERO]!
                 .Select((pick, index) => (pick, index))
-                .Where(tuple => tuple.Item1 != 0)
-                .OrderBy(tuple => tuple.Item1)
-                .Select(tuple => this.draft.heroes.ElementAtOrDefault(tuple.Item2));
-        }
+                .Where(tuple => tuple.pick != 0)
+                .OrderBy(tuple => tuple.pick)
+                .Select(tuple => this.draft.heroes.ElementAtOrDefault(tuple.index)!);
 
-        public IEnumerable<GlobalIdentifier> GetUnpickedHeroes()
-        {
-            return this.picks[DeckKind.HERO]
+        public IEnumerable<GlobalIdentifier> UnpickedHeroes =>
+            this.picks[DeckKind.HERO]!
                 .Select((pick, index) => (pick, index))
-                .Where(tuple => tuple.Item1 == 0)
-                .Select(tuple => this.draft.heroes.ElementAtOrDefault(tuple.Item2));
-        }
-
-        public GlobalIdentifier GetPickedVillain()
-        {
-            return this.draft.villains
+                .Where(tuple => tuple.pick == 0)
+                .Select(tuple => this.draft.heroes.ElementAtOrDefault(tuple.index)!);
+        public GlobalIdentifier PickedVillain =>
+            this.draft.villains
                 .ElementAtOrDefault(this.picks[DeckKind.VILLAIN].FindIndex((pick) => pick != 0))
-                ?? this.draft.environments.ElementAtOrDefault(0);
-        }
+                ?? this.draft.villains.ElementAtOrDefault(0)!;
 
-        public GlobalIdentifier GetPickedEnvironment()
-        {
-            return this.draft.environments
+        public GlobalIdentifier PickedEnvironment =>
+            this.draft.environments
                 .ElementAtOrDefault(this.picks[DeckKind.ENVIRONMENT].FindIndex((pick) => pick != 0))
-                ?? this.draft.environments.ElementAtOrDefault(0);
-        }
+                ?? this.draft.environments.ElementAtOrDefault(0)!;
     }
 }

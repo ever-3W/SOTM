@@ -95,7 +95,7 @@
         <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
             @foreach (Collection collection in deckData.Collections)
             {
-                @foreach (Expansion expansion in deckData.GetEnvironmentExpansions()) 
+                @foreach (Expansion expansion in collection.environmentExpansions) 
                 {
                     <DeckCard 
                         @ref="environmentDeckRef"
@@ -201,7 +201,7 @@
         var savedManifest = await deckData.LoadManifestData(localStorage);
         var latestManifest = await httpClient.GetFromJsonAsync<CollectionManifest>("data/ModManifest.json");
 
-        if (CollectionManifest.ListDeltas(savedManifest, latestManifest).Count() > 0)
+        if (latestManifest is not null && CollectionManifest.ListDeltas(savedManifest, latestManifest).Count() > 0)
         {
             Console.WriteLine("Deltas found, rebuilding deck data collection");
             var sourceCollections = (await Task.WhenAll(
@@ -209,7 +209,9 @@
                 {
                     return await httpClient.GetFromJsonAsync<Collection>($"data/{entry.file}");
                 })
-            )).OrderBy(collection => latestManifest.files[collection.identifier.ToString()].sortOrder);
+            ))
+                .Where(collection => collection is not null)
+                .OrderBy(collection => latestManifest.files[collection!.identifier.ToString()].sortOrder);
             deckData.BuildFromSourceCollections(sourceCollections);
             await deckData.SaveDeckData(localStorage);
             deckData.CollectionManifest = latestManifest;
@@ -231,7 +233,7 @@
         _autoSaveTimer.Enabled = true;
         _autoSaveTimer.Start();
     }
-    public void OnTimedEvent(Object source, ElapsedEventArgs e)
+    public void OnTimedEvent(Object? source, ElapsedEventArgs e)
     {
         _autoSaveSeconds++;
         var interval = settingsSvc.DraftAutoSaveInterval;
@@ -239,9 +241,7 @@
         {
             InvokeAsync(() =>
             {
-                Console.WriteLine($"auto save timer is now {_autoSaveSeconds}");
                 _autoSaveSeconds = 0;
-
                 return AutoSave();
             });
         }

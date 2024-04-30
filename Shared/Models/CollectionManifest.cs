@@ -59,18 +59,32 @@ namespace SOTM.Shared.Models
             }
         }
 
-        public static IEnumerable<CollectionManifestDelta> ListDeltas (CollectionManifest left, CollectionManifest right)
+        public static IEnumerable<CollectionManifestDelta> ListDeltas (CollectionManifest? left, CollectionManifest? right)
         {
-            return left.files.Keys
-                .Union(right.files.Keys)
+            if (left is null && right is null)
+            {
+                return Enumerable.Empty<CollectionManifestDelta>();
+            }
+            IEnumerable<string> leftKeys = left?.files.Keys ?? Enumerable.Empty<string>();
+            IEnumerable<string> rightKeys = right?.files.Keys ?? Enumerable.Empty<string>();
+
+            var leftDeltas = leftKeys
                 .Select(key => new CollectionManifestDelta()
                 {
                     identifier = key,
-                    file = left.files.GetValueOrDefault(key)?.file ?? right.files.GetValueOrDefault(key)?.file,
-                    leftHash = left.files.GetValueOrDefault(key)?.hash ?? null,
-                    rightHash = right.files.GetValueOrDefault(key)?.hash ?? null
-                })
-                .Where(delta => delta.leftHash != delta.rightHash);
+                    file = left!.files[key].file,
+                    leftHash = left.files[key].hash,
+                    rightHash = right?.files.GetValueOrDefault(key)?.hash ?? null
+                });
+            var rightDeltas = rightKeys
+                .Select(key => new CollectionManifestDelta()
+                {
+                    identifier = key,
+                    file = right!.files[key].file,
+                    leftHash = left?.files.GetValueOrDefault(key)?.hash ?? null,
+                    rightHash = right.files[key].hash
+                });
+            return leftDeltas.Concat(rightDeltas).Where(delta => delta.leftHash != delta.rightHash);
         }
     }
 }

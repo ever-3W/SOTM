@@ -248,32 +248,14 @@ namespace SOTM.MissionControl.Services
             return this.variantIdentifierEntityTable.GetValueOrDefault(identifier);
         }
 
-        public IEnumerable<Expansion> GetHeroExpansions()
-        {
-            return this.Collections.SelectMany(collection => collection.heroExpansions);
-        }
-
-        public IEnumerable<Expansion> GetVillainExpansions()
-        {
-            return this.Collections.SelectMany(collection => collection.villainExpansions);
-        }
-
-        public IEnumerable<Expansion> GetEnvironmentExpansions()
-        {
-            return this.Collections.SelectMany(collection => collection.environmentExpansions);
-        }
-
-        public IEnumerable<CollectionViewModel> GetAllCollectionViewModel()
-        {
-            return 
-                this.repo.value.presetCollections
-                    .Select(collection => CollectionViewModel.CreateViewModel(collection, CollectionSource.PRESET))
+        public IEnumerable<CollectionViewModel> CollectionViewModels =>
+            this.repo.value.presetCollections
+                .Select(collection => CollectionViewModel.CreateViewModel(collection, CollectionSource.PRESET))
                 .Concat
                 (
                     this.repo.value.importedCollections
                         .Select(collection => CollectionViewModel.CreateViewModel(collection, CollectionSource.IMPORTED))
                 );
-        }
 
         public void ImportCollection(Collection collection)
         {

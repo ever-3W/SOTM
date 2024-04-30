@@ -124,10 +124,10 @@
         public GameTableRowData (GameLogService gameLog, Game game)
         {
             this.result = game.state == GameState.WIN ? "Win" : "Loss";
-            this.heroes = game.GetPickedHeroes().Select(identifier => gameLog.GetVariantMetadata(identifier).title).ToList();
-            this.villain = gameLog.GetVariantMetadata(game.GetPickedVillain()).title;
-            this.environment = gameLog.GetVariantMetadata(game.GetPickedEnvironment()).title;
-            this.unpickedHeroes = game.GetUnpickedHeroes().Select(identifier => gameLog.GetVariantMetadata(identifier).title).ToList();
+            this.heroes = game.PickedHeroes.Select(identifier => gameLog.GetVariantMetadata(identifier).title).ToList();
+            this.villain = gameLog.GetVariantMetadata(game.PickedVillain).title;
+            this.environment = gameLog.GetVariantMetadata(game.PickedEnvironment).title;
+            this.unpickedHeroes = game.UnpickedHeroes.Select(identifier => gameLog.GetVariantMetadata(identifier).title).ToList();
         }
     }
 
