@@ -7,7 +7,7 @@
 @inherits ComponentBase
 
 <MudCard Class="@($"pa-0 card-fix-width card-body {Class}")" Style="@($"background-color: var(--{(this.IsAnyVariantPickable ? "pickable-color" : "banned-color")});")">
-    <MudCardHeader Class="@($"px-3 py-0 cursor-pointer {(this.IsAnyVariantPickable ? "card-head-pickable" : "card-head-banned")}")" @onclick="ToggleCardVariants">
+    <MudCardHeader Class="@($"px-2 py-0 cursor-pointer {(this.IsAnyVariantPickable ? "card-head-pickable" : "card-head-banned")}")" @onclick="ToggleCardVariants">
         <CardHeaderContent>
             <MudText Typo="@(Title.Length > LARGE_TEXT_MAX_LENGTH ? Typo.subtitle2 : Typo.body1)" Class="@($"{(this.IsAnyVariantPickable ? "card-head-text-pickable" : "card-head-text-banned")}")"><b>@Title</b></MudText>
         </CardHeaderContent>
@@ -104,7 +104,7 @@
 
 @code
 {
-    private const int LARGE_TEXT_MAX_LENGTH = 20;
+    private const int LARGE_TEXT_MAX_LENGTH = 18;
 
     private Dictionary<GlobalIdentifier, DeckVariantViewModel> _variantModelTable;
     private Dictionary<GlobalIdentifier, bool> _variantPickableTable;

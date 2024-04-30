@@ -26,7 +26,7 @@
 
 <div Class="d-flex justify-space-around flex-1 flex-wrap gap-3">
     <MudCard Class="flex-1 pa-3 mb-3 villain-section" Outlined="true">
-        <MudCardHeader Class="pa-0">
+        <MudCardHeader Class="pa-0 mb-2 group-header">
             <CardHeaderContent>
                 <MudText Typo="Typo.h5" Style="user-select: none;"><b>VILLAINS</b></MudText>
             </CardHeaderContent>
@@ -46,7 +46,7 @@
         </MudCardContent>
     </MudCard>
     <MudCard Class="flex-1 pa-3 hero-section" Outlined="true">
-        <MudCardHeader Class="pa-0">
+        <MudCardHeader Class="pa-0 mb-2 group-header">
             <CardHeaderContent>
                 <MudText Typo="Typo.h5" Style="user-select: none;"><b>HEROES</b></MudText>
             </CardHeaderContent>
@@ -55,7 +55,7 @@
             @foreach (Expansion expansion in deckData.GetHeroExpansions()) 
             {
                 <MudCard Outlined Class="pa-3 mb-3" Style=@($"background: {Colors.Amber.Lighten4};")>
-                    <MudCardHeader Class="pa-0 mb-2 hero-expansion-header">
+                    <MudCardHeader Class="pa-0 mb-2 group-header">
                         <CardHeaderContent>
                             <MudText Typo="Typo.h6">@expansion.title</MudText>
                         </CardHeaderContent>
@@ -78,7 +78,7 @@
         </MudCardContent>
     </MudCard>
     <MudCard Class="flex-1 pa-3 mb-3 environment-section" Outlined="true">
-        <MudCardHeader Class="pa-0">
+        <MudCardHeader Class="pa-0 mb-2 group-header">
             <CardHeaderContent>
                 <MudText Typo="Typo.h5" Style="user-select: none;"><b>ENVIRONMENTS</b></MudText>
             </CardHeaderContent>
@@ -111,7 +111,7 @@
         --mud-palette-background-grey: @(Colors.Indigo.Lighten1);
         --mud-default-borderradius: 0px;
     }
-    .hero-expansion-header {
+    .group-header {
         color: var(--pickable-text-color);
         user-select: none;
         margin-bottom: 2px;
