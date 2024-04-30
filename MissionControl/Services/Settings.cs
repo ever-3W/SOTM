@@ -35,18 +35,15 @@ namespace SOTM.MissionControl.Services
     public class SettingsService
     {
         private const string SETTINGS_STORAGE_KEY = "Settings";
-        private GenericRepository<SettingsModel> repo = new(SETTINGS_STORAGE_KEY, new());
-        private ILocalStorageService _storageService;
-
-        public async Task Save(ILocalStorageService storageService)
-        {
-            this._storageService = storageService;
-            await repo.Save(this._storageService);
-        }
+        private readonly GenericRepository<SettingsModel> repo = new(SETTINGS_STORAGE_KEY, new());
+        private ILocalStorageService? _storageService;
 
         public async Task Save()
         {
-            await repo.Save(this._storageService);
+            if (this._storageService is not null)
+            {
+                await repo.Save(this._storageService);
+            }
         }
 
         public async Task Load(ILocalStorageService storageService)

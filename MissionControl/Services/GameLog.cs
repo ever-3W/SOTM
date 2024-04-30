@@ -79,19 +79,16 @@ namespace SOTM.MissionControl.Services
     public class GameLogService
     {
         private const string GAME_LOG_STORAGE_KEY = "GameLog";
-        private GenericRepository<GameLogModel> repo = new(GAME_LOG_STORAGE_KEY, new());
+        private readonly GenericRepository<GameLogModel> repo = new(GAME_LOG_STORAGE_KEY, new());
+        public Func<ILocalStorageService, Task> Save;
+        public Func<ILocalStorageService, Task<GameLogModel>> Load;
+        public Func<byte[]> GetBytes;
 
-        public async Task Save(ILocalStorageService storageService)
+        public GameLogService()
         {
-            await this.repo.Save(storageService);
-        }
-        public async Task<GameLogModel> Load(ILocalStorageService storageService)
-        {
-            return await this.repo.Load(storageService);
-        }
-        public byte[] GetBytes()
-        {
-            return this.repo.GetBytes();
+            this.Save = this.repo.Save;
+            this.Load = this.repo.Load;
+            this.GetBytes = this.repo.GetBytes;
         }
         public void MergeGameLogs(GameLogModel newGameLog)
         {

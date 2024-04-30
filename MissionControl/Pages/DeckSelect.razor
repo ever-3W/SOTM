@@ -184,8 +184,8 @@
     private async void DraftRandomGame()
     {
         var pickableVariantSet = await this.AutoSave();
-        gameSvc.game = new Game(randomizer.DraftRandomClassicGame(deckData, settingsSvc, pickableVariantSet));
-        await gameSvc.repo.Save(localStorage);
+        gameSvc.NewGame(new Game(randomizer.DraftRandomClassicGame(deckData, settingsSvc, pickableVariantSet)));
+        await gameSvc.Save(localStorage);
 
         navManager.NavigateTo("/play-game");
     }
@@ -221,7 +221,7 @@
             await deckData.Load(localStorage);
         }
 
-        await draftSelections.repo.Load(localStorage);
+        await draftSelections.Load(localStorage);
         KeyboardEvents.AddKeyDownListener(this.OnKeyDown);
         KeyboardEvents.AddKeyUpListener(this.OnKeyUp);
 
@@ -253,7 +253,7 @@
             .SelectMany(component => component.PickableVariants).ToHashSet();
 
         draftSelections.SetPickableVariants(pickableVariantSet);
-        await draftSelections.repo.Save(localStorage); 
+        await draftSelections.Save(localStorage); 
         return pickableVariantSet;
     }
 

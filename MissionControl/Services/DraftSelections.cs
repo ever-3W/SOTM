@@ -1,6 +1,7 @@
 using SOTM.Shared.Models;
 using SOTM.MissionControl.Models;
 using System.Text.Json.Serialization;
+using Blazored.LocalStorage;
 
 namespace SOTM.MissionControl.Services
 {
@@ -13,7 +14,15 @@ namespace SOTM.MissionControl.Services
     public class DraftSelectionsService
     {
         public const string DRAFT_SELECTIONS_STORAGE_KEY = "DraftSelections";
-        public GenericRepository<DraftSelectionsModel> repo = new(DRAFT_SELECTIONS_STORAGE_KEY, new());
+        private readonly GenericRepository<DraftSelectionsModel> repo = new(DRAFT_SELECTIONS_STORAGE_KEY, new());
+        public Func<ILocalStorageService, Task> Save;
+        public Func<ILocalStorageService, Task<DraftSelectionsModel>> Load;
+
+        public DraftSelectionsService()
+        {
+            this.Save = this.repo.Save;
+            this.Load = this.repo.Load;
+        }
 
         public void SetPickableVariants(HashSet<GlobalIdentifier> pickableVariants)
         {
