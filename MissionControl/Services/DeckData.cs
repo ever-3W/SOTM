@@ -132,15 +132,27 @@ namespace SOTM.MissionControl.Services
     public class DeckDataService
     {
         private const string DECK_DATA_STORAGE_KEY = "DeckDataModel";
-        public GenericRepository<DeckDataModel> repo = new(DECK_DATA_STORAGE_KEY, new());
-
+        private readonly GenericRepository<DeckDataModel> repo = new(DECK_DATA_STORAGE_KEY, new());
+        public Func<ILocalStorageService, Task> SaveDeckData;
+        public Func<ILocalStorageService, Task<DeckDataModel>> LoadDeckData;
         private const string LOADED_MANIFEST_STORAGE_KEY = "LoadedCollectionManifest";
-        public GenericRepository<CollectionManifest> manifestRepo = new(LOADED_MANIFEST_STORAGE_KEY, new());
+        private readonly GenericRepository<CollectionManifest> manifestRepo = new(LOADED_MANIFEST_STORAGE_KEY, new());
+        public Func<ILocalStorageService, Task> SaveManifestData;
+        public Func<ILocalStorageService, Task<CollectionManifest>> LoadManifestData;
 
-        public DeckDataModel model
+        public DeckDataService()
         {
-            get => this.repo.value;
-            set => this.repo.value = value;
+            this.SaveDeckData = repo.Save;
+            this.LoadDeckData = repo.Load;
+            this.SaveManifestData = manifestRepo.Save;
+            this.LoadManifestData = manifestRepo.Load;
+        }
+
+        public IEnumerable<Collection> Collections => this.repo.value.GetAllCollections();
+
+        public CollectionManifest CollectionManifest
+        {
+            set => this.manifestRepo.value = value;
         }
 
         // Used for data lookup
@@ -160,19 +172,14 @@ namespace SOTM.MissionControl.Services
             }
         }
 
-        public IEnumerable<CollectionManifestDelta> ListManifestDeltas (CollectionManifest other)
-        {
-            return CollectionManifest.ListDeltas(this.manifestRepo.value, other);
-        }
-
         public IEnumerable<DeckVariant> GetAllVariants(Deck deck)
         {
             string dne = deck.GetNamespacedIdentifier();
-            IEnumerable<DeckVariant> promoVariants = this.model.GetAllCollections().SelectMany(collection => collection.hangingVariants.GetValueOrDefault(dne, []));
+            IEnumerable<DeckVariant> promoVariants = this.Collections.SelectMany(collection => collection.hangingVariants.GetValueOrDefault(dne, []));
             return deck.GetChildren().Concat(promoVariants);
         }
 
-        public Collection GetSourceCollection(GlobalIdentifier identifier)
+        public Collection GetVariantCollection(GlobalIdentifier identifier)
         {
             return this.variantIdentifierCollectionTable[identifier];
         }
@@ -184,7 +191,7 @@ namespace SOTM.MissionControl.Services
                 return null;
             }
             return new DeckVariantViewModel(variant) 
-            { color = this.GetSourceCollection(variant.identifier).color };
+            { color = this.GetVariantCollection(variant.identifier).color };
         }
 
         public IEnumerable<DeckVariantViewModel> GetAllVariantViewModels(Deck deck)
@@ -197,16 +204,16 @@ namespace SOTM.MissionControl.Services
             IEnumerable<Expansion> parentsEnumerable = [];
             if (kind == DeckKind.HERO)
             {
-                parentsEnumerable = this.model.GetAllCollections().SelectMany(collection => collection.heroExpansions);
+                parentsEnumerable = this.Collections.SelectMany(collection => collection.heroExpansions);
             } else if (kind == DeckKind.VILLAIN)
             {
-                parentsEnumerable = this.model.GetAllCollections().SelectMany(collection => collection.villainExpansions);
+                parentsEnumerable = this.Collections.SelectMany(collection => collection.villainExpansions);
             } else if (kind == DeckKind.ENVIRONMENT)
             {
-                parentsEnumerable = this.model.GetAllCollections().SelectMany(collection => collection.environmentExpansions);
+                parentsEnumerable = this.Collections.SelectMany(collection => collection.environmentExpansions);
             } else if (kind == DeckKind.VILLAIN_TEAM)
             {
-                parentsEnumerable = this.model.GetAllCollections().SelectMany(collection => collection.teamVillainExpansions);
+                parentsEnumerable = this.Collections.SelectMany(collection => collection.teamVillainExpansions);
             }
             return parentsEnumerable.SelectMany(expansion => expansion.GetChildren().Select(deck => this.GetAllVariants(deck)));
         }
@@ -217,7 +224,7 @@ namespace SOTM.MissionControl.Services
             {
                 if (collection != null)
                 {
-                    this.model.AddPreset(collection);
+                    this.repo.value.AddPreset(collection);
                     this.BuildCollectionDataTables(collection);
                 }
             }
@@ -226,7 +233,7 @@ namespace SOTM.MissionControl.Services
         public async Task Load(ILocalStorageService storageService)
         {
             await this.repo.Load(storageService);
-            foreach (Collection collection in this.model.GetAllCollections())
+            foreach (Collection collection in this.Collections)
             {
                 this.BuildCollectionDataTables(collection);
             }
@@ -243,34 +250,34 @@ namespace SOTM.MissionControl.Services
 
         public IEnumerable<Expansion> GetHeroExpansions()
         {
-            return this.model.GetAllCollections().SelectMany(collection => collection.heroExpansions);
+            return this.Collections.SelectMany(collection => collection.heroExpansions);
         }
 
         public IEnumerable<Expansion> GetVillainExpansions()
         {
-            return this.model.GetAllCollections().SelectMany(collection => collection.villainExpansions);
+            return this.Collections.SelectMany(collection => collection.villainExpansions);
         }
 
         public IEnumerable<Expansion> GetEnvironmentExpansions()
         {
-            return this.model.GetAllCollections().SelectMany(collection => collection.environmentExpansions);
+            return this.Collections.SelectMany(collection => collection.environmentExpansions);
         }
 
         public IEnumerable<CollectionViewModel> GetAllCollectionViewModel()
         {
             return 
-                this.model.presetCollections
+                this.repo.value.presetCollections
                     .Select(collection => CollectionViewModel.CreateViewModel(collection, CollectionSource.PRESET))
                 .Concat
                 (
-                    this.model.importedCollections
+                    this.repo.value.importedCollections
                         .Select(collection => CollectionViewModel.CreateViewModel(collection, CollectionSource.IMPORTED))
                 );
         }
 
         public void ImportCollection(Collection collection)
         {
-            if (this.model.AddImported(collection))
+            if (this.repo.value.AddImported(collection))
             {
                 this.BuildCollectionDataTables(collection);
             }
@@ -278,7 +285,7 @@ namespace SOTM.MissionControl.Services
 
         public void RemoveImportedCollection(GlobalIdentifier collectionIdentifier)
         {
-            this.model.RemoveImported(collectionIdentifier);
+            this.repo.value.RemoveImported(collectionIdentifier);
         }
     }
 }

@@ -19,7 +19,7 @@
     <MudText> Click on "Draft New Game" to create a draft with randomized villain, hero, and environment decks. </MudText>
     <MudText> Click on any hero/villain/environment item to ban it from being selected. Clicking a banned item again will unban it. </MudText>
     <MudText> Clicking on a card heading will ban/unban all items listed on that card. </MudText>
-    <MudText> Shift-click on any hero/villain/environment item (not heading) to ban/unban all other items from the same mod. </MudText>
+    <MudText> Shift-click on any hero/villain/environment to ban/unban all other items from the same mod. </MudText>
 </div>
 
 <MudButton OnClick="DraftRandomGame" Variant="Variant.Filled" Class="action-button">Draft New Game</MudButton>
@@ -32,16 +32,20 @@
             </CardHeaderContent>
         </MudCardHeader>
         <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
-            @foreach (Expansion expansion in deckData.GetVillainExpansions()) 
-            {
-                <DeckCard 
-                    @ref="villainDeckRef"
-                    Title="@(expansion.shortTitle)"
-                    Variants="@(DeckCard.FromExpansionModel(deckData, expansion))"
-                    PickableVariants="@(expansion.GetChildren().SelectMany(deck => GetInitialPickableVariants(deck)))"
-                    Class="villain-cards"
-                    OnChangedTo="OnChangedTo"
-                />
+            @foreach (Collection collection in deckData.Collections)
+                @foreach (Expansion expansion in collection.villainExpansions) 
+                {
+                    <DeckCard 
+                        @ref="villainDeckRef"
+                        Title="@(expansion.shortTitle)"
+                        ParentCollection="collection"
+                        Variants="@(DeckCard.FromExpansionModel(deckData, expansion))"
+                        PickableVariants="@(expansion.GetChildren().SelectMany(deck => GetInitialPickableVariants(deck)))"
+                        Class="villain-cards"
+                        OnChangedTo="OnChangedTo"
+                        OnToggleHeading="OnToggleHeading"
+                    />
+                }
             }
         </MudCardContent>
     </MudCard>
@@ -52,28 +56,33 @@
             </CardHeaderContent>
         </MudCardHeader>
         <MudCardContent Class="pa-0">
-            @foreach (Expansion expansion in deckData.GetHeroExpansions()) 
+            @foreach (Collection collection in deckData.Collections)
             {
-                <MudCard Outlined Class="pa-3 mb-3" Style=@($"background: {Colors.Amber.Lighten4};")>
-                    <MudCardHeader Class="pa-0 mb-2 group-header">
-                        <CardHeaderContent>
-                            <MudText Typo="Typo.h6">@expansion.title</MudText>
-                        </CardHeaderContent>
-                    </MudCardHeader>
-                    <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
-                        @foreach (Deck deck in expansion.GetChildren())
-                        {
-                            <DeckCard 
-                                @ref="heroDeckRef"
-                                Title="@(deck.title)"
-                                Variants="@(DeckCard.FromDeckModel(deckData, deck))"
-                                PickableVariants="@(GetInitialPickableVariants(deck))"
-                                Class="hero-cards"
-                                OnChangedTo="OnChangedTo"
-                            />
-                        }
-                    </MudCardContent>
-                </MudCard>
+                @foreach (Expansion expansion in collection.heroExpansions) 
+                {
+                    <MudCard Outlined Class="pa-3 mb-3" Style=@($"background: {Colors.Amber.Lighten4};")>
+                        <MudCardHeader Class="pa-0 mb-2 group-header">
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h6">@expansion.title</MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
+                            @foreach (Deck deck in expansion.GetChildren())
+                            {
+                                <DeckCard 
+                                    @ref="heroDeckRef"
+                                    Title="@(deck.title)"
+                                    ParentCollection="collection"
+                                    Variants="@(DeckCard.FromDeckModel(deckData, deck))"
+                                    PickableVariants="@(GetInitialPickableVariants(deck))"
+                                    Class="hero-cards"
+                                    OnChangedTo="OnChangedTo"
+                                    OnToggleHeading="OnToggleHeading"
+                                />
+                            }
+                        </MudCardContent>
+                    </MudCard>
+                }
             }
         </MudCardContent>
     </MudCard>
@@ -84,16 +93,21 @@
             </CardHeaderContent>
         </MudCardHeader>
         <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
-            @foreach (Expansion expansion in deckData.GetEnvironmentExpansions()) 
+            @foreach (Collection collection in deckData.Collections)
             {
-                <DeckCard 
-                    @ref="environmentDeckRef"
-                    Title="@(expansion.shortTitle)"
-                    Variants="@(DeckCard.FromExpansionModel(deckData, expansion))"
-                    PickableVariants="@(expansion.GetChildren().SelectMany(deck => GetInitialPickableVariants(deck)))"
-                    Class="environment-cards"
-                    OnChangedTo="OnChangedTo"
-                />
+                @foreach (Expansion expansion in deckData.GetEnvironmentExpansions()) 
+                {
+                    <DeckCard 
+                        @ref="environmentDeckRef"
+                        Title="@(expansion.shortTitle)"
+                        ParentCollection="collection"
+                        Variants="@(DeckCard.FromExpansionModel(deckData, expansion))"
+                        PickableVariants="@(expansion.GetChildren().SelectMany(deck => GetInitialPickableVariants(deck)))"
+                        Class="environment-cards"
+                        OnChangedTo="OnChangedTo"
+                        OnToggleHeading="OnToggleHeading"
+                    />
+                }
             }
         </MudCardContent>
     </MudCard>
@@ -184,10 +198,10 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await deckData.manifestRepo.Load(localStorage);
+        var savedManifest = await deckData.LoadManifestData(localStorage);
         var latestManifest = await httpClient.GetFromJsonAsync<CollectionManifest>("data/ModManifest.json");
 
-        if (deckData.ListManifestDeltas(latestManifest).Count() > 0)
+        if (CollectionManifest.ListDeltas(savedManifest, latestManifest).Count() > 0)
         {
             Console.WriteLine("Deltas found, rebuilding deck data collection");
             var sourceCollections = (await Task.WhenAll(
@@ -197,9 +211,9 @@
                 })
             )).OrderBy(collection => latestManifest.files[collection.identifier.ToString()].sortOrder);
             deckData.BuildFromSourceCollections(sourceCollections);
-            await deckData.repo.Save(localStorage);
-            deckData.manifestRepo.value = latestManifest;
-            await deckData.manifestRepo.Save(localStorage);
+            await deckData.SaveDeckData(localStorage);
+            deckData.CollectionManifest = latestManifest;
+            await deckData.SaveManifestData(localStorage);
         }
         else
         {
@@ -268,7 +282,7 @@
     {
         if (_shiftFlag)
         {
-            var collection = deckData.GetSourceCollection(identifier);
+            var collection = deckData.GetVariantCollection(identifier);
             if (changedValue)
             {
                 foreach (Components.DeckCard component in this.AllDeckComponents())
@@ -288,5 +302,28 @@
         {
             source.SetSingleValue(identifier, changedValue);
         }
+    }
+
+    public void OnToggleHeading(Components.DeckCard source, bool changedValue)
+    {
+        if (_shiftFlag)
+        {
+            var otherComponents = this.AllDeckComponents().Except([source]);
+            if (changedValue)
+            {
+                foreach (Components.DeckCard component in otherComponents)
+                {
+                    component.IncludeAllInCollection(component.ParentCollection);
+                }
+            }
+            else
+            {
+                foreach (Components.DeckCard component in otherComponents)
+                {
+                    component.ExcludeAllInCollection(component.ParentCollection);
+                }
+            }
+        }
+        source.SetAllValues(changedValue);
     }
 }

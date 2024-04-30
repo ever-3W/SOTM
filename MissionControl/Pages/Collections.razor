@@ -151,7 +151,7 @@
         {
             var collection = await JsonSerializer.DeserializeAsync<Collection>(args.File.OpenReadStream());
             deckData.ImportCollection(collection);
-            await deckData.repo.Save(localStorage);
+            await deckData.SaveDeckData(localStorage);
             this._collectionViewModels = deckData.GetAllCollectionViewModel();
             StateHasChanged();
         }
@@ -166,7 +166,7 @@
     {
         Console.WriteLine($"Removing {identifier.ToString()}");
         deckData.RemoveImportedCollection(identifier);
-        await deckData.repo.Save(localStorage);
+        await deckData.SaveDeckData(localStorage);
         this._collectionViewModels = deckData.GetAllCollectionViewModel();
         StateHasChanged();
     }

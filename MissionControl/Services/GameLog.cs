@@ -41,7 +41,7 @@ namespace SOTM.MissionControl.Services
             HashSet<Collection> collections = new();
             foreach (GlobalIdentifier identifier in game.draft.GetAllVariants())
             {
-                var collection = deckData.GetSourceCollection(identifier);
+                var collection = deckData.GetVariantCollection(identifier);
                 collections.Add(collection);
                 this.variantLog[identifier.ToString()] = new DeckVariantLogModel
                 {
