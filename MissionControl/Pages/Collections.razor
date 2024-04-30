@@ -11,7 +11,7 @@
 <MudStack Class="flex-0 align-content-start" Style="width: 225px;">
     <MudText> All collections currently loaded are listed on the right. </MudText>
     <MudText> Items are marked with a specific color on the right corresponding to the collection they came from.</MudText>
-    <MudText> To import a new collection, upload its parsed JSON file using the button below. </MudText>
+    <MudText> To import a new collection, upload its <a href="https://github.com/ever-3W/SOTM/tree/main/InfraredEyepiece#usage" target="_blank">parsed JSON file</a> using the button below. </MudText>
     <MudFileUpload T="IBrowserFile" OnFilesChanged="UploadCollection" Style="flex: none !important;">
         <ButtonTemplate>
             <MudButton 
@@ -49,7 +49,7 @@
                         }
                         else
                         {
-                            <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="@(CollectionIconOnClick(metadata.identifier))" Size="@Size.Small" Color="Color.Default" />
+                            <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="@(() => CollectionIconOnClick(metadata.identifier))" Size="@Size.Small" Color="Color.Default" />
                         }
                     </div>
                 </CardHeaderContent>
@@ -84,6 +84,10 @@
 </div>
 </div>
 <style>
+    a {
+        all: revert;
+    }
+
     .server-side {
         --card-bg-color: @(Colors.BlueGrey.Lighten4);
         --head-color: @(Colors.BlueGrey.Lighten2);
@@ -158,13 +162,12 @@
         }
     }
 
-    public Action CollectionIconOnClick(GlobalIdentifier identifier)
+    public async Task CollectionIconOnClick(GlobalIdentifier identifier)
     {
-        return () =>
-        {
-            Console.WriteLine($"Removing {identifier.ToString()}");
-            deckData.RemoveImportedCollection(identifier);
-            StateHasChanged();
-        };
+        Console.WriteLine($"Removing {identifier.ToString()}");
+        deckData.RemoveImportedCollection(identifier);
+        await deckData.repo.Save(localStorage);
+        this._collectionViewModels = deckData.GetAllCollectionViewModel();
+        StateHasChanged();
     }
 }

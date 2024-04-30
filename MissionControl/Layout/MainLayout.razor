@@ -20,7 +20,9 @@
         <MudSpacer/>
         <MudChip OnClick=@(GetChipOnClick("collections")) Class=@(GetChipClass("collections")) Label="true"> Collections </MudChip>
         <MudChip OnClick="ToggleSettingsDrawer" Class=@(GetSettingsChipClass()) Label="true"> Settings </MudChip>
-        @* <MudChip OnClick=@(GetChipOnClick("about")) Class=@(GetChipClass("about")) Label="true"> About </MudChip> *@
+        <a href="https://github.com/ever-3W/SOTM/blob/main/MissionControl/README.md" target="_blank">
+            <MudChip Class="app-bar-chip" Label="true"> About </MudChip>
+        </a>
     </MudAppBar>
     <MudLayout Class="mud-height-full">
         <MudDrawer Anchor="Anchor.Right" Open="this.settingsDrawerOpen" Elevation="0" Variant="@DrawerVariant.Persistent" Color="Color.Primary" Class="px-4 settings-drawer">
