@@ -22,14 +22,7 @@ namespace SOTM.InfraredEyepiece.Utilities
                 .Replace("Cauldron ", "Cauldron: ")
                 .Replace("Obliv Aeon", "OblivAeon");
         }
-
-        private const int VARIANT_LINE_CHAR_LIMIT = 25;
-
-        private static Dictionary<string, string> SHORT_TITLE_SPECIAL_CASES = new()
-        {
-            { "VillainsOfTheMultiverse", "VOTM"},
-            { "Menagerie", "MOTM"}
-        };
+        private static Dictionary<string, string> SHORT_TITLE_SPECIAL_CASES = new();
 
         public static string GetExpansionShortTitle (string expansionIdentifier)
         {

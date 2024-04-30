@@ -2,7 +2,7 @@
   "files": {
     "Vanilla": {
       "file": "Vanilla.json",
-      "hash": "7C55FB76BD3CF507CA41802255413D681CBAF43887854C5E908A656D0EAA5BB1",
+      "hash": "4AF1086EF4A2663D222BC8C062AC70130450F9F92DA979CAB5D6F5657491292B",
       "sortOrder": 0
     },
     "Cauldron": {
@@ -22,12 +22,12 @@
     },
     "Menagerie": {
       "file": "Menagerie.json",
-      "hash": "4C8A6DD66D8612DA910DBD743D9865905AAB78268137D6CCAEF7AF695FB3810E",
+      "hash": "AF77D6271C64BF74F5E348F735CA48FF941034EC954C55E10502A4B4556DB669",
       "sortOrder": 4
     },
     "SpookyGhostwriter": {
       "file": "SpookyGhostwriter.json",
-      "hash": "B886527B09FF284BE908BDCABDA544D430796F95825968933FB5C4BE1BCEC5F7",
+      "hash": "0692CA60E3D6BD5C4CFFA8EC79C773BB2818A807EF9D59A83F126103C2DC29A0",
       "sortOrder": 5
     }
   }
