@@ -106,9 +106,9 @@
 {
     private const int LARGE_TEXT_MAX_LENGTH = 18;
 
-    private Dictionary<GlobalIdentifier, DeckVariantViewModel> _variantModelTable;
-    private Dictionary<GlobalIdentifier, bool> _variantPickableTable;
-    private Dictionary<Collection, IEnumerable<GlobalIdentifier>> _collectionSliceTable;
+    private Dictionary<GlobalIdentifier, DeckVariantViewModel> _variantModelTable = new();
+    private Dictionary<GlobalIdentifier, bool> _variantPickableTable = new();
+    private Dictionary<Collection, IEnumerable<GlobalIdentifier>> _collectionSliceTable = new();
 
     [Parameter]
     public string Title { get; set; }
