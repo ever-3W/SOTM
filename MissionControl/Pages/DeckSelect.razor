@@ -33,6 +33,7 @@
         </MudCardHeader>
         <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
             @foreach (Collection collection in deckData.Collections)
+            {
                 @foreach (Expansion expansion in collection.villainExpansions) 
                 {
                     <DeckCard 
