@@ -56,10 +56,11 @@ namespace SOTM.InfraredEyepiece.Importers
                     {
                         foreach (Card pc in Array.FindAll(dl.promoCards, (card) => card.identifier == primaryCard.identifier))
                         {
+                            string promoTitle = pc.promoTitle ?? pc.promoIdentifier;
                             DeckVariant variant = new DeckVariant(deckEntity.identifier.CreateChildIdentifier(pc.promoIdentifier))
                             {
-                                title = VariantTitleUtils.GetVariantFullTitle(pc.promoTitle),
-                                shortTitle = VariantTitleUtils.GetVariantShortTitle(pc.promoTitle, deckEntity.title)
+                                title = VariantTitleUtils.GetVariantFullTitle(promoTitle),
+                                shortTitle = VariantTitleUtils.GetVariantShortTitle(promoTitle, deckEntity.title)
                             };
                             deckEntity.AddChild(variant);
                         }
@@ -83,10 +84,11 @@ namespace SOTM.InfraredEyepiece.Importers
                                 .CreateChildIdentifier(promoList.Key.Split('.').Last())
                                 .CreateChildIdentifier(card.promoIdentifier);
 
+                            string promoTitle = card.promoTitle ?? card.promoIdentifier;
                             return new DeckVariant(identifier)
                             {
-                                title = VariantTitleUtils.GetVariantFullTitle(card.promoTitle),
-                                shortTitle = VariantTitleUtils.GetVariantShortTitle(card.promoTitle, null)
+                                title = VariantTitleUtils.GetVariantFullTitle(promoTitle),
+                                shortTitle = VariantTitleUtils.GetVariantShortTitle(promoTitle, null)
                             };
                         }).ToList()
                     ))

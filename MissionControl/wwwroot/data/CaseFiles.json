@@ -76,6 +76,19 @@
           "kind": "ENVIRONMENT",
           "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
           "identifier": "CaseFiles.CaseFiles.BirchwoodMass"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "CaseFiles.CaseFiles.HmcsMoondancer.HmcsMoondancer",
+              "title": "The HMCS Moondancer",
+              "shortTitle": "The HMCS Moondancer"
+            }
+          ],
+          "title": "The HMCS Moondancer",
+          "kind": "ENVIRONMENT",
+          "sourceExpansionIdentifier": "CaseFiles.CaseFiles",
+          "identifier": "CaseFiles.CaseFiles.HmcsMoondancer"
         }
       ],
       "title": "Case Files",

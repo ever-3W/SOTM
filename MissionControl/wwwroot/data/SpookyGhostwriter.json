@@ -19,6 +19,11 @@
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.EscarlataInkblotCharacter",
               "title": "The Enraged Escarlata",
               "shortTitle": "The Enraged Escarlata"
+            },
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.UKSSEscarlataCharacter",
+              "title": "Ultra Kart Super Slam Escarlata",
+              "shortTitle": "Ultra Kart Super Slam "
             }
           ],
           "title": "Escarlata",
@@ -94,6 +99,24 @@
           "kind": "HERO",
           "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
           "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette"
+        },
+        {
+          "variants": [
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Skimmer.Skimmer",
+              "title": "Skimmer",
+              "shortTitle": "Skimmer"
+            },
+            {
+              "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Skimmer.DamselflyCharacter",
+              "title": "Damselfly",
+              "shortTitle": "Damselfly"
+            }
+          ],
+          "title": "Skimmer",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "SpookyGhostwriter.SpookyGhostwriterComics",
+          "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Skimmer"
         }
       ],
       "title": "Spooky Ghostwriter Comics",

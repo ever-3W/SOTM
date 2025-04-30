@@ -47,6 +47,19 @@
         {
           "variants": [
             {
+              "identifier": "Menagerie.Menagerie.Mercury.Mercury",
+              "title": "Mercury",
+              "shortTitle": "Mercury"
+            }
+          ],
+          "title": "Mercury",
+          "kind": "HERO",
+          "sourceExpansionIdentifier": "Menagerie.Menagerie",
+          "identifier": "Menagerie.Menagerie.Mercury"
+        },
+        {
+          "variants": [
+            {
               "identifier": "Menagerie.Menagerie.Radiance.Radiance",
               "title": "Radiance",
               "shortTitle": "Radiance"
