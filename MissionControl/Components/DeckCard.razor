@@ -6,26 +6,40 @@
 
 @inherits ComponentBase
 
-<MudCard Class="@($"pa-0 card-fix-width card-body {Class}")" Style="@($"background-color: var(--{(this.IsAnyVariantPickable ? "pickable-color" : "banned-color")});")">
-    <MudCardHeader Class="@($"px-2 py-0 cursor-pointer {(this.IsAnyVariantPickable ? "card-head-pickable" : "card-head-banned")}")" @onclick="ToggleHeadingHandler">
+<MudCard Class="@($"pa-0 card-body {Class}")" Style="@($"background-color: var(--{(this.IsAnyVariantPickable ? "pickable-color" : "banned-color")});")">
+    <MudCardHeader Class="@($"d-block align-content-center px-2 py-0 cursor-pointer {(this.IsAnyVariantPickable ? "card-head-pickable" : "card-head-banned")}")" @onclick="ToggleHeadingHandler">
         <CardHeaderContent>
             <MudText Typo="@(Title.Length > LARGE_TEXT_MAX_LENGTH ? Typo.subtitle2 : Typo.body1)" Class="@($"{(this.IsAnyVariantPickable ? "card-head-text-pickable" : "card-head-text-banned")}")"><b>@Title</b></MudText>
         </CardHeaderContent>
     </MudCardHeader>
     <MudCardContent Class="pa-1">
-        <MudToggleGroup T="GlobalIdentifier" Dense DisableRipple Vertical SelectionMode="SelectionMode.MultiSelection" @bind-Values:get="PickableVariants" @bind-Values:set="ValuesChangedHandler" Class="banned" SelectedClass="pickable">
-            @foreach (var metadata in Variants)
-            {
-                <MudToggleItem Class="no-padding d-flex justify-space-between" Value="@metadata.identifier">
-                    <MudText Typo="Typo.body2" Class=@($"py-0 pl-1 pr-0 flex-1 {(context ? "pickable-text" : "banned-text")}") Style="width: 160px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@metadata.shortTitle</MudText>
-                    <div class="@($"flex-0 toggle-group-collection-marker{$"{(context ? "" : " variant-collection-marker-banned")}"}")" style="@($"background-color:{metadata.color}")"></div>
-                </MudToggleItem>
-            }
-        </MudToggleGroup>
+        <div class="variant-toggle-group">
+        @foreach (var metadata in Variants)
+        {
+            bool state = _variantPickableTable[metadata.identifier];
+            <div class=@($"variant-toggle-item d-flex flex-row align-stretch cursor-pointer {(state ? "pickable" : "banned")}") @onclick="@(() => this.OnChangedTo(this, metadata.identifier, !state))">
+                <MudText Typo="@(metadata?.shortTitle?.Length > LARGE_TEXT_MAX_LENGTH ? Typo.caption : Typo.body2)"
+                        Class=@($"flex-1 pa-0 ml-1 {(state ? "pickable-text" : "banned-text")}")>
+                    @metadata.shortTitle
+                </MudText>
+                <div class="@($"toggle-group-collection-marker{(state ? "" : " variant-collection-marker-banned")}")"
+                    style="@($"background-color:{metadata.color};")">
+                </div>
+            </div>
+        }
+        </div>
     </MudCardContent>
 </MudCard>
 
 <style>
+    .variant-toggle-group .variant-toggle-item {
+        border-width: 1px 1px 0 1px;
+        border-color: var(--mud-palette-background-grey);
+    }
+    .variant-toggle-group .variant-toggle-item:last-child {
+        border-bottom-width: 1px;
+    }
+
     .card-head-pickable, .card-head-banned {
         background: var(--head-color);
         min-height: 35px;
@@ -41,10 +55,9 @@
     }
 
     .card-head-text-pickable, .card-head-text-banned {
-        max-width: 160px;
-        white-space: nowrap; 
+        white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis; 
+        text-overflow: ellipsis;
         user-select: none;
     }
     .card-head-text-pickable {
@@ -64,37 +77,33 @@
         background-color: var(--banned-color);
     }
     .banned:hover {
-        background-color: var(--banned-color);
+        background-color: color-mix(in srgb, var(--banned-color) 90%, #000);
     }
 
     .pickable {
         background-color: var(--pickable-color);
     }
     .pickable:hover {
-        background-color: var(--pickable-color);
+        background-color: color-mix(in srgb, var(--pickable-color) 60%, #fff);
     }
 
     .banned-text {
         color: var(--banned-text-color);
         text-decoration: line-through;
     }
-
     .pickable-text {
         color: var(--pickable-text-color);
     }
 
-    .card-fix-width {
-        max-width: 180px !important;
-        width: 100% !important;
-    }
-
-    .no-padding {
-        padding: 0px !important;
+    .pickable-text, .banned-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        user-select: none;
     }
 
     .toggle-group-collection-marker {
-        width: 7px;
-        height: 100%;
+        flex: 0 0 6px;
     }
 
     .variant-collection-marker-banned {
@@ -132,7 +141,6 @@
     public Action<DeckCard, GlobalIdentifier, bool> OnChangedTo { get; set; } = (_, _, _) => {};
 
     [Parameter]
-
     public Action<DeckCard, bool> OnToggleHeading { get; set; } = (_, _) => {};
 
     [Parameter]
@@ -172,16 +180,6 @@
             .ToList();
     }
 
-    private void ValuesChangedHandler(IEnumerable<GlobalIdentifier> identifiers)
-    {
-        var changed = _variantPickableTable
-            .Where(entry => identifiers.Contains(entry.Key) != entry.Value)
-            .Select(entry => entry.Key);
-        foreach (GlobalIdentifier identifier in changed)
-        {
-            this.OnChangedTo(this, identifier, identifiers.Contains(identifier));
-        }
-    }
     public void SetSingleValue(GlobalIdentifier identifier, bool changedValue)
     {
         if (this._variantPickableTable.ContainsKey(identifier))

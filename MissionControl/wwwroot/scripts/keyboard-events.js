@@ -20,7 +20,6 @@ window.JsFunctions = {
 
         if (!attached)
         {
-            console.log("This function should only be invoked once!");
             window.document.addEventListener('keydown', function (e) {
                 DotNet.invokeMethodAsync('MissionControl', 'JsKeyDown', serializeEvent(e))
             });

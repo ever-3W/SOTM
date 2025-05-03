@@ -194,9 +194,25 @@ namespace SOTM.MissionControl.Services
             { color = this.GetVariantCollection(variant.identifier).color };
         }
 
+        public DeckVariantGroupViewModel GetDeckGroupViewModel(Deck deck)
+        {
+            return new DeckVariantGroupViewModel {
+                title = deck.title,
+                variants = this.GetAllVariantViewModels(deck)
+            };
+        }
+
+        public DeckVariantGroupViewModel GetExpansionGroupViewModel(Expansion expansion)
+        {
+            return new DeckVariantGroupViewModel {
+                title = expansion.title,
+                variants = expansion.GetChildren().SelectMany(this.GetAllVariantViewModels)
+            };
+        }
+
         public IEnumerable<DeckVariantViewModel> GetAllVariantViewModels(Deck deck)
         {
-            return this.GetAllVariants(deck).Select(this.GetVariantMetadata);
+            return this.GetAllVariants(deck).Select(this.GetVariantMetadata).Where(e => e != null).Select(e => e!);
         }
 
         public IEnumerable<IEnumerable<DeckVariant>> VariantsByKindGroupedByDeck(DeckKind kind)

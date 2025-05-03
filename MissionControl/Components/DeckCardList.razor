@@ -1,0 +1,69 @@
+@using SOTM.MissionControl.Models
+@using SOTM.Shared.Models
+
+<MudCard Outlined Class="@($"pa-2 mud-width-full mud-height-full {Class}")">
+    <MudCardHeader Class="pa-0 mb-2 group-header">
+        <CardHeaderContent>
+            <MudText Typo="Typo.h6">@Title</MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardContent Class="pa-0 mud-width-full mud-height-full">
+        <MudGrid Spacing="2">
+            @foreach (var group in VariantGroups)
+            {
+                <MudItem sm="@sm" md="@md" lg="@lg">
+                    <DeckCard 
+                        @ref="deckRef"
+                        Title="@(group.title)"
+                        ParentCollection="ParentCollection"
+                        Variants="@(group.variants)"
+                        PickableVariants="@(group.variants.Select((v) => v.identifier).Where((id) => PickableIdentifiers.Contains(id)))"
+                        Class="@($"mud-width-full mud-height-full {CardClass}")"
+                        OnChangedTo="OnChangedTo"
+                        OnToggleHeading="OnToggleHeading"
+                    />
+                </MudItem>
+            }
+        </MudGrid>
+    </MudCardContent>
+</MudCard>
+
+@code {
+    [Parameter]
+    public int sm { get; set; }
+    [Parameter]
+    public int md { get; set; }
+    [Parameter]
+    public int lg { get; set; }
+
+    [Parameter]
+    public string Class { get; set; } = "";
+
+    [Parameter]
+    public string CardClass { get; set; } = "";
+
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public Collection ParentCollection { get; set; }
+
+    [Parameter]
+    public IEnumerable<DeckVariantGroupViewModel> VariantGroups { get; set; }
+
+    [Parameter]
+    public ICollection<GlobalIdentifier> PickableIdentifiers { get; set; }
+
+    [Parameter]
+    public Action<DeckCard, GlobalIdentifier, bool> OnChangedTo { get; set; } = (_, _, _) => {};
+
+    [Parameter]
+    public Action<DeckCard, bool> OnToggleHeading { get; set; } = (_, _) => {};
+
+    private List<Components.DeckCard> _deckComponents = new List<Components.DeckCard>();
+    Components.DeckCard deckRef
+    {
+        set { _deckComponents.Add(value); }
+    }
+    public IEnumerable<Components.DeckCard> DeckComponents { get => this._deckComponents; }
+}

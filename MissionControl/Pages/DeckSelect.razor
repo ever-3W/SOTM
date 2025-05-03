@@ -12,7 +12,9 @@
 @inject DraftSelectionsService draftSelections
 @inject GameService gameSvc
 @inject SettingsService settingsSvc
+@inject IBrowserViewportService viewportSvc
 
+@implements IBrowserViewportObserver
 @implements IDisposable
 
 <div>
@@ -24,97 +26,105 @@
 
 <MudButton OnClick="DraftRandomGame" Variant="Variant.Filled" Class="action-button">Draft New Game</MudButton>
 
-<div Class="d-flex justify-space-around flex-1 flex-wrap gap-3">
-    <MudCard Class="flex-1 pa-3 mb-3 villain-section" Outlined="true">
-        <MudCardHeader Class="pa-0 mb-2 group-header">
-            <CardHeaderContent>
-                <MudText Typo="Typo.h5" Style="user-select: none;"><b>VILLAINS</b></MudText>
-            </CardHeaderContent>
-        </MudCardHeader>
-        <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
-            @foreach (Collection collection in deckData.Collections)
-            {
-                @foreach (Expansion expansion in collection.villainExpansions) 
+<MudGrid Spacing="2" Justify="Justify.FlexStart">
+    <MudItem md="3">
+        <MudCard Class="flex-1 pa-3 mb-3 villain-section" Outlined="true">
+            <MudCardHeader Class="pa-0 mb-2 group-header">
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h5" Style="user-select: none;"><b>VILLAINS</b></MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
+                @foreach (Collection collection in deckData.Collections.Where((collection) => collection.villainExpansions.Count() > 0))
                 {
-                    <DeckCard 
-                        @ref="villainDeckRef"
-                        Title="@(expansion.shortTitle)"
+                    <DeckCardList
+                        @ref="villainCardListRef"
+                        Class="villain-card-list"
+                        CardClass="villain-cards"
                         ParentCollection="collection"
-                        Variants="@(DeckCard.FromExpansionModel(deckData, expansion))"
-                        PickableVariants="@(expansion.GetChildren().SelectMany(deck => GetInitialPickableVariants(deck)))"
-                        Class="villain-cards"
+                        VariantGroups=@(collection.villainExpansions.Select(deckData.GetExpansionGroupViewModel))
+                        PickableIdentifiers="@(draftSelections.GetPickableVariantSet())"
+                        Title=@(collection.title)
+                        sm="3"
+                        md="12"
+                        lg="6"
                         OnChangedTo="OnChangedTo"
                         OnToggleHeading="OnToggleHeading"
                     />
                 }
-            }
-        </MudCardContent>
-    </MudCard>
-    <MudCard Class="flex-1 pa-3 hero-section" Outlined="true">
-        <MudCardHeader Class="pa-0 mb-2 group-header">
-            <CardHeaderContent>
-                <MudText Typo="Typo.h5" Style="user-select: none;"><b>HEROES</b></MudText>
-            </CardHeaderContent>
-        </MudCardHeader>
-        <MudCardContent Class="pa-0">
-            @foreach (Collection collection in deckData.Collections)
-            {
-                @foreach (Expansion expansion in collection.heroExpansions) 
-                {
-                    <MudCard Outlined Class="pa-3 mb-3" Style=@($"background: {Colors.Amber.Lighten4};")>
-                        <MudCardHeader Class="pa-0 mb-2 group-header">
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h6">@expansion.title</MudText>
-                            </CardHeaderContent>
-                        </MudCardHeader>
-                        <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
-                            @foreach (Deck deck in expansion.GetChildren())
-                            {
-                                <DeckCard 
-                                    @ref="heroDeckRef"
-                                    Title="@(deck.title)"
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+    <MudItem md="6">
+        <MudCard Class="flex-1 pa-3 hero-section" Outlined="true">
+            <MudCardHeader Class="pa-0 mb-2 group-header">
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h5" Style="user-select: none;"><b>HEROES</b></MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent Class="pa-0">
+                <MudGrid Spacing="2">
+                    @foreach (Collection collection in deckData.Collections)
+                    {
+                        @foreach (Expansion expansion in collection.heroExpansions.Where((e) => e.GetChildren().Count() > 0))
+                        {
+                            bool useHalfStyle = _breakpoint != Breakpoint.Md && expansion.GetChildren().Count() <= 2;
+                            <MudItem sm=@(useHalfStyle ? 6 : 12) md="12" lg=@(useHalfStyle ? 6 : 12)>
+                                <DeckCardList
+                                    @ref="heroCardListRef"
+                                    Class="hero-card-list"
+                                    CardClass="hero-cards"
                                     ParentCollection="collection"
-                                    Variants="@(DeckCard.FromDeckModel(deckData, deck))"
-                                    PickableVariants="@(GetInitialPickableVariants(deck))"
-                                    Class="hero-cards"
+                                    VariantGroups=@(expansion.GetChildren().Select(deckData.GetDeckGroupViewModel))
+                                    PickableIdentifiers="@(draftSelections.GetPickableVariantSet())"
+                                    Title=@(expansion.title)
+                                    sm="@(useHalfStyle ? 6 : 3)"
+                                    md="4"
+                                    lg="@(useHalfStyle ? 6 : 3)"
                                     OnChangedTo="OnChangedTo"
                                     OnToggleHeading="OnToggleHeading"
                                 />
-                            }
-                        </MudCardContent>
-                    </MudCard>
-                }
-            }
-        </MudCardContent>
-    </MudCard>
-    <MudCard Class="flex-1 pa-3 mb-3 environment-section" Outlined="true">
-        <MudCardHeader Class="pa-0 mb-2 group-header">
-            <CardHeaderContent>
-                <MudText Typo="Typo.h5" Style="user-select: none;"><b>ENVIRONMENTS</b></MudText>
-            </CardHeaderContent>
-        </MudCardHeader>
-        <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
-            @foreach (Collection collection in deckData.Collections)
-            {
-                @foreach (Expansion expansion in collection.environmentExpansions) 
+                            </MudItem>
+                        }
+                    }
+                </MudGrid>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+    <MudItem md="3">
+        <MudCard Class="flex-1 pa-3 mb-3 environment-section" Outlined="true">
+            <MudCardHeader Class="pa-0 mb-2 group-header">
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h5" Style="user-select: none;"><b>ENVIRONMENTS</b></MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent Class="pa-0 d-flex align-content-start flex-wrap gap-3">
+                @foreach (Collection collection in deckData.Collections.Where((collection) => collection.environmentExpansions.Count() > 0))
                 {
-                    <DeckCard 
-                        @ref="environmentDeckRef"
-                        Title="@(expansion.shortTitle)"
+                    <DeckCardList
+                        @ref="environmentCardListRef"
+                        Class="environment-card-list"
+                        CardClass="environment-cards"
                         ParentCollection="collection"
-                        Variants="@(DeckCard.FromExpansionModel(deckData, expansion))"
-                        PickableVariants="@(expansion.GetChildren().SelectMany(deck => GetInitialPickableVariants(deck)))"
-                        Class="environment-cards"
+                        VariantGroups=@(collection.environmentExpansions.Select(deckData.GetExpansionGroupViewModel))
+                        PickableIdentifiers="@(draftSelections.GetPickableVariantSet())"
+                        Title=@(collection.title)
+                        sm="3"
+                        md="12"
+                        lg="6"
                         OnChangedTo="OnChangedTo"
                         OnToggleHeading="OnToggleHeading"
                     />
                 }
-            }
-        </MudCardContent>
-    </MudCard>
-</div>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+</MudGrid>
 
 <style>
+    .villain-card-list {
+        background-color: @(Colors.Indigo.Lighten4);
+    }
     .villain-cards {
         --head-color: @(Colors.Indigo.Accent3);
         --pickable-color: @(Colors.Indigo.Accent1);
@@ -132,6 +142,9 @@
         margin-bottom: 2px;
         border-bottom: 1px solid var(--pickable-text-color);
     }
+    .hero-card-list {
+        background-color: @(Colors.Amber.Lighten4);
+    }
     .hero-cards {
         --head-color: @(Colors.Amber.Darken4);
         --pickable-color: @(Colors.Amber.Lighten1);
@@ -142,6 +155,9 @@
         --mud-palette-primary: @(Colors.Amber.Darken3);
         --mud-palette-background-grey: @(Colors.Amber.Darken3);
         --mud-default-borderradius: 0px;
+    }
+    .environment-card-list {
+        background-color: @(Colors.Green.Lighten4);
     }
     .environment-cards {
         --head-color: @(Colors.Green.Darken1);
@@ -157,6 +173,24 @@
 </style>
 
 @code {
+    private Breakpoint _breakpoint;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await viewportSvc.SubscribeAsync(this, fireImmediately: true);
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+    Guid IBrowserViewportObserver.Id { get; } = Guid.NewGuid();
+    Task IBrowserViewportObserver.NotifyBrowserViewportChangeAsync(BrowserViewportEventArgs browserViewportEventArgs)
+    {
+        _breakpoint = browserViewportEventArgs.Breakpoint;
+        return InvokeAsync(StateHasChanged);
+    }
+
     private bool _shiftFlag = false;
     private int _autoSaveSeconds = 0;
     public Timer? _autoSaveTimer;
@@ -164,6 +198,22 @@
     Components.DeckCard heroDeckRef
     {
         set { heroDeckComponents.Add(value); }
+    }
+
+    private List<Components.DeckCardList> heroCardListComponents = new();
+    Components.DeckCardList heroCardListRef
+    {
+        set { heroCardListComponents.Add(value); }
+    }
+    private List<Components.DeckCardList> villainCardListComponents = new();
+    Components.DeckCardList villainCardListRef
+    {
+        set { villainCardListComponents.Add(value); }
+    }
+    private List<Components.DeckCardList> environmentCardListComponents = new();
+    Components.DeckCardList environmentCardListRef
+    {
+        set { environmentCardListComponents.Add(value); }
     }
     private List<Components.DeckCard> villainDeckComponents = new List<Components.DeckCard>();
     Components.DeckCard villainDeckRef
@@ -177,9 +227,9 @@
     }
     private IEnumerable<Components.DeckCard> AllDeckComponents()
     {
-        return this.heroDeckComponents
-            .Concat(this.villainDeckComponents)
-            .Concat(this.environmentDeckComponents);
+        return this.heroCardListComponents.SelectMany((component) => component.DeckComponents)
+            .Concat(this.villainCardListComponents.SelectMany((component) => component.DeckComponents))
+            .Concat(this.environmentCardListComponents.SelectMany((component) => component.DeckComponents));
     }
 
     private async void DraftRandomGame()
@@ -283,7 +333,7 @@
     {
         if (_shiftFlag)
         {
-            var collection = deckData.GetVariantCollection(identifier);
+            var collection = source.ParentCollection;
             if (changedValue)
             {
                 foreach (Components.DeckCard component in this.AllDeckComponents())
@@ -309,19 +359,20 @@
     {
         if (_shiftFlag)
         {
+            var collection = source.ParentCollection;
             var otherComponents = this.AllDeckComponents().Except([source]);
             if (changedValue)
             {
                 foreach (Components.DeckCard component in otherComponents)
                 {
-                    component.IncludeAllInCollection(component.ParentCollection);
+                    component.IncludeAllInCollection(collection);
                 }
             }
             else
             {
                 foreach (Components.DeckCard component in otherComponents)
                 {
-                    component.ExcludeAllInCollection(component.ParentCollection);
+                    component.ExcludeAllInCollection(collection);
                 }
             }
         }
