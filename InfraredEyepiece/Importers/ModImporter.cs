@@ -32,14 +32,14 @@ namespace SOTM.InfraredEyepiece.Importers
             this._collectionIdentifier = new GlobalIdentifier(manifest.@namespace);
             this.collectionTitle = manifest.title;
             this.collectionColor = manifest.color;
-            this.manifestListedHeroes = new HashSet<string>(manifest?.decks?.heroes ?? new string[]{});
-            this.manifestListedVillains = new HashSet<string>(manifest?.decks?.villains ?? new string[]{});
-            this.manifestListedEnvironments = new HashSet<string>(manifest?.decks?.environments ?? new string[]{});
-            this.manifestListedTeamVillains = new HashSet<string>(manifest?.decks?.teamVillains ?? new string[]{});
+            this.manifestListedHeroes = manifest?.decks?.heroes?.ToHashSet() ?? new();
+            this.manifestListedVillains = manifest?.decks?.villains?.ToHashSet() ?? new();
+            this.manifestListedEnvironments = manifest?.decks?.environments?.ToHashSet() ?? new();
+            this.manifestListedTeamVillains = manifest?.decks?.teamVillains?.ToHashSet() ?? new();
             this.manifestListedVariantsByDeck = new Dictionary<string, HashSet<string>>(
                 (manifest?.variants ?? new Dictionary<string, string[]>())
                     .Select(kv => new KeyValuePair<string, HashSet<string>>
-                        (kv.Key, new HashSet<string>(kv.Value)))
+                        (kv.Key, [.. kv.Value]))
             );
         }
 

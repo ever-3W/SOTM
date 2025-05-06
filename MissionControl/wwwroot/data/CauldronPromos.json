@@ -18,7 +18,7 @@
       {
         "identifier": "CauldronPromos.PromoCardList.Bunker.SiegeBreakerBunkerCharacter",
         "title": "Siege Breaker Bunker",
-        "shortTitle": "Siege Breaker Bunker"
+        "shortTitle": "Siege Breaker"
       }
     ],
     "Expatriette": [
@@ -32,12 +32,12 @@
       {
         "identifier": "CauldronPromos.PromoCardList.MrFixer.EnlightenedMrFixerCharacter",
         "title": "Enlightened Mr. Fixer",
-        "shortTitle": "Enlightened Mr. Fixer"
+        "shortTitle": "Enlightened"
       },
       {
         "identifier": "CauldronPromos.PromoCardList.MrFixer.NorthernWindMrFixerCharacter",
         "title": "Northern Wind Mr. Fixer",
-        "shortTitle": "Northern Wind Mr. Fixer"
+        "shortTitle": "Northern Wind"
       }
     ],
     "OmnitronX": [

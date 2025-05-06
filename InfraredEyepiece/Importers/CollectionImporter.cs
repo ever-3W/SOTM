@@ -74,7 +74,7 @@ namespace SOTM.InfraredEyepiece.Importers
         private Dictionary<string, List<DeckVariant>> ParseHangingVariants(JSONPromoCardList pcl)
         {
             return new Dictionary<string, List<DeckVariant>> (
-                pcl.Select((promoList) => 
+                pcl.Select((promoList) =>
                     new KeyValuePair<string, List<DeckVariant>>(
                         promoList.Key,
                         promoList.Value.Select(card => 
@@ -88,7 +88,8 @@ namespace SOTM.InfraredEyepiece.Importers
                             return new DeckVariant(identifier)
                             {
                                 title = VariantTitleUtils.GetVariantFullTitle(promoTitle),
-                                shortTitle = VariantTitleUtils.GetVariantShortTitle(promoTitle, null)
+                                shortTitle = VariantTitleUtils.GetVariantShortTitle(promoTitle,
+                                    Regex.Replace(promoList.Key.Split('.').LastOrDefault(""), "([a-z])([A-Z0-9])", "$1 $2"))
                             };
                         }).ToList()
                     ))

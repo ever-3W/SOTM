@@ -41,7 +41,7 @@
             {
               "identifier": "Cauldron.Cauldron.DocHavoc.FirstResponseDocHavocCharacter",
               "title": "First Response Doc Havoc",
-              "shortTitle": "First Response "
+              "shortTitle": "First Response"
             },
             {
               "identifier": "Cauldron.Cauldron.DocHavoc.FutureDocHavocCharacter",
@@ -69,12 +69,12 @@
             {
               "identifier": "Cauldron.Cauldron.LadyOfTheWood.MinistryOfStrategicScienceLadyOfTheWoodCharacter",
               "title": "Ministry Of Strategic Science Lady of the Wood",
-              "shortTitle": "MSS Lady of the Wood"
+              "shortTitle": "Strategic Science"
             },
             {
               "identifier": "Cauldron.Cauldron.LadyOfTheWood.FutureLadyOfTheWoodCharacter",
               "title": "Lady of the Wood 2199",
-              "shortTitle": "Lady of the Wood 2199"
+              "shortTitle": "2199"
             }
           ],
           "title": "Lady Of The Wood",
@@ -92,12 +92,12 @@
             {
               "identifier": "Cauldron.Cauldron.Malichae.ShardmasterMalichaeCharacter",
               "title": "Shardmaster Malichae",
-              "shortTitle": "Shardmaster Malichae"
+              "shortTitle": "Shardmaster"
             },
             {
               "identifier": "Cauldron.Cauldron.Malichae.MinistryOfStrategicScienceMalichaeCharacter",
               "title": "Ministry Of Strategic Science Malichae",
-              "shortTitle": "MSS Malichae"
+              "shortTitle": "Strategic Science"
             }
           ],
           "title": "Malichae",
@@ -115,7 +115,7 @@
             {
               "identifier": "Cauldron.Cauldron.Necro.WardenOfChaosNecroCharacter",
               "title": "Necro: Warden of Chaos",
-              "shortTitle": "Necro: Warden of Chaos"
+              "shortTitle": "Warden of Chaos"
             },
             {
               "identifier": "Cauldron.Cauldron.Necro.PastNecroCharacter",
@@ -143,17 +143,17 @@
             {
               "identifier": "Cauldron.Cauldron.Quicksilver.UncannyQuicksilverCharacter",
               "title": "Uncanny Quicksilver",
-              "shortTitle": "Uncanny Quicksilver"
+              "shortTitle": "Uncanny"
             },
             {
               "identifier": "Cauldron.Cauldron.Quicksilver.RenegadeQuicksilverCharacter",
               "title": "Renegade Quicksilver",
-              "shortTitle": "Renegade Quicksilver"
+              "shortTitle": "Renegade"
             },
             {
               "identifier": "Cauldron.Cauldron.Quicksilver.HarbingerQuicksilverCharacter",
               "title": "Test Subject Harbinger-1 Quicksilver",
-              "shortTitle": "Test Subject Harbinger-1 "
+              "shortTitle": "Harbinger-1"
             }
           ],
           "title": "Quicksilver",
@@ -171,17 +171,17 @@
             {
               "identifier": "Cauldron.Cauldron.Starlight.GenesisStarlightCharacter",
               "title": "Starlight: Genesis",
-              "shortTitle": "Starlight: Genesis"
+              "shortTitle": "Genesis"
             },
             {
               "identifier": "Cauldron.Cauldron.Starlight.NightloreCouncilStarlightCharacter",
               "title": "Nightlore Council Starlight",
-              "shortTitle": "Nightlore Council "
+              "shortTitle": "Nightlore Council"
             },
             {
               "identifier": "Cauldron.Cauldron.Starlight.Area51StarlightCharacter",
               "title": "Starlight: Area-51",
-              "shortTitle": "Starlight: Area-51"
+              "shortTitle": "Area-51"
             }
           ],
           "title": "Starlight",
@@ -199,7 +199,7 @@
             {
               "identifier": "Cauldron.Cauldron.TangoOne.GhostOpsTangoOneCharacter",
               "title": "Ghost Ops Tango One",
-              "shortTitle": "Ghost Ops Tango One"
+              "shortTitle": "Ghost Ops"
             },
             {
               "identifier": "Cauldron.Cauldron.TangoOne.PastTangoOneCharacter",
@@ -222,22 +222,22 @@
             {
               "identifier": "Cauldron.Cauldron.TheKnight.TheKnight",
               "title": "The Knight",
-              "shortTitle": "The Knight"
+              "shortTitle": "Knight"
             },
             {
               "identifier": "Cauldron.Cauldron.TheKnight.FairTheKnightCharacter",
               "title": "The Fair Knight",
-              "shortTitle": "The Fair Knight"
+              "shortTitle": "Fair Knight"
             },
             {
               "identifier": "Cauldron.Cauldron.TheKnight.BerserkerTheKnightCharacter",
               "title": "The Berserker Knight",
-              "shortTitle": "The Berserker Knight"
+              "shortTitle": "Berserker"
             },
             {
               "identifier": "Cauldron.Cauldron.TheKnight.PastTheKnightCharacter",
               "title": "The Knight 1929",
-              "shortTitle": "The Knight 1929"
+              "shortTitle": "Knight 1929"
             },
             {
               "identifier": "Cauldron.Cauldron.TheKnight.WastelandRoninTheKnightCharacter",
@@ -255,27 +255,27 @@
             {
               "identifier": "Cauldron.Cauldron.TheStranger.TheStranger",
               "title": "The Stranger",
-              "shortTitle": "The Stranger"
+              "shortTitle": "Stranger"
             },
             {
               "identifier": "Cauldron.Cauldron.TheStranger.RunecarvedTheStrangerCharacter",
               "title": "The Runecarved Stranger",
-              "shortTitle": "Runecarved Stranger"
+              "shortTitle": "Runecarved"
             },
             {
               "identifier": "Cauldron.Cauldron.TheStranger.PastTheStrangerCharacter",
               "title": "The Stranger 1929",
-              "shortTitle": "The Stranger 1929"
+              "shortTitle": "Stranger 1929"
             },
             {
               "identifier": "Cauldron.Cauldron.TheStranger.WastelandRoninTheStrangerCharacter",
               "title": "Wasteland Ronin The Stranger",
-              "shortTitle": "Wasteland Ronin "
+              "shortTitle": "Wasteland Ronin"
             },
             {
               "identifier": "Cauldron.Cauldron.TheStranger.CornTheStrangerCharacter",
               "title": "The Stranger in the Corn",
-              "shortTitle": "Stranger in the Corn"
+              "shortTitle": "in the Corn"
             }
           ],
           "title": "The Stranger",
@@ -293,7 +293,7 @@
             {
               "identifier": "Cauldron.Cauldron.Vanish.FirstResponseVanishCharacter",
               "title": "First Response Vanish",
-              "shortTitle": "First Response Vanish"
+              "shortTitle": "First Response"
             },
             {
               "identifier": "Cauldron.Cauldron.Vanish.PastVanishCharacter",
@@ -303,7 +303,7 @@
             {
               "identifier": "Cauldron.Cauldron.Vanish.TombOfThievesVanishCharacter",
               "title": "Tomb of Thieves Vanish",
-              "shortTitle": "Tomb of Thieves Vanish"
+              "shortTitle": "Tomb of Thieves"
             }
           ],
           "title": "Vanish",
@@ -328,7 +328,7 @@
             {
               "identifier": "Cauldron.CauldronExperimental.Cricket.FirstResponseCricketCharacter",
               "title": "First Response Cricket",
-              "shortTitle": "First Response Cricket"
+              "shortTitle": "First Response"
             },
             {
               "identifier": "Cauldron.CauldronExperimental.Cricket.RenegadeCricketCharacter",
@@ -338,7 +338,7 @@
             {
               "identifier": "Cauldron.CauldronExperimental.Cricket.WastelandRoninCricketCharacter",
               "title": "Wasteland Ronin Cricket",
-              "shortTitle": "Wasteland Ronin "
+              "shortTitle": "Wasteland Ronin"
             }
           ],
           "title": "Cricket",
@@ -356,7 +356,7 @@
             {
               "identifier": "Cauldron.CauldronExperimental.Cypher.FirstResponseCypherCharacter",
               "title": "First Response Cypher",
-              "shortTitle": "First Response Cypher"
+              "shortTitle": "First Response"
             },
             {
               "identifier": "Cauldron.CauldronExperimental.Cypher.SwarmingProtocolCypherCharacter",
@@ -379,7 +379,7 @@
             {
               "identifier": "Cauldron.CauldronExperimental.Titan.MinistryOfStrategicScienceTitanCharacter",
               "title": "Ministry Of Strategic Science Titan",
-              "shortTitle": "MSS Titan"
+              "shortTitle": "Strategic Science"
             },
             {
               "identifier": "Cauldron.CauldronExperimental.Titan.FutureTitanCharacter",
@@ -434,7 +434,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.Drift.TestSubjectHalberdDriftCharacter",
               "title": "Drift: Test Subject Halberd-26",
-              "shortTitle": "Test Subject Halberd-26"
+              "shortTitle": "Halberd-26"
             }
           ],
           "title": "Drift",
@@ -452,7 +452,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.Gargoyle.WastelandRoninGargoyleCharacter",
               "title": "Wasteland Ronin Gargoyle",
-              "shortTitle": "Wasteland Ronin "
+              "shortTitle": "Wasteland Ronin"
             },
             {
               "identifier": "Cauldron.CauldronAdrift.Gargoyle.FutureGargoyleCharacter",
@@ -462,12 +462,12 @@
             {
               "identifier": "Cauldron.CauldronAdrift.Gargoyle.DragonRangerGargoyleCharacter",
               "title": "Dragon Ranger Gargoyle",
-              "shortTitle": "Dragon Ranger Gargoyle"
+              "shortTitle": "Dragon Ranger"
             },
             {
               "identifier": "Cauldron.CauldronAdrift.Gargoyle.InfiltratorGargoyleCharacter",
               "title": "Infiltrator Gargoyle",
-              "shortTitle": "Infiltrator Gargoyle"
+              "shortTitle": "Infiltrator"
             }
           ],
           "title": "Gargoyle",
@@ -485,7 +485,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.Gyrosaur.SpeedDemonGyrosaurCharacter",
               "title": "Gyrosaur: Speed Demon",
-              "shortTitle": "Gyrosaur: Speed Demon"
+              "shortTitle": "Speed Demon"
             },
             {
               "identifier": "Cauldron.CauldronAdrift.Gyrosaur.RenegadeGyrosaurCharacter",
@@ -518,7 +518,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.Pyre.WastelandRoninPyreCharacter",
               "title": "Wasteland Ronin Pyre",
-              "shortTitle": "Wasteland Ronin Pyre"
+              "shortTitle": "Wasteland Ronin"
             },
             {
               "identifier": "Cauldron.CauldronAdrift.Pyre.ExpeditionOblaskPyreCharacter",
@@ -541,7 +541,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.Terminus.MinistryOfStrategicScienceTerminusCharacter",
               "title": "Ministry Of Strategic Science Terminus",
-              "shortTitle": "MSS Terminus"
+              "shortTitle": "Strategic Science"
             },
             {
               "identifier": "Cauldron.CauldronAdrift.Terminus.FutureTerminusCharacter",
@@ -571,7 +571,7 @@
             {
               "identifier": "Cauldron.CauldronStormfall.Echelon.FirstResponseEchelonCharacter",
               "title": "First Response Echelon",
-              "shortTitle": "First Response Echelon"
+              "shortTitle": "First Response"
             },
             {
               "identifier": "Cauldron.CauldronStormfall.Echelon.FutureEchelonCharacter",
@@ -599,7 +599,7 @@
             {
               "identifier": "Cauldron.CauldronStormfall.Impact.WastelandRoninImpactCharacter",
               "title": "Wasteland Ronin Impact",
-              "shortTitle": "Wasteland Ronin Impact"
+              "shortTitle": "Wasteland Ronin"
             }
           ],
           "title": "Impact",
@@ -617,12 +617,12 @@
             {
               "identifier": "Cauldron.CauldronStormfall.MagnificentMara.MinistryOfStrategicScienceMagnificentMaraCharacter",
               "title": "Ministry Of Strategic Science Magnificent Mara",
-              "shortTitle": "MSS Magnificent Mara"
+              "shortTitle": "Strategic Science"
             },
             {
               "identifier": "Cauldron.CauldronStormfall.MagnificentMara.PastMagnificentMaraCharacter",
               "title": "Magnificent Mara 1929",
-              "shortTitle": "Magnificent Mara 1929"
+              "shortTitle": "1929"
             }
           ],
           "title": "Magnificent Mara",
@@ -649,7 +649,7 @@
             {
               "identifier": "Cauldron.Cauldron.Anathema.AcceleratedEvolutionAnathemaCharacter",
               "title": "Accelerated Evolution Anathema",
-              "shortTitle": "Acc. Evolution Anathema"
+              "shortTitle": "Acc. Evolution"
             }
           ],
           "title": "Anathema",
@@ -693,12 +693,12 @@
             {
               "identifier": "Cauldron.Cauldron.TheRam.TheRam",
               "title": "The Ram",
-              "shortTitle": "The Ram"
+              "shortTitle": "Ram"
             },
             {
               "identifier": "Cauldron.Cauldron.TheRam.PastTheRamCharacter",
               "title": "The Ram 1929",
-              "shortTitle": "The Ram 1929"
+              "shortTitle": "Ram 1929"
             }
           ],
           "title": "The Ram",
@@ -839,7 +839,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.TheInfernalChoir.TheInfernalChoir",
               "title": "The Infernal Choir",
-              "shortTitle": "The Infernal Choir"
+              "shortTitle": "Infernal Choir"
             }
           ],
           "title": "The Infernal Choir",
@@ -852,7 +852,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.TheMistressOfFate.TheMistressOfFate",
               "title": "The Mistress Of Fate",
-              "shortTitle": "The Mistress Of Fate"
+              "shortTitle": "Mistress Of Fate"
             }
           ],
           "title": "The Mistress Of Fate",
@@ -890,7 +890,7 @@
             {
               "identifier": "Cauldron.CauldronExperimental.SwarmEater.DistributedHivemindSwarmEaterCharacter",
               "title": "Swarm Eater: Distributed Hivemind",
-              "shortTitle": "Swarm Eater: Hivemind"
+              "shortTitle": "Hive Swarm Eater"
             }
           ],
           "title": "Swarm Eater",
@@ -938,7 +938,7 @@
             {
               "identifier": "Cauldron.Cauldron.FSCContinuanceWanderer.FSCContinuanceWanderer",
               "title": "F.S.C. Continuance Wanderer",
-              "shortTitle": "Continuance Wanderer"
+              "shortTitle": "F.S.C. Wanderer"
             }
           ],
           "title": "F.S.C. Continuance Wanderer",
@@ -951,7 +951,7 @@
             {
               "identifier": "Cauldron.Cauldron.HalberdExperimentalResearchCenter.HalberdExperimentalResearchCenter",
               "title": "Halberd Experimental Research Center",
-              "shortTitle": "Halberd Research Center"
+              "shortTitle": "Halberd Research"
             }
           ],
           "title": "Halberd Experimental Research Center",
@@ -977,7 +977,7 @@
             {
               "identifier": "Cauldron.Cauldron.StSimeonsCatacombs.StSimeonsCatacombs",
               "title": "St. Simeon\u0027s Catacombs",
-              "shortTitle": "St. Simeon\u0027s Catacombs"
+              "shortTitle": "St Simeon\u0027s"
             }
           ],
           "title": "St. Simeon\u0027s Catacombs",
@@ -990,7 +990,7 @@
             {
               "identifier": "Cauldron.Cauldron.TheWanderingIsle.TheWanderingIsle",
               "title": "The Wandering Isle",
-              "shortTitle": "The Wandering Isle"
+              "shortTitle": "Wandering Isle"
             }
           ],
           "title": "The Wandering Isle",
@@ -1010,7 +1010,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.CatchwaterHarbor.CatchwaterHarbor",
               "title": "Catchwater Harbor, 1929",
-              "shortTitle": "Catchwater Harbor, 1929"
+              "shortTitle": "Catchwater Harbor"
             }
           ],
           "title": "Catchwater Harbor 1929",
@@ -1036,7 +1036,7 @@
             {
               "identifier": "Cauldron.CauldronAdrift.TheChasmOfAThousandNights.TheChasmOfAThousandNights",
               "title": "The Chasm of a Thousand Nights",
-              "shortTitle": "Chasm of 1,000 Nights"
+              "shortTitle": "1000 Nights"
             }
           ],
           "title": "The Chasm of a Thousand Nights",
@@ -1135,7 +1135,7 @@
             {
               "identifier": "Cauldron.CauldronExperimental.TheCybersphere.TheCybersphere",
               "title": "The Cybersphere",
-              "shortTitle": "The Cybersphere"
+              "shortTitle": "Cybersphere"
             }
           ],
           "title": "The Cybersphere",

@@ -24,6 +24,10 @@ namespace SOTM.Shared.Models
         public string? leftHash;
         [JsonInclude]
         public string? rightHash;
+        [JsonInclude]
+        public int leftSortOrder;
+        [JsonInclude]
+        public int rightSortOrder;
     }
     public class CollectionManifest
     {
@@ -74,7 +78,9 @@ namespace SOTM.Shared.Models
                     identifier = key,
                     file = left!.files[key].file,
                     leftHash = left.files[key].hash,
-                    rightHash = right?.files.GetValueOrDefault(key)?.hash ?? null
+                    rightHash = right?.files.GetValueOrDefault(key)?.hash ?? null,
+                    leftSortOrder = left.files[key].sortOrder,
+                    rightSortOrder = right?.files.GetValueOrDefault(key)?.sortOrder ?? -1,
                 });
             var rightDeltas = rightKeys
                 .Select(key => new CollectionManifestDelta()
@@ -82,9 +88,11 @@ namespace SOTM.Shared.Models
                     identifier = key,
                     file = right!.files[key].file,
                     leftHash = left?.files.GetValueOrDefault(key)?.hash ?? null,
-                    rightHash = right.files[key].hash
+                    rightHash = right.files[key].hash,
+                    leftSortOrder = left?.files.GetValueOrDefault(key)?.sortOrder ?? -1,
+                    rightSortOrder = right.files[key].sortOrder
                 });
-            return leftDeltas.Concat(rightDeltas).Where(delta => delta.leftHash != delta.rightHash);
+            return leftDeltas.Concat(rightDeltas).Where(delta => (delta.leftHash != delta.rightHash) || (delta.leftSortOrder != delta.rightSortOrder));
         }
     }
 }

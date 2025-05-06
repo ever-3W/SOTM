@@ -13,17 +13,17 @@
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.EscarlataFiredancerCharacter",
               "title": "Escarlata: Firedancer",
-              "shortTitle": "Escarlata: Firedancer"
+              "shortTitle": "Firedancer"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.EscarlataInkblotCharacter",
               "title": "The Enraged Escarlata",
-              "shortTitle": "The Enraged Escarlata"
+              "shortTitle": "Enraged"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Escarlata.UKSSEscarlataCharacter",
               "title": "Ultra Kart Super Slam Escarlata",
-              "shortTitle": "Ultra Kart Super Slam "
+              "shortTitle": "Ultra Kart"
             }
           ],
           "title": "Escarlata",
@@ -41,7 +41,7 @@
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.GoldDragon.GoldDragonInkblotHumanCharacter",
               "title": "The Invincible Gold Dragon",
-              "shortTitle": "Invincible Gold Dragon"
+              "shortTitle": "Invincible"
             }
           ],
           "title": "Gold Dragon",
@@ -59,17 +59,17 @@
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.TsukikoTheGameIsRiggedCharacter",
               "title": "Tsukiko Tanner: The Game is Rigged",
-              "shortTitle": "The Game is Rigged"
+              "shortTitle": "Game is Rigged"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.DarkCarnivalTsukikoCharacter",
               "title": "Dark Carnival Tsukiko",
-              "shortTitle": "Dark Carnival Tsukiko"
+              "shortTitle": "Dark Carnival"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.TsukikoInkblotCharacter",
               "title": "The Tricksy Tsukiko",
-              "shortTitle": "The Tricksy Tsukiko"
+              "shortTitle": "Tricksy"
             },
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Tsukiko.GunClubTsukikoCharacter",
@@ -92,7 +92,7 @@
             {
               "identifier": "SpookyGhostwriter.SpookyGhostwriterComics.Silhouette.SilhouetteInkblotCharacter",
               "title": "The Zany Zywen",
-              "shortTitle": "The Zany Zywen"
+              "shortTitle": "Zany Zywen"
             }
           ],
           "title": "Silhouette",

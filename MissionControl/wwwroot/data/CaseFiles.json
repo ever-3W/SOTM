@@ -13,12 +13,12 @@
             {
               "identifier": "CaseFiles.CaseFiles.Charlie.RooksGambitCharlieCharacter",
               "title": "Charlie: Rook\u0027s Gambit",
-              "shortTitle": "Charlie: Rook\u0027s Gambit"
+              "shortTitle": "Rook\u0027s Gambit"
             },
             {
               "identifier": "CaseFiles.CaseFiles.Charlie.MoondancerCharlieCharacter",
               "title": "Charlie: Moondancer",
-              "shortTitle": "Charlie: Moondancer"
+              "shortTitle": "Moondancer"
             }
           ],
           "title": "Charlie",
@@ -36,12 +36,12 @@
             {
               "identifier": "CaseFiles.CaseFiles.Tucker.DivisionCheerTuckerCharacter",
               "title": "Tucker: Division Cheer",
-              "shortTitle": "Tucker: Division Cheer"
+              "shortTitle": "Division Cheer"
             },
             {
               "identifier": "CaseFiles.CaseFiles.Tucker.MoondancerTuckerCharacter",
               "title": "Tucker: Moondancer",
-              "shortTitle": "Tucker: Moondancer"
+              "shortTitle": "Moondancer"
             },
             {
               "identifier": "CaseFiles.CaseFiles.Tucker.GunClubTuckerCharacter",
@@ -69,7 +69,7 @@
             {
               "identifier": "CaseFiles.CaseFiles.BirchwoodMass.BirchwoodMass",
               "title": "Birchwood, Mass.",
-              "shortTitle": "Birchwood, Mass."
+              "shortTitle": "Birchwood, Mass"
             }
           ],
           "title": "Birchwood, Mass.",
@@ -82,7 +82,7 @@
             {
               "identifier": "CaseFiles.CaseFiles.HmcsMoondancer.HmcsMoondancer",
               "title": "The HMCS Moondancer",
-              "shortTitle": "The HMCS Moondancer"
+              "shortTitle": "HMCS Moondancer"
             }
           ],
           "title": "The HMCS Moondancer",
@@ -104,14 +104,14 @@
       {
         "identifier": "CaseFiles.PromoCardList.Expatriette.GunClubExpatrietteCharacter",
         "title": "Gun Club: Expatriette",
-        "shortTitle": "Gun Club: Expatriette"
+        "shortTitle": "Gun Club"
       }
     ],
     "Cauldron.TangoOne": [
       {
         "identifier": "CaseFiles.PromoCardList.TangoOne.GunClubTangoOneCharacter",
         "title": "Gun Club: Tango One",
-        "shortTitle": "Gun Club: Tango One"
+        "shortTitle": "Gun Club"
       }
     ],
     "Menagerie.Charade": [

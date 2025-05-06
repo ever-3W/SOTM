@@ -13,17 +13,17 @@
             {
               "identifier": "Vanilla.BaseExpansion.AbsoluteZero.AbsoluteZeroFreedomSixCharacter",
               "title": "Freedom Six Absolute Zero",
-              "shortTitle": "Freedom Six "
+              "shortTitle": "Freedom Six"
             },
             {
               "identifier": "Vanilla.BaseExpansion.AbsoluteZero.TermiNationAbsoluteZeroCharacter",
               "title": "Termi-Nation Absolute Zero",
-              "shortTitle": "Termi-Nation "
+              "shortTitle": "Termi-Nation"
             },
             {
               "identifier": "Vanilla.BaseExpansion.AbsoluteZero.FreedomFiveAbsoluteZeroCharacter",
               "title": "Freedom Five Absolute Zero",
-              "shortTitle": "Freedom Five "
+              "shortTitle": "Freedom Five"
             }
           ],
           "title": "Absolute Zero",
@@ -46,17 +46,17 @@
             {
               "identifier": "Vanilla.BaseExpansion.Bunker.BunkerFreedomSixCharacter",
               "title": "Freedom Six Bunker",
-              "shortTitle": "Freedom Six Bunker"
+              "shortTitle": "Freedom Six"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Bunker.TermiNationBunkerCharacter",
               "title": "Termi-Nation Bunker",
-              "shortTitle": "Termi-Nation Bunker"
+              "shortTitle": "Termi-Nation"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Bunker.FreedomFiveBunkerCharacter",
               "title": "Freedom Five Bunker",
-              "shortTitle": "Freedom Five Bunker"
+              "shortTitle": "Freedom Five"
             }
           ],
           "title": "Bunker",
@@ -84,7 +84,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.Legacy.FreedomFiveLegacyCharacter",
               "title": "Freedom Five Legacy",
-              "shortTitle": "Freedom Five Legacy"
+              "shortTitle": "Freedom Five"
             }
           ],
           "title": "Legacy",
@@ -102,17 +102,17 @@
             {
               "identifier": "Vanilla.BaseExpansion.Tachyon.TheSuperScientificTachyonCharacter",
               "title": "The Super Scientific Tachyon",
-              "shortTitle": "Super Scientific Tachyon"
+              "shortTitle": "Super Scientific"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Tachyon.TachyonFreedomSixCharacter",
               "title": "Freedom Six Tachyon",
-              "shortTitle": "Freedom Six Tachyon"
+              "shortTitle": "Freedom Six"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Tachyon.FreedomFiveTachyonCharacter",
               "title": "Freedom Five Tachyon",
-              "shortTitle": "Freedom Five Tachyon"
+              "shortTitle": "Freedom Five"
             }
           ],
           "title": "Tachyon",
@@ -125,7 +125,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.TheWraith.TheWraith",
               "title": "The Wraith",
-              "shortTitle": "The Wraith"
+              "shortTitle": "Wraith"
             },
             {
               "identifier": "Vanilla.BaseExpansion.TheWraith.RookCityWraithCharacter",
@@ -135,12 +135,12 @@
             {
               "identifier": "Vanilla.BaseExpansion.TheWraith.TheWraithFreedomSixCharacter",
               "title": "Freedom Six Wraith",
-              "shortTitle": "Freedom Six Wraith"
+              "shortTitle": "Freedom Six"
             },
             {
               "identifier": "Vanilla.BaseExpansion.TheWraith.FreedomFiveWraithCharacter",
               "title": "Freedom Five Wraith",
-              "shortTitle": "Freedom Five Wraith"
+              "shortTitle": "Freedom Five"
             }
           ],
           "title": "The Wraith",
@@ -163,12 +163,12 @@
             {
               "identifier": "Vanilla.BaseExpansion.Fanatic.PrimeWardensFanaticCharacter",
               "title": "Prime Wardens Fanatic",
-              "shortTitle": "Prime Wardens Fanatic"
+              "shortTitle": "Prime Wardens"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Fanatic.XtremePrimeWardensFanaticCharacter",
               "title": "Xtreme Prime Wardens Fanatic",
-              "shortTitle": "Xtreme Prime Wardens "
+              "shortTitle": "Xtreme Prime Wardens"
             }
           ],
           "title": "Fanatic",
@@ -186,17 +186,17 @@
             {
               "identifier": "Vanilla.BaseExpansion.Tempest.TempestFreedomSixCharacter",
               "title": "Freedom Six Tempest",
-              "shortTitle": "Freedom Six Tempest"
+              "shortTitle": "Freedom Six"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Tempest.PrimeWardensTempestCharacter",
               "title": "Prime Wardens Tempest",
-              "shortTitle": "Prime Wardens Tempest"
+              "shortTitle": "Prime Wardens"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Tempest.XtremePrimeWardensTempestCharacter",
               "title": "Xtreme Prime Wardens Tempest",
-              "shortTitle": "Xtreme Prime Wardens "
+              "shortTitle": "Xtreme Prime Wardens"
             }
           ],
           "title": "Tempest",
@@ -232,7 +232,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.TheVisionary.TheVisionary",
               "title": "The Visionary",
-              "shortTitle": "The Visionary"
+              "shortTitle": "Visionary"
             },
             {
               "identifier": "Vanilla.BaseExpansion.TheVisionary.DarkVisionaryCharacter",
@@ -242,7 +242,7 @@
             {
               "identifier": "Vanilla.BaseExpansion.TheVisionary.TheVisionaryUnleashedCharacter",
               "title": "The Visionary Unleashed",
-              "shortTitle": "Visionary Unleashed"
+              "shortTitle": "Unleashed"
             }
           ],
           "title": "The Visionary",
@@ -260,17 +260,17 @@
             {
               "identifier": "Vanilla.BaseExpansion.Haka.TheEternalHakaCharacter",
               "title": "The Eternal Haka",
-              "shortTitle": "The Eternal Haka"
+              "shortTitle": "Eternal Haka"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Haka.PrimeWardensHakaCharacter",
               "title": "Prime Wardens Haka",
-              "shortTitle": "Prime Wardens Haka"
+              "shortTitle": "Prime Wardens"
             },
             {
               "identifier": "Vanilla.BaseExpansion.Haka.XtremePrimeWardensHakaCharacter",
               "title": "Xtreme Prime Wardens Haka",
-              "shortTitle": "Xtreme Prime Wardens "
+              "shortTitle": "Xtreme Prime Wardens"
             }
           ],
           "title": "Haka",
@@ -300,7 +300,7 @@
             {
               "identifier": "Vanilla.MiniPack1.Unity.TermiNationUnityCharacter",
               "title": "Termi-Nation Unity",
-              "shortTitle": "Termi-Nation Unity"
+              "shortTitle": "Termi-Nation"
             }
           ],
           "title": "Unity",
@@ -325,7 +325,7 @@
             {
               "identifier": "Vanilla.RookCity.MrFixer.DarkWatchMrFixerCharacter",
               "title": "Dark Watch Mr. Fixer",
-              "shortTitle": "Dark Watch Mr. Fixer"
+              "shortTitle": "Dark Watch"
             }
           ],
           "title": "Mr. Fixer",
@@ -343,7 +343,7 @@
             {
               "identifier": "Vanilla.RookCity.Expatriette.DarkWatchExpatrietteCharacter",
               "title": "Dark Watch Expatriette",
-              "shortTitle": "Dark Watch Expatriette"
+              "shortTitle": "Dark Watch"
             }
           ],
           "title": "Expatriette",
@@ -363,12 +363,12 @@
             {
               "identifier": "Vanilla.MiniPack2.TheScholar.TheScholar",
               "title": "The Scholar",
-              "shortTitle": "The Scholar"
+              "shortTitle": "Scholar"
             },
             {
               "identifier": "Vanilla.MiniPack2.TheScholar.TheScholarOfTheInfiniteCharacter",
               "title": "The Scholar of the Infinite",
-              "shortTitle": "Scholar of the Infinite"
+              "shortTitle": "of the Infinite"
             }
           ],
           "title": "The Scholar",
@@ -393,7 +393,7 @@
             {
               "identifier": "Vanilla.InfernalRelics.NightMist.DarkWatchNightMistCharacter",
               "title": "Dark Watch NightMist",
-              "shortTitle": "Dark Watch NightMist"
+              "shortTitle": "Dark Watch"
             }
           ],
           "title": "NightMist",
@@ -406,7 +406,7 @@
             {
               "identifier": "Vanilla.InfernalRelics.TheArgentAdept.TheArgentAdept",
               "title": "The Argent Adept",
-              "shortTitle": "The Argent Adept"
+              "shortTitle": "Argent Adept"
             },
             {
               "identifier": "Vanilla.InfernalRelics.TheArgentAdept.PrimeWardensArgentAdeptCharacter",
@@ -489,12 +489,12 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.CaptainCosmic.PrimeWardensCaptainCosmicCharacter",
               "title": "Prime Wardens Captain Cosmic",
-              "shortTitle": "Prime Wardens "
+              "shortTitle": "Prime Wardens"
             },
             {
               "identifier": "Vanilla.WrathOfTheCosmos.CaptainCosmic.XtremePrimeWardensCaptainCosmicCharacter",
               "title": "Xtreme Prime Wardens Captain Cosmic",
-              "shortTitle": "Xtreme Prime Wardens "
+              "shortTitle": "Xtreme Prime Wardens"
             },
             {
               "identifier": "Vanilla.WrathOfTheCosmos.CaptainCosmic.CaptainCosmicRequitalCharacter",
@@ -517,7 +517,7 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.SkyScraper.ExtremistSkyScraperNormalCharacter",
               "title": "Extremist Sky-Scraper",
-              "shortTitle": "Extremist Sky-Scraper"
+              "shortTitle": "Extremist"
             }
           ],
           "title": "Sky-Scraper",
@@ -547,7 +547,7 @@
             {
               "identifier": "Vanilla.MiniPack3.Guise.CompletionistGuiseCharacter",
               "title": "Completionist Guise",
-              "shortTitle": "Completionist Guise"
+              "shortTitle": "Completionist"
             }
           ],
           "title": "Guise",
@@ -572,7 +572,7 @@
             {
               "identifier": "Vanilla.Vengeance.Setback.DarkWatchSetbackCharacter",
               "title": "Dark Watch Setback",
-              "shortTitle": "Dark Watch Setback"
+              "shortTitle": "Dark Watch"
             }
           ],
           "title": "Setback",
@@ -603,12 +603,12 @@
             {
               "identifier": "Vanilla.Vengeance.Knyfe.Knyfe",
               "title": "K.N.Y.F.E.",
-              "shortTitle": "K.N.Y.F.E."
+              "shortTitle": "K.N.Y.F.E"
             },
             {
               "identifier": "Vanilla.Vengeance.Knyfe.KnyfeRogueAgentCharacter",
               "title": "K.N.Y.F.E. Rogue Agent",
-              "shortTitle": "K.N.Y.F.E. Rogue Agent"
+              "shortTitle": "Rogue Agent"
             }
           ],
           "title": "K.N.Y.F.E.",
@@ -621,12 +621,12 @@
             {
               "identifier": "Vanilla.Vengeance.TheSentinels.TheSentinels",
               "title": "The Sentinels",
-              "shortTitle": "The Sentinels"
+              "shortTitle": "Sentinels"
             },
             {
               "identifier": "Vanilla.Vengeance.TheSentinels.AdamantSentinelsInstructions",
               "title": "The Adamant Sentinels",
-              "shortTitle": "The Adamant Sentinels"
+              "shortTitle": "Adamant"
             }
           ],
           "title": "The Sentinels",
@@ -639,12 +639,12 @@
             {
               "identifier": "Vanilla.Vengeance.TheNaturalist.TheNaturalist",
               "title": "The Naturalist",
-              "shortTitle": "The Naturalist"
+              "shortTitle": "Naturalist"
             },
             {
               "identifier": "Vanilla.Vengeance.TheNaturalist.TheHuntedNaturalistCharacter",
               "title": "The Hunted Naturalist",
-              "shortTitle": "The Hunted Naturalist"
+              "shortTitle": "Hunted"
             }
           ],
           "title": "The Naturalist",
@@ -669,7 +669,7 @@
             {
               "identifier": "Vanilla.MiniPack4.Stuntman.ActionHeroStuntmanCharacter",
               "title": "Action Hero Stuntman",
-              "shortTitle": "Action Hero Stuntman"
+              "shortTitle": "Action Hero"
             }
           ],
           "title": "Stuntman",
@@ -707,12 +707,12 @@
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardTheIdealist.VoidGuardTheIdealist",
               "title": "Void Guard The Idealist",
-              "shortTitle": "Void Guard The Idealist"
+              "shortTitle": "Idealist"
             },
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardTheIdealist.VoidGuardSuperSentaiIdealistCharacter",
               "title": "Super Sentai Idealist",
-              "shortTitle": "Super Sentai Idealist"
+              "shortTitle": "Super Sentai"
             }
           ],
           "title": "Void Guard The Idealist",
@@ -725,12 +725,12 @@
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardDrMedico.VoidGuardDrMedico",
               "title": "Void Guard Dr. Medico",
-              "shortTitle": "Void Guard Dr. Medico"
+              "shortTitle": "Dr. Medico"
             },
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardDrMedico.VoidGuardDrMedicoMalpracticeCharacter",
               "title": "Dr. Medico - Malpractice",
-              "shortTitle": "Dr. Medico - Malpractice"
+              "shortTitle": "Malpractice"
             }
           ],
           "title": "Void Guard Dr. Medico",
@@ -743,12 +743,12 @@
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardMainstay.VoidGuardMainstay",
               "title": "Void Guard Mainstay",
-              "shortTitle": "Void Guard Mainstay"
+              "shortTitle": "Mainstay"
             },
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardMainstay.VoidGuardRoadWarriorMainstayCharacter",
               "title": "Road Warrior Mainstay",
-              "shortTitle": "Road Warrior Mainstay"
+              "shortTitle": "Road Warrior"
             }
           ],
           "title": "Void Guard Mainstay",
@@ -761,12 +761,12 @@
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardWrithe.VoidGuardWrithe",
               "title": "Void Guard Writhe",
-              "shortTitle": "Void Guard Writhe"
+              "shortTitle": "Writhe"
             },
             {
               "identifier": "Vanilla.MiniPack5.VoidGuardWrithe.VoidGuardWritheCosmicInventorCharacter",
               "title": "Writhe: Cosmic Inventor",
-              "shortTitle": "Writhe: Cosmic Inventor"
+              "shortTitle": "Cosmic Inventor"
             }
           ],
           "title": "Void Guard Writhe",
@@ -809,7 +809,7 @@
             {
               "identifier": "Vanilla.OblivAeon.LaComodora.LaComodoraCurseOfTheBlackSpotCharacter",
               "title": "La Comodora: Curse of the Black Spot",
-              "shortTitle": "Curse of the Black Spot"
+              "shortTitle": "Black Spot"
             }
           ],
           "title": "La Comodora",
@@ -827,7 +827,7 @@
             {
               "identifier": "Vanilla.OblivAeon.Lifeline.LifelineBloodMageCharacter",
               "title": "Lifeline - Blood Mage",
-              "shortTitle": "Lifeline - Blood Mage"
+              "shortTitle": "Blood Mage"
             }
           ],
           "title": "Lifeline",
@@ -858,7 +858,7 @@
             {
               "identifier": "Vanilla.OblivAeon.TheHarpy.TheHarpy",
               "title": "The Harpy",
-              "shortTitle": "The Harpy"
+              "shortTitle": "Harpy"
             },
             {
               "identifier": "Vanilla.OblivAeon.TheHarpy.DarkWatchHarpyCharacter",
@@ -888,7 +888,7 @@
             {
               "identifier": "Vanilla.EarthPrime.CaptainThunder.RookieCaptainThunderCharacter",
               "title": "Rookie Captain Thunder",
-              "shortTitle": "Rookie Captain Thunder"
+              "shortTitle": "Rookie"
             }
           ],
           "title": "Captain Thunder",
@@ -924,7 +924,7 @@
             {
               "identifier": "Vanilla.EarthPrime.LadyLiberty.TheAllNewLadyLibertyCharacter",
               "title": "The All-New Lady Liberty",
-              "shortTitle": "All-New Lady Liberty"
+              "shortTitle": "All-New"
             }
           ],
           "title": "Lady Liberty",
@@ -960,7 +960,7 @@
             {
               "identifier": "Vanilla.EarthPrime.Siren.SirenBeneathTheSeaCharacter",
               "title": "Siren Beneath the Sea",
-              "shortTitle": "Siren Beneath the Sea"
+              "shortTitle": "Beneath the Sea"
             }
           ],
           "title": "Siren",
@@ -978,7 +978,7 @@
             {
               "identifier": "Vanilla.EarthPrime.JohnnyRocket.MaximumSpeedJohnnyRocketCharacter",
               "title": "Maximum Speed Johnny Rocket",
-              "shortTitle": "Maximum Speed "
+              "shortTitle": "Maximum Speed"
             }
           ],
           "title": "Johnny Rocket",
@@ -996,7 +996,7 @@
             {
               "identifier": "Vanilla.EarthPrime.Daedalus.DaedalusAtTheForgeCharacter",
               "title": "Daedalus at the Forge",
-              "shortTitle": "Daedalus at the Forge"
+              "shortTitle": "Forge"
             }
           ],
           "title": "Daedalus",
@@ -1009,7 +1009,7 @@
             {
               "identifier": "Vanilla.EarthPrime.TheRaven.TheRaven",
               "title": "The Raven",
-              "shortTitle": "The Raven"
+              "shortTitle": "Raven"
             },
             {
               "identifier": "Vanilla.EarthPrime.TheRaven.SilverAgeRavenCharacter",
@@ -1032,7 +1032,7 @@
             {
               "identifier": "Vanilla.EarthPrime.Pseudo.SpaceInfiltratorPseudoCharacter",
               "title": "Space Infiltrator Pseudo",
-              "shortTitle": "Space Infiltrator "
+              "shortTitle": "Space Infiltrator"
             }
           ],
           "title": "Pseudo",
@@ -1075,7 +1075,7 @@
             {
               "identifier": "Vanilla.MagicalMysteriesPack.LanternJack.ChillingTalesLanternJackCharacter",
               "title": "Chilling Tales Lantern Jack",
-              "shortTitle": "Chilling Tales "
+              "shortTitle": "Chilling Tales"
             }
           ],
           "title": "Lantern Jack",
@@ -1093,7 +1093,7 @@
             {
               "identifier": "Vanilla.MagicalMysteriesPack.Eldritch.EldritchsLastStandCharacter",
               "title": "Eldritch\u0027s Last Stand",
-              "shortTitle": "Eldritch\u0027s Last Stand"
+              "shortTitle": "Last Stand"
             }
           ],
           "title": "Eldritch",
@@ -1209,7 +1209,7 @@
             {
               "identifier": "Vanilla.RookCity.Spite.SpiteAgentOfGloomCharacter",
               "title": "Spite: Agent of Gloom",
-              "shortTitle": "Spite: Agent of Gloom"
+              "shortTitle": "Agent of Gloom"
             }
           ],
           "title": "Spite",
@@ -1235,7 +1235,7 @@
             {
               "identifier": "Vanilla.RookCity.TheMatriarch.TheMatriarch",
               "title": "The Matriarch",
-              "shortTitle": "The Matriarch"
+              "shortTitle": "Matriarch"
             }
           ],
           "title": "The Matriarch",
@@ -1248,7 +1248,7 @@
             {
               "identifier": "Vanilla.RookCity.TheChairman.TheChairman",
               "title": "The Chairman",
-              "shortTitle": "The Chairman"
+              "shortTitle": "Chairman"
             }
           ],
           "title": "The Chairman",
@@ -1286,7 +1286,7 @@
             {
               "identifier": "Vanilla.InfernalRelics.GloomWeaver.GloomWeaverSkinWalkerCharacter",
               "title": "Skinwalker GloomWeaver",
-              "shortTitle": "Skinwalker GloomWeaver"
+              "shortTitle": "Skinwalker"
             }
           ],
           "title": "GloomWeaver",
@@ -1312,7 +1312,7 @@
             {
               "identifier": "Vanilla.InfernalRelics.TheEnnead.TheEnnead",
               "title": "The Ennead",
-              "shortTitle": "The Ennead"
+              "shortTitle": "Ennead"
             }
           ],
           "title": "The Ennead",
@@ -1396,7 +1396,7 @@
             {
               "identifier": "Vanilla.ShatteredTimelines.TheDreamer.TheDreamer",
               "title": "The Dreamer",
-              "shortTitle": "The Dreamer"
+              "shortTitle": "Dreamer"
             }
           ],
           "title": "The Dreamer",
@@ -1680,7 +1680,7 @@
             {
               "identifier": "Vanilla.RookCity.PikeIndustrialComplex.PikeIndustrialComplex",
               "title": "Pike Industrial Complex",
-              "shortTitle": "Pike Industrial Complex"
+              "shortTitle": "Pike Ind. Complex"
             }
           ],
           "title": "Pike Industrial Complex",
@@ -1746,7 +1746,7 @@
             {
               "identifier": "Vanilla.MiniPack2.TheFinalWasteland.TheFinalWasteland",
               "title": "The Final Wasteland",
-              "shortTitle": "The Final Wasteland"
+              "shortTitle": "Final Wasteland"
             }
           ],
           "title": "The Final Wasteland",
@@ -1766,7 +1766,7 @@
             {
               "identifier": "Vanilla.ShatteredTimelines.TheBlock.TheBlock",
               "title": "The Block",
-              "shortTitle": "The Block"
+              "shortTitle": "Block"
             }
           ],
           "title": "The Block",
@@ -1799,7 +1799,7 @@
             {
               "identifier": "Vanilla.WrathOfTheCosmos.TheEnclaveOfTheEndlings.TheEnclaveOfTheEndlings",
               "title": "The Enclave of the Endlings",
-              "shortTitle": "Enclave of the Endlings"
+              "shortTitle": "Endling Enclave"
             }
           ],
           "title": "The Enclave of the Endlings",
@@ -1852,7 +1852,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.TheTempleOfZhuLong.TheTempleOfZhuLong",
               "title": "The Temple of Zhu Long",
-              "shortTitle": "The Temple of Zhu Long"
+              "shortTitle": "Temple of Zhu Long"
             }
           ],
           "title": "The Temple of Zhu Long",
@@ -1865,7 +1865,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.TheCourtOfBlood.TheCourtOfBlood",
               "title": "The Court of Blood",
-              "shortTitle": "The Court of Blood"
+              "shortTitle": "Court of Blood"
             }
           ],
           "title": "The Court of Blood",
@@ -1891,7 +1891,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.MMFFCC.MMFFCC",
               "title": "Madame Mittermeier\u0027s Fantastical Festival of Conundrums and Curiosities",
-              "shortTitle": "MMFFCC"
+              "shortTitle": "Mdm. Mittermeier\u0027s"
             }
           ],
           "title": "Madame Mittermeier\u0027s Fantastical Festival of Conundrums and Curiosities",
@@ -1911,7 +1911,7 @@
             {
               "identifier": "Vanilla.Vengeance.MobileDefensePlatform.MobileDefensePlatform",
               "title": "Mobile Defense Platform",
-              "shortTitle": "Mobile Defense Platform"
+              "shortTitle": "Mobile Def. Platform"
             }
           ],
           "title": "Mobile Defense Platform",
@@ -1944,7 +1944,7 @@
             {
               "identifier": "Vanilla.MiniPack4.TheCelestialTribunal.TheCelestialTribunal",
               "title": "The Celestial Tribunal",
-              "shortTitle": "The Celestial Tribunal"
+              "shortTitle": "Celestial Tribunal"
             }
           ],
           "title": "The Celestial Tribunal",
@@ -2062,7 +2062,7 @@
             {
               "identifier": "Vanilla.EarthPrime.TheTerminus.TheTerminus",
               "title": "The Terminus",
-              "shortTitle": "The Terminus"
+              "shortTitle": "Terminus"
             }
           ],
           "title": "The Terminus",
@@ -2293,7 +2293,7 @@
             {
               "identifier": "Vanilla.VillainsOfTheMultiverse.TheOperativeTeam.TheOperativeTeam",
               "title": "The Operative",
-              "shortTitle": "The Operative"
+              "shortTitle": "Operative"
             }
           ],
           "title": "The Operative",
